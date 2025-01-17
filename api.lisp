@@ -27,6 +27,11 @@
            #:aws-request))
 (in-package #:aws-sdk/api)
 
+(defvar *keep-alive* t
+  "Determines if HTTP connections use keep-alive. Only affects requests made via AWS-SDK/API:AWS-REQUEST.")
+(defvar *use-connection-pool* t
+  "Determines if HTTP connections are pooled. Only affects requests made via AWS-SDK/API:AWS-REQUEST.")
+
 (defun aws-request (req &key want-stream)
   (check-type req request)
   (let* ((session (request-session req))
@@ -60,5 +65,6 @@
                                    ("X-Amz-Content-Sha256" . ,(aws-sdk/utils::sha-256 (or payload "")))
                                    ,@headers)
                         :content payload
-                        :keep-alive nil
+                        :keep-alive *keep-alive*
+                        :use-connection-pool *use-connection-pool*
                         :want-stream want-stream)))))))
