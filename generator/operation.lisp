@@ -24,6 +24,8 @@
   (:import-from #:uiop
                 #:string-prefix-p)
   (:import-from #:xmls)
+  (:import-from #:str
+                #:replace-using)
   (:export #:compile-operation))
 (in-package #:aws-sdk/generator/operation)
 
@@ -101,6 +103,25 @@
                   (t
                    body-str))))))))
 
+(defun aws-sign4-uri-encode (data &optional path?)
+  (replace-using
+   (append
+    '(
+      ;; See https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_sigv-create-signed-request.html
+      ;; and https://github.com/aws/aws-sdk-java/blob/d9d27d23607ddcf09cc25f48a9d2fbfe697fe60c/aws-java-sdk-core/src/main/java/com/amazonaws/util/SdkHttpUtils.java#L66
+      "+"   "%20"
+      "*"   "%2A"
+      "%7E" "~")
+    (when path?
+      '("%2F" "/"
+        ;; The replacement below is not documented, but empirically,
+        ;; we need this to get lambda INVOKE requests to be properly
+        ;; signed when using full ARN function identifiers. Also,
+        ;; Amazon Q says this should be the case, although it is not
+        ;; a source of authoritative specification.
+        "%3A" ":")))
+   (quri:url-encode data)))
+
 (defun compile-path-pattern (path-pattern)
   (when path-pattern
     (let ((slots
@@ -113,7 +134,7 @@
                   (push
                     (if plus-ends
                         `(slot-value input ',slot-symbol)
-                        `(quri:url-encode (slot-value input ',slot-symbol)))
+                        `(aws-sign4-uri-encode (slot-value input ',slot-symbol) t))
                     slots))))))
       (if slots
           `(lambda (input)
