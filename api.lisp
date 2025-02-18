@@ -42,10 +42,13 @@
       (error "No credentials are found"))
     (unless region
       (error "AWS region is not configured"))
-    (let ((aws-sign4:*aws-credentials* (lambda () (credentials-keys credentials)))
-          (headers (append (credentials-headers credentials)
-                           (request-headers req)))
-          (payload (request-payload req)))
+    (let* ((aws-sign4:*aws-credentials* (lambda () (credentials-keys credentials)))
+           (payload (request-payload req))
+           (payload-hash
+             `(("X-Amz-Content-Sha256" . ,(aws-sdk/utils::sha-256 (or payload "")))))
+           (headers (append (credentials-headers credentials)
+                            (request-headers req)
+                            payload-hash)))
       (multiple-value-bind (authorization x-amz-date)
           (let ((uri (quri:uri (request-path req))))
             (aws-sign4:aws-sign4 :region region
@@ -62,7 +65,6 @@
                         :method (request-method req)
                         :headers `(("Authorization" . ,authorization)
                                    ("X-Amz-Date" . ,x-amz-date)
-                                   ("X-Amz-Content-Sha256" . ,(aws-sdk/utils::sha-256 (or payload "")))
                                    ,@headers)
                         :content payload
                         :keep-alive *keep-alive*
