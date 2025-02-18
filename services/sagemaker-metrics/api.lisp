@@ -20,7 +20,7 @@
  (common-lisp:export 'sagemaker-metrics-error))
 (common-lisp:progn
  (common-lisp:defclass sagemaker-metrics-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "sagemaker-metrics"
                         :api-version "2022-09-30" :host-prefix

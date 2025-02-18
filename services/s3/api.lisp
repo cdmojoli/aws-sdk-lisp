@@ -102,8 +102,10 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-charged))
-      (common-lisp:cons "x-amz-request-charged"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-charged"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -165,13 +167,17 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-payer))
-      (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -1505,32 +1511,44 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'expiration))
-      (common-lisp:cons "x-amz-expiration" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expiration" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'server-side-encryption))
-      (common-lisp:cons "x-amz-server-side-encryption"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'version-id))
-      (common-lisp:cons "x-amz-version-id" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-version-id" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'ssekmskey-id))
-      (common-lisp:cons "x-amz-server-side-encryption-aws-kms-key-id"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-aws-kms-key-id"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'bucket-key-enabled))
-      (common-lisp:cons "x-amz-server-side-encryption-bucket-key-enabled"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-bucket-key-enabled"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-charged))
-      (common-lisp:cons "x-amz-request-charged"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-charged"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -1711,47 +1729,65 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-crc32))
-      (common-lisp:cons "x-amz-checksum-crc32" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-checksum-crc32" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-crc32c))
-      (common-lisp:cons "x-amz-checksum-crc32c"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-checksum-crc32c"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-sha1))
-      (common-lisp:cons "x-amz-checksum-sha1" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-checksum-sha1" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-sha256))
-      (common-lisp:cons "x-amz-checksum-sha256"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-checksum-sha256"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-payer))
-      (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'ssecustomer-algorithm))
-      (common-lisp:cons "x-amz-server-side-encryption-customer-algorithm"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-customer-algorithm"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'ssecustomer-key))
-      (common-lisp:cons "x-amz-server-side-encryption-customer-key"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-customer-key"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'ssecustomer-key-md5))
-      (common-lisp:cons "x-amz-server-side-encryption-customer-key-MD5"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-customer-key-MD5"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -2082,55 +2118,75 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'expiration))
-      (common-lisp:cons "x-amz-expiration" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expiration" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'copy-source-version-id))
-      (common-lisp:cons "x-amz-copy-source-version-id"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-copy-source-version-id"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'version-id))
-      (common-lisp:cons "x-amz-version-id" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-version-id" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'server-side-encryption))
-      (common-lisp:cons "x-amz-server-side-encryption"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'ssecustomer-algorithm))
-      (common-lisp:cons "x-amz-server-side-encryption-customer-algorithm"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-customer-algorithm"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'ssecustomer-key-md5))
-      (common-lisp:cons "x-amz-server-side-encryption-customer-key-MD5"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-customer-key-MD5"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'ssekmskey-id))
-      (common-lisp:cons "x-amz-server-side-encryption-aws-kms-key-id"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-aws-kms-key-id"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'ssekmsencryption-context))
-      (common-lisp:cons "x-amz-server-side-encryption-context"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-context"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'bucket-key-enabled))
-      (common-lisp:cons "x-amz-server-side-encryption-bucket-key-enabled"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-bucket-key-enabled"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-charged))
-      (common-lisp:cons "x-amz-request-charged"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-charged"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         ((aws-sdk/generator/shape::input copy-object-output))
    (common-lisp:append
@@ -2463,197 +2519,274 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'acl))
-      (common-lisp:cons "x-amz-acl" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-acl" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'cache-control))
-      (common-lisp:cons "Cache-Control" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Cache-Control" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-algorithm))
-      (common-lisp:cons "x-amz-checksum-algorithm"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-checksum-algorithm"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-disposition))
-      (common-lisp:cons "Content-Disposition" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Disposition" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-encoding))
-      (common-lisp:cons "Content-Encoding" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Encoding" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-language))
-      (common-lisp:cons "Content-Language" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Language" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-type))
-      (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'copy-source))
-      (common-lisp:cons "x-amz-copy-source" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-copy-source" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'copy-source-if-match))
-      (common-lisp:cons "x-amz-copy-source-if-match"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-copy-source-if-match"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'copy-source-if-modified-since))
-      (common-lisp:cons "x-amz-copy-source-if-modified-since"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-copy-source-if-modified-since"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'copy-source-if-none-match))
-      (common-lisp:cons "x-amz-copy-source-if-none-match"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-copy-source-if-none-match"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'copy-source-if-unmodified-since))
-      (common-lisp:cons "x-amz-copy-source-if-unmodified-since"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-copy-source-if-unmodified-since"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'expires))
-      (common-lisp:cons "Expires" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Expires" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'grant-full-control))
-      (common-lisp:cons "x-amz-grant-full-control"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-grant-full-control"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'grant-read))
-      (common-lisp:cons "x-amz-grant-read" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-grant-read" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'grant-read-acp))
-      (common-lisp:cons "x-amz-grant-read-acp" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-grant-read-acp" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'grant-write-acp))
-      (common-lisp:cons "x-amz-grant-write-acp"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-grant-write-acp"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'metadata-directive))
-      (common-lisp:cons "x-amz-metadata-directive"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-metadata-directive"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'tagging-directive))
-      (common-lisp:cons "x-amz-tagging-directive"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-tagging-directive"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'server-side-encryption))
-      (common-lisp:cons "x-amz-server-side-encryption"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'storage-class))
-      (common-lisp:cons "x-amz-storage-class" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-storage-class" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'website-redirect-location))
-      (common-lisp:cons "x-amz-website-redirect-location"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-website-redirect-location"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'ssecustomer-algorithm))
-      (common-lisp:cons "x-amz-server-side-encryption-customer-algorithm"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-customer-algorithm"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'ssecustomer-key))
-      (common-lisp:cons "x-amz-server-side-encryption-customer-key"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-customer-key"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'ssecustomer-key-md5))
-      (common-lisp:cons "x-amz-server-side-encryption-customer-key-MD5"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-customer-key-MD5"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'ssekmskey-id))
-      (common-lisp:cons "x-amz-server-side-encryption-aws-kms-key-id"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-aws-kms-key-id"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'ssekmsencryption-context))
-      (common-lisp:cons "x-amz-server-side-encryption-context"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-context"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'bucket-key-enabled))
-      (common-lisp:cons "x-amz-server-side-encryption-bucket-key-enabled"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-bucket-key-enabled"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'copy-source-ssecustomer-algorithm))
       (common-lisp:cons
-       "x-amz-copy-source-server-side-encryption-customer-algorithm"
-       aws-sdk/generator/shape::value))
+       (common-lisp:cons
+        "x-amz-copy-source-server-side-encryption-customer-algorithm"
+        aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'copy-source-ssecustomer-key))
-      (common-lisp:cons "x-amz-copy-source-server-side-encryption-customer-key"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons
+        "x-amz-copy-source-server-side-encryption-customer-key"
+        aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'copy-source-ssecustomer-key-md5))
       (common-lisp:cons
-       "x-amz-copy-source-server-side-encryption-customer-key-MD5"
-       aws-sdk/generator/shape::value))
+       (common-lisp:cons
+        "x-amz-copy-source-server-side-encryption-customer-key-MD5"
+        aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-payer))
-      (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'tagging))
-      (common-lisp:cons "x-amz-tagging" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-tagging" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'object-lock-mode))
-      (common-lisp:cons "x-amz-object-lock-mode"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-object-lock-mode"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'object-lock-retain-until-date))
-      (common-lisp:cons "x-amz-object-lock-retain-until-date"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-object-lock-retain-until-date"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'object-lock-legal-hold-status))
-      (common-lisp:cons "x-amz-object-lock-legal-hold"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-object-lock-legal-hold"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-source-bucket-owner))
-      (common-lisp:cons "x-amz-source-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-source-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (common-lisp:when
         (common-lisp:slot-value aws-sdk/generator/shape::input 'metadata)
       (common-lisp:loop aws-sdk/generator/shape::for aws-sdk/generator/shape::key aws-sdk/generator/shape::being aws-sdk/generator/shape::each aws-sdk/generator/shape::hash-key aws-sdk/generator/shape::of (common-lisp:slot-value
@@ -2965,7 +3098,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'location))
-      (common-lisp:cons "Location" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Location" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         ((aws-sdk/generator/shape::input create-bucket-output))
    (common-lisp:append))
@@ -3060,40 +3195,56 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'acl))
-      (common-lisp:cons "x-amz-acl" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-acl" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'grant-full-control))
-      (common-lisp:cons "x-amz-grant-full-control"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-grant-full-control"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'grant-read))
-      (common-lisp:cons "x-amz-grant-read" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-grant-read" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'grant-read-acp))
-      (common-lisp:cons "x-amz-grant-read-acp" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-grant-read-acp" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'grant-write))
-      (common-lisp:cons "x-amz-grant-write" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-grant-write" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'grant-write-acp))
-      (common-lisp:cons "x-amz-grant-write-acp"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-grant-write-acp"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'object-lock-enabled-for-bucket))
-      (common-lisp:cons "x-amz-bucket-object-lock-enabled"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-bucket-object-lock-enabled"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'object-ownership))
-      (common-lisp:cons "x-amz-object-ownership"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-object-ownership"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -3227,54 +3378,74 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'abort-date))
-      (common-lisp:cons "x-amz-abort-date" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-abort-date" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'abort-rule-id))
-      (common-lisp:cons "x-amz-abort-rule-id" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-abort-rule-id" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'server-side-encryption))
-      (common-lisp:cons "x-amz-server-side-encryption"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'ssecustomer-algorithm))
-      (common-lisp:cons "x-amz-server-side-encryption-customer-algorithm"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-customer-algorithm"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'ssecustomer-key-md5))
-      (common-lisp:cons "x-amz-server-side-encryption-customer-key-MD5"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-customer-key-MD5"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'ssekmskey-id))
-      (common-lisp:cons "x-amz-server-side-encryption-aws-kms-key-id"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-aws-kms-key-id"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'ssekmsencryption-context))
-      (common-lisp:cons "x-amz-server-side-encryption-context"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-context"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'bucket-key-enabled))
-      (common-lisp:cons "x-amz-server-side-encryption-bucket-key-enabled"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-bucket-key-enabled"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-charged))
-      (common-lisp:cons "x-amz-request-charged"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-charged"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-algorithm))
-      (common-lisp:cons "x-amz-checksum-algorithm"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-checksum-algorithm"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -3543,133 +3714,187 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'acl))
-      (common-lisp:cons "x-amz-acl" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-acl" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'cache-control))
-      (common-lisp:cons "Cache-Control" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Cache-Control" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-disposition))
-      (common-lisp:cons "Content-Disposition" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Disposition" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-encoding))
-      (common-lisp:cons "Content-Encoding" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Encoding" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-language))
-      (common-lisp:cons "Content-Language" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Language" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-type))
-      (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'expires))
-      (common-lisp:cons "Expires" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Expires" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'grant-full-control))
-      (common-lisp:cons "x-amz-grant-full-control"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-grant-full-control"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'grant-read))
-      (common-lisp:cons "x-amz-grant-read" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-grant-read" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'grant-read-acp))
-      (common-lisp:cons "x-amz-grant-read-acp" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-grant-read-acp" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'grant-write-acp))
-      (common-lisp:cons "x-amz-grant-write-acp"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-grant-write-acp"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'server-side-encryption))
-      (common-lisp:cons "x-amz-server-side-encryption"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'storage-class))
-      (common-lisp:cons "x-amz-storage-class" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-storage-class" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'website-redirect-location))
-      (common-lisp:cons "x-amz-website-redirect-location"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-website-redirect-location"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'ssecustomer-algorithm))
-      (common-lisp:cons "x-amz-server-side-encryption-customer-algorithm"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-customer-algorithm"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'ssecustomer-key))
-      (common-lisp:cons "x-amz-server-side-encryption-customer-key"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-customer-key"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'ssecustomer-key-md5))
-      (common-lisp:cons "x-amz-server-side-encryption-customer-key-MD5"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-customer-key-MD5"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'ssekmskey-id))
-      (common-lisp:cons "x-amz-server-side-encryption-aws-kms-key-id"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-aws-kms-key-id"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'ssekmsencryption-context))
-      (common-lisp:cons "x-amz-server-side-encryption-context"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-context"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'bucket-key-enabled))
-      (common-lisp:cons "x-amz-server-side-encryption-bucket-key-enabled"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-bucket-key-enabled"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-payer))
-      (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'tagging))
-      (common-lisp:cons "x-amz-tagging" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-tagging" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'object-lock-mode))
-      (common-lisp:cons "x-amz-object-lock-mode"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-object-lock-mode"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'object-lock-retain-until-date))
-      (common-lisp:cons "x-amz-object-lock-retain-until-date"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-object-lock-retain-until-date"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'object-lock-legal-hold-status))
-      (common-lisp:cons "x-amz-object-lock-legal-hold"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-object-lock-legal-hold"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-algorithm))
-      (common-lisp:cons "x-amz-checksum-algorithm"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-checksum-algorithm"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (common-lisp:when
         (common-lisp:slot-value aws-sdk/generator/shape::input 'metadata)
       (common-lisp:loop aws-sdk/generator/shape::for aws-sdk/generator/shape::key aws-sdk/generator/shape::being aws-sdk/generator/shape::each aws-sdk/generator/shape::hash-key aws-sdk/generator/shape::of (common-lisp:slot-value
@@ -3760,8 +3985,10 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'session-mode))
-      (common-lisp:cons "x-amz-create-session-mode"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-create-session-mode"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -3915,8 +4142,10 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -3958,8 +4187,10 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -4003,8 +4234,10 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -4098,8 +4331,10 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -4143,8 +4378,10 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -4195,8 +4432,10 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -4240,8 +4479,10 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -4284,8 +4525,10 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -4329,8 +4572,10 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -4371,8 +4616,10 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -4416,8 +4663,10 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -4461,8 +4710,10 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -4641,16 +4892,22 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'delete-marker))
-      (common-lisp:cons "x-amz-delete-marker" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-delete-marker" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'version-id))
-      (common-lisp:cons "x-amz-version-id" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-version-id" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-charged))
-      (common-lisp:cons "x-amz-request-charged"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-charged"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         ((aws-sdk/generator/shape::input delete-object-output))
    (common-lisp:append))
@@ -4718,23 +4975,31 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'mfa))
-      (common-lisp:cons "x-amz-mfa" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-mfa" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-payer))
-      (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'bypass-governance-retention))
-      (common-lisp:cons "x-amz-bypass-governance-retention"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-bypass-governance-retention"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -4770,7 +5035,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'version-id))
-      (common-lisp:cons "x-amz-version-id" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-version-id" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -4826,8 +5093,10 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -4873,8 +5142,10 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-charged))
-      (common-lisp:cons "x-amz-request-charged"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-charged"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -4961,28 +5232,38 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'mfa))
-      (common-lisp:cons "x-amz-mfa" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-mfa" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-payer))
-      (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'bypass-governance-retention))
-      (common-lisp:cons "x-amz-bypass-governance-retention"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-bypass-governance-retention"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-algorithm))
-      (common-lisp:cons "x-amz-sdk-checksum-algorithm"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-sdk-checksum-algorithm"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -5033,8 +5314,10 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -5643,8 +5926,10 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-charged))
-      (common-lisp:cons "x-amz-request-charged"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-charged"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -5703,13 +5988,16 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-payer))
-      (common-lisp:cons "x-amz-request-payer"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -5798,8 +6086,10 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -5896,8 +6186,10 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -5975,8 +6267,10 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -6063,8 +6357,10 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -6248,8 +6544,10 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -6334,8 +6632,10 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -6415,8 +6715,10 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -6498,8 +6800,10 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -6580,8 +6884,10 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -6674,8 +6980,10 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -6720,8 +7028,10 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -6805,8 +7115,10 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -6884,8 +7196,10 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -6969,8 +7283,10 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -7058,8 +7374,10 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -7141,8 +7459,10 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -7222,8 +7542,10 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -7321,8 +7643,10 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -7448,8 +7772,10 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -7494,8 +7820,10 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-charged))
-      (common-lisp:cons "x-amz-request-charged"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-charged"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -7568,13 +7896,17 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-payer))
-      (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -7664,20 +7996,28 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'delete-marker))
-      (common-lisp:cons "x-amz-delete-marker" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-delete-marker" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'last-modified))
-      (common-lisp:cons "Last-Modified" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Last-Modified" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'version-id))
-      (common-lisp:cons "x-amz-version-id" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-version-id" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-charged))
-      (common-lisp:cons "x-amz-request-charged"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-charged"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -7931,43 +8271,59 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'max-parts))
-      (common-lisp:cons "x-amz-max-parts" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-max-parts" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'part-number-marker))
-      (common-lisp:cons "x-amz-part-number-marker"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-part-number-marker"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'ssecustomer-algorithm))
-      (common-lisp:cons "x-amz-server-side-encryption-customer-algorithm"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-customer-algorithm"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'ssecustomer-key))
-      (common-lisp:cons "x-amz-server-side-encryption-customer-key"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-customer-key"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'ssecustomer-key-md5))
-      (common-lisp:cons "x-amz-server-side-encryption-customer-key-MD5"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-customer-key-MD5"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-payer))
-      (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'object-attributes))
-      (common-lisp:cons "x-amz-object-attributes"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-object-attributes"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -8069,13 +8425,17 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-payer))
-      (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -8163,8 +8523,10 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -8431,157 +8793,225 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'delete-marker))
-      (common-lisp:cons "x-amz-delete-marker" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-delete-marker" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'accept-ranges))
-      (common-lisp:cons "accept-ranges" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "accept-ranges" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'expiration))
-      (common-lisp:cons "x-amz-expiration" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expiration" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'restore))
-      (common-lisp:cons "x-amz-restore" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-restore" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'last-modified))
-      (common-lisp:cons "Last-Modified" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Last-Modified" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-length))
-      (common-lisp:cons "Content-Length" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Length" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-crc32))
-      (common-lisp:cons "x-amz-checksum-crc32" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-checksum-crc32" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-crc32c))
-      (common-lisp:cons "x-amz-checksum-crc32c"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-checksum-crc32c"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-sha1))
-      (common-lisp:cons "x-amz-checksum-sha1" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-checksum-sha1" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-sha256))
-      (common-lisp:cons "x-amz-checksum-sha256"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-checksum-sha256"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'missing-meta))
-      (common-lisp:cons "x-amz-missing-meta" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-missing-meta" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'version-id))
-      (common-lisp:cons "x-amz-version-id" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-version-id" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'cache-control))
-      (common-lisp:cons "Cache-Control" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Cache-Control" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-disposition))
-      (common-lisp:cons "Content-Disposition" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Disposition" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-encoding))
-      (common-lisp:cons "Content-Encoding" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Encoding" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-language))
-      (common-lisp:cons "Content-Language" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Language" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-range))
-      (common-lisp:cons "Content-Range" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Range" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-type))
-      (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'expires))
-      (common-lisp:cons "Expires" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Expires" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'website-redirect-location))
-      (common-lisp:cons "x-amz-website-redirect-location"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-website-redirect-location"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'server-side-encryption))
-      (common-lisp:cons "x-amz-server-side-encryption"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'ssecustomer-algorithm))
-      (common-lisp:cons "x-amz-server-side-encryption-customer-algorithm"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-customer-algorithm"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'ssecustomer-key-md5))
-      (common-lisp:cons "x-amz-server-side-encryption-customer-key-MD5"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-customer-key-MD5"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'ssekmskey-id))
-      (common-lisp:cons "x-amz-server-side-encryption-aws-kms-key-id"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-aws-kms-key-id"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'bucket-key-enabled))
-      (common-lisp:cons "x-amz-server-side-encryption-bucket-key-enabled"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-bucket-key-enabled"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'storage-class))
-      (common-lisp:cons "x-amz-storage-class" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-storage-class" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-charged))
-      (common-lisp:cons "x-amz-request-charged"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-charged"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'replication-status))
-      (common-lisp:cons "x-amz-replication-status"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-replication-status"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'parts-count))
-      (common-lisp:cons "x-amz-mp-parts-count" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-mp-parts-count" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'tag-count))
-      (common-lisp:cons "x-amz-tagging-count" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-tagging-count" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'object-lock-mode))
-      (common-lisp:cons "x-amz-object-lock-mode"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-object-lock-mode"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'object-lock-retain-until-date))
-      (common-lisp:cons "x-amz-object-lock-retain-until-date"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-object-lock-retain-until-date"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'object-lock-legal-hold-status))
-      (common-lisp:cons "x-amz-object-lock-legal-hold"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-object-lock-legal-hold"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (common-lisp:when
         (common-lisp:slot-value aws-sdk/generator/shape::input 'metadata)
       (common-lisp:loop aws-sdk/generator/shape::for aws-sdk/generator/shape::key aws-sdk/generator/shape::being aws-sdk/generator/shape::each aws-sdk/generator/shape::hash-key aws-sdk/generator/shape::of (common-lisp:slot-value
@@ -8766,54 +9196,75 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'if-match))
-      (common-lisp:cons "If-Match" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "If-Match" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'if-modified-since))
-      (common-lisp:cons "If-Modified-Since" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "If-Modified-Since" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'if-none-match))
-      (common-lisp:cons "If-None-Match" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "If-None-Match" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'if-unmodified-since))
-      (common-lisp:cons "If-Unmodified-Since" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "If-Unmodified-Since" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'range))
-      (common-lisp:cons "Range" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Range" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'ssecustomer-algorithm))
-      (common-lisp:cons "x-amz-server-side-encryption-customer-algorithm"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-customer-algorithm"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'ssecustomer-key))
-      (common-lisp:cons "x-amz-server-side-encryption-customer-key"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-customer-key"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'ssecustomer-key-md5))
-      (common-lisp:cons "x-amz-server-side-encryption-customer-key-MD5"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-customer-key-MD5"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-payer))
-      (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-mode))
-      (common-lisp:cons "x-amz-checksum-mode"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-checksum-mode" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         ((aws-sdk/generator/shape::input get-object-request))
    (common-lisp:append))
@@ -8911,13 +9362,17 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-payer))
-      (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -8959,7 +9414,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'version-id))
-      (common-lisp:cons "x-amz-version-id" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-version-id" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -9027,13 +9484,16 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-payer))
-      (common-lisp:cons "x-amz-request-payer"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -9076,8 +9536,10 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-charged))
-      (common-lisp:cons "x-amz-request-charged"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-charged"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -9130,13 +9592,17 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-payer))
-      (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -9224,8 +9690,10 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -9447,23 +9915,31 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'bucket-location-type))
-      (common-lisp:cons "x-amz-bucket-location-type"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-bucket-location-type"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'bucket-location-name))
-      (common-lisp:cons "x-amz-bucket-location-name"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-bucket-location-name"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'bucket-region))
-      (common-lisp:cons "x-amz-bucket-region" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-bucket-region" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'access-point-alias))
-      (common-lisp:cons "x-amz-access-point-alias"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-access-point-alias"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         ((aws-sdk/generator/shape::input head-bucket-output))
    (common-lisp:append))
@@ -9498,8 +9974,10 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         ((aws-sdk/generator/shape::input head-bucket-request))
    (common-lisp:append))
@@ -9756,153 +10234,219 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'delete-marker))
-      (common-lisp:cons "x-amz-delete-marker" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-delete-marker" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'accept-ranges))
-      (common-lisp:cons "accept-ranges" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "accept-ranges" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'expiration))
-      (common-lisp:cons "x-amz-expiration" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expiration" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'restore))
-      (common-lisp:cons "x-amz-restore" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-restore" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'archive-status))
-      (common-lisp:cons "x-amz-archive-status" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-archive-status" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'last-modified))
-      (common-lisp:cons "Last-Modified" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Last-Modified" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-length))
-      (common-lisp:cons "Content-Length" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Length" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-crc32))
-      (common-lisp:cons "x-amz-checksum-crc32" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-checksum-crc32" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-crc32c))
-      (common-lisp:cons "x-amz-checksum-crc32c"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-checksum-crc32c"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-sha1))
-      (common-lisp:cons "x-amz-checksum-sha1" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-checksum-sha1" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-sha256))
-      (common-lisp:cons "x-amz-checksum-sha256"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-checksum-sha256"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'missing-meta))
-      (common-lisp:cons "x-amz-missing-meta" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-missing-meta" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'version-id))
-      (common-lisp:cons "x-amz-version-id" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-version-id" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'cache-control))
-      (common-lisp:cons "Cache-Control" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Cache-Control" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-disposition))
-      (common-lisp:cons "Content-Disposition" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Disposition" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-encoding))
-      (common-lisp:cons "Content-Encoding" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Encoding" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-language))
-      (common-lisp:cons "Content-Language" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Language" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-type))
-      (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'expires))
-      (common-lisp:cons "Expires" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Expires" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'website-redirect-location))
-      (common-lisp:cons "x-amz-website-redirect-location"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-website-redirect-location"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'server-side-encryption))
-      (common-lisp:cons "x-amz-server-side-encryption"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'ssecustomer-algorithm))
-      (common-lisp:cons "x-amz-server-side-encryption-customer-algorithm"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-customer-algorithm"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'ssecustomer-key-md5))
-      (common-lisp:cons "x-amz-server-side-encryption-customer-key-MD5"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-customer-key-MD5"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'ssekmskey-id))
-      (common-lisp:cons "x-amz-server-side-encryption-aws-kms-key-id"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-aws-kms-key-id"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'bucket-key-enabled))
-      (common-lisp:cons "x-amz-server-side-encryption-bucket-key-enabled"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-bucket-key-enabled"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'storage-class))
-      (common-lisp:cons "x-amz-storage-class" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-storage-class" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-charged))
-      (common-lisp:cons "x-amz-request-charged"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-charged"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'replication-status))
-      (common-lisp:cons "x-amz-replication-status"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-replication-status"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'parts-count))
-      (common-lisp:cons "x-amz-mp-parts-count" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-mp-parts-count" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'object-lock-mode))
-      (common-lisp:cons "x-amz-object-lock-mode"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-object-lock-mode"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'object-lock-retain-until-date))
-      (common-lisp:cons "x-amz-object-lock-retain-until-date"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-object-lock-retain-until-date"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'object-lock-legal-hold-status))
-      (common-lisp:cons "x-amz-object-lock-legal-hold"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-object-lock-legal-hold"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (common-lisp:when
         (common-lisp:slot-value aws-sdk/generator/shape::input 'metadata)
       (common-lisp:loop aws-sdk/generator/shape::for aws-sdk/generator/shape::key aws-sdk/generator/shape::being aws-sdk/generator/shape::each aws-sdk/generator/shape::hash-key aws-sdk/generator/shape::of (common-lisp:slot-value
@@ -10034,54 +10578,75 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'if-match))
-      (common-lisp:cons "If-Match" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "If-Match" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'if-modified-since))
-      (common-lisp:cons "If-Modified-Since" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "If-Modified-Since" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'if-none-match))
-      (common-lisp:cons "If-None-Match" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "If-None-Match" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'if-unmodified-since))
-      (common-lisp:cons "If-Unmodified-Since" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "If-Unmodified-Since" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'range))
-      (common-lisp:cons "Range" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Range" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'ssecustomer-algorithm))
-      (common-lisp:cons "x-amz-server-side-encryption-customer-algorithm"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-customer-algorithm"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'ssecustomer-key))
-      (common-lisp:cons "x-amz-server-side-encryption-customer-key"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-customer-key"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'ssecustomer-key-md5))
-      (common-lisp:cons "x-amz-server-side-encryption-customer-key-MD5"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-customer-key-MD5"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-payer))
-      (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-mode))
-      (common-lisp:cons "x-amz-checksum-mode"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-checksum-mode" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         ((aws-sdk/generator/shape::input head-object-request))
    (common-lisp:append))
@@ -11562,8 +12127,10 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -11828,8 +12395,10 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -11967,8 +12536,10 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -12225,8 +12796,10 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-charged))
-      (common-lisp:cons "x-amz-request-charged"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-charged"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -12401,13 +12974,16 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-payer))
-      (common-lisp:cons "x-amz-request-payer"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -12531,8 +13107,10 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-charged))
-      (common-lisp:cons "x-amz-request-charged"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-charged"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -12722,18 +13300,24 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-payer))
-      (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'optional-object-attributes))
-      (common-lisp:cons "x-amz-optional-object-attributes"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-optional-object-attributes"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -12824,8 +13408,10 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-charged))
-      (common-lisp:cons "x-amz-request-charged"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-charged"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         ((aws-sdk/generator/shape::input list-objects-output))
    (common-lisp:append
@@ -12974,19 +13560,25 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-payer))
-      (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'optional-object-attributes))
-      (common-lisp:cons "x-amz-optional-object-attributes"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-optional-object-attributes"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         ((aws-sdk/generator/shape::input list-objects-request))
    (common-lisp:append))
@@ -13090,8 +13682,10 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-charged))
-      (common-lisp:cons "x-amz-request-charged"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-charged"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -13276,19 +13870,25 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-payer))
-      (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'optional-object-attributes))
-      (common-lisp:cons "x-amz-optional-object-attributes"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-optional-object-attributes"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -13405,16 +14005,22 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'abort-date))
-      (common-lisp:cons "x-amz-abort-date" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-abort-date" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'abort-rule-id))
-      (common-lisp:cons "x-amz-abort-rule-id" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-abort-rule-id" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-charged))
-      (common-lisp:cons "x-amz-request-charged"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-charged"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         ((aws-sdk/generator/shape::input list-parts-output))
    (common-lisp:append
@@ -13588,29 +14194,39 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-payer))
-      (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'ssecustomer-algorithm))
-      (common-lisp:cons "x-amz-server-side-encryption-customer-algorithm"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-customer-algorithm"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'ssecustomer-key))
-      (common-lisp:cons "x-amz-server-side-encryption-customer-key"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-customer-key"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'ssecustomer-key-md5))
-      (common-lisp:cons "x-amz-server-side-encryption-customer-key-MD5"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-customer-key-MD5"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         ((aws-sdk/generator/shape::input list-parts-request))
    (common-lisp:append))
@@ -15763,13 +16379,17 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-algorithm))
-      (common-lisp:cons "x-amz-sdk-checksum-algorithm"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-sdk-checksum-algorithm"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -15879,44 +16499,62 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'acl))
-      (common-lisp:cons "x-amz-acl" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-acl" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-md5))
-      (common-lisp:cons "Content-MD5" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-MD5" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-algorithm))
-      (common-lisp:cons "x-amz-sdk-checksum-algorithm"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-sdk-checksum-algorithm"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'grant-full-control))
-      (common-lisp:cons "x-amz-grant-full-control"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-grant-full-control"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'grant-read))
-      (common-lisp:cons "x-amz-grant-read" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-grant-read" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'grant-read-acp))
-      (common-lisp:cons "x-amz-grant-read-acp" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-grant-read-acp" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'grant-write))
-      (common-lisp:cons "x-amz-grant-write" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-grant-write" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'grant-write-acp))
-      (common-lisp:cons "x-amz-grant-write-acp"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-grant-write-acp"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -15989,8 +16627,10 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -16062,18 +16702,24 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-md5))
-      (common-lisp:cons "Content-MD5" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-MD5" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-algorithm))
-      (common-lisp:cons "x-amz-sdk-checksum-algorithm"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-sdk-checksum-algorithm"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -16149,18 +16795,24 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-md5))
-      (common-lisp:cons "Content-MD5" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-MD5" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-algorithm))
-      (common-lisp:cons "x-amz-sdk-checksum-algorithm"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-sdk-checksum-algorithm"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -16296,8 +16948,10 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -16367,14 +17021,18 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-algorithm))
-      (common-lisp:cons "x-amz-sdk-checksum-algorithm"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-sdk-checksum-algorithm"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -16449,18 +17107,24 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-md5))
-      (common-lisp:cons "Content-MD5" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-MD5" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-algorithm))
-      (common-lisp:cons "x-amz-sdk-checksum-algorithm"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-sdk-checksum-algorithm"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -16535,18 +17199,24 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-md5))
-      (common-lisp:cons "Content-MD5" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-MD5" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-algorithm))
-      (common-lisp:cons "x-amz-sdk-checksum-algorithm"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-sdk-checksum-algorithm"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -16616,8 +17286,10 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -16691,14 +17363,18 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'skip-destination-validation))
-      (common-lisp:cons "x-amz-skip-destination-validation"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-skip-destination-validation"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -16776,18 +17452,24 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-md5))
-      (common-lisp:cons "Content-MD5" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-MD5" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-algorithm))
-      (common-lisp:cons "x-amz-sdk-checksum-algorithm"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-sdk-checksum-algorithm"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -16855,13 +17537,17 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-md5))
-      (common-lisp:cons "Content-MD5" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-MD5" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -16939,24 +17625,32 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-md5))
-      (common-lisp:cons "Content-MD5" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-MD5" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-algorithm))
-      (common-lisp:cons "x-amz-sdk-checksum-algorithm"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-sdk-checksum-algorithm"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'confirm-remove-self-bucket-access))
-      (common-lisp:cons "x-amz-confirm-remove-self-bucket-access"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-confirm-remove-self-bucket-access"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -17038,23 +17732,31 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-md5))
-      (common-lisp:cons "Content-MD5" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-MD5" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-algorithm))
-      (common-lisp:cons "x-amz-sdk-checksum-algorithm"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-sdk-checksum-algorithm"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'token))
-      (common-lisp:cons "x-amz-bucket-object-lock-token"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-bucket-object-lock-token"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -17132,18 +17834,24 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-md5))
-      (common-lisp:cons "Content-MD5" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-MD5" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-algorithm))
-      (common-lisp:cons "x-amz-sdk-checksum-algorithm"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-sdk-checksum-algorithm"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -17213,18 +17921,24 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-md5))
-      (common-lisp:cons "Content-MD5" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-MD5" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-algorithm))
-      (common-lisp:cons "x-amz-sdk-checksum-algorithm"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-sdk-checksum-algorithm"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -17304,22 +18018,30 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-md5))
-      (common-lisp:cons "Content-MD5" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-MD5" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-algorithm))
-      (common-lisp:cons "x-amz-sdk-checksum-algorithm"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-sdk-checksum-algorithm"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'mfa))
-      (common-lisp:cons "x-amz-mfa" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-mfa" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -17394,18 +18116,24 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-md5))
-      (common-lisp:cons "Content-MD5" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-MD5" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-algorithm))
-      (common-lisp:cons "x-amz-sdk-checksum-algorithm"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-sdk-checksum-algorithm"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -17449,8 +18177,10 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-charged))
-      (common-lisp:cons "x-amz-request-charged"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-charged"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -17570,48 +18300,68 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'acl))
-      (common-lisp:cons "x-amz-acl" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-acl" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-md5))
-      (common-lisp:cons "Content-MD5" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-MD5" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-algorithm))
-      (common-lisp:cons "x-amz-sdk-checksum-algorithm"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-sdk-checksum-algorithm"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'grant-full-control))
-      (common-lisp:cons "x-amz-grant-full-control"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-grant-full-control"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'grant-read))
-      (common-lisp:cons "x-amz-grant-read" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-grant-read" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'grant-read-acp))
-      (common-lisp:cons "x-amz-grant-read-acp" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-grant-read-acp" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'grant-write))
-      (common-lisp:cons "x-amz-grant-write" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-grant-write" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'grant-write-acp))
-      (common-lisp:cons "x-amz-grant-write-acp"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-grant-write-acp"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-payer))
-      (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -17656,8 +18406,10 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-charged))
-      (common-lisp:cons "x-amz-request-charged"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-charged"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -17741,22 +18493,30 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-payer))
-      (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-md5))
-      (common-lisp:cons "Content-MD5" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-MD5" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-algorithm))
-      (common-lisp:cons "x-amz-sdk-checksum-algorithm"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-sdk-checksum-algorithm"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -17800,8 +18560,10 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-charged))
-      (common-lisp:cons "x-amz-request-charged"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-charged"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -17881,27 +18643,37 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-payer))
-      (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'token))
-      (common-lisp:cons "x-amz-bucket-object-lock-token"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-bucket-object-lock-token"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-md5))
-      (common-lisp:cons "Content-MD5" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-MD5" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-algorithm))
-      (common-lisp:cons "x-amz-sdk-checksum-algorithm"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-sdk-checksum-algorithm"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -18035,71 +18807,99 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'expiration))
-      (common-lisp:cons "x-amz-expiration" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expiration" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-crc32))
-      (common-lisp:cons "x-amz-checksum-crc32" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-checksum-crc32" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-crc32c))
-      (common-lisp:cons "x-amz-checksum-crc32c"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-checksum-crc32c"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-sha1))
-      (common-lisp:cons "x-amz-checksum-sha1" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-checksum-sha1" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-sha256))
-      (common-lisp:cons "x-amz-checksum-sha256"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-checksum-sha256"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'server-side-encryption))
-      (common-lisp:cons "x-amz-server-side-encryption"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'version-id))
-      (common-lisp:cons "x-amz-version-id" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-version-id" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'ssecustomer-algorithm))
-      (common-lisp:cons "x-amz-server-side-encryption-customer-algorithm"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-customer-algorithm"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'ssecustomer-key-md5))
-      (common-lisp:cons "x-amz-server-side-encryption-customer-key-MD5"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-customer-key-MD5"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'ssekmskey-id))
-      (common-lisp:cons "x-amz-server-side-encryption-aws-kms-key-id"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-aws-kms-key-id"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'ssekmsencryption-context))
-      (common-lisp:cons "x-amz-server-side-encryption-context"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-context"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'bucket-key-enabled))
-      (common-lisp:cons "x-amz-server-side-encryption-bucket-key-enabled"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-bucket-key-enabled"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-charged))
-      (common-lisp:cons "x-amz-request-charged"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-charged"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         ((aws-sdk/generator/shape::input put-object-output))
    (common-lisp:append))
@@ -18378,159 +19178,225 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'acl))
-      (common-lisp:cons "x-amz-acl" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-acl" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'cache-control))
-      (common-lisp:cons "Cache-Control" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Cache-Control" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-disposition))
-      (common-lisp:cons "Content-Disposition" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Disposition" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-encoding))
-      (common-lisp:cons "Content-Encoding" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Encoding" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-language))
-      (common-lisp:cons "Content-Language" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Language" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-length))
-      (common-lisp:cons "Content-Length" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Length" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-md5))
-      (common-lisp:cons "Content-MD5" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-MD5" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-type))
-      (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-algorithm))
-      (common-lisp:cons "x-amz-sdk-checksum-algorithm"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-sdk-checksum-algorithm"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-crc32))
-      (common-lisp:cons "x-amz-checksum-crc32" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-checksum-crc32" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-crc32c))
-      (common-lisp:cons "x-amz-checksum-crc32c"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-checksum-crc32c"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-sha1))
-      (common-lisp:cons "x-amz-checksum-sha1" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-checksum-sha1" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-sha256))
-      (common-lisp:cons "x-amz-checksum-sha256"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-checksum-sha256"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'expires))
-      (common-lisp:cons "Expires" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Expires" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'grant-full-control))
-      (common-lisp:cons "x-amz-grant-full-control"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-grant-full-control"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'grant-read))
-      (common-lisp:cons "x-amz-grant-read" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-grant-read" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'grant-read-acp))
-      (common-lisp:cons "x-amz-grant-read-acp" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-grant-read-acp" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'grant-write-acp))
-      (common-lisp:cons "x-amz-grant-write-acp"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-grant-write-acp"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'server-side-encryption))
-      (common-lisp:cons "x-amz-server-side-encryption"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'storage-class))
-      (common-lisp:cons "x-amz-storage-class" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-storage-class" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'website-redirect-location))
-      (common-lisp:cons "x-amz-website-redirect-location"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-website-redirect-location"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'ssecustomer-algorithm))
-      (common-lisp:cons "x-amz-server-side-encryption-customer-algorithm"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-customer-algorithm"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'ssecustomer-key))
-      (common-lisp:cons "x-amz-server-side-encryption-customer-key"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-customer-key"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'ssecustomer-key-md5))
-      (common-lisp:cons "x-amz-server-side-encryption-customer-key-MD5"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-customer-key-MD5"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'ssekmskey-id))
-      (common-lisp:cons "x-amz-server-side-encryption-aws-kms-key-id"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-aws-kms-key-id"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'ssekmsencryption-context))
-      (common-lisp:cons "x-amz-server-side-encryption-context"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-context"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'bucket-key-enabled))
-      (common-lisp:cons "x-amz-server-side-encryption-bucket-key-enabled"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-bucket-key-enabled"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-payer))
-      (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'tagging))
-      (common-lisp:cons "x-amz-tagging" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-tagging" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'object-lock-mode))
-      (common-lisp:cons "x-amz-object-lock-mode"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-object-lock-mode"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'object-lock-retain-until-date))
-      (common-lisp:cons "x-amz-object-lock-retain-until-date"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-object-lock-retain-until-date"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'object-lock-legal-hold-status))
-      (common-lisp:cons "x-amz-object-lock-legal-hold"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-object-lock-legal-hold"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (common-lisp:when
         (common-lisp:slot-value aws-sdk/generator/shape::input 'metadata)
       (common-lisp:loop aws-sdk/generator/shape::for aws-sdk/generator/shape::key aws-sdk/generator/shape::being aws-sdk/generator/shape::each aws-sdk/generator/shape::hash-key aws-sdk/generator/shape::of (common-lisp:slot-value
@@ -18574,8 +19440,10 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-charged))
-      (common-lisp:cons "x-amz-request-charged"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-charged"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -18667,28 +19535,38 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-payer))
-      (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'bypass-governance-retention))
-      (common-lisp:cons "x-amz-bypass-governance-retention"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-bypass-governance-retention"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-md5))
-      (common-lisp:cons "Content-MD5" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-MD5" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-algorithm))
-      (common-lisp:cons "x-amz-sdk-checksum-algorithm"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-sdk-checksum-algorithm"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -18731,7 +19609,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'version-id))
-      (common-lisp:cons "x-amz-version-id" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-version-id" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -18811,23 +19691,30 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-md5))
-      (common-lisp:cons "Content-MD5" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-MD5" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-algorithm))
-      (common-lisp:cons "x-amz-sdk-checksum-algorithm"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-sdk-checksum-algorithm"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-payer))
-      (common-lisp:cons "x-amz-request-payer"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -18903,18 +19790,24 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-md5))
-      (common-lisp:cons "Content-MD5" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-MD5" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-algorithm))
-      (common-lisp:cons "x-amz-sdk-checksum-algorithm"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-sdk-checksum-algorithm"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -19113,14 +20006,7 @@
    (common-lisp:append))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         ((aws-sdk/generator/shape::input records-event))
-   (common-lisp:append
-    (alexandria:when-let (aws-sdk/generator/shape::value
-                          (common-lisp:slot-value
-                           aws-sdk/generator/shape::input 'payload))
-      (common-lisp:list
-       (common-lisp:cons "Payload"
-                         (aws-sdk/generator/shape::input-params
-                          aws-sdk/generator/shape::value))))))
+   (common-lisp:append))
  (common-lisp:defmethod aws-sdk/generator/shape::input-payload
                         ((aws-sdk/generator/shape::input records-event))
    common-lisp:nil))
@@ -19817,13 +20703,17 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-charged))
-      (common-lisp:cons "x-amz-request-charged"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-charged"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'restore-output-path))
-      (common-lisp:cons "x-amz-restore-output-path"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-restore-output-path"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -19896,18 +20786,24 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-payer))
-      (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-algorithm))
-      (common-lisp:cons "x-amz-sdk-checksum-algorithm"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-sdk-checksum-algorithm"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -20631,14 +21527,7 @@
                         (
                          (aws-sdk/generator/shape::input
                           select-object-content-output))
-   (common-lisp:append
-    (alexandria:when-let (aws-sdk/generator/shape::value
-                          (common-lisp:slot-value
-                           aws-sdk/generator/shape::input 'payload))
-      (common-lisp:list
-       (common-lisp:cons "Payload"
-                         (aws-sdk/generator/shape::input-params
-                          aws-sdk/generator/shape::value))))))
+   (common-lisp:append))
  (common-lisp:defmethod aws-sdk/generator/shape::input-payload
                         (
                          (aws-sdk/generator/shape::input
@@ -20753,24 +21642,32 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'ssecustomer-algorithm))
-      (common-lisp:cons "x-amz-server-side-encryption-customer-algorithm"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-customer-algorithm"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'ssecustomer-key))
-      (common-lisp:cons "x-amz-server-side-encryption-customer-key"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-customer-key"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'ssecustomer-key-md5))
-      (common-lisp:cons "x-amz-server-side-encryption-customer-key-MD5"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-customer-key-MD5"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -21995,40 +22892,54 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'copy-source-version-id))
-      (common-lisp:cons "x-amz-copy-source-version-id"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-copy-source-version-id"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'server-side-encryption))
-      (common-lisp:cons "x-amz-server-side-encryption"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'ssecustomer-algorithm))
-      (common-lisp:cons "x-amz-server-side-encryption-customer-algorithm"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-customer-algorithm"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'ssecustomer-key-md5))
-      (common-lisp:cons "x-amz-server-side-encryption-customer-key-MD5"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-customer-key-MD5"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'ssekmskey-id))
-      (common-lisp:cons "x-amz-server-side-encryption-aws-kms-key-id"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-aws-kms-key-id"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'bucket-key-enabled))
-      (common-lisp:cons "x-amz-server-side-encryption-bucket-key-enabled"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-bucket-key-enabled"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-charged))
-      (common-lisp:cons "x-amz-request-charged"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-charged"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -22212,88 +23123,119 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'copy-source))
-      (common-lisp:cons "x-amz-copy-source" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-copy-source" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'copy-source-if-match))
-      (common-lisp:cons "x-amz-copy-source-if-match"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-copy-source-if-match"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'copy-source-if-modified-since))
-      (common-lisp:cons "x-amz-copy-source-if-modified-since"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-copy-source-if-modified-since"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'copy-source-if-none-match))
-      (common-lisp:cons "x-amz-copy-source-if-none-match"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-copy-source-if-none-match"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'copy-source-if-unmodified-since))
-      (common-lisp:cons "x-amz-copy-source-if-unmodified-since"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-copy-source-if-unmodified-since"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'copy-source-range))
-      (common-lisp:cons "x-amz-copy-source-range"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-copy-source-range"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'ssecustomer-algorithm))
-      (common-lisp:cons "x-amz-server-side-encryption-customer-algorithm"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-customer-algorithm"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'ssecustomer-key))
-      (common-lisp:cons "x-amz-server-side-encryption-customer-key"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-customer-key"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'ssecustomer-key-md5))
-      (common-lisp:cons "x-amz-server-side-encryption-customer-key-MD5"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-customer-key-MD5"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'copy-source-ssecustomer-algorithm))
       (common-lisp:cons
-       "x-amz-copy-source-server-side-encryption-customer-algorithm"
-       aws-sdk/generator/shape::value))
+       (common-lisp:cons
+        "x-amz-copy-source-server-side-encryption-customer-algorithm"
+        aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'copy-source-ssecustomer-key))
-      (common-lisp:cons "x-amz-copy-source-server-side-encryption-customer-key"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons
+        "x-amz-copy-source-server-side-encryption-customer-key"
+        aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'copy-source-ssecustomer-key-md5))
       (common-lisp:cons
-       "x-amz-copy-source-server-side-encryption-customer-key-MD5"
-       aws-sdk/generator/shape::value))
+       (common-lisp:cons
+        "x-amz-copy-source-server-side-encryption-customer-key-MD5"
+        aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-payer))
-      (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-source-bucket-owner))
-      (common-lisp:cons "x-amz-source-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-source-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -22399,56 +23341,78 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'server-side-encryption))
-      (common-lisp:cons "x-amz-server-side-encryption"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-crc32))
-      (common-lisp:cons "x-amz-checksum-crc32" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-checksum-crc32" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-crc32c))
-      (common-lisp:cons "x-amz-checksum-crc32c"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-checksum-crc32c"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-sha1))
-      (common-lisp:cons "x-amz-checksum-sha1" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-checksum-sha1" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-sha256))
-      (common-lisp:cons "x-amz-checksum-sha256"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-checksum-sha256"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'ssecustomer-algorithm))
-      (common-lisp:cons "x-amz-server-side-encryption-customer-algorithm"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-customer-algorithm"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'ssecustomer-key-md5))
-      (common-lisp:cons "x-amz-server-side-encryption-customer-key-MD5"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-customer-key-MD5"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'ssekmskey-id))
-      (common-lisp:cons "x-amz-server-side-encryption-aws-kms-key-id"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-aws-kms-key-id"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'bucket-key-enabled))
-      (common-lisp:cons "x-amz-server-side-encryption-bucket-key-enabled"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-bucket-key-enabled"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-charged))
-      (common-lisp:cons "x-amz-request-charged"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-charged"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         ((aws-sdk/generator/shape::input upload-part-output))
    (common-lisp:append))
@@ -22586,60 +23550,84 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-length))
-      (common-lisp:cons "Content-Length" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Length" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-md5))
-      (common-lisp:cons "Content-MD5" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-MD5" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-algorithm))
-      (common-lisp:cons "x-amz-sdk-checksum-algorithm"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-sdk-checksum-algorithm"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-crc32))
-      (common-lisp:cons "x-amz-checksum-crc32" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-checksum-crc32" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-crc32c))
-      (common-lisp:cons "x-amz-checksum-crc32c"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-checksum-crc32c"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-sha1))
-      (common-lisp:cons "x-amz-checksum-sha1" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-checksum-sha1" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-sha256))
-      (common-lisp:cons "x-amz-checksum-sha256"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-checksum-sha256"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'ssecustomer-algorithm))
-      (common-lisp:cons "x-amz-server-side-encryption-customer-algorithm"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-customer-algorithm"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'ssecustomer-key))
-      (common-lisp:cons "x-amz-server-side-encryption-customer-key"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-customer-key"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'ssecustomer-key-md5))
-      (common-lisp:cons "x-amz-server-side-encryption-customer-key-MD5"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-server-side-encryption-customer-key-MD5"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-payer))
-      (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-payer" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'expected-bucket-owner))
-      (common-lisp:cons "x-amz-expected-bucket-owner"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-expected-bucket-owner"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         ((aws-sdk/generator/shape::input upload-part-request))
    (common-lisp:append))
@@ -23104,196 +24092,272 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-route))
-      (common-lisp:cons "x-amz-request-route" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-route" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-token))
-      (common-lisp:cons "x-amz-request-token" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-request-token" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'status-code))
-      (common-lisp:cons "x-amz-fwd-status" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-fwd-status" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'error-code))
-      (common-lisp:cons "x-amz-fwd-error-code" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-fwd-error-code" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'error-message))
-      (common-lisp:cons "x-amz-fwd-error-message"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-fwd-error-message"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'accept-ranges))
-      (common-lisp:cons "x-amz-fwd-header-accept-ranges"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-fwd-header-accept-ranges"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'cache-control))
-      (common-lisp:cons "x-amz-fwd-header-Cache-Control"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-fwd-header-Cache-Control"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-disposition))
-      (common-lisp:cons "x-amz-fwd-header-Content-Disposition"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-fwd-header-Content-Disposition"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-encoding))
-      (common-lisp:cons "x-amz-fwd-header-Content-Encoding"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-fwd-header-Content-Encoding"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-language))
-      (common-lisp:cons "x-amz-fwd-header-Content-Language"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-fwd-header-Content-Language"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-length))
-      (common-lisp:cons "Content-Length" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Length" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-range))
-      (common-lisp:cons "x-amz-fwd-header-Content-Range"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-fwd-header-Content-Range"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-type))
-      (common-lisp:cons "x-amz-fwd-header-Content-Type"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-fwd-header-Content-Type"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-crc32))
-      (common-lisp:cons "x-amz-fwd-header-x-amz-checksum-crc32"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-fwd-header-x-amz-checksum-crc32"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-crc32c))
-      (common-lisp:cons "x-amz-fwd-header-x-amz-checksum-crc32c"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-fwd-header-x-amz-checksum-crc32c"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-sha1))
-      (common-lisp:cons "x-amz-fwd-header-x-amz-checksum-sha1"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-fwd-header-x-amz-checksum-sha1"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-sha256))
-      (common-lisp:cons "x-amz-fwd-header-x-amz-checksum-sha256"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-fwd-header-x-amz-checksum-sha256"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'delete-marker))
-      (common-lisp:cons "x-amz-fwd-header-x-amz-delete-marker"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-fwd-header-x-amz-delete-marker"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "x-amz-fwd-header-ETag"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-fwd-header-ETag"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'expires))
-      (common-lisp:cons "x-amz-fwd-header-Expires"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-fwd-header-Expires"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'expiration))
-      (common-lisp:cons "x-amz-fwd-header-x-amz-expiration"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-fwd-header-x-amz-expiration"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'last-modified))
-      (common-lisp:cons "x-amz-fwd-header-Last-Modified"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-fwd-header-Last-Modified"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'missing-meta))
-      (common-lisp:cons "x-amz-fwd-header-x-amz-missing-meta"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-fwd-header-x-amz-missing-meta"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'object-lock-mode))
-      (common-lisp:cons "x-amz-fwd-header-x-amz-object-lock-mode"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-fwd-header-x-amz-object-lock-mode"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'object-lock-legal-hold-status))
-      (common-lisp:cons "x-amz-fwd-header-x-amz-object-lock-legal-hold"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-fwd-header-x-amz-object-lock-legal-hold"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'object-lock-retain-until-date))
-      (common-lisp:cons "x-amz-fwd-header-x-amz-object-lock-retain-until-date"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-fwd-header-x-amz-object-lock-retain-until-date"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'parts-count))
-      (common-lisp:cons "x-amz-fwd-header-x-amz-mp-parts-count"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-fwd-header-x-amz-mp-parts-count"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'replication-status))
-      (common-lisp:cons "x-amz-fwd-header-x-amz-replication-status"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-fwd-header-x-amz-replication-status"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-charged))
-      (common-lisp:cons "x-amz-fwd-header-x-amz-request-charged"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-fwd-header-x-amz-request-charged"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'restore))
-      (common-lisp:cons "x-amz-fwd-header-x-amz-restore"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-fwd-header-x-amz-restore"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'server-side-encryption))
-      (common-lisp:cons "x-amz-fwd-header-x-amz-server-side-encryption"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-fwd-header-x-amz-server-side-encryption"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'ssecustomer-algorithm))
       (common-lisp:cons
-       "x-amz-fwd-header-x-amz-server-side-encryption-customer-algorithm"
-       aws-sdk/generator/shape::value))
+       (common-lisp:cons
+        "x-amz-fwd-header-x-amz-server-side-encryption-customer-algorithm"
+        aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'ssekmskey-id))
       (common-lisp:cons
-       "x-amz-fwd-header-x-amz-server-side-encryption-aws-kms-key-id"
-       aws-sdk/generator/shape::value))
+       (common-lisp:cons
+        "x-amz-fwd-header-x-amz-server-side-encryption-aws-kms-key-id"
+        aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'ssecustomer-key-md5))
       (common-lisp:cons
-       "x-amz-fwd-header-x-amz-server-side-encryption-customer-key-MD5"
-       aws-sdk/generator/shape::value))
+       (common-lisp:cons
+        "x-amz-fwd-header-x-amz-server-side-encryption-customer-key-MD5"
+        aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'storage-class))
-      (common-lisp:cons "x-amz-fwd-header-x-amz-storage-class"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-fwd-header-x-amz-storage-class"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'tag-count))
-      (common-lisp:cons "x-amz-fwd-header-x-amz-tagging-count"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-fwd-header-x-amz-tagging-count"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'version-id))
-      (common-lisp:cons "x-amz-fwd-header-x-amz-version-id"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-fwd-header-x-amz-version-id"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'bucket-key-enabled))
       (common-lisp:cons
-       "x-amz-fwd-header-x-amz-server-side-encryption-bucket-key-enabled"
-       aws-sdk/generator/shape::value))
+       (common-lisp:cons
+        "x-amz-fwd-header-x-amz-server-side-encryption-bucket-key-enabled"
+        aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (common-lisp:when
         (common-lisp:slot-value aws-sdk/generator/shape::input 'metadata)
       (common-lisp:loop aws-sdk/generator/shape::for aws-sdk/generator/shape::key aws-sdk/generator/shape::being aws-sdk/generator/shape::each aws-sdk/generator/shape::hash-key aws-sdk/generator/shape::of (common-lisp:slot-value
@@ -23340,10 +24404,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))
+                                                             'bucket)
+                                                            common-lisp:t)
                                                            (common-lisp:slot-value
                                                             aws-sdk/generator/operation::input
                                                             'key)))
@@ -23378,10 +24443,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))
+                                                             'bucket)
+                                                            common-lisp:t)
                                                            (common-lisp:slot-value
                                                             aws-sdk/generator/operation::input
                                                             'key)))
@@ -23437,10 +24503,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))
+                                                             'bucket)
+                                                            common-lisp:t)
                                                            (common-lisp:slot-value
                                                             aws-sdk/generator/operation::input
                                                             'key)))
@@ -23473,10 +24540,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "CreateBucket"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-bucket))
@@ -23518,10 +24586,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/~A?uploads"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))
+                                                             'bucket)
+                                                            common-lisp:t)
                                                            (common-lisp:slot-value
                                                             aws-sdk/generator/operation::input
                                                             'key)))
@@ -23548,10 +24617,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?session"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "CreateSession"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-session))
@@ -23575,10 +24645,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "DeleteBucket"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-bucket))
@@ -23604,10 +24675,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?analytics"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "DeleteBucketAnalyticsConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-bucket-analytics-configuration))
@@ -23631,10 +24703,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?cors"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "DeleteBucketCors"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-bucket-cors))
@@ -23658,10 +24731,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?encryption"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "DeleteBucketEncryption"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-bucket-encryption))
@@ -23686,10 +24760,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?intelligent-tiering"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "DeleteBucketIntelligentTieringConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-bucket-intelligent-tiering-configuration))
@@ -23715,10 +24790,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?inventory"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "DeleteBucketInventoryConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-bucket-inventory-configuration))
@@ -23742,10 +24818,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?lifecycle"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "DeleteBucketLifecycle"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-bucket-lifecycle))
@@ -23771,10 +24848,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?metrics"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "DeleteBucketMetricsConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-bucket-metrics-configuration))
@@ -23799,10 +24877,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?ownershipControls"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "DeleteBucketOwnershipControls"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-bucket-ownership-controls))
@@ -23826,10 +24905,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?policy"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "DeleteBucketPolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-bucket-policy))
@@ -23854,10 +24934,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?replication"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "DeleteBucketReplication"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-bucket-replication))
@@ -23881,10 +24962,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?tagging"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "DeleteBucketTagging"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-bucket-tagging))
@@ -23908,10 +24990,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?website"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "DeleteBucketWebsite"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-bucket-website))
@@ -23938,10 +25021,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))
+                                                             'bucket)
+                                                            common-lisp:t)
                                                            (common-lisp:slot-value
                                                             aws-sdk/generator/operation::input
                                                             'key)))
@@ -23970,10 +25054,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/~A?tagging"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))
+                                                             'bucket)
+                                                            common-lisp:t)
                                                            (common-lisp:slot-value
                                                             aws-sdk/generator/operation::input
                                                             'key)))
@@ -24004,10 +25089,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?delete"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "DeleteObjects"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-objects))
@@ -24032,10 +25118,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?publicAccessBlock"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "DeletePublicAccessBlock"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-public-access-block))
@@ -24062,10 +25149,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?accelerate"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "GetBucketAccelerateConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-bucket-accelerate-configuration))
@@ -24089,10 +25177,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?acl"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "GetBucketAcl"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-bucket-acl))
@@ -24118,10 +25207,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?analytics"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "GetBucketAnalyticsConfiguration"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'get-bucket-analytics-configuration))
@@ -24145,10 +25235,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?cors"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "GetBucketCors"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-bucket-cors))
@@ -24172,10 +25263,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?encryption"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "GetBucketEncryption"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'get-bucket-encryption))
@@ -24200,10 +25292,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?intelligent-tiering"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "GetBucketIntelligentTieringConfiguration"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'get-bucket-intelligent-tiering-configuration))
@@ -24229,10 +25322,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?inventory"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "GetBucketInventoryConfiguration"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'get-bucket-inventory-configuration))
@@ -24256,10 +25350,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?lifecycle"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "GetBucketLifecycle"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-bucket-lifecycle))
@@ -24284,10 +25379,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?lifecycle"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "GetBucketLifecycleConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-bucket-lifecycle-configuration))
@@ -24311,10 +25407,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?location"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "GetBucketLocation"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-bucket-location))
@@ -24338,10 +25435,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?logging"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "GetBucketLogging"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-bucket-logging))
@@ -24367,10 +25465,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?metrics"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "GetBucketMetricsConfiguration"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'get-bucket-metrics-configuration))
@@ -24395,10 +25494,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?notification"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "GetBucketNotification"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-bucket-notification))
@@ -24423,10 +25523,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?notification"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "GetBucketNotificationConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-bucket-notification-configuration))
@@ -24451,10 +25552,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?ownershipControls"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "GetBucketOwnershipControls"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'get-bucket-ownership-controls))
@@ -24478,10 +25580,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?policy"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "GetBucketPolicy"))
       "string" common-lisp:nil *error-map*)))
  (common-lisp:export 'get-bucket-policy))
@@ -24505,10 +25608,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?policyStatus"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "GetBucketPolicyStatus"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'get-bucket-policy-status))
@@ -24532,10 +25636,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?replication"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "GetBucketReplication"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'get-bucket-replication))
@@ -24560,10 +25665,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?requestPayment"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "GetBucketRequestPayment"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-bucket-request-payment))
@@ -24587,10 +25693,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?tagging"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "GetBucketTagging"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-bucket-tagging))
@@ -24614,10 +25721,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?versioning"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "GetBucketVersioning"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-bucket-versioning))
@@ -24641,10 +25749,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?website"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "GetBucketWebsite"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-bucket-website))
@@ -24681,10 +25790,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))
+                                                             'bucket)
+                                                            common-lisp:t)
                                                            (common-lisp:slot-value
                                                             aws-sdk/generator/operation::input
                                                             'key)))
@@ -24715,10 +25825,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/~A?acl"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))
+                                                             'bucket)
+                                                            common-lisp:t)
                                                            (common-lisp:slot-value
                                                             aws-sdk/generator/operation::input
                                                             'key)))
@@ -24751,10 +25862,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/~A?attributes"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))
+                                                             'bucket)
+                                                            common-lisp:t)
                                                            (common-lisp:slot-value
                                                             aws-sdk/generator/operation::input
                                                             'key)))
@@ -24784,10 +25896,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/~A?legal-hold"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))
+                                                             'bucket)
+                                                            common-lisp:t)
                                                            (common-lisp:slot-value
                                                             aws-sdk/generator/operation::input
                                                             'key)))
@@ -24815,10 +25928,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?object-lock"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "GetObjectLockConfiguration"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'get-object-lock-configuration))
@@ -24845,10 +25959,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/~A?retention"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))
+                                                             'bucket)
+                                                            common-lisp:t)
                                                            (common-lisp:slot-value
                                                             aws-sdk/generator/operation::input
                                                             'key)))
@@ -24878,10 +25993,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/~A?tagging"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))
+                                                             'bucket)
+                                                            common-lisp:t)
                                                            (common-lisp:slot-value
                                                             aws-sdk/generator/operation::input
                                                             'key)))
@@ -24910,10 +26026,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/~A?torrent"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))
+                                                             'bucket)
+                                                            common-lisp:t)
                                                            (common-lisp:slot-value
                                                             aws-sdk/generator/operation::input
                                                             'key)))
@@ -24941,10 +26058,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?publicAccessBlock"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "GetPublicAccessBlock"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'get-public-access-block))
@@ -24968,10 +26086,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "HeadBucket"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'head-bucket))
@@ -25003,10 +26122,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))
+                                                             'bucket)
+                                                            common-lisp:t)
                                                            (common-lisp:slot-value
                                                             aws-sdk/generator/operation::input
                                                             'key)))
@@ -25036,10 +26156,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?analytics"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "ListBucketAnalyticsConfigurations"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-bucket-analytics-configurations))
@@ -25064,10 +26185,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?intelligent-tiering"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "ListBucketIntelligentTieringConfigurations"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-bucket-intelligent-tiering-configurations))
@@ -25094,10 +26216,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?inventory"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "ListBucketInventoryConfigurations"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-bucket-inventory-configurations))
@@ -25124,10 +26247,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?metrics"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "ListBucketMetricsConfigurations"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-bucket-metrics-configurations))
@@ -25181,10 +26305,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?uploads"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "ListMultipartUploads"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-multipart-uploads))
@@ -25213,10 +26338,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?versions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "ListObjectVersions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-object-versions))
@@ -25244,10 +26370,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "ListObjects"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-objects))
@@ -25277,10 +26404,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?list-type=2"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "ListObjectsV2"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-objects-v2))
@@ -25309,10 +26437,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))
+                                                             'bucket)
+                                                            common-lisp:t)
                                                            (common-lisp:slot-value
                                                             aws-sdk/generator/operation::input
                                                             'key)))
@@ -25343,10 +26472,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?accelerate"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "PutBucketAccelerateConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-bucket-accelerate-configuration))
@@ -25376,10 +26506,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?acl"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "PutBucketAcl"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-bucket-acl))
@@ -25407,10 +26538,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?analytics"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "PutBucketAnalyticsConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-bucket-analytics-configuration))
@@ -25437,10 +26569,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?cors"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "PutBucketCors"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-bucket-cors))
@@ -25468,10 +26601,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?encryption"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "PutBucketEncryption"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-bucket-encryption))
@@ -25498,10 +26632,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?intelligent-tiering"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "PutBucketIntelligentTieringConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-bucket-intelligent-tiering-configuration))
@@ -25529,10 +26664,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?inventory"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "PutBucketInventoryConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-bucket-inventory-configuration))
@@ -25559,10 +26695,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?lifecycle"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "PutBucketLifecycle"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-bucket-lifecycle))
@@ -25590,10 +26727,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?lifecycle"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "PutBucketLifecycleConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-bucket-lifecycle-configuration))
@@ -25620,10 +26758,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?logging"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "PutBucketLogging"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-bucket-logging))
@@ -25651,10 +26790,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?metrics"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "PutBucketMetricsConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-bucket-metrics-configuration))
@@ -25681,10 +26821,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?notification"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "PutBucketNotification"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-bucket-notification))
@@ -25712,10 +26853,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?notification"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "PutBucketNotificationConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-bucket-notification-configuration))
@@ -25743,10 +26885,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?ownershipControls"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "PutBucketOwnershipControls"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-bucket-ownership-controls))
@@ -25774,10 +26917,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?policy"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "PutBucketPolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-bucket-policy))
@@ -25804,10 +26948,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?replication"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "PutBucketReplication"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-bucket-replication))
@@ -25835,10 +26980,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?requestPayment"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "PutBucketRequestPayment"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-bucket-request-payment))
@@ -25865,10 +27011,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?tagging"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "PutBucketTagging"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-bucket-tagging))
@@ -25895,10 +27042,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?versioning"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "PutBucketVersioning"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-bucket-versioning))
@@ -25925,10 +27073,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?website"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "PutBucketWebsite"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-bucket-website))
@@ -25973,10 +27122,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))
+                                                             'bucket)
+                                                            common-lisp:t)
                                                            (common-lisp:slot-value
                                                             aws-sdk/generator/operation::input
                                                             'key)))
@@ -26010,10 +27160,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/~A?acl"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))
+                                                             'bucket)
+                                                            common-lisp:t)
                                                            (common-lisp:slot-value
                                                             aws-sdk/generator/operation::input
                                                             'key)))
@@ -26044,10 +27195,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/~A?legal-hold"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))
+                                                             'bucket)
+                                                            common-lisp:t)
                                                            (common-lisp:slot-value
                                                             aws-sdk/generator/operation::input
                                                             'key)))
@@ -26079,10 +27231,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?object-lock"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "PutObjectLockConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-object-lock-configuration))
@@ -26111,10 +27264,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/~A?retention"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))
+                                                             'bucket)
+                                                            common-lisp:t)
                                                            (common-lisp:slot-value
                                                             aws-sdk/generator/operation::input
                                                             'key)))
@@ -26145,10 +27299,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/~A?tagging"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))
+                                                             'bucket)
+                                                            common-lisp:t)
                                                            (common-lisp:slot-value
                                                             aws-sdk/generator/operation::input
                                                             'key)))
@@ -26178,10 +27333,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A?publicAccessBlock"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))))
+                                                             'bucket)
+                                                            common-lisp:t)))
                                                         "PutPublicAccessBlock"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-public-access-block))
@@ -26208,10 +27364,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/~A?restore"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))
+                                                             'bucket)
+                                                            common-lisp:t)
                                                            (common-lisp:slot-value
                                                             aws-sdk/generator/operation::input
                                                             'key)))
@@ -26245,10 +27402,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/~A?select&select-type=2"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))
+                                                             'bucket)
+                                                            common-lisp:t)
                                                            (common-lisp:slot-value
                                                             aws-sdk/generator/operation::input
                                                             'key)))
@@ -26283,10 +27441,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))
+                                                             'bucket)
+                                                            common-lisp:t)
                                                            (common-lisp:slot-value
                                                             aws-sdk/generator/operation::input
                                                             'key)))
@@ -26328,10 +27487,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bucket))
+                                                             'bucket)
+                                                            common-lisp:t)
                                                            (common-lisp:slot-value
                                                             aws-sdk/generator/operation::input
                                                             'key)))

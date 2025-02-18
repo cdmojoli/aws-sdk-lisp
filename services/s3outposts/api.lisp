@@ -20,7 +20,7 @@
  (common-lisp:export 's3outposts-error))
 (common-lisp:progn
  (common-lisp:defclass s3outposts-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "s3outposts" :api-version
                         "2017-07-25" :host-prefix "s3-outposts" :signing-name

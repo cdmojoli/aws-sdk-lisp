@@ -20,7 +20,7 @@
  (common-lisp:export 'elastictranscoder-error))
 (common-lisp:progn
  (common-lisp:defclass elastictranscoder-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "elastictranscoder"
                         :api-version "2012-09-25" :host-prefix
@@ -4972,9 +4972,10 @@
         'elastictranscoder-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/2012-09-25/jobs/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'id))))
+                                aws-sdk/generator/operation::input 'id)
+                               common-lisp:t)))
         "CancelJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'cancel-job))
@@ -5050,9 +5051,10 @@
         'elastictranscoder-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/2012-09-25/pipelines/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'id))))
+                                aws-sdk/generator/operation::input 'id)
+                               common-lisp:t)))
         "DeletePipeline"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-pipeline))
@@ -5071,9 +5073,10 @@
         'elastictranscoder-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/2012-09-25/presets/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'id))))
+                                aws-sdk/generator/operation::input 'id)
+                               common-lisp:t)))
         "DeletePreset"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-preset))
@@ -5093,10 +5096,11 @@
         'elastictranscoder-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/2012-09-25/jobsByPipeline/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'pipeline-id))))
+                                'pipeline-id)
+                               common-lisp:t)))
         "ListJobsByPipeline"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-jobs-by-pipeline))
@@ -5115,9 +5119,10 @@
         'elastictranscoder-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/2012-09-25/jobsByStatus/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'status))))
+                                aws-sdk/generator/operation::input 'status)
+                               common-lisp:t)))
         "ListJobsByStatus"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-jobs-by-status))
@@ -5168,9 +5173,10 @@
         'elastictranscoder-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/2012-09-25/jobs/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'id))))
+                                aws-sdk/generator/operation::input 'id)
+                               common-lisp:t)))
         "ReadJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'read-job))
@@ -5189,9 +5195,10 @@
         'elastictranscoder-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/2012-09-25/pipelines/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'id))))
+                                aws-sdk/generator/operation::input 'id)
+                               common-lisp:t)))
         "ReadPipeline"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'read-pipeline))
@@ -5210,9 +5217,10 @@
         'elastictranscoder-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/2012-09-25/presets/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'id))))
+                                aws-sdk/generator/operation::input 'id)
+                               common-lisp:t)))
         "ReadPreset"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'read-preset))
@@ -5251,9 +5259,10 @@
         'elastictranscoder-request aws-sdk/generator/operation::input "PUT"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/2012-09-25/pipelines/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'id))))
+                                aws-sdk/generator/operation::input 'id)
+                               common-lisp:t)))
         "UpdatePipeline"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-pipeline))
@@ -5274,9 +5283,10 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/2012-09-25/pipelines/~A/notifications"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'id))))
+                                aws-sdk/generator/operation::input 'id)
+                               common-lisp:t)))
         "UpdatePipelineNotifications"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-pipeline-notifications))
@@ -5295,9 +5305,10 @@
         'elastictranscoder-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/2012-09-25/pipelines/~A/status"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'id))))
+                                aws-sdk/generator/operation::input 'id)
+                               common-lisp:t)))
         "UpdatePipelineStatus"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-pipeline-status))

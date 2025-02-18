@@ -2703,11 +2703,15 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'staging))
-      (common-lisp:cons "Staging" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Staging" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'if-match))
-      (common-lisp:cons "If-Match" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "If-Match" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -2767,11 +2771,15 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'location))
-      (common-lisp:cons "Location" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Location" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -2868,11 +2876,15 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'location))
-      (common-lisp:cons "Location" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Location" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -2981,11 +2993,15 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'location))
-      (common-lisp:cons "Location" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Location" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -3095,11 +3111,15 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'location))
-      (common-lisp:cons "Location" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Location" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -3198,11 +3218,15 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'location))
-      (common-lisp:cons "Location" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Location" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -3306,11 +3330,15 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'location))
-      (common-lisp:cons "Location" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Location" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -3418,11 +3446,15 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'location))
-      (common-lisp:cons "Location" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Location" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -3532,11 +3564,15 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'location))
-      (common-lisp:cons "Location" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Location" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -3657,11 +3693,15 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'location))
-      (common-lisp:cons "Location" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Location" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -3760,7 +3800,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'location))
-      (common-lisp:cons "Location" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Location" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -3851,11 +3893,15 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'location))
-      (common-lisp:cons "Location" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Location" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -3980,11 +4026,15 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'location))
-      (common-lisp:cons "Location" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Location" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -4188,11 +4238,15 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'location))
-      (common-lisp:cons "Location" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Location" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -4299,11 +4353,15 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'location))
-      (common-lisp:cons "Location" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Location" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -4398,11 +4456,15 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'location))
-      (common-lisp:cons "Location" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Location" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -4629,11 +4691,15 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'location))
-      (common-lisp:cons "Location" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Location" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -4741,11 +4807,15 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'location))
-      (common-lisp:cons "Location" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Location" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -4856,11 +4926,15 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'location))
-      (common-lisp:cons "Location" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Location" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -5492,7 +5566,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'if-match))
-      (common-lisp:cons "If-Match" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "If-Match" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -5536,7 +5612,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'if-match))
-      (common-lisp:cons "If-Match" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "If-Match" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -5580,7 +5658,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'if-match))
-      (common-lisp:cons "If-Match" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "If-Match" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -5621,7 +5701,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'if-match))
-      (common-lisp:cons "If-Match" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "If-Match" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -5665,7 +5747,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'if-match))
-      (common-lisp:cons "If-Match" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "If-Match" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -5709,7 +5793,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'if-match))
-      (common-lisp:cons "If-Match" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "If-Match" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -5749,7 +5835,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'if-match))
-      (common-lisp:cons "If-Match" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "If-Match" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -5789,7 +5877,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'if-match))
-      (common-lisp:cons "If-Match" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "If-Match" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -5833,7 +5923,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'if-match))
-      (common-lisp:cons "If-Match" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "If-Match" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -5937,7 +6029,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'if-match))
-      (common-lisp:cons "If-Match" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "If-Match" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -5980,7 +6074,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'if-match))
-      (common-lisp:cons "If-Match" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "If-Match" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -6021,7 +6117,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'if-match))
-      (common-lisp:cons "If-Match" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "If-Match" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -6116,7 +6214,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'if-match))
-      (common-lisp:cons "If-Match" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "If-Match" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -6159,7 +6259,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'if-match))
-      (common-lisp:cons "If-Match" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "If-Match" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -6234,7 +6336,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -6317,7 +6421,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -9005,7 +9111,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -9082,7 +9190,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -9170,7 +9280,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -9258,7 +9370,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -9346,7 +9460,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -9432,7 +9548,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -9516,7 +9634,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -9593,7 +9713,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -9678,7 +9800,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -9766,7 +9890,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -9854,7 +9980,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -9940,7 +10068,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -10021,11 +10151,15 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-type))
-      (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         ((aws-sdk/generator/shape::input get-function-result))
    (common-lisp:append
@@ -10174,7 +10308,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -10247,7 +10383,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         ((aws-sdk/generator/shape::input get-key-group-result))
    (common-lisp:append
@@ -10405,7 +10543,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -10490,7 +10630,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -10576,7 +10718,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -10661,7 +10805,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -10743,7 +10889,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -10818,7 +10966,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -10996,7 +11146,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -11082,7 +11234,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -11169,7 +11323,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -11255,7 +11411,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -17090,7 +17248,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'if-match))
-      (common-lisp:cons "If-Match" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "If-Match" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -20486,7 +20646,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'if-match))
-      (common-lisp:cons "If-Match" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "If-Match" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -21338,7 +21500,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'if-match))
-      (common-lisp:cons "If-Match" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "If-Match" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -21387,7 +21551,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -21451,7 +21617,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'if-match))
-      (common-lisp:cons "If-Match" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "If-Match" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -21506,7 +21674,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -21571,7 +21741,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'if-match))
-      (common-lisp:cons "If-Match" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "If-Match" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -21626,7 +21798,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -21685,7 +21859,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'if-match))
-      (common-lisp:cons "If-Match" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "If-Match" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -21734,7 +21910,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -21793,7 +21971,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'if-match))
-      (common-lisp:cons "If-Match" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "If-Match" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -21837,7 +22017,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -21900,7 +22082,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'if-match))
-      (common-lisp:cons "If-Match" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "If-Match" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -21955,7 +22139,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -22020,7 +22206,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'if-match))
-      (common-lisp:cons "If-Match" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "If-Match" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -22075,7 +22263,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -22138,7 +22328,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'if-match))
-      (common-lisp:cons "If-Match" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "If-Match" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -22192,7 +22384,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETtag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETtag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -22247,7 +22441,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'if-match))
-      (common-lisp:cons "If-Match" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "If-Match" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -22293,7 +22489,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -22352,7 +22550,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'if-match))
-      (common-lisp:cons "If-Match" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "If-Match" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -22401,7 +22601,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -22463,7 +22665,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'if-match))
-      (common-lisp:cons "If-Match" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "If-Match" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -22516,7 +22720,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -22580,7 +22786,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'if-match))
-      (common-lisp:cons "If-Match" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "If-Match" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -22633,7 +22841,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -22692,7 +22902,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'if-match))
-      (common-lisp:cons "If-Match" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "If-Match" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -22738,7 +22950,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -22933,7 +23147,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'if-match))
-      (common-lisp:cons "If-Match" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "If-Match" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -22987,7 +23203,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -23051,7 +23269,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'if-match))
-      (common-lisp:cons "If-Match" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "If-Match" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -23105,7 +23325,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -23277,10 +23499,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/distribution/~A/associate-alias"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'target-distribution-id))))
+                                                             'target-distribution-id)
+                                                            common-lisp:t)))
                                                         "AssociateAlias"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'associate-alias))
@@ -23307,10 +23530,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/distribution/~A/copy"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'primary-distribution-id))))
+                                                             'primary-distribution-id)
+                                                            common-lisp:t)))
                                                         "CopyDistribution"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'copy-distribution))
@@ -23489,10 +23713,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/distribution/~A/invalidation"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'distribution-id))))
+                                                             'distribution-id)
+                                                            common-lisp:t)))
                                                         "CreateInvalidation"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'create-invalidation))
@@ -23554,10 +23779,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/distributions/~A/monitoring-subscription/"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'distribution-id))))
+                                                             'distribution-id)
+                                                            common-lisp:t)))
                                                         "CreateMonitoringSubscription"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'create-monitoring-subscription))
@@ -23715,10 +23941,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/cache-policy/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "DeleteCachePolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-cache-policy))
@@ -23743,10 +23970,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/origin-access-identity/cloudfront/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "DeleteCloudFrontOriginAccessIdentity"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-cloud-front-origin-access-identity))
@@ -23771,10 +23999,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/continuous-deployment-policy/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "DeleteContinuousDeploymentPolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-continuous-deployment-policy))
@@ -23798,10 +24027,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/distribution/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "DeleteDistribution"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-distribution))
@@ -23826,10 +24056,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/field-level-encryption/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "DeleteFieldLevelEncryptionConfig"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-field-level-encryption-config))
@@ -23854,10 +24085,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/field-level-encryption-profile/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "DeleteFieldLevelEncryptionProfile"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-field-level-encryption-profile))
@@ -23881,10 +24113,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/function/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "DeleteFunction"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-function))
@@ -23908,10 +24141,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/key-group/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "DeleteKeyGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-key-group))
@@ -23935,10 +24169,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/key-value-store/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "DeleteKeyValueStore"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-key-value-store))
@@ -23963,10 +24198,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/distributions/~A/monitoring-subscription/"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'distribution-id))))
+                                                             'distribution-id)
+                                                            common-lisp:t)))
                                                         "DeleteMonitoringSubscription"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-monitoring-subscription))
@@ -23991,10 +24227,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/origin-access-control/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "DeleteOriginAccessControl"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-origin-access-control))
@@ -24019,10 +24256,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/origin-request-policy/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "DeleteOriginRequestPolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-origin-request-policy))
@@ -24046,10 +24284,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/public-key/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "DeletePublicKey"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-public-key))
@@ -24093,10 +24332,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/response-headers-policy/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "DeleteResponseHeadersPolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-response-headers-policy))
@@ -24121,10 +24361,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/streaming-distribution/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "DeleteStreamingDistribution"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-streaming-distribution))
@@ -24148,10 +24389,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/function/~A/describe"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "DescribeFunction"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-function))
@@ -24175,10 +24417,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/key-value-store/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "DescribeKeyValueStore"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-key-value-store))
@@ -24202,10 +24445,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/cache-policy/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetCachePolicy"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'get-cache-policy))
@@ -24229,10 +24473,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/cache-policy/~A/config"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetCachePolicyConfig"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'get-cache-policy-config))
@@ -24257,10 +24502,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/origin-access-identity/cloudfront/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetCloudFrontOriginAccessIdentity"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'get-cloud-front-origin-access-identity))
@@ -24285,10 +24531,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/origin-access-identity/cloudfront/~A/config"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetCloudFrontOriginAccessIdentityConfig"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'get-cloud-front-origin-access-identity-config))
@@ -24313,10 +24560,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/continuous-deployment-policy/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetContinuousDeploymentPolicy"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'get-continuous-deployment-policy))
@@ -24341,10 +24589,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/continuous-deployment-policy/~A/config"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetContinuousDeploymentPolicyConfig"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'get-continuous-deployment-policy-config))
@@ -24368,10 +24617,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/distribution/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetDistribution"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'get-distribution))
@@ -24395,10 +24645,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/distribution/~A/config"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetDistributionConfig"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'get-distribution-config))
@@ -24423,10 +24674,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/field-level-encryption/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetFieldLevelEncryption"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'get-field-level-encryption))
@@ -24451,10 +24703,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/field-level-encryption/~A/config"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetFieldLevelEncryptionConfig"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'get-field-level-encryption-config))
@@ -24479,10 +24732,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/field-level-encryption-profile/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetFieldLevelEncryptionProfile"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'get-field-level-encryption-profile))
@@ -24507,10 +24761,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/field-level-encryption-profile/~A/config"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetFieldLevelEncryptionProfileConfig"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'get-field-level-encryption-profile-config))
@@ -24534,10 +24789,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/function/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "GetFunction")
        :want-stream common-lisp:t)
       "blob" common-lisp:nil *error-map*)))
@@ -24562,14 +24818,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/distribution/~A/invalidation/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'distribution-id))
-                                                           (quri.encode:url-encode
+                                                             'distribution-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetInvalidation"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'get-invalidation))
@@ -24593,10 +24851,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/key-group/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetKeyGroup"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'get-key-group))
@@ -24620,10 +24879,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/key-group/~A/config"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetKeyGroupConfig"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'get-key-group-config))
@@ -24648,10 +24908,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/distributions/~A/monitoring-subscription/"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'distribution-id))))
+                                                             'distribution-id)
+                                                            common-lisp:t)))
                                                         "GetMonitoringSubscription"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'get-monitoring-subscription))
@@ -24676,10 +24937,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/origin-access-control/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetOriginAccessControl"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'get-origin-access-control))
@@ -24704,10 +24966,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/origin-access-control/~A/config"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetOriginAccessControlConfig"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'get-origin-access-control-config))
@@ -24732,10 +24995,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/origin-request-policy/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetOriginRequestPolicy"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'get-origin-request-policy))
@@ -24760,10 +25024,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/origin-request-policy/~A/config"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetOriginRequestPolicyConfig"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'get-origin-request-policy-config))
@@ -24787,10 +25052,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/public-key/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetPublicKey"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'get-public-key))
@@ -24814,10 +25080,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/public-key/~A/config"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetPublicKeyConfig"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'get-public-key-config))
@@ -24860,10 +25127,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/response-headers-policy/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetResponseHeadersPolicy"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'get-response-headers-policy))
@@ -24888,10 +25156,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/response-headers-policy/~A/config"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetResponseHeadersPolicyConfig"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'get-response-headers-policy-config))
@@ -24916,10 +25185,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/streaming-distribution/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetStreamingDistribution"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'get-streaming-distribution))
@@ -24944,10 +25214,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/streaming-distribution/~A/config"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetStreamingDistributionConfig"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'get-streaming-distribution-config))
@@ -25066,10 +25337,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/distributionsByCachePolicyId/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'cache-policy-id))))
+                                                             'cache-policy-id)
+                                                            common-lisp:t)))
                                                         "ListDistributionsByCachePolicyId"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'list-distributions-by-cache-policy-id))
@@ -25094,10 +25366,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/distributionsByKeyGroupId/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'key-group-id))))
+                                                             'key-group-id)
+                                                            common-lisp:t)))
                                                         "ListDistributionsByKeyGroup"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'list-distributions-by-key-group))
@@ -25124,10 +25397,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/distributionsByOriginRequestPolicyId/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'origin-request-policy-id))))
+                                                             'origin-request-policy-id)
+                                                            common-lisp:t)))
                                                         "ListDistributionsByOriginRequestPolicyId"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'list-distributions-by-origin-request-policy-id))
@@ -25176,10 +25450,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/distributionsByResponseHeadersPolicyId/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'response-headers-policy-id))))
+                                                             'response-headers-policy-id)
+                                                            common-lisp:t)))
                                                         "ListDistributionsByResponseHeadersPolicyId"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'list-distributions-by-response-headers-policy-id))
@@ -25204,10 +25479,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/distributionsByWebACLId/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'web-aclid))))
+                                                             'web-aclid)
+                                                            common-lisp:t)))
                                                         "ListDistributionsByWebACLId"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'list-distributions-by-web-aclid))
@@ -25288,10 +25564,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/distribution/~A/invalidation"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'distribution-id))))
+                                                             'distribution-id)
+                                                            common-lisp:t)))
                                                         "ListInvalidations"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'list-invalidations))
@@ -25482,10 +25759,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/function/~A/publish"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "PublishFunction"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'publish-function))
@@ -25528,10 +25806,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/function/~A/test"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "TestFunction"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'test-function))
@@ -25574,10 +25853,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/cache-policy/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "UpdateCachePolicy"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'update-cache-policy))
@@ -25605,10 +25885,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/origin-access-identity/cloudfront/~A/config"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "UpdateCloudFrontOriginAccessIdentity"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'update-cloud-front-origin-access-identity))
@@ -25635,10 +25916,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/continuous-deployment-policy/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "UpdateContinuousDeploymentPolicy"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'update-continuous-deployment-policy))
@@ -25663,10 +25945,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/distribution/~A/config"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "UpdateDistribution"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'update-distribution))
@@ -25692,10 +25975,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/distribution/~A/promote-staging-config"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "UpdateDistributionWithStagingConfig"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'update-distribution-with-staging-config))
@@ -25722,10 +26006,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/field-level-encryption/~A/config"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "UpdateFieldLevelEncryptionConfig"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'update-field-level-encryption-config))
@@ -25752,10 +26037,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/field-level-encryption-profile/~A/config"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "UpdateFieldLevelEncryptionProfile"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'update-field-level-encryption-profile))
@@ -25781,10 +26067,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/function/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "UpdateFunction"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'update-function))
@@ -25808,10 +26095,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/key-group/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "UpdateKeyGroup"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'update-key-group))
@@ -25835,10 +26123,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/key-value-store/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "UpdateKeyValueStore"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'update-key-value-store))
@@ -25864,10 +26153,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/origin-access-control/~A/config"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "UpdateOriginAccessControl"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'update-origin-access-control))
@@ -25893,10 +26183,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/origin-request-policy/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "UpdateOriginRequestPolicy"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'update-origin-request-policy))
@@ -25920,10 +26211,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/public-key/~A/config"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "UpdatePublicKey"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'update-public-key))
@@ -25970,10 +26262,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/response-headers-policy/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "UpdateResponseHeadersPolicy"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'update-response-headers-policy))
@@ -26000,10 +26293,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-05-31/streaming-distribution/~A/config"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "UpdateStreamingDistribution"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'update-streaming-distribution))

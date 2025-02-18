@@ -20,7 +20,7 @@
  (common-lisp:export 'wellarchitected-error))
 (common-lisp:progn
  (common-lisp:defclass wellarchitected-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "wellarchitected"
                         :api-version "2020-03-31" :host-prefix
@@ -14020,10 +14020,11 @@
         'wellarchitected-request aws-sdk/generator/operation::input "PATCH"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/workloads/~A/associateLenses"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'workload-id))))
+                                'workload-id)
+                               common-lisp:t)))
         "AssociateLenses"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'associate-lenses))
@@ -14042,10 +14043,11 @@
         'wellarchitected-request aws-sdk/generator/operation::input "PATCH"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/workloads/~A/associateProfiles"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'workload-id))))
+                                'workload-id)
+                               common-lisp:t)))
         "AssociateProfiles"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'associate-profiles))
@@ -14066,10 +14068,10 @@
         'wellarchitected-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/lenses/~A/shares"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'lens-alias))))
+                                aws-sdk/generator/operation::input 'lens-alias)
+                               common-lisp:t)))
         "CreateLensShare"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-lens-share))
@@ -14091,10 +14093,10 @@
         'wellarchitected-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/lenses/~A/versions"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'lens-alias))))
+                                aws-sdk/generator/operation::input 'lens-alias)
+                               common-lisp:t)))
         "CreateLensVersion"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-lens-version))
@@ -14115,10 +14117,11 @@
         'wellarchitected-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/workloads/~A/milestones"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'workload-id))))
+                                'workload-id)
+                               common-lisp:t)))
         "CreateMilestone"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-milestone))
@@ -14158,10 +14161,11 @@
         'wellarchitected-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/profiles/~A/shares"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'profile-arn))))
+                                'profile-arn)
+                               common-lisp:t)))
         "CreateProfileShare"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-profile-share))
@@ -14201,10 +14205,11 @@
         'wellarchitected-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/templates/shares/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'template-arn))))
+                                'template-arn)
+                               common-lisp:t)))
         "CreateTemplateShare"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-template-share))
@@ -14250,10 +14255,11 @@
         'wellarchitected-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/workloads/~A/shares"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'workload-id))))
+                                'workload-id)
+                               common-lisp:t)))
         "CreateWorkloadShare"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-workload-share))
@@ -14274,10 +14280,10 @@
         'wellarchitected-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/lenses/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'lens-alias))))
+                                aws-sdk/generator/operation::input 'lens-alias)
+                               common-lisp:t)))
         "DeleteLens"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-lens))
@@ -14297,14 +14303,14 @@
         'wellarchitected-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/lenses/~A/shares/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'lens-alias))
-                              (quri.encode:url-encode
+                                aws-sdk/generator/operation::input 'lens-alias)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'share-id))))
+                                aws-sdk/generator/operation::input 'share-id)
+                               common-lisp:t)))
         "DeleteLensShare"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-lens-share))
@@ -14324,10 +14330,11 @@
         'wellarchitected-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/profiles/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'profile-arn))))
+                                'profile-arn)
+                               common-lisp:t)))
         "DeleteProfile"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-profile))
@@ -14348,14 +14355,15 @@
         'wellarchitected-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/profiles/~A/shares/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'profile-arn))
-                              (quri.encode:url-encode
+                                'profile-arn)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'share-id))))
+                                aws-sdk/generator/operation::input 'share-id)
+                               common-lisp:t)))
         "DeleteProfileShare"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-profile-share))
@@ -14375,10 +14383,11 @@
         'wellarchitected-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/reviewTemplates/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'template-arn))))
+                                'template-arn)
+                               common-lisp:t)))
         "DeleteReviewTemplate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-review-template))
@@ -14399,14 +14408,15 @@
         'wellarchitected-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/templates/shares/~A/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'template-arn))
-                              (quri.encode:url-encode
+                                'template-arn)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'share-id))))
+                                aws-sdk/generator/operation::input 'share-id)
+                               common-lisp:t)))
         "DeleteTemplateShare"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-template-share))
@@ -14426,10 +14436,11 @@
         'wellarchitected-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/workloads/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'workload-id))))
+                                'workload-id)
+                               common-lisp:t)))
         "DeleteWorkload"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-workload))
@@ -14450,14 +14461,15 @@
         'wellarchitected-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/workloads/~A/shares/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'workload-id))
-                              (quri.encode:url-encode
+                                'workload-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'share-id))))
+                                aws-sdk/generator/operation::input 'share-id)
+                               common-lisp:t)))
         "DeleteWorkloadShare"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-workload-share))
@@ -14477,10 +14489,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/workloads/~A/disassociateLenses"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'workload-id))))
+                                'workload-id)
+                               common-lisp:t)))
         "DisassociateLenses"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'disassociate-lenses))
@@ -14500,10 +14513,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/workloads/~A/disassociateProfiles"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'workload-id))))
+                                'workload-id)
+                               common-lisp:t)))
         "DisassociateProfiles"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'disassociate-profiles))
@@ -14522,10 +14536,10 @@
         'wellarchitected-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/lenses/~A/export"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'lens-alias))))
+                                aws-sdk/generator/operation::input 'lens-alias)
+                               common-lisp:t)))
         "ExportLens"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'export-lens))
@@ -14548,18 +14562,20 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/workloads/~A/lensReviews/~A/answers/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'workload-id))
-                              (quri.encode:url-encode
+                                'workload-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
+                               (common-lisp:slot-value
+                                aws-sdk/generator/operation::input 'lens-alias)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'lens-alias))
-                              (quri.encode:url-encode
-                               (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'question-id))))
+                                'question-id)
+                               common-lisp:t)))
         "GetAnswer"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-answer))
@@ -14597,10 +14613,10 @@
         'wellarchitected-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/lenses/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'lens-alias))))
+                                aws-sdk/generator/operation::input 'lens-alias)
+                               common-lisp:t)))
         "GetLens"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-lens))
@@ -14620,14 +14636,15 @@
         'wellarchitected-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/workloads/~A/lensReviews/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'workload-id))
-                              (quri.encode:url-encode
+                                'workload-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'lens-alias))))
+                                aws-sdk/generator/operation::input 'lens-alias)
+                               common-lisp:t)))
         "GetLensReview"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-lens-review))
@@ -14648,14 +14665,15 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/workloads/~A/lensReviews/~A/report"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'workload-id))
-                              (quri.encode:url-encode
+                                'workload-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'lens-alias))))
+                                aws-sdk/generator/operation::input 'lens-alias)
+                               common-lisp:t)))
         "GetLensReviewReport"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-lens-review-report))
@@ -14677,10 +14695,10 @@
         'wellarchitected-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/lenses/~A/versionDifference"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'lens-alias))))
+                                aws-sdk/generator/operation::input 'lens-alias)
+                               common-lisp:t)))
         "GetLensVersionDifference"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-lens-version-difference))
@@ -14699,14 +14717,16 @@
         'wellarchitected-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/workloads/~A/milestones/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'workload-id))
-                              (quri.encode:url-encode
+                                'workload-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'milestone-number))))
+                                'milestone-number)
+                               common-lisp:t)))
         "GetMilestone"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-milestone))
@@ -14725,10 +14745,11 @@
         'wellarchitected-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/profiles/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'profile-arn))))
+                                'profile-arn)
+                               common-lisp:t)))
         "GetProfile"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-profile))
@@ -14756,10 +14777,11 @@
         'wellarchitected-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/reviewTemplates/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'template-arn))))
+                                'template-arn)
+                               common-lisp:t)))
         "GetReviewTemplate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-review-template))
@@ -14780,18 +14802,20 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/reviewTemplates/~A/lensReviews/~A/answers/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'template-arn))
-                              (quri.encode:url-encode
+                                'template-arn)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
+                               (common-lisp:slot-value
+                                aws-sdk/generator/operation::input 'lens-alias)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'lens-alias))
-                              (quri.encode:url-encode
-                               (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'question-id))))
+                                'question-id)
+                               common-lisp:t)))
         "GetReviewTemplateAnswer"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-review-template-answer))
@@ -14812,14 +14836,15 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/reviewTemplates/~A/lensReviews/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'template-arn))
-                              (quri.encode:url-encode
+                                'template-arn)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'lens-alias))))
+                                aws-sdk/generator/operation::input 'lens-alias)
+                               common-lisp:t)))
         "GetReviewTemplateLensReview"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-review-template-lens-review))
@@ -14838,10 +14863,11 @@
         'wellarchitected-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/workloads/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'workload-id))))
+                                'workload-id)
+                               common-lisp:t)))
         "GetWorkload"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-workload))
@@ -14882,14 +14908,15 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/workloads/~A/lensReviews/~A/answers"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'workload-id))
-                              (quri.encode:url-encode
+                                'workload-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'lens-alias))))
+                                aws-sdk/generator/operation::input 'lens-alias)
+                               common-lisp:t)))
         "ListAnswers"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-answers))
@@ -14911,10 +14938,11 @@
         'wellarchitected-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/workloads/~A/checks"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'workload-id))))
+                                'workload-id)
+                               common-lisp:t)))
         "ListCheckDetails"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-check-details))
@@ -14936,10 +14964,11 @@
         'wellarchitected-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/workloads/~A/checkSummaries"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'workload-id))))
+                                'workload-id)
+                               common-lisp:t)))
         "ListCheckSummaries"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-check-summaries))
@@ -14963,14 +14992,15 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/workloads/~A/lensReviews/~A/improvements"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'workload-id))
-                              (quri.encode:url-encode
+                                'workload-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'lens-alias))))
+                                aws-sdk/generator/operation::input 'lens-alias)
+                               common-lisp:t)))
         "ListLensReviewImprovements"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-lens-review-improvements))
@@ -14992,10 +15022,11 @@
         'wellarchitected-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/workloads/~A/lensReviews"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'workload-id))))
+                                'workload-id)
+                               common-lisp:t)))
         "ListLensReviews"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-lens-reviews))
@@ -15017,10 +15048,10 @@
         'wellarchitected-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/lenses/~A/shares"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'lens-alias))))
+                                aws-sdk/generator/operation::input 'lens-alias)
+                               common-lisp:t)))
         "ListLensShares"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-lens-shares))
@@ -15060,10 +15091,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/workloads/~A/milestonesSummaries"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'workload-id))))
+                                'workload-id)
+                               common-lisp:t)))
         "ListMilestones"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-milestones))
@@ -15120,10 +15152,11 @@
         'wellarchitected-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/profiles/~A/shares"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'profile-arn))))
+                                'profile-arn)
+                               common-lisp:t)))
         "ListProfileShares"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-profile-shares))
@@ -15166,14 +15199,15 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/reviewTemplates/~A/lensReviews/~A/answers"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'template-arn))
-                              (quri.encode:url-encode
+                                'template-arn)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'lens-alias))))
+                                aws-sdk/generator/operation::input 'lens-alias)
+                               common-lisp:t)))
         "ListReviewTemplateAnswers"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-review-template-answers))
@@ -15229,10 +15263,11 @@
         'wellarchitected-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'workload-arn))))
+                                'workload-arn)
+                               common-lisp:t)))
         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -15254,10 +15289,11 @@
         'wellarchitected-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/templates/shares/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'template-arn))))
+                                'template-arn)
+                               common-lisp:t)))
         "ListTemplateShares"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-template-shares))
@@ -15279,10 +15315,11 @@
         'wellarchitected-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/workloads/~A/shares"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'workload-id))))
+                                'workload-id)
+                               common-lisp:t)))
         "ListWorkloadShares"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-workload-shares))
@@ -15319,10 +15356,11 @@
         'wellarchitected-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'workload-arn))))
+                                'workload-arn)
+                               common-lisp:t)))
         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -15341,10 +15379,11 @@
         'wellarchitected-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'workload-arn))))
+                                'workload-arn)
+                               common-lisp:t)))
         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -15368,18 +15407,20 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/workloads/~A/lensReviews/~A/answers/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'workload-id))
-                              (quri.encode:url-encode
+                                'workload-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
+                               (common-lisp:slot-value
+                                aws-sdk/generator/operation::input 'lens-alias)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'lens-alias))
-                              (quri.encode:url-encode
-                               (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'question-id))))
+                                'question-id)
+                               common-lisp:t)))
         "UpdateAnswer"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-answer))
@@ -15419,14 +15460,15 @@
         'wellarchitected-request aws-sdk/generator/operation::input "PATCH"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/workloads/~A/lensReviews/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'workload-id))
-                              (quri.encode:url-encode
+                                'workload-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'lens-alias))))
+                                aws-sdk/generator/operation::input 'lens-alias)
+                               common-lisp:t)))
         "UpdateLensReview"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-lens-review))
@@ -15447,10 +15489,11 @@
         'wellarchitected-request aws-sdk/generator/operation::input "PATCH"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/profiles/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'profile-arn))))
+                                'profile-arn)
+                               common-lisp:t)))
         "UpdateProfile"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-profile))
@@ -15472,10 +15515,11 @@
         'wellarchitected-request aws-sdk/generator/operation::input "PATCH"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/reviewTemplates/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'template-arn))))
+                                'template-arn)
+                               common-lisp:t)))
         "UpdateReviewTemplate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-review-template))
@@ -15500,18 +15544,20 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/reviewTemplates/~A/lensReviews/~A/answers/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'template-arn))
-                              (quri.encode:url-encode
+                                'template-arn)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
+                               (common-lisp:slot-value
+                                aws-sdk/generator/operation::input 'lens-alias)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'lens-alias))
-                              (quri.encode:url-encode
-                               (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'question-id))))
+                                'question-id)
+                               common-lisp:t)))
         "UpdateReviewTemplateAnswer"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-review-template-answer))
@@ -15534,14 +15580,15 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/reviewTemplates/~A/lensReviews/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'template-arn))
-                              (quri.encode:url-encode
+                                'template-arn)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'lens-alias))))
+                                aws-sdk/generator/operation::input 'lens-alias)
+                               common-lisp:t)))
         "UpdateReviewTemplateLensReview"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-review-template-lens-review))
@@ -15562,10 +15609,11 @@
         'wellarchitected-request aws-sdk/generator/operation::input "PATCH"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/shareInvitations/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'share-invitation-id))))
+                                'share-invitation-id)
+                               common-lisp:t)))
         "UpdateShareInvitation"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-share-invitation))
@@ -15593,10 +15641,11 @@
         'wellarchitected-request aws-sdk/generator/operation::input "PATCH"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/workloads/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'workload-id))))
+                                'workload-id)
+                               common-lisp:t)))
         "UpdateWorkload"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-workload))
@@ -15616,14 +15665,15 @@
         'wellarchitected-request aws-sdk/generator/operation::input "PATCH"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/workloads/~A/shares/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'workload-id))
-                              (quri.encode:url-encode
+                                'workload-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'share-id))))
+                                aws-sdk/generator/operation::input 'share-id)
+                               common-lisp:t)))
         "UpdateWorkloadShare"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-workload-share))
@@ -15646,14 +15696,15 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/workloads/~A/lensReviews/~A/upgrade"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'workload-id))
-                              (quri.encode:url-encode
+                                'workload-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'lens-alias))))
+                                aws-sdk/generator/operation::input 'lens-alias)
+                               common-lisp:t)))
         "UpgradeLensReview"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'upgrade-lens-review))
@@ -15676,14 +15727,16 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/workloads/~A/profiles/~A/upgrade"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'workload-id))
-                              (quri.encode:url-encode
+                                'workload-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'profile-arn))))
+                                'profile-arn)
+                               common-lisp:t)))
         "UpgradeProfileVersion"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'upgrade-profile-version))
@@ -15706,14 +15759,15 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/reviewTemplates/~A/lensReviews/~A/upgrade"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'template-arn))
-                              (quri.encode:url-encode
+                                'template-arn)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'lens-alias))))
+                                aws-sdk/generator/operation::input 'lens-alias)
+                               common-lisp:t)))
         "UpgradeReviewTemplateLensReview"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'upgrade-review-template-lens-review))

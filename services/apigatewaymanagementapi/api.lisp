@@ -20,7 +20,7 @@
  (common-lisp:export 'apigatewaymanagementapi-error))
 (common-lisp:progn
  (common-lisp:defclass apigatewaymanagementapi-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "apigatewaymanagementapi"
                         :api-version "2018-11-29" :host-prefix "execute-api"
@@ -286,10 +286,11 @@
         "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/@connections/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'connection-id))))
+                                'connection-id)
+                               common-lisp:t)))
         "DeleteConnection"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-connection))
@@ -309,10 +310,11 @@
         "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/@connections/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'connection-id))))
+                                'connection-id)
+                               common-lisp:t)))
         "GetConnection"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-connection))
@@ -332,10 +334,11 @@
         "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/@connections/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'connection-id))))
+                                'connection-id)
+                               common-lisp:t)))
         "PostToConnection"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'post-to-connection))

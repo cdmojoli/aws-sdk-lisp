@@ -20,7 +20,7 @@
  (common-lisp:export 'marketplace-deployment-error))
 (common-lisp:progn
  (common-lisp:defclass marketplace-deployment-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "marketplace-deployment"
                         :api-version "2023-01-25" :host-prefix
@@ -583,10 +583,11 @@
         "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -610,13 +611,14 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/catalogs/~A/products/~A/deployment-parameters"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'catalog))
-                              (quri.encode:url-encode
+                                aws-sdk/generator/operation::input 'catalog)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'product-id))))
+                                aws-sdk/generator/operation::input 'product-id)
+                               common-lisp:t)))
         "PutDeploymentParameter"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-deployment-parameter))
@@ -636,10 +638,11 @@
         "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -659,10 +662,11 @@
         "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))

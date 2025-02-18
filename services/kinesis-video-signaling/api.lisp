@@ -20,7 +20,7 @@
  (common-lisp:export 'kinesis-video-signaling-error))
 (common-lisp:progn
  (common-lisp:defclass kinesis-video-signaling-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "kinesis-video-signaling"
                         :api-version "2019-12-04" :host-prefix "kinesisvideo"

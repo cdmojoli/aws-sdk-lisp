@@ -20,7 +20,7 @@
  (common-lisp:export 'workmailmessageflow-error))
 (common-lisp:progn
  (common-lisp:defclass workmailmessageflow-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "workmailmessageflow"
                         :api-version "2019-05-01" :host-prefix
@@ -318,10 +318,10 @@
         'workmailmessageflow-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/messages/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'message-id))))
+                                aws-sdk/generator/operation::input 'message-id)
+                               common-lisp:t)))
         "GetRawMessageContent")
        :want-stream common-lisp:t)
       "blob" common-lisp:nil *error-map*)))
@@ -341,10 +341,10 @@
         'workmailmessageflow-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/messages/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'message-id))))
+                                aws-sdk/generator/operation::input 'message-id)
+                               common-lisp:t)))
         "PutRawMessageContent"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-raw-message-content))

@@ -20,7 +20,7 @@
  (common-lisp:export 'iotdeviceadvisor-error))
 (common-lisp:progn
  (common-lisp:defclass iotdeviceadvisor-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "iotdeviceadvisor"
                         :api-version "2020-09-18" :host-prefix
@@ -2601,10 +2601,11 @@
         'iotdeviceadvisor-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/suiteDefinitions/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'suite-definition-id))))
+                                'suite-definition-id)
+                               common-lisp:t)))
         "DeleteSuiteDefinition"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-suite-definition))
@@ -2644,10 +2645,11 @@
         'iotdeviceadvisor-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/suiteDefinitions/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'suite-definition-id))))
+                                'suite-definition-id)
+                               common-lisp:t)))
         "GetSuiteDefinition"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-suite-definition))
@@ -2668,14 +2670,16 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/suiteDefinitions/~A/suiteRuns/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'suite-definition-id))
-                              (quri.encode:url-encode
+                                'suite-definition-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'suite-run-id))))
+                                'suite-run-id)
+                               common-lisp:t)))
         "GetSuiteRun"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-suite-run))
@@ -2696,14 +2700,16 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/suiteDefinitions/~A/suiteRuns/~A/report"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'suite-definition-id))
-                              (quri.encode:url-encode
+                                'suite-definition-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'suite-run-id))))
+                                'suite-run-id)
+                               common-lisp:t)))
         "GetSuiteRunReport"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-suite-run-report))
@@ -2757,10 +2763,11 @@
         'iotdeviceadvisor-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -2782,10 +2789,11 @@
         'iotdeviceadvisor-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/suiteDefinitions/~A/suiteRuns"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'suite-definition-id))))
+                                'suite-definition-id)
+                               common-lisp:t)))
         "StartSuiteRun"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'start-suite-run))
@@ -2806,14 +2814,16 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/suiteDefinitions/~A/suiteRuns/~A/stop"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'suite-definition-id))
-                              (quri.encode:url-encode
+                                'suite-definition-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'suite-run-id))))
+                                'suite-run-id)
+                               common-lisp:t)))
         "StopSuiteRun"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'stop-suite-run))
@@ -2832,10 +2842,11 @@
         'iotdeviceadvisor-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -2854,10 +2865,11 @@
         'iotdeviceadvisor-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -2878,10 +2890,11 @@
         'iotdeviceadvisor-request aws-sdk/generator/operation::input "PATCH"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/suiteDefinitions/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'suite-definition-id))))
+                                'suite-definition-id)
+                               common-lisp:t)))
         "UpdateSuiteDefinition"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-suite-definition))

@@ -20,7 +20,7 @@
  (common-lisp:export 'signer-error))
 (common-lisp:progn
  (common-lisp:defclass signer-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "signer" :api-version
                         "2017-08-25" :host-prefix "signer" :signing-name
@@ -4042,10 +4042,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/signing-profiles/~A/permissions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'profile-name))))
+                                                             'profile-name)
+                                                            common-lisp:t)))
                                                         "AddProfilePermission"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'add-profile-permission))
@@ -4069,10 +4070,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/signing-profiles/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'profile-name))))
+                                                             'profile-name)
+                                                            common-lisp:t)))
                                                         "CancelSigningProfile"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'cancel-signing-profile))
@@ -4096,10 +4098,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/signing-jobs/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'job-id))))
+                                                             'job-id)
+                                                            common-lisp:t)))
                                                         "DescribeSigningJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-signing-job))
@@ -4143,10 +4146,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/signing-platforms/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'platform-id))))
+                                                             'platform-id)
+                                                            common-lisp:t)))
                                                         "GetSigningPlatform"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-signing-platform))
@@ -4170,10 +4174,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/signing-profiles/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'profile-name))))
+                                                             'profile-name)
+                                                            common-lisp:t)))
                                                         "GetSigningProfile"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-signing-profile))
@@ -4197,10 +4202,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/signing-profiles/~A/permissions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'profile-name))))
+                                                             'profile-name)
+                                                            common-lisp:t)))
                                                         "ListProfilePermissions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-profile-permissions))
@@ -4287,10 +4293,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -4318,10 +4325,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/signing-profiles/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'profile-name))))
+                                                             'profile-name)
+                                                            common-lisp:t)))
                                                         "PutSigningProfile"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-signing-profile))
@@ -4347,14 +4355,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/signing-profiles/~A/permissions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'profile-name))
-                                                           (quri.encode:url-encode
+                                                             'profile-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'statement-id))))
+                                                             'statement-id)
+                                                            common-lisp:t)))
                                                         "RemoveProfilePermission"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'remove-profile-permission))
@@ -4378,10 +4388,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/signing-jobs/~A/revoke"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'job-id))))
+                                                             'job-id)
+                                                            common-lisp:t)))
                                                         "RevokeSignature"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'revoke-signature))
@@ -4407,10 +4418,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/signing-profiles/~A/revoke"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'profile-name))))
+                                                             'profile-name)
+                                                            common-lisp:t)))
                                                         "RevokeSigningProfile"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'revoke-signing-profile))
@@ -4474,10 +4486,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -4501,10 +4514,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))

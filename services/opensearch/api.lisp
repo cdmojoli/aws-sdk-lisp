@@ -20,7 +20,7 @@
  (common-lisp:export 'opensearch-error))
 (common-lisp:progn
  (common-lisp:defclass opensearch-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "opensearch" :api-version
                         "2021-01-01" :host-prefix "es" :signing-name
@@ -15230,10 +15230,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2021-01-01/opensearch/cc/inboundConnection/~A/accept"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'connection-id))))
+                                                             'connection-id)
+                                                            common-lisp:t)))
                                                         "AcceptInboundConnection"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'accept-inbound-connection))
@@ -15259,10 +15260,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2021-01-01/opensearch/domain/~A/dataSource"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-name))))
+                                                             'domain-name)
+                                                            common-lisp:t)))
                                                         "AddDataSource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'add-data-source))
@@ -15304,14 +15306,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2021-01-01/packages/associate/~A/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'package-id))
-                                                           (quri.encode:url-encode
+                                                             'package-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-name))))
+                                                             'domain-name)
+                                                            common-lisp:t)))
                                                         "AssociatePackage"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'associate-package))
@@ -15336,10 +15340,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2021-01-01/opensearch/domain/~A/authorizeVpcEndpointAccess"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-name))))
+                                                             'domain-name)
+                                                            common-lisp:t)))
                                                         "AuthorizeVpcEndpointAccess"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'authorize-vpc-endpoint-access))
@@ -15364,10 +15369,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2021-01-01/opensearch/domain/~A/config/cancel"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-name))))
+                                                             'domain-name)
+                                                            common-lisp:t)))
                                                         "CancelDomainConfigChange"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'cancel-domain-config-change))
@@ -15502,14 +15508,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2021-01-01/opensearch/domain/~A/dataSource/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-name))
-                                                           (quri.encode:url-encode
+                                                             'domain-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'data-source-name))))
+                                                             'data-source-name)
+                                                            common-lisp:t)))
                                                         "DeleteDataSource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-data-source))
@@ -15533,10 +15541,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2021-01-01/opensearch/domain/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-name))))
+                                                             'domain-name)
+                                                            common-lisp:t)))
                                                         "DeleteDomain"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-domain))
@@ -15561,10 +15570,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2021-01-01/opensearch/cc/inboundConnection/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'connection-id))))
+                                                             'connection-id)
+                                                            common-lisp:t)))
                                                         "DeleteInboundConnection"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-inbound-connection))
@@ -15589,10 +15599,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2021-01-01/opensearch/cc/outboundConnection/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'connection-id))))
+                                                             'connection-id)
+                                                            common-lisp:t)))
                                                         "DeleteOutboundConnection"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-outbound-connection))
@@ -15616,10 +15627,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2021-01-01/packages/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'package-id))))
+                                                             'package-id)
+                                                            common-lisp:t)))
                                                         "DeletePackage"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-package))
@@ -15643,10 +15655,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2021-01-01/opensearch/vpcEndpoints/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'vpc-endpoint-id))))
+                                                             'vpc-endpoint-id)
+                                                            common-lisp:t)))
                                                         "DeleteVpcEndpoint"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-vpc-endpoint))
@@ -15670,10 +15683,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2021-01-01/opensearch/domain/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-name))))
+                                                             'domain-name)
+                                                            common-lisp:t)))
                                                         "DescribeDomain"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-domain))
@@ -15699,10 +15713,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2021-01-01/opensearch/domain/~A/autoTunes"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-name))))
+                                                             'domain-name)
+                                                            common-lisp:t)))
                                                         "DescribeDomainAutoTunes"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-domain-auto-tunes))
@@ -15727,10 +15742,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2021-01-01/opensearch/domain/~A/progress"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-name))))
+                                                             'domain-name)
+                                                            common-lisp:t)))
                                                         "DescribeDomainChangeProgress"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-domain-change-progress))
@@ -15754,10 +15770,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2021-01-01/opensearch/domain/~A/config"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-name))))
+                                                             'domain-name)
+                                                            common-lisp:t)))
                                                         "DescribeDomainConfig"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-domain-config))
@@ -15781,10 +15798,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2021-01-01/opensearch/domain/~A/health"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-name))))
+                                                             'domain-name)
+                                                            common-lisp:t)))
                                                         "DescribeDomainHealth"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-domain-health))
@@ -15808,10 +15826,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2021-01-01/opensearch/domain/~A/nodes"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-name))))
+                                                             'domain-name)
+                                                            common-lisp:t)))
                                                         "DescribeDomainNodes"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-domain-nodes))
@@ -15856,10 +15875,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2021-01-01/opensearch/domain/~A/dryRun"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-name))))
+                                                             'domain-name)
+                                                            common-lisp:t)))
                                                         "DescribeDryRunProgress"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-dry-run-progress))
@@ -15904,14 +15924,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2021-01-01/opensearch/instanceTypeLimits/~A/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'engine-version))
-                                                           (quri.encode:url-encode
+                                                             'engine-version)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'instance-type))))
+                                                             'instance-type)
+                                                            common-lisp:t)))
                                                         "DescribeInstanceTypeLimits"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-instance-type-limits))
@@ -16033,14 +16055,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2021-01-01/packages/dissociate/~A/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'package-id))
-                                                           (quri.encode:url-encode
+                                                             'package-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-name))))
+                                                             'domain-name)
+                                                            common-lisp:t)))
                                                         "DissociatePackage"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'dissociate-package))
@@ -16082,14 +16106,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2021-01-01/opensearch/domain/~A/dataSource/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-name))
-                                                           (quri.encode:url-encode
+                                                             'domain-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'data-source-name))))
+                                                             'data-source-name)
+                                                            common-lisp:t)))
                                                         "GetDataSource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-data-source))
@@ -16114,10 +16140,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2021-01-01/opensearch/domain/~A/domainMaintenance"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-name))))
+                                                             'domain-name)
+                                                            common-lisp:t)))
                                                         "GetDomainMaintenanceStatus"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-domain-maintenance-status))
@@ -16143,10 +16170,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2021-01-01/packages/~A/history"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'package-id))))
+                                                             'package-id)
+                                                            common-lisp:t)))
                                                         "GetPackageVersionHistory"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-package-version-history))
@@ -16171,10 +16199,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2021-01-01/opensearch/upgradeDomain/~A/history"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-name))))
+                                                             'domain-name)
+                                                            common-lisp:t)))
                                                         "GetUpgradeHistory"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-upgrade-history))
@@ -16198,10 +16227,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2021-01-01/opensearch/upgradeDomain/~A/status"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-name))))
+                                                             'domain-name)
+                                                            common-lisp:t)))
                                                         "GetUpgradeStatus"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-upgrade-status))
@@ -16225,10 +16255,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2021-01-01/opensearch/domain/~A/dataSource"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-name))))
+                                                             'domain-name)
+                                                            common-lisp:t)))
                                                         "ListDataSources"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-data-sources))
@@ -16254,10 +16285,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2021-01-01/opensearch/domain/~A/domainMaintenances"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-name))))
+                                                             'domain-name)
+                                                            common-lisp:t)))
                                                         "ListDomainMaintenances"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-domain-maintenances))
@@ -16300,10 +16332,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2021-01-01/packages/~A/domains"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'package-id))))
+                                                             'package-id)
+                                                            common-lisp:t)))
                                                         "ListDomainsForPackage"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-domains-for-package))
@@ -16331,10 +16364,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2021-01-01/opensearch/instanceTypeDetails/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'engine-version))))
+                                                             'engine-version)
+                                                            common-lisp:t)))
                                                         "ListInstanceTypeDetails"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-instance-type-details))
@@ -16359,10 +16393,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2021-01-01/domain/~A/packages"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-name))))
+                                                             'domain-name)
+                                                            common-lisp:t)))
                                                         "ListPackagesForDomain"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-packages-for-domain))
@@ -16387,10 +16422,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2021-01-01/opensearch/domain/~A/scheduledActions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-name))))
+                                                             'domain-name)
+                                                            common-lisp:t)))
                                                         "ListScheduledActions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-scheduled-actions))
@@ -16450,10 +16486,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2021-01-01/opensearch/domain/~A/listVpcEndpointAccess"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-name))))
+                                                             'domain-name)
+                                                            common-lisp:t)))
                                                         "ListVpcEndpointAccess"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-vpc-endpoint-access))
@@ -16496,10 +16533,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2021-01-01/opensearch/domain/~A/vpcEndpoints"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-name))))
+                                                             'domain-name)
+                                                            common-lisp:t)))
                                                         "ListVpcEndpointsForDomain"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-vpc-endpoints-for-domain))
@@ -16546,10 +16584,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2021-01-01/opensearch/cc/inboundConnection/~A/reject"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'connection-id))))
+                                                             'connection-id)
+                                                            common-lisp:t)))
                                                         "RejectInboundConnection"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'reject-inbound-connection))
@@ -16592,10 +16631,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2021-01-01/opensearch/domain/~A/revokeVpcEndpointAccess"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-name))))
+                                                             'domain-name)
+                                                            common-lisp:t)))
                                                         "RevokeVpcEndpointAccess"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'revoke-vpc-endpoint-access))
@@ -16619,10 +16659,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2021-01-01/opensearch/domain/~A/domainMaintenance"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-name))))
+                                                             'domain-name)
+                                                            common-lisp:t)))
                                                         "StartDomainMaintenance"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'start-domain-maintenance))
@@ -16669,14 +16710,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2021-01-01/opensearch/domain/~A/dataSource/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-name))
-                                                           (quri.encode:url-encode
+                                                             'domain-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'data-source-name))))
+                                                             'data-source-name)
+                                                            common-lisp:t)))
                                                         "UpdateDataSource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-data-source))
@@ -16714,10 +16757,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2021-01-01/opensearch/domain/~A/config"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-name))))
+                                                             'domain-name)
+                                                            common-lisp:t)))
                                                         "UpdateDomainConfig"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-domain-config))
@@ -16765,10 +16809,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2021-01-01/opensearch/domain/~A/scheduledAction/update"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-name))))
+                                                             'domain-name)
+                                                            common-lisp:t)))
                                                         "UpdateScheduledAction"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-scheduled-action))

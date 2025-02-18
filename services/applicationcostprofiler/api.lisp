@@ -20,7 +20,7 @@
  (common-lisp:export 'applicationcostprofiler-error))
 (common-lisp:progn
  (common-lisp:defclass applicationcostprofiler-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "applicationcostprofiler"
                         :api-version "2020-09-10" :host-prefix
@@ -991,10 +991,10 @@
         "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/reportDefinition/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'report-id))))
+                                aws-sdk/generator/operation::input 'report-id)
+                               common-lisp:t)))
         "DeleteReportDefinition"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-report-definition))
@@ -1014,10 +1014,10 @@
         "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/reportDefinition/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'report-id))))
+                                aws-sdk/generator/operation::input 'report-id)
+                               common-lisp:t)))
         "GetReportDefinition"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-report-definition))
@@ -1091,10 +1091,10 @@
         "PUT"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/reportDefinition/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'report-id))))
+                                aws-sdk/generator/operation::input 'report-id)
+                               common-lisp:t)))
         "UpdateReportDefinition"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-report-definition))

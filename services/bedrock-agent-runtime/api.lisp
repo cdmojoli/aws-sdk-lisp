@@ -20,7 +20,7 @@
  (common-lisp:export 'bedrock-agent-runtime-error))
 (common-lisp:progn
  (common-lisp:defclass bedrock-agent-runtime-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "bedrock-agent-runtime"
                         :api-version "2023-07-26" :host-prefix
@@ -721,13 +721,17 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-type))
-      (common-lisp:cons "x-amzn-bedrock-agent-content-type"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amzn-bedrock-agent-content-type"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'session-id))
-      (common-lisp:cons "x-amz-bedrock-agent-session-id"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-bedrock-agent-session-id"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -3146,17 +3150,19 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/agents/~A/agentAliases/~A/sessions/~A/text"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'agent-id))
-                              (quri.encode:url-encode
-                               (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'agent-alias-id))
-                              (quri.encode:url-encode
+                                aws-sdk/generator/operation::input 'agent-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'session-id))))
+                                'agent-alias-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
+                               (common-lisp:slot-value
+                                aws-sdk/generator/operation::input 'session-id)
+                               common-lisp:t)))
         "InvokeAgent"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'invoke-agent))
@@ -3179,10 +3185,11 @@
         "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/knowledgebases/~A/retrieve"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'knowledge-base-id))))
+                                'knowledge-base-id)
+                               common-lisp:t)))
         "Retrieve"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'retrieve))

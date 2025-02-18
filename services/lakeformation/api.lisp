@@ -20,7 +20,7 @@
  (common-lisp:export 'lakeformation-error))
 (common-lisp:progn
  (common-lisp:defclass lakeformation-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "lakeformation" :api-version
                         "2017-03-31" :host-prefix "lakeformation" :signing-name

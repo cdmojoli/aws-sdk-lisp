@@ -20,7 +20,7 @@
  (common-lisp:export 'kafkaconnect-error))
 (common-lisp:progn
  (common-lisp:defclass kafkaconnect-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "kafkaconnect" :api-version
                         "2021-09-14" :host-prefix "kafkaconnect" :signing-name
@@ -5414,10 +5414,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/connectors/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'connector-arn))))
+                                                             'connector-arn)
+                                                            common-lisp:t)))
                                                         "DeleteConnector"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-connector))
@@ -5441,10 +5442,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/custom-plugins/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'custom-plugin-arn))))
+                                                             'custom-plugin-arn)
+                                                            common-lisp:t)))
                                                         "DeleteCustomPlugin"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-custom-plugin))
@@ -5469,10 +5471,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/worker-configurations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'worker-configuration-arn))))
+                                                             'worker-configuration-arn)
+                                                            common-lisp:t)))
                                                         "DeleteWorkerConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-worker-configuration))
@@ -5496,10 +5499,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/connectors/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'connector-arn))))
+                                                             'connector-arn)
+                                                            common-lisp:t)))
                                                         "DescribeConnector"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-connector))
@@ -5523,10 +5527,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/custom-plugins/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'custom-plugin-arn))))
+                                                             'custom-plugin-arn)
+                                                            common-lisp:t)))
                                                         "DescribeCustomPlugin"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-custom-plugin))
@@ -5551,10 +5556,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/worker-configurations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'worker-configuration-arn))))
+                                                             'worker-configuration-arn)
+                                                            common-lisp:t)))
                                                         "DescribeWorkerConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-worker-configuration))
@@ -5616,10 +5622,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -5663,10 +5670,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -5690,10 +5698,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -5718,10 +5727,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/connectors/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'connector-arn))))
+                                                             'connector-arn)
+                                                            common-lisp:t)))
                                                         "UpdateConnector"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-connector))

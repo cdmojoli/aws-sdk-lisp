@@ -20,7 +20,7 @@
  (common-lisp:export 'marketplace-catalog-error))
 (common-lisp:progn
  (common-lisp:defclass marketplace-catalog-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "marketplace-catalog"
                         :api-version "2018-09-17" :host-prefix

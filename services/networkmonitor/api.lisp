@@ -20,7 +20,7 @@
  (common-lisp:export 'networkmonitor-error))
 (common-lisp:progn
  (common-lisp:defclass networkmonitor-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "networkmonitor"
                         :api-version "2023-08-01" :host-prefix "networkmonitor"
@@ -2183,10 +2183,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/monitors/~A/probes"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'monitor-name))))
+                                                             'monitor-name)
+                                                            common-lisp:t)))
                                                         "CreateProbe"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-probe))
@@ -2210,10 +2211,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/monitors/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'monitor-name))))
+                                                             'monitor-name)
+                                                            common-lisp:t)))
                                                         "DeleteMonitor"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-monitor))
@@ -2237,14 +2239,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/monitors/~A/probes/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'monitor-name))
-                                                           (quri.encode:url-encode
+                                                             'monitor-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'probe-id))))
+                                                             'probe-id)
+                                                            common-lisp:t)))
                                                         "DeleteProbe"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-probe))
@@ -2268,10 +2272,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/monitors/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'monitor-name))))
+                                                             'monitor-name)
+                                                            common-lisp:t)))
                                                         "GetMonitor"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-monitor))
@@ -2295,14 +2300,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/monitors/~A/probes/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'monitor-name))
-                                                           (quri.encode:url-encode
+                                                             'monitor-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'probe-id))))
+                                                             'probe-id)
+                                                            common-lisp:t)))
                                                         "GetProbe"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-probe))
@@ -2343,10 +2350,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -2370,10 +2378,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -2397,10 +2406,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -2425,10 +2435,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/monitors/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'monitor-name))))
+                                                             'monitor-name)
+                                                            common-lisp:t)))
                                                         "UpdateMonitor"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-monitor))
@@ -2455,14 +2466,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/monitors/~A/probes/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'monitor-name))
-                                                           (quri.encode:url-encode
+                                                             'monitor-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'probe-id))))
+                                                             'probe-id)
+                                                            common-lisp:t)))
                                                         "UpdateProbe"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-probe))

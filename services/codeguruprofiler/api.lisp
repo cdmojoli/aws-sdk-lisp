@@ -20,7 +20,7 @@
  (common-lisp:export 'codeguruprofiler-error))
 (common-lisp:progn
  (common-lisp:defclass codeguruprofiler-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "codeguruprofiler"
                         :api-version "2019-07-18" :host-prefix
@@ -1604,7 +1604,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'accept))
-      (common-lisp:cons "Accept" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Accept" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         ((aws-sdk/generator/shape::input get-profile-request))
    (common-lisp:append))
@@ -1644,11 +1646,15 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-encoding))
-      (common-lisp:cons "Content-Encoding" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Encoding" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-type))
-      (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         ((aws-sdk/generator/shape::input get-profile-response))
    (common-lisp:append
@@ -2598,7 +2604,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-type))
-      (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -3783,10 +3791,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/profilingGroups/~A/notificationConfiguration"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'profiling-group-name))))
+                                'profiling-group-name)
+                               common-lisp:t)))
         "AddNotificationChannels"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'add-notification-channels))
@@ -3810,10 +3819,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/profilingGroups/~A/frames/-/metrics"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'profiling-group-name))))
+                                'profiling-group-name)
+                               common-lisp:t)))
         "BatchGetFrameMetricData"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'batch-get-frame-metric-data))
@@ -3835,10 +3845,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/profilingGroups/~A/configureAgent"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'profiling-group-name))))
+                                'profiling-group-name)
+                               common-lisp:t)))
         "ConfigureAgent"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'configure-agent))
@@ -3876,10 +3887,11 @@
         'codeguruprofiler-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/profilingGroups/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'profiling-group-name))))
+                                'profiling-group-name)
+                               common-lisp:t)))
         "DeleteProfilingGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-profiling-group))
@@ -3898,10 +3910,11 @@
         'codeguruprofiler-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/profilingGroups/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'profiling-group-name))))
+                                'profiling-group-name)
+                               common-lisp:t)))
         "DescribeProfilingGroup"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-profiling-group))
@@ -3941,10 +3954,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/profilingGroups/~A/notificationConfiguration"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'profiling-group-name))))
+                                'profiling-group-name)
+                               common-lisp:t)))
         "GetNotificationConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-notification-configuration))
@@ -3963,10 +3977,11 @@
         'codeguruprofiler-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/profilingGroups/~A/policy"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'profiling-group-name))))
+                                'profiling-group-name)
+                               common-lisp:t)))
         "GetPolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-policy))
@@ -3988,10 +4003,11 @@
         'codeguruprofiler-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/profilingGroups/~A/profile"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'profiling-group-name))))
+                                'profiling-group-name)
+                               common-lisp:t)))
         "GetProfile")
        :want-stream common-lisp:t)
       "blob" common-lisp:nil *error-map*)))
@@ -4014,10 +4030,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/internal/profilingGroups/~A/recommendations"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'profiling-group-name))))
+                                'profiling-group-name)
+                               common-lisp:t)))
         "GetRecommendations"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-recommendations))
@@ -4040,10 +4057,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/internal/profilingGroups/~A/findingsReports"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'profiling-group-name))))
+                                'profiling-group-name)
+                               common-lisp:t)))
         "ListFindingsReports"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-findings-reports))
@@ -4066,10 +4084,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/profilingGroups/~A/profileTimes"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'profiling-group-name))))
+                                'profiling-group-name)
+                               common-lisp:t)))
         "ListProfileTimes"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-profile-times))
@@ -4106,10 +4125,11 @@
         'codeguruprofiler-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -4132,10 +4152,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/profilingGroups/~A/agentProfile"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'profiling-group-name))))
+                                'profiling-group-name)
+                               common-lisp:t)))
         "PostAgentProfile"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'post-agent-profile))
@@ -4157,14 +4178,16 @@
         'codeguruprofiler-request aws-sdk/generator/operation::input "PUT"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/profilingGroups/~A/policy/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'profiling-group-name))
-                              (quri.encode:url-encode
+                                'profiling-group-name)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'action-group))))
+                                'action-group)
+                               common-lisp:t)))
         "PutPermission"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-permission))
@@ -4186,14 +4209,15 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/profilingGroups/~A/notificationConfiguration/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'profiling-group-name))
-                              (quri.encode:url-encode
+                                'profiling-group-name)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'channel-id))))
+                                aws-sdk/generator/operation::input 'channel-id)
+                               common-lisp:t)))
         "RemoveNotificationChannel"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'remove-notification-channel))
@@ -4214,14 +4238,16 @@
         'codeguruprofiler-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/profilingGroups/~A/policy/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'profiling-group-name))
-                              (quri.encode:url-encode
+                                'profiling-group-name)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'action-group))))
+                                'action-group)
+                               common-lisp:t)))
         "RemovePermission"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'remove-permission))
@@ -4244,14 +4270,16 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/internal/profilingGroups/~A/anomalies/~A/feedback"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'profiling-group-name))
-                              (quri.encode:url-encode
+                                'profiling-group-name)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'anomaly-instance-id))))
+                                'anomaly-instance-id)
+                               common-lisp:t)))
         "SubmitFeedback"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'submit-feedback))
@@ -4270,10 +4298,11 @@
         'codeguruprofiler-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -4292,10 +4321,11 @@
         'codeguruprofiler-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -4316,10 +4346,11 @@
         'codeguruprofiler-request aws-sdk/generator/operation::input "PUT"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/profilingGroups/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'profiling-group-name))))
+                                'profiling-group-name)
+                               common-lisp:t)))
         "UpdateProfilingGroup"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'update-profiling-group))

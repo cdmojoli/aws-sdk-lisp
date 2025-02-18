@@ -20,7 +20,7 @@
  (common-lisp:export 'nimble-error))
 (common-lisp:progn
  (common-lisp:defclass nimble-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "nimble" :api-version
                         "2020-08-01" :host-prefix "nimble" :signing-name
@@ -66,7 +66,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'client-token))
-      (common-lisp:cons "X-Amz-Client-Token" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amz-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         ((aws-sdk/generator/shape::input accept-eulas-request))
    (common-lisp:append
@@ -449,7 +451,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'client-token))
-      (common-lisp:cons "X-Amz-Client-Token" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amz-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -611,7 +615,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'client-token))
-      (common-lisp:cons "X-Amz-Client-Token" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amz-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -756,7 +762,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'client-token))
-      (common-lisp:cons "X-Amz-Client-Token" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amz-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -890,7 +898,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'client-token))
-      (common-lisp:cons "X-Amz-Client-Token" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amz-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -1070,7 +1080,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'client-token))
-      (common-lisp:cons "X-Amz-Client-Token" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amz-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -1265,7 +1277,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'client-token))
-      (common-lisp:cons "X-Amz-Client-Token" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amz-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -1401,7 +1415,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'client-token))
-      (common-lisp:cons "X-Amz-Client-Token" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amz-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -1479,7 +1495,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'client-token))
-      (common-lisp:cons "X-Amz-Client-Token" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amz-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -1570,7 +1588,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'client-token))
-      (common-lisp:cons "X-Amz-Client-Token" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amz-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -1659,7 +1679,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'client-token))
-      (common-lisp:cons "X-Amz-Client-Token" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amz-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -1750,7 +1772,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'client-token))
-      (common-lisp:cons "X-Amz-Client-Token" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amz-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -1838,7 +1862,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'client-token))
-      (common-lisp:cons "X-Amz-Client-Token" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amz-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -1905,7 +1931,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'client-token))
-      (common-lisp:cons "X-Amz-Client-Token" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amz-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -5203,7 +5231,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'client-token))
-      (common-lisp:cons "X-Amz-Client-Token" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amz-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -5302,7 +5332,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'client-token))
-      (common-lisp:cons "X-Amz-Client-Token" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amz-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -5579,7 +5611,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'client-token))
-      (common-lisp:cons "X-Amz-Client-Token" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amz-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -5670,7 +5704,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'client-token))
-      (common-lisp:cons "X-Amz-Client-Token" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amz-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -5767,7 +5803,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'client-token))
-      (common-lisp:cons "X-Amz-Client-Token" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amz-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -8655,7 +8693,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'client-token))
-      (common-lisp:cons "X-Amz-Client-Token" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amz-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -8794,7 +8834,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'client-token))
-      (common-lisp:cons "X-Amz-Client-Token" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amz-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -8937,7 +8979,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'client-token))
-      (common-lisp:cons "X-Amz-Client-Token" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amz-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -9123,7 +9167,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'client-token))
-      (common-lisp:cons "X-Amz-Client-Token" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amz-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -9295,7 +9341,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'client-token))
-      (common-lisp:cons "X-Amz-Client-Token" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amz-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -9543,10 +9591,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-08-01/studios/~A/eula-acceptances"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'studio-id))))
+                                                             'studio-id)
+                                                            common-lisp:t)))
                                                         "AcceptEulas"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'accept-eulas))
@@ -9575,10 +9624,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-08-01/studios/~A/launch-profiles"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'studio-id))))
+                                                             'studio-id)
+                                                            common-lisp:t)))
                                                         "CreateLaunchProfile"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-launch-profile))
@@ -9605,10 +9655,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-08-01/studios/~A/streaming-images"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'studio-id))))
+                                                             'studio-id)
+                                                            common-lisp:t)))
                                                         "CreateStreamingImage"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-streaming-image))
@@ -9636,10 +9687,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-08-01/studios/~A/streaming-sessions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'studio-id))))
+                                                             'studio-id)
+                                                            common-lisp:t)))
                                                         "CreateStreamingSession"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-streaming-session))
@@ -9667,14 +9719,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-08-01/studios/~A/streaming-sessions/~A/streams"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'studio-id))
-                                                           (quri.encode:url-encode
+                                                             'studio-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'session-id))))
+                                                             'session-id)
+                                                            common-lisp:t)))
                                                         "CreateStreamingSessionStream"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-streaming-session-stream))
@@ -9728,10 +9782,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-08-01/studios/~A/studio-components"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'studio-id))))
+                                                             'studio-id)
+                                                            common-lisp:t)))
                                                         "CreateStudioComponent"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-studio-component))
@@ -9756,14 +9811,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-08-01/studios/~A/launch-profiles/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'studio-id))
-                                                           (quri.encode:url-encode
+                                                             'studio-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'launch-profile-id))))
+                                                             'launch-profile-id)
+                                                            common-lisp:t)))
                                                         "DeleteLaunchProfile"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-launch-profile))
@@ -9791,18 +9848,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-08-01/studios/~A/launch-profiles/~A/membership/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'studio-id))
-                                                           (quri.encode:url-encode
+                                                             'studio-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'launch-profile-id))
-                                                           (quri.encode:url-encode
+                                                             'launch-profile-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'principal-id))))
+                                                             'principal-id)
+                                                            common-lisp:t)))
                                                         "DeleteLaunchProfileMember"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-launch-profile-member))
@@ -9828,14 +9888,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-08-01/studios/~A/streaming-images/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'studio-id))
-                                                           (quri.encode:url-encode
+                                                             'studio-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'streaming-image-id))))
+                                                             'streaming-image-id)
+                                                            common-lisp:t)))
                                                         "DeleteStreamingImage"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-streaming-image))
@@ -9860,14 +9922,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-08-01/studios/~A/streaming-sessions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'studio-id))
-                                                           (quri.encode:url-encode
+                                                             'studio-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'session-id))))
+                                                             'session-id)
+                                                            common-lisp:t)))
                                                         "DeleteStreamingSession"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-streaming-session))
@@ -9891,10 +9955,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-08-01/studios/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'studio-id))))
+                                                             'studio-id)
+                                                            common-lisp:t)))
                                                         "DeleteStudio"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-studio))
@@ -9920,14 +9985,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-08-01/studios/~A/studio-components/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'studio-id))
-                                                           (quri.encode:url-encode
+                                                             'studio-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'studio-component-id))))
+                                                             'studio-component-id)
+                                                            common-lisp:t)))
                                                         "DeleteStudioComponent"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-studio-component))
@@ -9952,14 +10019,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-08-01/studios/~A/membership/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'studio-id))
-                                                           (quri.encode:url-encode
+                                                             'studio-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'principal-id))))
+                                                             'principal-id)
+                                                            common-lisp:t)))
                                                         "DeleteStudioMember"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-studio-member))
@@ -9983,10 +10052,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-08-01/eulas/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'eula-id))))
+                                                             'eula-id)
+                                                            common-lisp:t)))
                                                         "GetEula"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-eula))
@@ -10010,14 +10080,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-08-01/studios/~A/launch-profiles/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'studio-id))
-                                                           (quri.encode:url-encode
+                                                             'studio-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'launch-profile-id))))
+                                                             'launch-profile-id)
+                                                            common-lisp:t)))
                                                         "GetLaunchProfile"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-launch-profile))
@@ -10042,14 +10114,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-08-01/studios/~A/launch-profiles/~A/details"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'studio-id))
-                                                           (quri.encode:url-encode
+                                                             'studio-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'launch-profile-id))))
+                                                             'launch-profile-id)
+                                                            common-lisp:t)))
                                                         "GetLaunchProfileDetails"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-launch-profile-details))
@@ -10078,14 +10152,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-08-01/studios/~A/launch-profiles/~A/init"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'studio-id))
-                                                           (quri.encode:url-encode
+                                                             'studio-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'launch-profile-id))))
+                                                             'launch-profile-id)
+                                                            common-lisp:t)))
                                                         "GetLaunchProfileInitialization"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-launch-profile-initialization))
@@ -10111,18 +10187,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-08-01/studios/~A/launch-profiles/~A/membership/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'studio-id))
-                                                           (quri.encode:url-encode
+                                                             'studio-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'launch-profile-id))
-                                                           (quri.encode:url-encode
+                                                             'launch-profile-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'principal-id))))
+                                                             'principal-id)
+                                                            common-lisp:t)))
                                                         "GetLaunchProfileMember"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-launch-profile-member))
@@ -10146,14 +10225,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-08-01/studios/~A/streaming-images/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'studio-id))
-                                                           (quri.encode:url-encode
+                                                             'studio-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'streaming-image-id))))
+                                                             'streaming-image-id)
+                                                            common-lisp:t)))
                                                         "GetStreamingImage"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-streaming-image))
@@ -10177,14 +10258,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-08-01/studios/~A/streaming-sessions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'studio-id))
-                                                           (quri.encode:url-encode
+                                                             'studio-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'session-id))))
+                                                             'session-id)
+                                                            common-lisp:t)))
                                                         "GetStreamingSession"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-streaming-session))
@@ -10209,14 +10292,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-08-01/studios/~A/streaming-session-backups/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'studio-id))
-                                                           (quri.encode:url-encode
+                                                             'studio-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'backup-id))))
+                                                             'backup-id)
+                                                            common-lisp:t)))
                                                         "GetStreamingSessionBackup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-streaming-session-backup))
@@ -10241,18 +10326,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-08-01/studios/~A/streaming-sessions/~A/streams/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'studio-id))
-                                                           (quri.encode:url-encode
+                                                             'studio-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'session-id))
-                                                           (quri.encode:url-encode
+                                                             'session-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'stream-id))))
+                                                             'stream-id)
+                                                            common-lisp:t)))
                                                         "GetStreamingSessionStream"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-streaming-session-stream))
@@ -10276,10 +10364,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-08-01/studios/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'studio-id))))
+                                                             'studio-id)
+                                                            common-lisp:t)))
                                                         "GetStudio"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-studio))
@@ -10303,14 +10392,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-08-01/studios/~A/studio-components/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'studio-id))
-                                                           (quri.encode:url-encode
+                                                             'studio-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'studio-component-id))))
+                                                             'studio-component-id)
+                                                            common-lisp:t)))
                                                         "GetStudioComponent"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-studio-component))
@@ -10334,14 +10425,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-08-01/studios/~A/membership/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'studio-id))
-                                                           (quri.encode:url-encode
+                                                             'studio-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'principal-id))))
+                                                             'principal-id)
+                                                            common-lisp:t)))
                                                         "GetStudioMember"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-studio-member))
@@ -10365,10 +10458,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-08-01/studios/~A/eula-acceptances"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'studio-id))))
+                                                             'studio-id)
+                                                            common-lisp:t)))
                                                         "ListEulaAcceptances"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-eula-acceptances))
@@ -10413,14 +10507,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-08-01/studios/~A/launch-profiles/~A/membership"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'studio-id))
-                                                           (quri.encode:url-encode
+                                                             'studio-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'launch-profile-id))))
+                                                             'launch-profile-id)
+                                                            common-lisp:t)))
                                                         "ListLaunchProfileMembers"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-launch-profile-members))
@@ -10447,10 +10543,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-08-01/studios/~A/launch-profiles"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'studio-id))))
+                                                             'studio-id)
+                                                            common-lisp:t)))
                                                         "ListLaunchProfiles"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-launch-profiles))
@@ -10474,10 +10571,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-08-01/studios/~A/streaming-images"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'studio-id))))
+                                                             'studio-id)
+                                                            common-lisp:t)))
                                                         "ListStreamingImages"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-streaming-images))
@@ -10502,10 +10600,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-08-01/studios/~A/streaming-session-backups"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'studio-id))))
+                                                             'studio-id)
+                                                            common-lisp:t)))
                                                         "ListStreamingSessionBackups"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-streaming-session-backups))
@@ -10532,10 +10631,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-08-01/studios/~A/streaming-sessions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'studio-id))))
+                                                             'studio-id)
+                                                            common-lisp:t)))
                                                         "ListStreamingSessions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-streaming-sessions))
@@ -10561,10 +10661,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-08-01/studios/~A/studio-components"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'studio-id))))
+                                                             'studio-id)
+                                                            common-lisp:t)))
                                                         "ListStudioComponents"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-studio-components))
@@ -10589,10 +10690,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-08-01/studios/~A/membership"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'studio-id))))
+                                                             'studio-id)
+                                                            common-lisp:t)))
                                                         "ListStudioMembers"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-studio-members))
@@ -10634,10 +10736,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-08-01/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -10665,14 +10768,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-08-01/studios/~A/launch-profiles/~A/membership"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'studio-id))
-                                                           (quri.encode:url-encode
+                                                             'studio-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'launch-profile-id))))
+                                                             'launch-profile-id)
+                                                            common-lisp:t)))
                                                         "PutLaunchProfileMembers"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-launch-profile-members))
@@ -10698,10 +10803,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-08-01/studios/~A/membership"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'studio-id))))
+                                                             'studio-id)
+                                                            common-lisp:t)))
                                                         "PutStudioMembers"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-studio-members))
@@ -10727,14 +10833,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-08-01/studios/~A/streaming-sessions/~A/start"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'studio-id))
-                                                           (quri.encode:url-encode
+                                                             'studio-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'session-id))))
+                                                             'session-id)
+                                                            common-lisp:t)))
                                                         "StartStreamingSession"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'start-streaming-session))
@@ -10759,10 +10867,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-08-01/studios/~A/sso-configuration"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'studio-id))))
+                                                             'studio-id)
+                                                            common-lisp:t)))
                                                         "StartStudioSSOConfigurationRepair"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'start-studio-ssoconfiguration-repair))
@@ -10789,14 +10898,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-08-01/studios/~A/streaming-sessions/~A/stop"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'studio-id))
-                                                           (quri.encode:url-encode
+                                                             'studio-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'session-id))))
+                                                             'session-id)
+                                                            common-lisp:t)))
                                                         "StopStreamingSession"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'stop-streaming-session))
@@ -10820,10 +10931,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-08-01/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -10847,10 +10959,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-08-01/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -10879,14 +10992,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-08-01/studios/~A/launch-profiles/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'studio-id))
-                                                           (quri.encode:url-encode
+                                                             'studio-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'launch-profile-id))))
+                                                             'launch-profile-id)
+                                                            common-lisp:t)))
                                                         "UpdateLaunchProfile"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-launch-profile))
@@ -10914,18 +11029,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-08-01/studios/~A/launch-profiles/~A/membership/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'studio-id))
-                                                           (quri.encode:url-encode
+                                                             'studio-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'launch-profile-id))
-                                                           (quri.encode:url-encode
+                                                             'launch-profile-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'principal-id))))
+                                                             'principal-id)
+                                                            common-lisp:t)))
                                                         "UpdateLaunchProfileMember"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-launch-profile-member))
@@ -10952,14 +11070,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-08-01/studios/~A/streaming-images/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'studio-id))
-                                                           (quri.encode:url-encode
+                                                             'studio-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'streaming-image-id))))
+                                                             'streaming-image-id)
+                                                            common-lisp:t)))
                                                         "UpdateStreamingImage"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-streaming-image))
@@ -10986,10 +11106,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-08-01/studios/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'studio-id))))
+                                                             'studio-id)
+                                                            common-lisp:t)))
                                                         "UpdateStudio"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-studio))
@@ -11021,14 +11142,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-08-01/studios/~A/studio-components/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'studio-id))
-                                                           (quri.encode:url-encode
+                                                             'studio-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'studio-component-id))))
+                                                             'studio-component-id)
+                                                            common-lisp:t)))
                                                         "UpdateStudioComponent"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-studio-component))

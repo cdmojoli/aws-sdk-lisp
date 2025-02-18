@@ -20,7 +20,7 @@
  (common-lisp:export 'personalize-runtime-error))
 (common-lisp:progn
  (common-lisp:defclass personalize-runtime-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "personalize-runtime"
                         :api-version "2018-05-22" :host-prefix

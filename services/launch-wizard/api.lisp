@@ -20,7 +20,7 @@
  (common-lisp:export 'launch-wizard-error))
 (common-lisp:progn
  (common-lisp:defclass launch-wizard-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "launch-wizard" :api-version
                         "2018-05-10" :host-prefix "launchwizard" :signing-name

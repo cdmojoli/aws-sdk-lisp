@@ -20,7 +20,7 @@
  (common-lisp:export 'sagemaker-edge-error))
 (common-lisp:progn
  (common-lisp:defclass sagemaker-edge-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "sagemaker-edge"
                         :api-version "2020-09-23" :host-prefix "edge.sagemaker"

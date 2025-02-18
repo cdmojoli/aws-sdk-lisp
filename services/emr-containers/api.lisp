@@ -20,7 +20,7 @@
  (common-lisp:export 'emr-containers-error))
 (common-lisp:progn
  (common-lisp:defclass emr-containers-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "emr-containers"
                         :api-version "2020-10-01" :host-prefix "emr-containers"
@@ -4441,14 +4441,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/virtualclusters/~A/jobruns/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'virtual-cluster-id))
-                                                           (quri.encode:url-encode
+                                                             'virtual-cluster-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'job-run-id))))
+                                                             'job-run-id)
+                                                            common-lisp:t)))
                                                         "CancelJobRun"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'cancel-job-run))
@@ -4497,10 +4499,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/virtualclusters/~A/endpoints"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'virtual-cluster-id))))
+                                                             'virtual-cluster-id)
+                                                            common-lisp:t)))
                                                         "CreateManagedEndpoint"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-managed-endpoint))
@@ -4544,10 +4547,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/jobtemplates/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'template-id))))
+                                                             'template-id)
+                                                            common-lisp:t)))
                                                         "DeleteJobTemplate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-job-template))
@@ -4571,14 +4575,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/virtualclusters/~A/endpoints/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'virtual-cluster-id))
-                                                           (quri.encode:url-encode
+                                                             'virtual-cluster-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'endpoint-id))))
+                                                             'endpoint-id)
+                                                            common-lisp:t)))
                                                         "DeleteManagedEndpoint"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-managed-endpoint))
@@ -4602,10 +4608,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/virtualclusters/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'virtual-cluster-id))))
+                                                             'virtual-cluster-id)
+                                                            common-lisp:t)))
                                                         "DeleteVirtualCluster"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-virtual-cluster))
@@ -4629,14 +4636,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/virtualclusters/~A/jobruns/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'virtual-cluster-id))
-                                                           (quri.encode:url-encode
+                                                             'virtual-cluster-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'job-run-id))))
+                                                             'job-run-id)
+                                                            common-lisp:t)))
                                                         "DescribeJobRun"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-job-run))
@@ -4660,10 +4669,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/jobtemplates/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'template-id))))
+                                                             'template-id)
+                                                            common-lisp:t)))
                                                         "DescribeJobTemplate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-job-template))
@@ -4688,14 +4698,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/virtualclusters/~A/endpoints/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'virtual-cluster-id))
-                                                           (quri.encode:url-encode
+                                                             'virtual-cluster-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'endpoint-id))))
+                                                             'endpoint-id)
+                                                            common-lisp:t)))
                                                         "DescribeManagedEndpoint"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-managed-endpoint))
@@ -4719,10 +4731,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/virtualclusters/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'virtual-cluster-id))))
+                                                             'virtual-cluster-id)
+                                                            common-lisp:t)))
                                                         "DescribeVirtualCluster"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-virtual-cluster))
@@ -4753,14 +4766,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/virtualclusters/~A/endpoints/~A/credentials"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'virtual-cluster-id))
-                                                           (quri.encode:url-encode
+                                                             'virtual-cluster-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'endpoint-id))))
+                                                             'endpoint-id)
+                                                            common-lisp:t)))
                                                         "GetManagedEndpointSessionCredentials"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-managed-endpoint-session-credentials))
@@ -4787,10 +4802,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/virtualclusters/~A/jobruns"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'virtual-cluster-id))))
+                                                             'virtual-cluster-id)
+                                                            common-lisp:t)))
                                                         "ListJobRuns"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-job-runs))
@@ -4837,10 +4853,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/virtualclusters/~A/endpoints"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'virtual-cluster-id))))
+                                                             'virtual-cluster-id)
+                                                            common-lisp:t)))
                                                         "ListManagedEndpoints"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-managed-endpoints))
@@ -4864,10 +4881,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -4919,10 +4937,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/virtualclusters/~A/jobruns"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'virtual-cluster-id))))
+                                                             'virtual-cluster-id)
+                                                            common-lisp:t)))
                                                         "StartJobRun"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'start-job-run))
@@ -4946,10 +4965,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -4973,10 +4993,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))

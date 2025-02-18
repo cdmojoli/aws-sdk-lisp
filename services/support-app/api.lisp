@@ -20,7 +20,7 @@
  (common-lisp:export 'support-app-error))
 (common-lisp:progn
  (common-lisp:defclass support-app-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "support-app" :api-version
                         "2021-08-20" :host-prefix "supportapp" :signing-name

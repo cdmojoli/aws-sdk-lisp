@@ -20,7 +20,7 @@
  (common-lisp:export 'amplifyuibuilder-error))
 (common-lisp:progn
  (common-lisp:defclass amplifyuibuilder-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "amplifyuibuilder"
                         :api-version "2021-08-11" :host-prefix
@@ -8377,13 +8377,15 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/app/~A/environment/~A/components"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'app-id))
-                              (quri.encode:url-encode
+                                aws-sdk/generator/operation::input 'app-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'environment-name))))
+                                'environment-name)
+                               common-lisp:t)))
         "CreateComponent"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'create-component))
@@ -8405,13 +8407,15 @@
         'amplifyuibuilder-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/app/~A/environment/~A/forms"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'app-id))
-                              (quri.encode:url-encode
+                                aws-sdk/generator/operation::input 'app-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'environment-name))))
+                                'environment-name)
+                               common-lisp:t)))
         "CreateForm"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'create-form))
@@ -8433,13 +8437,15 @@
         'amplifyuibuilder-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/app/~A/environment/~A/themes"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'app-id))
-                              (quri.encode:url-encode
+                                aws-sdk/generator/operation::input 'app-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'environment-name))))
+                                'environment-name)
+                               common-lisp:t)))
         "CreateTheme"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'create-theme))
@@ -8459,16 +8465,19 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/app/~A/environment/~A/components/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'app-id))
-                              (quri.encode:url-encode
+                                aws-sdk/generator/operation::input 'app-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'environment-name))
-                              (quri.encode:url-encode
+                                'environment-name)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'id))))
+                                aws-sdk/generator/operation::input 'id)
+                               common-lisp:t)))
         "DeleteComponent"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-component))
@@ -8487,16 +8496,19 @@
         'amplifyuibuilder-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/app/~A/environment/~A/forms/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'app-id))
-                              (quri.encode:url-encode
+                                aws-sdk/generator/operation::input 'app-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'environment-name))
-                              (quri.encode:url-encode
+                                'environment-name)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'id))))
+                                aws-sdk/generator/operation::input 'id)
+                               common-lisp:t)))
         "DeleteForm"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-form))
@@ -8516,16 +8528,19 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/app/~A/environment/~A/themes/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'app-id))
-                              (quri.encode:url-encode
+                                aws-sdk/generator/operation::input 'app-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'environment-name))
-                              (quri.encode:url-encode
+                                'environment-name)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'id))))
+                                aws-sdk/generator/operation::input 'id)
+                               common-lisp:t)))
         "DeleteTheme"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-theme))
@@ -8544,10 +8559,10 @@
         'amplifyuibuilder-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tokens/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'provider))))
+                                aws-sdk/generator/operation::input 'provider)
+                               common-lisp:t)))
         "ExchangeCodeForToken"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'exchange-code-for-token))
@@ -8568,13 +8583,15 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/export/app/~A/environment/~A/components"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'app-id))
-                              (quri.encode:url-encode
+                                aws-sdk/generator/operation::input 'app-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'environment-name))))
+                                'environment-name)
+                               common-lisp:t)))
         "ExportComponents"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'export-components))
@@ -8595,13 +8612,15 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/export/app/~A/environment/~A/forms"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'app-id))
-                              (quri.encode:url-encode
+                                aws-sdk/generator/operation::input 'app-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'environment-name))))
+                                'environment-name)
+                               common-lisp:t)))
         "ExportForms"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'export-forms))
@@ -8622,13 +8641,15 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/export/app/~A/environment/~A/themes"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'app-id))
-                              (quri.encode:url-encode
+                                aws-sdk/generator/operation::input 'app-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'environment-name))))
+                                'environment-name)
+                               common-lisp:t)))
         "ExportThemes"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'export-themes))
@@ -8648,16 +8669,19 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/app/~A/environment/~A/codegen-jobs/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'app-id))
-                              (quri.encode:url-encode
+                                aws-sdk/generator/operation::input 'app-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'environment-name))
-                              (quri.encode:url-encode
+                                'environment-name)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'id))))
+                                aws-sdk/generator/operation::input 'id)
+                               common-lisp:t)))
         "GetCodegenJob"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'get-codegen-job))
@@ -8677,16 +8701,19 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/app/~A/environment/~A/components/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'app-id))
-                              (quri.encode:url-encode
+                                aws-sdk/generator/operation::input 'app-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'environment-name))
-                              (quri.encode:url-encode
+                                'environment-name)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'id))))
+                                aws-sdk/generator/operation::input 'id)
+                               common-lisp:t)))
         "GetComponent"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'get-component))
@@ -8705,16 +8732,19 @@
         'amplifyuibuilder-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/app/~A/environment/~A/forms/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'app-id))
-                              (quri.encode:url-encode
+                                aws-sdk/generator/operation::input 'app-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'environment-name))
-                              (quri.encode:url-encode
+                                'environment-name)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'id))))
+                                aws-sdk/generator/operation::input 'id)
+                               common-lisp:t)))
         "GetForm"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'get-form))
@@ -8733,13 +8763,15 @@
         'amplifyuibuilder-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/app/~A/environment/~A/metadata"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'app-id))
-                              (quri.encode:url-encode
+                                aws-sdk/generator/operation::input 'app-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'environment-name))))
+                                'environment-name)
+                               common-lisp:t)))
         "GetMetadata"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-metadata))
@@ -8759,16 +8791,19 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/app/~A/environment/~A/themes/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'app-id))
-                              (quri.encode:url-encode
+                                aws-sdk/generator/operation::input 'app-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'environment-name))
-                              (quri.encode:url-encode
+                                'environment-name)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'id))))
+                                aws-sdk/generator/operation::input 'id)
+                               common-lisp:t)))
         "GetTheme"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'get-theme))
@@ -8790,13 +8825,15 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/app/~A/environment/~A/codegen-jobs"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'app-id))
-                              (quri.encode:url-encode
+                                aws-sdk/generator/operation::input 'app-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'environment-name))))
+                                'environment-name)
+                               common-lisp:t)))
         "ListCodegenJobs"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-codegen-jobs))
@@ -8818,13 +8855,15 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/app/~A/environment/~A/components"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'app-id))
-                              (quri.encode:url-encode
+                                aws-sdk/generator/operation::input 'app-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'environment-name))))
+                                'environment-name)
+                               common-lisp:t)))
         "ListComponents"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-components))
@@ -8845,13 +8884,15 @@
         'amplifyuibuilder-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/app/~A/environment/~A/forms"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'app-id))
-                              (quri.encode:url-encode
+                                aws-sdk/generator/operation::input 'app-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'environment-name))))
+                                'environment-name)
+                               common-lisp:t)))
         "ListForms"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-forms))
@@ -8870,10 +8911,11 @@
         'amplifyuibuilder-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -8894,13 +8936,15 @@
         'amplifyuibuilder-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/app/~A/environment/~A/themes"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'app-id))
-                              (quri.encode:url-encode
+                                aws-sdk/generator/operation::input 'app-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'environment-name))))
+                                'environment-name)
+                               common-lisp:t)))
         "ListThemes"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-themes))
@@ -8922,17 +8966,20 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/app/~A/environment/~A/metadata/features/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'app-id))
-                              (quri.encode:url-encode
-                               (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'environment-name))
-                              (quri.encode:url-encode
+                                aws-sdk/generator/operation::input 'app-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'feature-name))))
+                                'environment-name)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
+                               (common-lisp:slot-value
+                                aws-sdk/generator/operation::input
+                                'feature-name)
+                               common-lisp:t)))
         "PutMetadataFlag"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-metadata-flag))
@@ -8951,10 +8998,10 @@
         'amplifyuibuilder-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tokens/~A/refresh"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'provider))))
+                                aws-sdk/generator/operation::input 'provider)
+                               common-lisp:t)))
         "RefreshToken"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'refresh-token))
@@ -8977,13 +9024,15 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/app/~A/environment/~A/codegen-jobs"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'app-id))
-                              (quri.encode:url-encode
+                                aws-sdk/generator/operation::input 'app-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'environment-name))))
+                                'environment-name)
+                               common-lisp:t)))
         "StartCodegenJob"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'start-codegen-job))
@@ -9002,10 +9051,11 @@
         'amplifyuibuilder-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -9024,10 +9074,11 @@
         'amplifyuibuilder-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -9050,16 +9101,19 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/app/~A/environment/~A/components/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'app-id))
-                              (quri.encode:url-encode
+                                aws-sdk/generator/operation::input 'app-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'environment-name))
-                              (quri.encode:url-encode
+                                'environment-name)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'id))))
+                                aws-sdk/generator/operation::input 'id)
+                               common-lisp:t)))
         "UpdateComponent"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'update-component))
@@ -9081,16 +9135,19 @@
         'amplifyuibuilder-request aws-sdk/generator/operation::input "PATCH"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/app/~A/environment/~A/forms/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'app-id))
-                              (quri.encode:url-encode
+                                aws-sdk/generator/operation::input 'app-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'environment-name))
-                              (quri.encode:url-encode
+                                'environment-name)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'id))))
+                                aws-sdk/generator/operation::input 'id)
+                               common-lisp:t)))
         "UpdateForm"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'update-form))
@@ -9113,16 +9170,19 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/app/~A/environment/~A/themes/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'app-id))
-                              (quri.encode:url-encode
+                                aws-sdk/generator/operation::input 'app-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'environment-name))
-                              (quri.encode:url-encode
+                                'environment-name)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'id))))
+                                aws-sdk/generator/operation::input 'id)
+                               common-lisp:t)))
         "UpdateTheme"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'update-theme))

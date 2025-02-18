@@ -20,7 +20,7 @@
  (common-lisp:export 'kinesis-video-webrtc-storage-error))
 (common-lisp:progn
  (common-lisp:defclass kinesis-video-webrtc-storage-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service
                         "kinesis-video-webrtc-storage" :api-version

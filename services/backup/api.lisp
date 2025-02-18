@@ -20,7 +20,7 @@
  (common-lisp:export 'backup-error))
 (common-lisp:progn
  (common-lisp:defclass backup-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "backup" :api-version
                         "2018-11-15" :host-prefix "backup" :signing-name
@@ -16862,10 +16862,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/legal-holds/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'legal-hold-id))))
+                                                             'legal-hold-id)
+                                                            common-lisp:t)))
                                                         "CancelLegalHold"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'cancel-legal-hold))
@@ -16910,10 +16911,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backup/plans/~A/selections/"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'backup-plan-id))))
+                                                             'backup-plan-id)
+                                                            common-lisp:t)))
                                                         "CreateBackupSelection"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-backup-selection))
@@ -16940,10 +16942,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backup-vaults/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'backup-vault-name))))
+                                                             'backup-vault-name)
+                                                            common-lisp:t)))
                                                         "CreateBackupVault"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-backup-vault))
@@ -17012,10 +17015,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/logically-air-gapped-backup-vaults/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'backup-vault-name))))
+                                                             'backup-vault-name)
+                                                            common-lisp:t)))
                                                         "CreateLogicallyAirGappedBackupVault"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-logically-air-gapped-backup-vault))
@@ -17087,10 +17091,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/restore-testing/plans/~A/selections"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'restore-testing-plan-name))))
+                                                             'restore-testing-plan-name)
+                                                            common-lisp:t)))
                                                         "CreateRestoreTestingSelection"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-restore-testing-selection))
@@ -17114,10 +17119,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backup/plans/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'backup-plan-id))))
+                                                             'backup-plan-id)
+                                                            common-lisp:t)))
                                                         "DeleteBackupPlan"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-backup-plan))
@@ -17141,14 +17147,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backup/plans/~A/selections/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'backup-plan-id))
-                                                           (quri.encode:url-encode
+                                                             'backup-plan-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'selection-id))))
+                                                             'selection-id)
+                                                            common-lisp:t)))
                                                         "DeleteBackupSelection"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-backup-selection))
@@ -17172,10 +17180,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backup-vaults/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'backup-vault-name))))
+                                                             'backup-vault-name)
+                                                            common-lisp:t)))
                                                         "DeleteBackupVault"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-backup-vault))
@@ -17200,10 +17209,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backup-vaults/~A/access-policy"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'backup-vault-name))))
+                                                             'backup-vault-name)
+                                                            common-lisp:t)))
                                                         "DeleteBackupVaultAccessPolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-backup-vault-access-policy))
@@ -17228,10 +17238,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backup-vaults/~A/vault-lock"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'backup-vault-name))))
+                                                             'backup-vault-name)
+                                                            common-lisp:t)))
                                                         "DeleteBackupVaultLockConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-backup-vault-lock-configuration))
@@ -17256,10 +17267,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backup-vaults/~A/notification-configuration"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'backup-vault-name))))
+                                                             'backup-vault-name)
+                                                            common-lisp:t)))
                                                         "DeleteBackupVaultNotifications"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-backup-vault-notifications))
@@ -17283,10 +17295,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/audit/frameworks/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'framework-name))))
+                                                             'framework-name)
+                                                            common-lisp:t)))
                                                         "DeleteFramework"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-framework))
@@ -17311,14 +17324,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backup-vaults/~A/recovery-points/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'backup-vault-name))
-                                                           (quri.encode:url-encode
+                                                             'backup-vault-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'recovery-point-arn))))
+                                                             'recovery-point-arn)
+                                                            common-lisp:t)))
                                                         "DeleteRecoveryPoint"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-recovery-point))
@@ -17342,10 +17357,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/audit/report-plans/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'report-plan-name))))
+                                                             'report-plan-name)
+                                                            common-lisp:t)))
                                                         "DeleteReportPlan"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-report-plan))
@@ -17370,10 +17386,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/restore-testing/plans/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'restore-testing-plan-name))))
+                                                             'restore-testing-plan-name)
+                                                            common-lisp:t)))
                                                         "DeleteRestoreTestingPlan"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-restore-testing-plan))
@@ -17401,14 +17418,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/restore-testing/plans/~A/selections/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'restore-testing-plan-name))
-                                                           (quri.encode:url-encode
+                                                             'restore-testing-plan-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'restore-testing-selection-name))))
+                                                             'restore-testing-selection-name)
+                                                            common-lisp:t)))
                                                         "DeleteRestoreTestingSelection"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-restore-testing-selection))
@@ -17432,10 +17451,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backup-jobs/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'backup-job-id))))
+                                                             'backup-job-id)
+                                                            common-lisp:t)))
                                                         "DescribeBackupJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-backup-job))
@@ -17461,10 +17481,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backup-vaults/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'backup-vault-name))))
+                                                             'backup-vault-name)
+                                                            common-lisp:t)))
                                                         "DescribeBackupVault"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-backup-vault))
@@ -17488,10 +17509,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/copy-jobs/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'copy-job-id))))
+                                                             'copy-job-id)
+                                                            common-lisp:t)))
                                                         "DescribeCopyJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-copy-job))
@@ -17515,10 +17537,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/audit/frameworks/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'framework-name))))
+                                                             'framework-name)
+                                                            common-lisp:t)))
                                                         "DescribeFramework"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-framework))
@@ -17552,10 +17575,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/resources/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "DescribeProtectedResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-protected-resource))
@@ -17582,14 +17606,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backup-vaults/~A/recovery-points/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'backup-vault-name))
-                                                           (quri.encode:url-encode
+                                                             'backup-vault-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'recovery-point-arn))))
+                                                             'recovery-point-arn)
+                                                            common-lisp:t)))
                                                         "DescribeRecoveryPoint"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-recovery-point))
@@ -17622,10 +17648,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/audit/report-jobs/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'report-job-id))))
+                                                             'report-job-id)
+                                                            common-lisp:t)))
                                                         "DescribeReportJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-report-job))
@@ -17649,10 +17676,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/audit/report-plans/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'report-plan-name))))
+                                                             'report-plan-name)
+                                                            common-lisp:t)))
                                                         "DescribeReportPlan"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-report-plan))
@@ -17676,10 +17704,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/restore-jobs/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'restore-job-id))))
+                                                             'restore-job-id)
+                                                            common-lisp:t)))
                                                         "DescribeRestoreJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-restore-job))
@@ -17705,14 +17734,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backup-vaults/~A/recovery-points/~A/disassociate"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'backup-vault-name))
-                                                           (quri.encode:url-encode
+                                                             'backup-vault-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'recovery-point-arn))))
+                                                             'recovery-point-arn)
+                                                            common-lisp:t)))
                                                         "DisassociateRecoveryPoint"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'disassociate-recovery-point))
@@ -17738,14 +17769,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backup-vaults/~A/recovery-points/~A/parentAssociation"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'backup-vault-name))
-                                                           (quri.encode:url-encode
+                                                             'backup-vault-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'recovery-point-arn))))
+                                                             'recovery-point-arn)
+                                                            common-lisp:t)))
                                                         "DisassociateRecoveryPointFromParent"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'disassociate-recovery-point-from-parent))
@@ -17770,10 +17803,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backup/plans/~A/toTemplate/"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'backup-plan-id))))
+                                                             'backup-plan-id)
+                                                            common-lisp:t)))
                                                         "ExportBackupPlanTemplate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'export-backup-plan-template))
@@ -17797,10 +17831,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backup/plans/~A/"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'backup-plan-id))))
+                                                             'backup-plan-id)
+                                                            common-lisp:t)))
                                                         "GetBackupPlan"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-backup-plan))
@@ -17843,10 +17878,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backup/template/plans/~A/toPlan"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'template-id))))
+                                                             'template-id)
+                                                            common-lisp:t)))
                                                         "GetBackupPlanFromTemplate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-backup-plan-from-template))
@@ -17870,14 +17906,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backup/plans/~A/selections/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'backup-plan-id))
-                                                           (quri.encode:url-encode
+                                                             'backup-plan-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'selection-id))))
+                                                             'selection-id)
+                                                            common-lisp:t)))
                                                         "GetBackupSelection"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-backup-selection))
@@ -17902,10 +17940,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backup-vaults/~A/access-policy"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'backup-vault-name))))
+                                                             'backup-vault-name)
+                                                            common-lisp:t)))
                                                         "GetBackupVaultAccessPolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-backup-vault-access-policy))
@@ -17930,10 +17969,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backup-vaults/~A/notification-configuration"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'backup-vault-name))))
+                                                             'backup-vault-name)
+                                                            common-lisp:t)))
                                                         "GetBackupVaultNotifications"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-backup-vault-notifications))
@@ -17957,10 +17997,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/legal-holds/~A/"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'legal-hold-id))))
+                                                             'legal-hold-id)
+                                                            common-lisp:t)))
                                                         "GetLegalHold"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-legal-hold))
@@ -17988,14 +18029,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backup-vaults/~A/recovery-points/~A/restore-metadata"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'backup-vault-name))
-                                                           (quri.encode:url-encode
+                                                             'backup-vault-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'recovery-point-arn))))
+                                                             'recovery-point-arn)
+                                                            common-lisp:t)))
                                                         "GetRecoveryPointRestoreMetadata"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-recovery-point-restore-metadata))
@@ -18019,10 +18062,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/restore-jobs/~A/metadata"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'restore-job-id))))
+                                                             'restore-job-id)
+                                                            common-lisp:t)))
                                                         "GetRestoreJobMetadata"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-restore-job-metadata))
@@ -18068,10 +18112,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/restore-testing/plans/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'restore-testing-plan-name))))
+                                                             'restore-testing-plan-name)
+                                                            common-lisp:t)))
                                                         "GetRestoreTestingPlan"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-restore-testing-plan))
@@ -18099,14 +18144,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/restore-testing/plans/~A/selections/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'restore-testing-plan-name))
-                                                           (quri.encode:url-encode
+                                                             'restore-testing-plan-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'restore-testing-selection-name))))
+                                                             'restore-testing-selection-name)
+                                                            common-lisp:t)))
                                                         "GetRestoreTestingSelection"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-restore-testing-selection))
@@ -18205,10 +18252,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backup/plans/~A/versions/"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'backup-plan-id))))
+                                                             'backup-plan-id)
+                                                            common-lisp:t)))
                                                         "ListBackupPlanVersions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-backup-plan-versions))
@@ -18251,10 +18299,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backup/plans/~A/selections/"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'backup-plan-id))))
+                                                             'backup-plan-id)
+                                                            common-lisp:t)))
                                                         "ListBackupSelections"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-backup-selections))
@@ -18400,10 +18449,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backup-vaults/~A/resources/"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'backup-vault-name))))
+                                                             'backup-vault-name)
+                                                            common-lisp:t)))
                                                         "ListProtectedResourcesByBackupVault"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-protected-resources-by-backup-vault))
@@ -18434,10 +18484,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backup-vaults/~A/recovery-points/"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'backup-vault-name))))
+                                                             'backup-vault-name)
+                                                            common-lisp:t)))
                                                         "ListRecoveryPointsByBackupVault"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-recovery-points-by-backup-vault))
@@ -18463,10 +18514,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/legal-holds/~A/recovery-points"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'legal-hold-id))))
+                                                             'legal-hold-id)
+                                                            common-lisp:t)))
                                                         "ListRecoveryPointsByLegalHold"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-recovery-points-by-legal-hold))
@@ -18492,10 +18544,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/resources/~A/recovery-points/"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "ListRecoveryPointsByResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-recovery-points-by-resource))
@@ -18609,10 +18662,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/resources/~A/restore-jobs/"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "ListRestoreJobsByProtectedResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-restore-jobs-by-protected-resource))
@@ -18657,10 +18711,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/restore-testing/plans/~A/selections"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'restore-testing-plan-name))))
+                                                             'restore-testing-plan-name)
+                                                            common-lisp:t)))
                                                         "ListRestoreTestingSelections"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-restore-testing-selections))
@@ -18685,10 +18740,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A/"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "ListTags"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags))
@@ -18713,10 +18769,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backup-vaults/~A/access-policy"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'backup-vault-name))))
+                                                             'backup-vault-name)
+                                                            common-lisp:t)))
                                                         "PutBackupVaultAccessPolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-backup-vault-access-policy))
@@ -18744,10 +18801,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backup-vaults/~A/vault-lock"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'backup-vault-name))))
+                                                             'backup-vault-name)
+                                                            common-lisp:t)))
                                                         "PutBackupVaultLockConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-backup-vault-lock-configuration))
@@ -18774,10 +18832,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backup-vaults/~A/notification-configuration"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'backup-vault-name))))
+                                                             'backup-vault-name)
+                                                            common-lisp:t)))
                                                         "PutBackupVaultNotifications"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-backup-vault-notifications))
@@ -18805,10 +18864,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/restore-jobs/~A/validations"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'restore-job-id))))
+                                                             'restore-job-id)
+                                                            common-lisp:t)))
                                                         "PutRestoreValidationResult"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-restore-validation-result))
@@ -18877,10 +18937,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/audit/report-jobs/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'report-plan-name))))
+                                                             'report-plan-name)
+                                                            common-lisp:t)))
                                                         "StartReportJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'start-report-job))
@@ -18925,10 +18986,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backup-jobs/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'backup-job-id))))
+                                                             'backup-job-id)
+                                                            common-lisp:t)))
                                                         "StopBackupJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'stop-backup-job))
@@ -18952,10 +19014,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -18979,10 +19042,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/untag/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -19006,10 +19070,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backup/plans/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'backup-plan-id))))
+                                                             'backup-plan-id)
+                                                            common-lisp:t)))
                                                         "UpdateBackupPlan"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-backup-plan))
@@ -19036,10 +19101,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/audit/frameworks/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'framework-name))))
+                                                             'framework-name)
+                                                            common-lisp:t)))
                                                         "UpdateFramework"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-framework))
@@ -19084,14 +19150,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backup-vaults/~A/recovery-points/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'backup-vault-name))
-                                                           (quri.encode:url-encode
+                                                             'backup-vault-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'recovery-point-arn))))
+                                                             'recovery-point-arn)
+                                                            common-lisp:t)))
                                                         "UpdateRecoveryPointLifecycle"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-recovery-point-lifecycle))
@@ -19139,10 +19207,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/audit/report-plans/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'report-plan-name))))
+                                                             'report-plan-name)
+                                                            common-lisp:t)))
                                                         "UpdateReportPlan"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-report-plan))
@@ -19169,10 +19238,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/restore-testing/plans/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'restore-testing-plan-name))))
+                                                             'restore-testing-plan-name)
+                                                            common-lisp:t)))
                                                         "UpdateRestoreTestingPlan"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-restore-testing-plan))
@@ -19200,14 +19270,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/restore-testing/plans/~A/selections/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'restore-testing-plan-name))
-                                                           (quri.encode:url-encode
+                                                             'restore-testing-plan-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'restore-testing-selection-name))))
+                                                             'restore-testing-selection-name)
+                                                            common-lisp:t)))
                                                         "UpdateRestoreTestingSelection"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-restore-testing-selection))

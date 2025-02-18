@@ -20,7 +20,7 @@
  (common-lisp:export 'auditmanager-error))
 (common-lisp:progn
  (common-lisp:defclass auditmanager-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "auditmanager" :api-version
                         "2017-07-25" :host-prefix "auditmanager" :signing-name
@@ -11654,10 +11654,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/assessments/~A/associateToAssessmentReport"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'assessment-id))))
+                                                             'assessment-id)
+                                                            common-lisp:t)))
                                                         "AssociateAssessmentReportEvidenceFolder"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'associate-assessment-report-evidence-folder))
@@ -11684,10 +11685,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/assessments/~A/batchAssociateToAssessmentReport"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'assessment-id))))
+                                                             'assessment-id)
+                                                            common-lisp:t)))
                                                         "BatchAssociateAssessmentReportEvidence"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'batch-associate-assessment-report-evidence))
@@ -11713,10 +11715,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/assessments/~A/delegations"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'assessment-id))))
+                                                             'assessment-id)
+                                                            common-lisp:t)))
                                                         "BatchCreateDelegationByAssessment"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'batch-create-delegation-by-assessment))
@@ -11741,10 +11744,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/assessments/~A/delegations"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'assessment-id))))
+                                                             'assessment-id)
+                                                            common-lisp:t)))
                                                         "BatchDeleteDelegationByAssessment"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'batch-delete-delegation-by-assessment))
@@ -11771,10 +11775,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/assessments/~A/batchDisassociateFromAssessmentReport"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'assessment-id))))
+                                                             'assessment-id)
+                                                            common-lisp:t)))
                                                         "BatchDisassociateAssessmentReportEvidence"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'batch-disassociate-assessment-report-evidence))
@@ -11802,18 +11807,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/assessments/~A/controlSets/~A/controls/~A/evidence"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'assessment-id))
-                                                           (quri.encode:url-encode
+                                                             'assessment-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'control-set-id))
-                                                           (quri.encode:url-encode
+                                                             'control-set-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'control-id))))
+                                                             'control-id)
+                                                            common-lisp:t)))
                                                         "BatchImportEvidenceToAssessmentControl"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'batch-import-evidence-to-assessment-control))
@@ -11881,10 +11889,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/assessments/~A/reports"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'assessment-id))))
+                                                             'assessment-id)
+                                                            common-lisp:t)))
                                                         "CreateAssessmentReport"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-assessment-report))
@@ -11929,10 +11938,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/assessments/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'assessment-id))))
+                                                             'assessment-id)
+                                                            common-lisp:t)))
                                                         "DeleteAssessment"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-assessment))
@@ -11957,10 +11967,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/assessmentFrameworks/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'framework-id))))
+                                                             'framework-id)
+                                                            common-lisp:t)))
                                                         "DeleteAssessmentFramework"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-assessment-framework))
@@ -11985,10 +11996,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/assessmentFrameworkShareRequests/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'request-id))))
+                                                             'request-id)
+                                                            common-lisp:t)))
                                                         "DeleteAssessmentFrameworkShare"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-assessment-framework-share))
@@ -12013,14 +12025,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/assessments/~A/reports/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'assessment-id))
-                                                           (quri.encode:url-encode
+                                                             'assessment-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'assessment-report-id))))
+                                                             'assessment-report-id)
+                                                            common-lisp:t)))
                                                         "DeleteAssessmentReport"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-assessment-report))
@@ -12044,10 +12058,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/controls/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'control-id))))
+                                                             'control-id)
+                                                            common-lisp:t)))
                                                         "DeleteControl"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-control))
@@ -12101,10 +12116,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/assessments/~A/disassociateFromAssessmentReport"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'assessment-id))))
+                                                             'assessment-id)
+                                                            common-lisp:t)))
                                                         "DisassociateAssessmentReportEvidenceFolder"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'disassociate-assessment-report-evidence-folder))
@@ -12137,10 +12153,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/assessments/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'assessment-id))))
+                                                             'assessment-id)
+                                                            common-lisp:t)))
                                                         "GetAssessment"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-assessment))
@@ -12164,10 +12181,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/assessmentFrameworks/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'framework-id))))
+                                                             'framework-id)
+                                                            common-lisp:t)))
                                                         "GetAssessmentFramework"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-assessment-framework))
@@ -12193,14 +12211,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/assessments/~A/reports/~A/url"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'assessment-id))
-                                                           (quri.encode:url-encode
+                                                             'assessment-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'assessment-report-id))))
+                                                             'assessment-report-id)
+                                                            common-lisp:t)))
                                                         "GetAssessmentReportUrl"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-assessment-report-url))
@@ -12227,10 +12247,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/assessments/~A/changelogs"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'assessment-id))))
+                                                             'assessment-id)
+                                                            common-lisp:t)))
                                                         "GetChangeLogs"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-change-logs))
@@ -12254,10 +12275,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/controls/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'control-id))))
+                                                             'control-id)
+                                                            common-lisp:t)))
                                                         "GetControl"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-control))
@@ -12301,22 +12323,26 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/assessments/~A/controlSets/~A/evidenceFolders/~A/evidence/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'assessment-id))
-                                                           (quri.encode:url-encode
+                                                             'assessment-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'control-set-id))
-                                                           (quri.encode:url-encode
+                                                             'control-set-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'evidence-folder-id))
-                                                           (quri.encode:url-encode
+                                                             'evidence-folder-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'evidence-id))))
+                                                             'evidence-id)
+                                                            common-lisp:t)))
                                                         "GetEvidence"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-evidence))
@@ -12344,18 +12370,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/assessments/~A/controlSets/~A/evidenceFolders/~A/evidence"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'assessment-id))
-                                                           (quri.encode:url-encode
+                                                             'assessment-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'control-set-id))
-                                                           (quri.encode:url-encode
+                                                             'control-set-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'evidence-folder-id))))
+                                                             'evidence-folder-id)
+                                                            common-lisp:t)))
                                                         "GetEvidenceByEvidenceFolder"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-evidence-by-evidence-folder))
@@ -12400,18 +12429,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/assessments/~A/controlSets/~A/evidenceFolders/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'assessment-id))
-                                                           (quri.encode:url-encode
+                                                             'assessment-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'control-set-id))
-                                                           (quri.encode:url-encode
+                                                             'control-set-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'evidence-folder-id))))
+                                                             'evidence-folder-id)
+                                                            common-lisp:t)))
                                                         "GetEvidenceFolder"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-evidence-folder))
@@ -12437,10 +12469,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/assessments/~A/evidenceFolders"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'assessment-id))))
+                                                             'assessment-id)
+                                                            common-lisp:t)))
                                                         "GetEvidenceFoldersByAssessment"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-evidence-folders-by-assessment))
@@ -12468,18 +12501,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/assessments/~A/evidenceFolders-by-assessment-control/~A/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'assessment-id))
-                                                           (quri.encode:url-encode
+                                                             'assessment-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'control-set-id))
-                                                           (quri.encode:url-encode
+                                                             'control-set-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'control-id))))
+                                                             'control-id)
+                                                            common-lisp:t)))
                                                         "GetEvidenceFoldersByAssessmentControl"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-evidence-folders-by-assessment-control))
@@ -12512,10 +12548,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/insights/assessments/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'assessment-id))))
+                                                             'assessment-id)
+                                                            common-lisp:t)))
                                                         "GetInsightsByAssessment"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-insights-by-assessment))
@@ -12556,10 +12593,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/settings/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'attribute))))
+                                                             'attribute)
+                                                            common-lisp:t)))
                                                         "GetSettings"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-settings))
@@ -12793,10 +12831,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -12862,10 +12901,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/assessmentFrameworks/~A/shareRequests"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'framework-id))))
+                                                             'framework-id)
+                                                            common-lisp:t)))
                                                         "StartAssessmentFrameworkShare"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'start-assessment-framework-share))
@@ -12889,10 +12929,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -12916,10 +12957,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -12947,10 +12989,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/assessments/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'assessment-id))))
+                                                             'assessment-id)
+                                                            common-lisp:t)))
                                                         "UpdateAssessment"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-assessment))
@@ -12978,18 +13021,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/assessments/~A/controlSets/~A/controls/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'assessment-id))
-                                                           (quri.encode:url-encode
+                                                             'assessment-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'control-set-id))
-                                                           (quri.encode:url-encode
+                                                             'control-set-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'control-id))))
+                                                             'control-id)
+                                                            common-lisp:t)))
                                                         "UpdateAssessmentControl"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-assessment-control))
@@ -13016,14 +13062,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/assessments/~A/controlSets/~A/status"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'assessment-id))
-                                                           (quri.encode:url-encode
+                                                             'assessment-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'control-set-id))))
+                                                             'control-set-id)
+                                                            common-lisp:t)))
                                                         "UpdateAssessmentControlSetStatus"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-assessment-control-set-status))
@@ -13051,10 +13099,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/assessmentFrameworks/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'framework-id))))
+                                                             'framework-id)
+                                                            common-lisp:t)))
                                                         "UpdateAssessmentFramework"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-assessment-framework))
@@ -13079,10 +13128,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/assessmentFrameworkShareRequests/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'request-id))))
+                                                             'request-id)
+                                                            common-lisp:t)))
                                                         "UpdateAssessmentFrameworkShare"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-assessment-framework-share))
@@ -13106,10 +13156,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/assessments/~A/status"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'assessment-id))))
+                                                             'assessment-id)
+                                                            common-lisp:t)))
                                                         "UpdateAssessmentStatus"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-assessment-status))
@@ -13137,10 +13188,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/controls/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'control-id))))
+                                                             'control-id)
+                                                            common-lisp:t)))
                                                         "UpdateControl"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-control))

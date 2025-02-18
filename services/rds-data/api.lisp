@@ -20,7 +20,7 @@
  (common-lisp:export 'rds-data-error))
 (common-lisp:progn
  (common-lisp:defclass rds-data-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "rds-data" :api-version
                         "2018-08-01" :host-prefix "rds-data" :signing-name

@@ -20,7 +20,7 @@
  (common-lisp:export 'iottwinmaker-error))
 (common-lisp:progn
  (common-lisp:defclass iottwinmaker-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "iottwinmaker" :api-version
                         "2021-11-29" :host-prefix "iottwinmaker" :signing-name
@@ -11327,10 +11327,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/workspaces/~A/entity-properties"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'workspace-id))))
+                                                             'workspace-id)
+                                                            common-lisp:t)))
                                                         "BatchPutPropertyValues"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'batch-put-property-values))
@@ -11355,10 +11356,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/metadata-transfer-jobs/~A/cancel"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'metadata-transfer-job-id))))
+                                                             'metadata-transfer-job-id)
+                                                            common-lisp:t)))
                                                         "CancelMetadataTransferJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'cancel-metadata-transfer-job))
@@ -11388,14 +11390,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/workspaces/~A/component-types/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'workspace-id))
-                                                           (quri.encode:url-encode
+                                                             'workspace-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'component-type-id))))
+                                                             'component-type-id)
+                                                            common-lisp:t)))
                                                         "CreateComponentType"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-component-type))
@@ -11423,10 +11427,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/workspaces/~A/entities"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'workspace-id))))
+                                                             'workspace-id)
+                                                            common-lisp:t)))
                                                         "CreateEntity"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-entity))
@@ -11475,10 +11480,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/workspaces/~A/scenes"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'workspace-id))))
+                                                             'workspace-id)
+                                                            common-lisp:t)))
                                                         "CreateScene"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-scene))
@@ -11503,14 +11509,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/workspaces/~A/sync-jobs/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'workspace-id))
-                                                           (quri.encode:url-encode
+                                                             'workspace-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'sync-source))))
+                                                             'sync-source)
+                                                            common-lisp:t)))
                                                         "CreateSyncJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-sync-job))
@@ -11536,10 +11544,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/workspaces/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'workspace-id))))
+                                                             'workspace-id)
+                                                            common-lisp:t)))
                                                         "CreateWorkspace"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-workspace))
@@ -11563,14 +11572,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/workspaces/~A/component-types/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'workspace-id))
-                                                           (quri.encode:url-encode
+                                                             'workspace-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'component-type-id))))
+                                                             'component-type-id)
+                                                            common-lisp:t)))
                                                         "DeleteComponentType"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-component-type))
@@ -11595,14 +11606,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/workspaces/~A/entities/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'workspace-id))
-                                                           (quri.encode:url-encode
+                                                             'workspace-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'entity-id))))
+                                                             'entity-id)
+                                                            common-lisp:t)))
                                                         "DeleteEntity"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-entity))
@@ -11626,14 +11639,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/workspaces/~A/scenes/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'workspace-id))
-                                                           (quri.encode:url-encode
+                                                             'workspace-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'scene-id))))
+                                                             'scene-id)
+                                                            common-lisp:t)))
                                                         "DeleteScene"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-scene))
@@ -11657,14 +11672,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/workspaces/~A/sync-jobs/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'workspace-id))
-                                                           (quri.encode:url-encode
+                                                             'workspace-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'sync-source))))
+                                                             'sync-source)
+                                                            common-lisp:t)))
                                                         "DeleteSyncJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-sync-job))
@@ -11688,10 +11705,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/workspaces/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'workspace-id))))
+                                                             'workspace-id)
+                                                            common-lisp:t)))
                                                         "DeleteWorkspace"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-workspace))
@@ -11736,14 +11754,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/workspaces/~A/component-types/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'workspace-id))
-                                                           (quri.encode:url-encode
+                                                             'workspace-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'component-type-id))))
+                                                             'component-type-id)
+                                                            common-lisp:t)))
                                                         "GetComponentType"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-component-type))
@@ -11767,14 +11787,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/workspaces/~A/entities/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'workspace-id))
-                                                           (quri.encode:url-encode
+                                                             'workspace-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'entity-id))))
+                                                             'entity-id)
+                                                            common-lisp:t)))
                                                         "GetEntity"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-entity))
@@ -11799,10 +11821,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/metadata-transfer-jobs/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'metadata-transfer-job-id))))
+                                                             'metadata-transfer-job-id)
+                                                            common-lisp:t)))
                                                         "GetMetadataTransferJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-metadata-transfer-job))
@@ -11840,10 +11863,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/workspaces/~A/entity-properties/value"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'workspace-id))))
+                                                             'workspace-id)
+                                                            common-lisp:t)))
                                                         "GetPropertyValue"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-property-value))
@@ -11876,10 +11900,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/workspaces/~A/entity-properties/history"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'workspace-id))))
+                                                             'workspace-id)
+                                                            common-lisp:t)))
                                                         "GetPropertyValueHistory"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-property-value-history))
@@ -11903,14 +11928,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/workspaces/~A/scenes/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'workspace-id))
-                                                           (quri.encode:url-encode
+                                                             'workspace-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'scene-id))))
+                                                             'scene-id)
+                                                            common-lisp:t)))
                                                         "GetScene"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-scene))
@@ -11934,10 +11961,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/sync-jobs/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'sync-source))))
+                                                             'sync-source)
+                                                            common-lisp:t)))
                                                         "GetSyncJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-sync-job))
@@ -11961,10 +11989,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/workspaces/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'workspace-id))))
+                                                             'workspace-id)
+                                                            common-lisp:t)))
                                                         "GetWorkspace"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-workspace))
@@ -11990,10 +12019,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/workspaces/~A/component-types-list"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'workspace-id))))
+                                                             'workspace-id)
+                                                            common-lisp:t)))
                                                         "ListComponentTypes"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-component-types))
@@ -12020,14 +12050,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/workspaces/~A/entities/~A/components-list"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'workspace-id))
-                                                           (quri.encode:url-encode
+                                                             'workspace-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'entity-id))))
+                                                             'entity-id)
+                                                            common-lisp:t)))
                                                         "ListComponents"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-components))
@@ -12053,10 +12085,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/workspaces/~A/entities-list"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'workspace-id))))
+                                                             'workspace-id)
+                                                            common-lisp:t)))
                                                         "ListEntities"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-entities))
@@ -12105,10 +12138,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/workspaces/~A/properties-list"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'workspace-id))))
+                                                             'workspace-id)
+                                                            common-lisp:t)))
                                                         "ListProperties"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-properties))
@@ -12133,10 +12167,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/workspaces/~A/scenes-list"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'workspace-id))))
+                                                             'workspace-id)
+                                                            common-lisp:t)))
                                                         "ListScenes"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-scenes))
@@ -12161,10 +12196,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/workspaces/~A/sync-jobs-list"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'workspace-id))))
+                                                             'workspace-id)
+                                                            common-lisp:t)))
                                                         "ListSyncJobs"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-sync-jobs))
@@ -12191,14 +12227,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/workspaces/~A/sync-jobs/~A/resources-list"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'workspace-id))
-                                                           (quri.encode:url-encode
+                                                             'workspace-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'sync-source))))
+                                                             'sync-source)
+                                                            common-lisp:t)))
                                                         "ListSyncResources"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-sync-resources))
@@ -12298,14 +12336,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/workspaces/~A/component-types/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'workspace-id))
-                                                           (quri.encode:url-encode
+                                                             'workspace-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'component-type-id))))
+                                                             'component-type-id)
+                                                            common-lisp:t)))
                                                         "UpdateComponentType"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-component-type))
@@ -12333,14 +12373,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/workspaces/~A/entities/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'workspace-id))
-                                                           (quri.encode:url-encode
+                                                             'workspace-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'entity-id))))
+                                                             'entity-id)
+                                                            common-lisp:t)))
                                                         "UpdateEntity"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-entity))
@@ -12384,14 +12426,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/workspaces/~A/scenes/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'workspace-id))
-                                                           (quri.encode:url-encode
+                                                             'workspace-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'scene-id))))
+                                                             'scene-id)
+                                                            common-lisp:t)))
                                                         "UpdateScene"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-scene))
@@ -12416,10 +12460,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/workspaces/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'workspace-id))))
+                                                             'workspace-id)
+                                                            common-lisp:t)))
                                                         "UpdateWorkspace"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-workspace))

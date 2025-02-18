@@ -20,7 +20,7 @@
  (common-lisp:export 'cleanrooms-error))
 (common-lisp:progn
  (common-lisp:defclass cleanrooms-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "cleanrooms" :api-version
                         "2022-02-17" :host-prefix "cleanrooms" :signing-name
@@ -14591,10 +14591,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/collaborations/~A/batch-analysistemplates"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'collaboration-identifier))))
+                                                             'collaboration-identifier)
+                                                            common-lisp:t)))
                                                         "BatchGetCollaborationAnalysisTemplate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'batch-get-collaboration-analysis-template))
@@ -14618,10 +14619,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/collaborations/~A/batch-schema"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'collaboration-identifier))))
+                                                             'collaboration-identifier)
+                                                            common-lisp:t)))
                                                         "BatchGetSchema"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'batch-get-schema))
@@ -14648,10 +14650,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/memberships/~A/analysistemplates"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'membership-identifier))))
+                                                             'membership-identifier)
+                                                            common-lisp:t)))
                                                         "CreateAnalysisTemplate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-analysis-template))
@@ -14706,10 +14709,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/memberships/~A/configuredaudiencemodelassociations"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'membership-identifier))))
+                                                             'membership-identifier)
+                                                            common-lisp:t)))
                                                         "CreateConfiguredAudienceModelAssociation"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-configured-audience-model-association))
@@ -14758,10 +14762,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/configuredTables/~A/analysisRule"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'configured-table-identifier))))
+                                                             'configured-table-identifier)
+                                                            common-lisp:t)))
                                                         "CreateConfiguredTableAnalysisRule"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-configured-table-analysis-rule))
@@ -14789,10 +14794,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/memberships/~A/configuredTableAssociations"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'membership-identifier))))
+                                                             'membership-identifier)
+                                                            common-lisp:t)))
                                                         "CreateConfiguredTableAssociation"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-configured-table-association))
@@ -14840,10 +14846,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/memberships/~A/privacybudgettemplates"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'membership-identifier))))
+                                                             'membership-identifier)
+                                                            common-lisp:t)))
                                                         "CreatePrivacyBudgetTemplate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-privacy-budget-template))
@@ -14869,14 +14876,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/memberships/~A/analysistemplates/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'membership-identifier))
-                                                           (quri.encode:url-encode
+                                                             'membership-identifier)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'analysis-template-identifier))))
+                                                             'analysis-template-identifier)
+                                                            common-lisp:t)))
                                                         "DeleteAnalysisTemplate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-analysis-template))
@@ -14900,10 +14909,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/collaborations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'collaboration-identifier))))
+                                                             'collaboration-identifier)
+                                                            common-lisp:t)))
                                                         "DeleteCollaboration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-collaboration))
@@ -14932,14 +14942,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/memberships/~A/configuredaudiencemodelassociations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'membership-identifier))
-                                                           (quri.encode:url-encode
+                                                             'membership-identifier)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'configured-audience-model-association-identifier))))
+                                                             'configured-audience-model-association-identifier)
+                                                            common-lisp:t)))
                                                         "DeleteConfiguredAudienceModelAssociation"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-configured-audience-model-association))
@@ -14963,10 +14975,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/configuredTables/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'configured-table-identifier))))
+                                                             'configured-table-identifier)
+                                                            common-lisp:t)))
                                                         "DeleteConfiguredTable"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-configured-table))
@@ -14993,14 +15006,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/configuredTables/~A/analysisRule/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'configured-table-identifier))
-                                                           (quri.encode:url-encode
+                                                             'configured-table-identifier)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'analysis-rule-type))))
+                                                             'analysis-rule-type)
+                                                            common-lisp:t)))
                                                         "DeleteConfiguredTableAnalysisRule"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-configured-table-analysis-rule))
@@ -15028,14 +15043,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/memberships/~A/configuredTableAssociations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'membership-identifier))
-                                                           (quri.encode:url-encode
+                                                             'membership-identifier)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'configured-table-association-identifier))))
+                                                             'configured-table-association-identifier)
+                                                            common-lisp:t)))
                                                         "DeleteConfiguredTableAssociation"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-configured-table-association))
@@ -15060,14 +15077,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/collaborations/~A/member/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'collaboration-identifier))
-                                                           (quri.encode:url-encode
+                                                             'collaboration-identifier)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'account-id))))
+                                                             'account-id)
+                                                            common-lisp:t)))
                                                         "DeleteMember"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-member))
@@ -15091,10 +15110,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/memberships/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'membership-identifier))))
+                                                             'membership-identifier)
+                                                            common-lisp:t)))
                                                         "DeleteMembership"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-membership))
@@ -15122,14 +15142,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/memberships/~A/privacybudgettemplates/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'membership-identifier))
-                                                           (quri.encode:url-encode
+                                                             'membership-identifier)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'privacy-budget-template-identifier))))
+                                                             'privacy-budget-template-identifier)
+                                                            common-lisp:t)))
                                                         "DeletePrivacyBudgetTemplate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-privacy-budget-template))
@@ -15155,14 +15177,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/memberships/~A/analysistemplates/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'membership-identifier))
-                                                           (quri.encode:url-encode
+                                                             'membership-identifier)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'analysis-template-identifier))))
+                                                             'analysis-template-identifier)
+                                                            common-lisp:t)))
                                                         "GetAnalysisTemplate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-analysis-template))
@@ -15186,10 +15210,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/collaborations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'collaboration-identifier))))
+                                                             'collaboration-identifier)
+                                                            common-lisp:t)))
                                                         "GetCollaboration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-collaboration))
@@ -15216,14 +15241,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/collaborations/~A/analysistemplates/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'collaboration-identifier))
-                                                           (quri.encode:url-encode
+                                                             'collaboration-identifier)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'analysis-template-arn))))
+                                                             'analysis-template-arn)
+                                                            common-lisp:t)))
                                                         "GetCollaborationAnalysisTemplate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-collaboration-analysis-template))
@@ -15251,14 +15278,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/collaborations/~A/configuredaudiencemodelassociations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'collaboration-identifier))
-                                                           (quri.encode:url-encode
+                                                             'collaboration-identifier)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'configured-audience-model-association-identifier))))
+                                                             'configured-audience-model-association-identifier)
+                                                            common-lisp:t)))
                                                         "GetCollaborationConfiguredAudienceModelAssociation"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-collaboration-configured-audience-model-association))
@@ -15286,14 +15315,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/collaborations/~A/privacybudgettemplates/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'collaboration-identifier))
-                                                           (quri.encode:url-encode
+                                                             'collaboration-identifier)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'privacy-budget-template-identifier))))
+                                                             'privacy-budget-template-identifier)
+                                                            common-lisp:t)))
                                                         "GetCollaborationPrivacyBudgetTemplate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-collaboration-privacy-budget-template))
@@ -15322,14 +15353,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/memberships/~A/configuredaudiencemodelassociations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'membership-identifier))
-                                                           (quri.encode:url-encode
+                                                             'membership-identifier)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'configured-audience-model-association-identifier))))
+                                                             'configured-audience-model-association-identifier)
+                                                            common-lisp:t)))
                                                         "GetConfiguredAudienceModelAssociation"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-configured-audience-model-association))
@@ -15353,10 +15386,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/configuredTables/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'configured-table-identifier))))
+                                                             'configured-table-identifier)
+                                                            common-lisp:t)))
                                                         "GetConfiguredTable"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-configured-table))
@@ -15383,14 +15417,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/configuredTables/~A/analysisRule/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'configured-table-identifier))
-                                                           (quri.encode:url-encode
+                                                             'configured-table-identifier)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'analysis-rule-type))))
+                                                             'analysis-rule-type)
+                                                            common-lisp:t)))
                                                         "GetConfiguredTableAnalysisRule"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-configured-table-analysis-rule))
@@ -15418,14 +15454,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/memberships/~A/configuredTableAssociations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'membership-identifier))
-                                                           (quri.encode:url-encode
+                                                             'membership-identifier)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'configured-table-association-identifier))))
+                                                             'configured-table-association-identifier)
+                                                            common-lisp:t)))
                                                         "GetConfiguredTableAssociation"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-configured-table-association))
@@ -15449,10 +15487,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/memberships/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'membership-identifier))))
+                                                             'membership-identifier)
+                                                            common-lisp:t)))
                                                         "GetMembership"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-membership))
@@ -15480,14 +15519,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/memberships/~A/privacybudgettemplates/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'membership-identifier))
-                                                           (quri.encode:url-encode
+                                                             'membership-identifier)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'privacy-budget-template-identifier))))
+                                                             'privacy-budget-template-identifier)
+                                                            common-lisp:t)))
                                                         "GetPrivacyBudgetTemplate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-privacy-budget-template))
@@ -15513,14 +15554,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/memberships/~A/protectedQueries/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'membership-identifier))
-                                                           (quri.encode:url-encode
+                                                             'membership-identifier)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'protected-query-identifier))))
+                                                             'protected-query-identifier)
+                                                            common-lisp:t)))
                                                         "GetProtectedQuery"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-protected-query))
@@ -15544,14 +15587,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/collaborations/~A/schemas/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'collaboration-identifier))
-                                                           (quri.encode:url-encode
+                                                             'collaboration-identifier)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "GetSchema"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-schema))
@@ -15576,18 +15621,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/collaborations/~A/schemas/~A/analysisRule/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'collaboration-identifier))
-                                                           (quri.encode:url-encode
+                                                             'collaboration-identifier)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))
-                                                           (quri.encode:url-encode
+                                                             'name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'type))))
+                                                             'type)
+                                                            common-lisp:t)))
                                                         "GetSchemaAnalysisRule"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-schema-analysis-rule))
@@ -15613,10 +15661,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/memberships/~A/analysistemplates"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'membership-identifier))))
+                                                             'membership-identifier)
+                                                            common-lisp:t)))
                                                         "ListAnalysisTemplates"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-analysis-templates))
@@ -15643,10 +15692,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/collaborations/~A/analysistemplates"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'collaboration-identifier))))
+                                                             'collaboration-identifier)
+                                                            common-lisp:t)))
                                                         "ListCollaborationAnalysisTemplates"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-collaboration-analysis-templates))
@@ -15673,10 +15723,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/collaborations/~A/configuredaudiencemodelassociations"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'collaboration-identifier))))
+                                                             'collaboration-identifier)
+                                                            common-lisp:t)))
                                                         "ListCollaborationConfiguredAudienceModelAssociations"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export
@@ -15704,10 +15755,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/collaborations/~A/privacybudgettemplates"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'collaboration-identifier))))
+                                                             'collaboration-identifier)
+                                                            common-lisp:t)))
                                                         "ListCollaborationPrivacyBudgetTemplates"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-collaboration-privacy-budget-templates))
@@ -15735,10 +15787,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/collaborations/~A/privacybudgets"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'collaboration-identifier))))
+                                                             'collaboration-identifier)
+                                                            common-lisp:t)))
                                                         "ListCollaborationPrivacyBudgets"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-collaboration-privacy-budgets))
@@ -15783,10 +15836,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/memberships/~A/configuredaudiencemodelassociations"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'membership-identifier))))
+                                                             'membership-identifier)
+                                                            common-lisp:t)))
                                                         "ListConfiguredAudienceModelAssociations"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-configured-audience-model-associations))
@@ -15813,10 +15867,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/memberships/~A/configuredTableAssociations"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'membership-identifier))))
+                                                             'membership-identifier)
+                                                            common-lisp:t)))
                                                         "ListConfiguredTableAssociations"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-configured-table-associations))
@@ -15860,10 +15915,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/collaborations/~A/members"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'collaboration-identifier))))
+                                                             'collaboration-identifier)
+                                                            common-lisp:t)))
                                                         "ListMembers"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-members))
@@ -15907,10 +15963,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/memberships/~A/privacybudgettemplates"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'membership-identifier))))
+                                                             'membership-identifier)
+                                                            common-lisp:t)))
                                                         "ListPrivacyBudgetTemplates"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-privacy-budget-templates))
@@ -15937,10 +15994,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/memberships/~A/privacybudgets"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'membership-identifier))))
+                                                             'membership-identifier)
+                                                            common-lisp:t)))
                                                         "ListPrivacyBudgets"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-privacy-budgets))
@@ -15967,10 +16025,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/memberships/~A/protectedQueries"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'membership-identifier))))
+                                                             'membership-identifier)
+                                                            common-lisp:t)))
                                                         "ListProtectedQueries"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-protected-queries))
@@ -15997,10 +16056,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/collaborations/~A/schemas"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'collaboration-identifier))))
+                                                             'collaboration-identifier)
+                                                            common-lisp:t)))
                                                         "ListSchemas"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-schemas))
@@ -16024,10 +16084,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -16052,10 +16113,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/memberships/~A/previewprivacyimpact"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'membership-identifier))))
+                                                             'membership-identifier)
+                                                            common-lisp:t)))
                                                         "PreviewPrivacyImpact"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'preview-privacy-impact))
@@ -16082,10 +16144,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/memberships/~A/protectedQueries"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'membership-identifier))))
+                                                             'membership-identifier)
+                                                            common-lisp:t)))
                                                         "StartProtectedQuery"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'start-protected-query))
@@ -16109,10 +16172,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -16136,10 +16200,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -16166,14 +16231,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/memberships/~A/analysistemplates/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'membership-identifier))
-                                                           (quri.encode:url-encode
+                                                             'membership-identifier)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'analysis-template-identifier))))
+                                                             'analysis-template-identifier)
+                                                            common-lisp:t)))
                                                         "UpdateAnalysisTemplate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-analysis-template))
@@ -16199,10 +16266,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/collaborations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'collaboration-identifier))))
+                                                             'collaboration-identifier)
+                                                            common-lisp:t)))
                                                         "UpdateCollaboration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-collaboration))
@@ -16231,14 +16299,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/memberships/~A/configuredaudiencemodelassociations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'membership-identifier))
-                                                           (quri.encode:url-encode
+                                                             'membership-identifier)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'configured-audience-model-association-identifier))))
+                                                             'configured-audience-model-association-identifier)
+                                                            common-lisp:t)))
                                                         "UpdateConfiguredAudienceModelAssociation"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-configured-audience-model-association))
@@ -16264,10 +16334,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/configuredTables/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'configured-table-identifier))))
+                                                             'configured-table-identifier)
+                                                            common-lisp:t)))
                                                         "UpdateConfiguredTable"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-configured-table))
@@ -16295,14 +16366,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/configuredTables/~A/analysisRule/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'configured-table-identifier))
-                                                           (quri.encode:url-encode
+                                                             'configured-table-identifier)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'analysis-rule-type))))
+                                                             'analysis-rule-type)
+                                                            common-lisp:t)))
                                                         "UpdateConfiguredTableAnalysisRule"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-configured-table-analysis-rule))
@@ -16330,14 +16403,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/memberships/~A/configuredTableAssociations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'membership-identifier))
-                                                           (quri.encode:url-encode
+                                                             'membership-identifier)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'configured-table-association-identifier))))
+                                                             'configured-table-association-identifier)
+                                                            common-lisp:t)))
                                                         "UpdateConfiguredTableAssociation"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-configured-table-association))
@@ -16364,10 +16439,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/memberships/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'membership-identifier))))
+                                                             'membership-identifier)
+                                                            common-lisp:t)))
                                                         "UpdateMembership"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-membership))
@@ -16396,14 +16472,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/memberships/~A/privacybudgettemplates/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'membership-identifier))
-                                                           (quri.encode:url-encode
+                                                             'membership-identifier)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'privacy-budget-template-identifier))))
+                                                             'privacy-budget-template-identifier)
+                                                            common-lisp:t)))
                                                         "UpdatePrivacyBudgetTemplate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-privacy-budget-template))
@@ -16430,14 +16508,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/memberships/~A/protectedQueries/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'membership-identifier))
-                                                           (quri.encode:url-encode
+                                                             'membership-identifier)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'protected-query-identifier))))
+                                                             'protected-query-identifier)
+                                                            common-lisp:t)))
                                                         "UpdateProtectedQuery"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-protected-query))

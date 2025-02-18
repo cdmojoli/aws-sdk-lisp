@@ -20,7 +20,7 @@
  (common-lisp:export 'servicecatalog-appregistry-error))
 (common-lisp:progn
  (common-lisp:defclass servicecatalog-appregistry-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "servicecatalog-appregistry"
                         :api-version "2020-06-24" :host-prefix
@@ -3648,14 +3648,16 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/applications/~A/attribute-groups/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'application))
-                              (quri.encode:url-encode
+                                'application)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'attribute-group))))
+                                'attribute-group)
+                               common-lisp:t)))
         "AssociateAttributeGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'associate-attribute-group))
@@ -3678,18 +3680,20 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/applications/~A/resources/~A/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'application))
-                              (quri.encode:url-encode
+                                'application)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-type))
-                              (quri.encode:url-encode
+                                'resource-type)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'resource))))
+                                aws-sdk/generator/operation::input 'resource)
+                               common-lisp:t)))
         "AssociateResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'associate-resource))
@@ -3744,10 +3748,11 @@
         "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/applications/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'application))))
+                                'application)
+                               common-lisp:t)))
         "DeleteApplication"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-application))
@@ -3767,10 +3772,11 @@
         "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/attribute-groups/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'attribute-group))))
+                                'attribute-group)
+                               common-lisp:t)))
         "DeleteAttributeGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-attribute-group))
@@ -3792,14 +3798,16 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/applications/~A/attribute-groups/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'application))
-                              (quri.encode:url-encode
+                                'application)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'attribute-group))))
+                                'attribute-group)
+                               common-lisp:t)))
         "DisassociateAttributeGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'disassociate-attribute-group))
@@ -3821,18 +3829,20 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/applications/~A/resources/~A/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'application))
-                              (quri.encode:url-encode
+                                'application)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-type))
-                              (quri.encode:url-encode
+                                'resource-type)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'resource))))
+                                aws-sdk/generator/operation::input 'resource)
+                               common-lisp:t)))
         "DisassociateResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'disassociate-resource))
@@ -3852,10 +3862,11 @@
         "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/applications/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'application))))
+                                'application)
+                               common-lisp:t)))
         "GetApplication"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-application))
@@ -3879,18 +3890,20 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/applications/~A/resources/~A/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'application))
-                              (quri.encode:url-encode
+                                'application)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-type))
-                              (quri.encode:url-encode
+                                'resource-type)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'resource))))
+                                aws-sdk/generator/operation::input 'resource)
+                               common-lisp:t)))
         "GetAssociatedResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-associated-resource))
@@ -3910,10 +3923,11 @@
         "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/attribute-groups/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'attribute-group))))
+                                'attribute-group)
+                               common-lisp:t)))
         "GetAttributeGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-attribute-group))
@@ -3961,10 +3975,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/applications/~A/attribute-groups"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'application))))
+                                'application)
+                               common-lisp:t)))
         "ListAssociatedAttributeGroups"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-associated-attribute-groups))
@@ -3986,10 +4001,11 @@
         "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/applications/~A/resources"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'application))))
+                                'application)
+                               common-lisp:t)))
         "ListAssociatedResources"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-associated-resources))
@@ -4028,10 +4044,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/applications/~A/attribute-group-details"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'application))))
+                                'application)
+                               common-lisp:t)))
         "ListAttributeGroupsForApplication"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-attribute-groups-for-application))
@@ -4051,10 +4068,11 @@
         "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -4090,14 +4108,15 @@
         "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/sync/~A/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-type))
-                              (quri.encode:url-encode
+                                'resource-type)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'resource))))
+                                aws-sdk/generator/operation::input 'resource)
+                               common-lisp:t)))
         "SyncResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'sync-resource))
@@ -4117,10 +4136,11 @@
         "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -4140,10 +4160,11 @@
         "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -4163,10 +4184,11 @@
         "PATCH"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/applications/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'application))))
+                                'application)
+                               common-lisp:t)))
         "UpdateApplication"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-application))
@@ -4188,10 +4210,11 @@
         "PATCH"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/attribute-groups/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'attribute-group))))
+                                'attribute-group)
+                               common-lisp:t)))
         "UpdateAttributeGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-attribute-group))

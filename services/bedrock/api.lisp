@@ -20,7 +20,7 @@
  (common-lisp:export 'bedrock-error))
 (common-lisp:progn
  (common-lisp:defclass bedrock-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "bedrock" :api-version
                         "2023-04-20" :host-prefix "bedrock" :signing-name
@@ -4249,10 +4249,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/custom-models/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'model-identifier))))
+                                                             'model-identifier)
+                                                            common-lisp:t)))
                                                         "DeleteCustomModel"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-custom-model))
@@ -4286,10 +4287,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/provisioned-model-throughput/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'provisioned-model-id))))
+                                                             'provisioned-model-id)
+                                                            common-lisp:t)))
                                                         "DeleteProvisionedModelThroughput"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-provisioned-model-throughput))
@@ -4313,10 +4315,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/custom-models/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'model-identifier))))
+                                                             'model-identifier)
+                                                            common-lisp:t)))
                                                         "GetCustomModel"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-custom-model))
@@ -4340,10 +4343,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/foundation-models/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'model-identifier))))
+                                                             'model-identifier)
+                                                            common-lisp:t)))
                                                         "GetFoundationModel"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-foundation-model))
@@ -4368,10 +4372,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/model-customization-jobs/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'job-identifier))))
+                                                             'job-identifier)
+                                                            common-lisp:t)))
                                                         "GetModelCustomizationJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-model-customization-job))
@@ -4405,10 +4410,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/provisioned-model-throughput/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'provisioned-model-id))))
+                                                             'provisioned-model-id)
+                                                            common-lisp:t)))
                                                         "GetProvisionedModelThroughput"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-provisioned-model-throughput))
@@ -4561,10 +4567,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/model-customization-jobs/~A/stop"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'job-identifier))))
+                                                             'job-identifier)
+                                                            common-lisp:t)))
                                                         "StopModelCustomizationJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'stop-model-customization-job))
@@ -4626,10 +4633,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/provisioned-model-throughput/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'provisioned-model-id))))
+                                                             'provisioned-model-id)
+                                                            common-lisp:t)))
                                                         "UpdateProvisionedModelThroughput"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-provisioned-model-throughput))

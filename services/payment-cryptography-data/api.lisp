@@ -20,7 +20,7 @@
  (common-lisp:export 'payment-cryptography-data-error))
 (common-lisp:progn
  (common-lisp:defclass payment-cryptography-data-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "payment-cryptography-data"
                         :api-version "2022-02-03" :host-prefix
@@ -5453,10 +5453,11 @@
         "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/keys/~A/decrypt"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'key-identifier))))
+                                'key-identifier)
+                               common-lisp:t)))
         "DecryptData"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'decrypt-data))
@@ -5478,10 +5479,11 @@
         "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/keys/~A/encrypt"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'key-identifier))))
+                                'key-identifier)
+                               common-lisp:t)))
         "EncryptData"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'encrypt-data))
@@ -5566,10 +5568,11 @@
         "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/keys/~A/reencrypt"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'incoming-key-identifier))))
+                                'incoming-key-identifier)
+                               common-lisp:t)))
         "ReEncryptData"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 're-encrypt-data))

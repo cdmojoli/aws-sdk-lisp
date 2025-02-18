@@ -20,7 +20,7 @@
  (common-lisp:export 'chime-sdk-meetings-error))
 (common-lisp:progn
  (common-lisp:defclass chime-sdk-meetings-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "chime-sdk-meetings"
                         :api-version "2021-07-15" :host-prefix "meetings-chime"
@@ -3008,10 +3008,10 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/meetings/~A/attendees?operation=batch-create"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'meeting-id))))
+                                aws-sdk/generator/operation::input 'meeting-id)
+                               common-lisp:t)))
         "BatchCreateAttendee"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'batch-create-attendee))
@@ -3034,10 +3034,10 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/meetings/~A/attendees/capabilities?operation=batch-update-except"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'meeting-id))))
+                                aws-sdk/generator/operation::input 'meeting-id)
+                               common-lisp:t)))
         "BatchUpdateAttendeeCapabilitiesExcept"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'batch-update-attendee-capabilities-except))
@@ -3057,10 +3057,10 @@
         'chime-sdk-meetings-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/meetings/~A/attendees"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'meeting-id))))
+                                aws-sdk/generator/operation::input 'meeting-id)
+                               common-lisp:t)))
         "CreateAttendee"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-attendee))
@@ -3124,14 +3124,15 @@
         'chime-sdk-meetings-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/meetings/~A/attendees/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
+                               (common-lisp:slot-value
+                                aws-sdk/generator/operation::input 'meeting-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'meeting-id))
-                              (quri.encode:url-encode
-                               (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'attendee-id))))
+                                'attendee-id)
+                               common-lisp:t)))
         "DeleteAttendee"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-attendee))
@@ -3150,10 +3151,10 @@
         'chime-sdk-meetings-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/meetings/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'meeting-id))))
+                                aws-sdk/generator/operation::input 'meeting-id)
+                               common-lisp:t)))
         "DeleteMeeting"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-meeting))
@@ -3172,14 +3173,15 @@
         'chime-sdk-meetings-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/meetings/~A/attendees/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
+                               (common-lisp:slot-value
+                                aws-sdk/generator/operation::input 'meeting-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'meeting-id))
-                              (quri.encode:url-encode
-                               (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'attendee-id))))
+                                'attendee-id)
+                               common-lisp:t)))
         "GetAttendee"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-attendee))
@@ -3198,10 +3200,10 @@
         'chime-sdk-meetings-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/meetings/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'meeting-id))))
+                                aws-sdk/generator/operation::input 'meeting-id)
+                               common-lisp:t)))
         "GetMeeting"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-meeting))
@@ -3221,10 +3223,10 @@
         'chime-sdk-meetings-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/meetings/~A/attendees"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'meeting-id))))
+                                aws-sdk/generator/operation::input 'meeting-id)
+                               common-lisp:t)))
         "ListAttendees"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-attendees))
@@ -3262,10 +3264,10 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/meetings/~A/transcription?operation=start"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'meeting-id))))
+                                aws-sdk/generator/operation::input 'meeting-id)
+                               common-lisp:t)))
         "StartMeetingTranscription"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'start-meeting-transcription))
@@ -3286,10 +3288,10 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/meetings/~A/transcription?operation=stop"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'meeting-id))))
+                                aws-sdk/generator/operation::input 'meeting-id)
+                               common-lisp:t)))
         "StopMeetingTranscription"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'stop-meeting-transcription))
@@ -3343,14 +3345,15 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/meetings/~A/attendees/~A/capabilities"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
+                               (common-lisp:slot-value
+                                aws-sdk/generator/operation::input 'meeting-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'meeting-id))
-                              (quri.encode:url-encode
-                               (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'attendee-id))))
+                                'attendee-id)
+                               common-lisp:t)))
         "UpdateAttendeeCapabilities"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-attendee-capabilities))

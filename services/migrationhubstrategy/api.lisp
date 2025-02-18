@@ -20,7 +20,7 @@
  (common-lisp:export 'migrationhubstrategy-error))
 (common-lisp:progn
  (common-lisp:defclass migrationhubstrategy-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "migrationhubstrategy"
                         :api-version "2020-02-19" :host-prefix
@@ -6825,10 +6825,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/get-applicationcomponent-details/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'application-component-id))))
+                                'application-component-id)
+                               common-lisp:t)))
         "GetApplicationComponentDetails"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-application-component-details))
@@ -6849,10 +6850,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/get-applicationcomponent-strategies/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'application-component-id))))
+                                'application-component-id)
+                               common-lisp:t)))
         "GetApplicationComponentStrategies"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-application-component-strategies))
@@ -6871,9 +6873,10 @@
         'migrationhubstrategy-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/get-assessment/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'id))))
+                                aws-sdk/generator/operation::input 'id)
+                               common-lisp:t)))
         "GetAssessment"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-assessment))
@@ -6892,9 +6895,10 @@
         'migrationhubstrategy-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/get-import-file-task/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'id))))
+                                aws-sdk/generator/operation::input 'id)
+                               common-lisp:t)))
         "GetImportFileTask"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-import-file-task))
@@ -6942,9 +6946,10 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/get-recommendation-report-details/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'id))))
+                                aws-sdk/generator/operation::input 'id)
+                               common-lisp:t)))
         "GetRecommendationReportDetails"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-recommendation-report-details))
@@ -6964,10 +6969,10 @@
         'migrationhubstrategy-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/get-server-details/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'server-id))))
+                                aws-sdk/generator/operation::input 'server-id)
+                               common-lisp:t)))
         "GetServerDetails"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-server-details))
@@ -6986,10 +6991,10 @@
         'migrationhubstrategy-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/get-server-strategies/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'server-id))))
+                                aws-sdk/generator/operation::input 'server-id)
+                               common-lisp:t)))
         "GetServerStrategies"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-server-strategies))

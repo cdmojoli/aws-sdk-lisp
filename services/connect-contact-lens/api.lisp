@@ -20,7 +20,7 @@
  (common-lisp:export 'connect-contact-lens-error))
 (common-lisp:progn
  (common-lisp:defclass connect-contact-lens-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "connect-contact-lens"
                         :api-version "2020-08-21" :host-prefix "contact-lens"

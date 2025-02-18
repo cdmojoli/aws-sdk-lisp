@@ -20,7 +20,7 @@
  (common-lisp:export 'repostspace-error))
 (common-lisp:progn
  (common-lisp:defclass repostspace-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "repostspace" :api-version
                         "2022-05-13" :host-prefix "repostspace" :signing-name
@@ -1452,10 +1452,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/spaces/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'space-id))))
+                                                             'space-id)
+                                                            common-lisp:t)))
                                                         "DeleteSpace"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-space))
@@ -1479,14 +1480,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/spaces/~A/admins/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'space-id))
-                                                           (quri.encode:url-encode
+                                                             'space-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'admin-id))))
+                                                             'admin-id)
+                                                            common-lisp:t)))
                                                         "DeregisterAdmin"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'deregister-admin))
@@ -1510,10 +1513,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/spaces/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'space-id))))
+                                                             'space-id)
+                                                            common-lisp:t)))
                                                         "GetSpace"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-space))
@@ -1554,10 +1558,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -1581,14 +1586,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/spaces/~A/admins/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'space-id))
-                                                           (quri.encode:url-encode
+                                                             'space-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'admin-id))))
+                                                             'admin-id)
+                                                            common-lisp:t)))
                                                         "RegisterAdmin"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'register-admin))
@@ -1613,10 +1620,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/spaces/~A/invite"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'space-id))))
+                                                             'space-id)
+                                                            common-lisp:t)))
                                                         "SendInvites"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'send-invites))
@@ -1640,10 +1648,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -1667,10 +1676,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -1695,10 +1705,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/spaces/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'space-id))))
+                                                             'space-id)
+                                                            common-lisp:t)))
                                                         "UpdateSpace"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-space))

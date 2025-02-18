@@ -20,7 +20,7 @@
  (common-lisp:export 'fis-error))
 (common-lisp:progn
  (common-lisp:defclass fis-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "fis" :api-version
                         "2020-12-01" :host-prefix "fis" :signing-name "fis"
@@ -6327,14 +6327,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/experimentTemplates/~A/targetAccountConfigurations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))
-                                                           (quri.encode:url-encode
+                                                             'id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'account-id))))
+                                                             'account-id)
+                                                            common-lisp:t)))
                                                         "CreateTargetAccountConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-target-account-configuration))
@@ -6359,10 +6361,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/experimentTemplates/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "DeleteExperimentTemplate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-experiment-template))
@@ -6388,14 +6391,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/experimentTemplates/~A/targetAccountConfigurations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))
-                                                           (quri.encode:url-encode
+                                                             'id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'account-id))))
+                                                             'account-id)
+                                                            common-lisp:t)))
                                                         "DeleteTargetAccountConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-target-account-configuration))
@@ -6419,10 +6424,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/actions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetAction"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-action))
@@ -6446,10 +6452,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/experiments/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetExperiment"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-experiment))
@@ -6474,14 +6481,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/experiments/~A/targetAccountConfigurations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))
-                                                           (quri.encode:url-encode
+                                                             'id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'account-id))))
+                                                             'account-id)
+                                                            common-lisp:t)))
                                                         "GetExperimentTargetAccountConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-experiment-target-account-configuration))
@@ -6505,10 +6514,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/experimentTemplates/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetExperimentTemplate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-experiment-template))
@@ -6534,14 +6544,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/experimentTemplates/~A/targetAccountConfigurations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))
-                                                           (quri.encode:url-encode
+                                                             'id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'account-id))))
+                                                             'account-id)
+                                                            common-lisp:t)))
                                                         "GetTargetAccountConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-target-account-configuration))
@@ -6565,10 +6577,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/targetResourceTypes/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-type))))
+                                                             'resource-type)
+                                                            common-lisp:t)))
                                                         "GetTargetResourceType"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-target-resource-type))
@@ -6612,10 +6625,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/experiments/~A/resolvedTargets"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "ListExperimentResolvedTargets"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-experiment-resolved-targets))
@@ -6640,10 +6654,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/experiments/~A/targetAccountConfigurations"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "ListExperimentTargetAccountConfigurations"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-experiment-target-account-configurations))
@@ -6703,10 +6718,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -6733,10 +6749,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/experimentTemplates/~A/targetAccountConfigurations"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "ListTargetAccountConfigurations"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-target-account-configurations))
@@ -6797,10 +6814,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/experiments/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "StopExperiment"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'stop-experiment))
@@ -6824,10 +6842,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -6851,10 +6870,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -6882,10 +6902,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/experimentTemplates/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "UpdateExperimentTemplate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-experiment-template))
@@ -6913,14 +6934,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/experimentTemplates/~A/targetAccountConfigurations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))
-                                                           (quri.encode:url-encode
+                                                             'id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'account-id))))
+                                                             'account-id)
+                                                            common-lisp:t)))
                                                         "UpdateTargetAccountConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-target-account-configuration))

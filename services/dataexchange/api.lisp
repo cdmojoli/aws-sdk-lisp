@@ -20,7 +20,7 @@
  (common-lisp:export 'dataexchange-error))
 (common-lisp:progn
  (common-lisp:defclass dataexchange-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "dataexchange" :api-version
                         "2017-07-25" :host-prefix "dataexchange" :signing-name
@@ -7695,28 +7695,38 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'asset-id))
-      (common-lisp:cons "x-amzn-dataexchange-asset-id"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amzn-dataexchange-asset-id"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'data-set-id))
-      (common-lisp:cons "x-amzn-dataexchange-data-set-id"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amzn-dataexchange-data-set-id"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'method))
-      (common-lisp:cons "x-amzn-dataexchange-http-method"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amzn-dataexchange-http-method"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'path))
-      (common-lisp:cons "x-amzn-dataexchange-path"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amzn-dataexchange-path"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'revision-id))
-      (common-lisp:cons "x-amzn-dataexchange-revision-id"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amzn-dataexchange-revision-id"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (common-lisp:when
         (common-lisp:slot-value aws-sdk/generator/shape::input
                                 'request-headers)
@@ -8985,10 +8995,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/jobs/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'job-id))))
+                                                             'job-id)
+                                                            common-lisp:t)))
                                                         "CancelJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'cancel-job))
@@ -9065,10 +9076,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/data-sets/~A/revisions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'data-set-id))))
+                                                             'data-set-id)
+                                                            common-lisp:t)))
                                                         "CreateRevision"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-revision))
@@ -9093,18 +9105,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/data-sets/~A/revisions/~A/assets/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'data-set-id))
-                                                           (quri.encode:url-encode
+                                                             'data-set-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'revision-id))
-                                                           (quri.encode:url-encode
+                                                             'revision-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'asset-id))))
+                                                             'asset-id)
+                                                            common-lisp:t)))
                                                         "DeleteAsset"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-asset))
@@ -9128,10 +9143,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/data-sets/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'data-set-id))))
+                                                             'data-set-id)
+                                                            common-lisp:t)))
                                                         "DeleteDataSet"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-data-set))
@@ -9155,10 +9171,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/event-actions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'event-action-id))))
+                                                             'event-action-id)
+                                                            common-lisp:t)))
                                                         "DeleteEventAction"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-event-action))
@@ -9182,14 +9199,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/data-sets/~A/revisions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'data-set-id))
-                                                           (quri.encode:url-encode
+                                                             'data-set-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'revision-id))))
+                                                             'revision-id)
+                                                            common-lisp:t)))
                                                         "DeleteRevision"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-revision))
@@ -9214,18 +9233,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/data-sets/~A/revisions/~A/assets/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'data-set-id))
-                                                           (quri.encode:url-encode
+                                                             'data-set-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'revision-id))
-                                                           (quri.encode:url-encode
+                                                             'revision-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'asset-id))))
+                                                             'asset-id)
+                                                            common-lisp:t)))
                                                         "GetAsset"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-asset))
@@ -9249,10 +9271,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/data-sets/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'data-set-id))))
+                                                             'data-set-id)
+                                                            common-lisp:t)))
                                                         "GetDataSet"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-data-set))
@@ -9276,10 +9299,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/event-actions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'event-action-id))))
+                                                             'event-action-id)
+                                                            common-lisp:t)))
                                                         "GetEventAction"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-event-action))
@@ -9303,10 +9327,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/jobs/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'job-id))))
+                                                             'job-id)
+                                                            common-lisp:t)))
                                                         "GetJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-job))
@@ -9330,14 +9355,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/data-sets/~A/revisions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'data-set-id))
-                                                           (quri.encode:url-encode
+                                                             'data-set-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'revision-id))))
+                                                             'revision-id)
+                                                            common-lisp:t)))
                                                         "GetRevision"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-revision))
@@ -9362,10 +9389,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/data-sets/~A/revisions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'data-set-id))))
+                                                             'data-set-id)
+                                                            common-lisp:t)))
                                                         "ListDataSetRevisions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-data-set-revisions))
@@ -9446,14 +9474,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/data-sets/~A/revisions/~A/assets"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'data-set-id))
-                                                           (quri.encode:url-encode
+                                                             'data-set-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'revision-id))))
+                                                             'revision-id)
+                                                            common-lisp:t)))
                                                         "ListRevisionAssets"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-revision-assets))
@@ -9477,10 +9507,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -9506,14 +9537,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/data-sets/~A/revisions/~A/revoke"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'data-set-id))
-                                                           (quri.encode:url-encode
+                                                             'data-set-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'revision-id))))
+                                                             'revision-id)
+                                                            common-lisp:t)))
                                                         "RevokeRevision"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'revoke-revision))
@@ -9561,10 +9594,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/data-sets/~A/notification"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'data-set-id))))
+                                                             'data-set-id)
+                                                            common-lisp:t)))
                                                         "SendDataSetNotification"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'send-data-set-notification))
@@ -9588,10 +9622,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/jobs/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'job-id))))
+                                                             'job-id)
+                                                            common-lisp:t)))
                                                         "StartJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'start-job))
@@ -9615,10 +9650,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -9642,10 +9678,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -9670,18 +9707,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/data-sets/~A/revisions/~A/assets/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'data-set-id))
-                                                           (quri.encode:url-encode
+                                                             'data-set-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'revision-id))
-                                                           (quri.encode:url-encode
+                                                             'revision-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'asset-id))))
+                                                             'asset-id)
+                                                            common-lisp:t)))
                                                         "UpdateAsset"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-asset))
@@ -9705,10 +9745,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/data-sets/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'data-set-id))))
+                                                             'data-set-id)
+                                                            common-lisp:t)))
                                                         "UpdateDataSet"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-data-set))
@@ -9732,10 +9773,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/event-actions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'event-action-id))))
+                                                             'event-action-id)
+                                                            common-lisp:t)))
                                                         "UpdateEventAction"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-event-action))
@@ -9761,14 +9803,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/data-sets/~A/revisions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'data-set-id))
-                                                           (quri.encode:url-encode
+                                                             'data-set-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'revision-id))))
+                                                             'revision-id)
+                                                            common-lisp:t)))
                                                         "UpdateRevision"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-revision))

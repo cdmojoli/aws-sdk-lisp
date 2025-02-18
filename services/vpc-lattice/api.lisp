@@ -20,7 +20,7 @@
  (common-lisp:export 'vpc-lattice-error))
 (common-lisp:progn
  (common-lisp:defclass vpc-lattice-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "vpc-lattice" :api-version
                         "2022-11-30" :host-prefix "vpc-lattice" :signing-name
@@ -9770,14 +9770,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/services/~A/listeners/~A/rules"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'service-identifier))
-                                                           (quri.encode:url-encode
+                                                             'service-identifier)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'listener-identifier))))
+                                                             'listener-identifier)
+                                                            common-lisp:t)))
                                                         "BatchUpdateRule"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'batch-update-rule))
@@ -9826,10 +9828,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/services/~A/listeners"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'service-identifier))))
+                                                             'service-identifier)
+                                                            common-lisp:t)))
                                                         "CreateListener"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-listener))
@@ -9856,14 +9859,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/services/~A/listeners/~A/rules"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'service-identifier))
-                                                           (quri.encode:url-encode
+                                                             'service-identifier)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'listener-identifier))))
+                                                             'listener-identifier)
+                                                            common-lisp:t)))
                                                         "CreateRule"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-rule))
@@ -9990,10 +9995,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accesslogsubscriptions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'access-log-subscription-identifier))))
+                                                             'access-log-subscription-identifier)
+                                                            common-lisp:t)))
                                                         "DeleteAccessLogSubscription"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-access-log-subscription))
@@ -10017,10 +10023,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/authpolicy/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-identifier))))
+                                                             'resource-identifier)
+                                                            common-lisp:t)))
                                                         "DeleteAuthPolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-auth-policy))
@@ -10045,14 +10052,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/services/~A/listeners/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'service-identifier))
-                                                           (quri.encode:url-encode
+                                                             'service-identifier)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'listener-identifier))))
+                                                             'listener-identifier)
+                                                            common-lisp:t)))
                                                         "DeleteListener"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-listener))
@@ -10076,10 +10085,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/resourcepolicy/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "DeleteResourcePolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-resource-policy))
@@ -10106,18 +10116,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/services/~A/listeners/~A/rules/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'service-identifier))
-                                                           (quri.encode:url-encode
+                                                             'service-identifier)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'listener-identifier))
-                                                           (quri.encode:url-encode
+                                                             'listener-identifier)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'rule-identifier))))
+                                                             'rule-identifier)
+                                                            common-lisp:t)))
                                                         "DeleteRule"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-rule))
@@ -10141,10 +10154,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/services/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'service-identifier))))
+                                                             'service-identifier)
+                                                            common-lisp:t)))
                                                         "DeleteService"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-service))
@@ -10168,10 +10182,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/servicenetworks/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'service-network-identifier))))
+                                                             'service-network-identifier)
+                                                            common-lisp:t)))
                                                         "DeleteServiceNetwork"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-service-network))
@@ -10198,10 +10213,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/servicenetworkserviceassociations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'service-network-service-association-identifier))))
+                                                             'service-network-service-association-identifier)
+                                                            common-lisp:t)))
                                                         "DeleteServiceNetworkServiceAssociation"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-service-network-service-association))
@@ -10228,10 +10244,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/servicenetworkvpcassociations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'service-network-vpc-association-identifier))))
+                                                             'service-network-vpc-association-identifier)
+                                                            common-lisp:t)))
                                                         "DeleteServiceNetworkVpcAssociation"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-service-network-vpc-association))
@@ -10255,10 +10272,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/targetgroups/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'target-group-identifier))))
+                                                             'target-group-identifier)
+                                                            common-lisp:t)))
                                                         "DeleteTargetGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-target-group))
@@ -10283,10 +10301,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/targetgroups/~A/deregistertargets"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'target-group-identifier))))
+                                                             'target-group-identifier)
+                                                            common-lisp:t)))
                                                         "DeregisterTargets"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'deregister-targets))
@@ -10312,10 +10331,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accesslogsubscriptions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'access-log-subscription-identifier))))
+                                                             'access-log-subscription-identifier)
+                                                            common-lisp:t)))
                                                         "GetAccessLogSubscription"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-access-log-subscription))
@@ -10339,10 +10359,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/authpolicy/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-identifier))))
+                                                             'resource-identifier)
+                                                            common-lisp:t)))
                                                         "GetAuthPolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-auth-policy))
@@ -10367,14 +10388,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/services/~A/listeners/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'service-identifier))
-                                                           (quri.encode:url-encode
+                                                             'service-identifier)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'listener-identifier))))
+                                                             'listener-identifier)
+                                                            common-lisp:t)))
                                                         "GetListener"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-listener))
@@ -10398,10 +10421,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/resourcepolicy/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "GetResourcePolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-resource-policy))
@@ -10428,18 +10452,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/services/~A/listeners/~A/rules/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'service-identifier))
-                                                           (quri.encode:url-encode
+                                                             'service-identifier)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'listener-identifier))
-                                                           (quri.encode:url-encode
+                                                             'listener-identifier)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'rule-identifier))))
+                                                             'rule-identifier)
+                                                            common-lisp:t)))
                                                         "GetRule"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-rule))
@@ -10463,10 +10490,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/services/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'service-identifier))))
+                                                             'service-identifier)
+                                                            common-lisp:t)))
                                                         "GetService"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-service))
@@ -10490,10 +10518,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/servicenetworks/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'service-network-identifier))))
+                                                             'service-network-identifier)
+                                                            common-lisp:t)))
                                                         "GetServiceNetwork"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-service-network))
@@ -10520,10 +10549,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/servicenetworkserviceassociations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'service-network-service-association-identifier))))
+                                                             'service-network-service-association-identifier)
+                                                            common-lisp:t)))
                                                         "GetServiceNetworkServiceAssociation"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-service-network-service-association))
@@ -10550,10 +10580,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/servicenetworkvpcassociations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'service-network-vpc-association-identifier))))
+                                                             'service-network-vpc-association-identifier)
+                                                            common-lisp:t)))
                                                         "GetServiceNetworkVpcAssociation"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-service-network-vpc-association))
@@ -10577,10 +10608,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/targetgroups/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'target-group-identifier))))
+                                                             'target-group-identifier)
+                                                            common-lisp:t)))
                                                         "GetTargetGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-target-group))
@@ -10627,10 +10659,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/services/~A/listeners"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'service-identifier))))
+                                                             'service-identifier)
+                                                            common-lisp:t)))
                                                         "ListListeners"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-listeners))
@@ -10657,14 +10690,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/services/~A/listeners/~A/rules"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'service-identifier))
-                                                           (quri.encode:url-encode
+                                                             'service-identifier)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'listener-identifier))))
+                                                             'listener-identifier)
+                                                            common-lisp:t)))
                                                         "ListRules"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-rules))
@@ -10767,10 +10802,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -10817,10 +10853,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/targetgroups/~A/listtargets"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'target-group-identifier))))
+                                                             'target-group-identifier)
+                                                            common-lisp:t)))
                                                         "ListTargets"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-targets))
@@ -10844,10 +10881,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/authpolicy/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-identifier))))
+                                                             'resource-identifier)
+                                                            common-lisp:t)))
                                                         "PutAuthPolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-auth-policy))
@@ -10871,10 +10909,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/resourcepolicy/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "PutResourcePolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-resource-policy))
@@ -10899,10 +10938,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/targetgroups/~A/registertargets"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'target-group-identifier))))
+                                                             'target-group-identifier)
+                                                            common-lisp:t)))
                                                         "RegisterTargets"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'register-targets))
@@ -10926,10 +10966,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -10953,10 +10994,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -10983,10 +11025,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accesslogsubscriptions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'access-log-subscription-identifier))))
+                                                             'access-log-subscription-identifier)
+                                                            common-lisp:t)))
                                                         "UpdateAccessLogSubscription"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-access-log-subscription))
@@ -11013,14 +11056,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/services/~A/listeners/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'service-identifier))
-                                                           (quri.encode:url-encode
+                                                             'service-identifier)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'listener-identifier))))
+                                                             'listener-identifier)
+                                                            common-lisp:t)))
                                                         "UpdateListener"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-listener))
@@ -11047,18 +11092,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/services/~A/listeners/~A/rules/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'service-identifier))
-                                                           (quri.encode:url-encode
+                                                             'service-identifier)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'listener-identifier))
-                                                           (quri.encode:url-encode
+                                                             'listener-identifier)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'rule-identifier))))
+                                                             'rule-identifier)
+                                                            common-lisp:t)))
                                                         "UpdateRule"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-rule))
@@ -11084,10 +11132,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/services/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'service-identifier))))
+                                                             'service-identifier)
+                                                            common-lisp:t)))
                                                         "UpdateService"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-service))
@@ -11112,10 +11161,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/servicenetworks/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'service-network-identifier))))
+                                                             'service-network-identifier)
+                                                            common-lisp:t)))
                                                         "UpdateServiceNetwork"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-service-network))
@@ -11143,10 +11193,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/servicenetworkvpcassociations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'service-network-vpc-association-identifier))))
+                                                             'service-network-vpc-association-identifier)
+                                                            common-lisp:t)))
                                                         "UpdateServiceNetworkVpcAssociation"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-service-network-vpc-association))
@@ -11171,10 +11222,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/targetgroups/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'target-group-identifier))))
+                                                             'target-group-identifier)
+                                                            common-lisp:t)))
                                                         "UpdateTargetGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-target-group))

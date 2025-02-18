@@ -20,7 +20,7 @@
  (common-lisp:export 'quicksight-error))
 (common-lisp:progn
  (common-lisp:defclass quicksight-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "quicksight" :api-version
                         "2018-04-01" :host-prefix "quicksight" :signing-name
@@ -80417,18 +80417,21 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/data-sets/~A/ingestions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'data-set-id))
-                                                           (quri.encode:url-encode
+                                                             'data-set-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'ingestion-id))))
+                                                             'ingestion-id)
+                                                            common-lisp:t)))
                                                         "CancelIngestion"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'cancel-ingestion))
@@ -80456,10 +80459,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/customizations"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))))
+                                                             'aws-account-id)
+                                                            common-lisp:t)))
                                                         "CreateAccountCustomization"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-account-customization))
@@ -80492,10 +80496,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/account/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))))
+                                                             'aws-account-id)
+                                                            common-lisp:t)))
                                                         "CreateAccountSubscription"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-account-subscription))
@@ -80524,14 +80529,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/analyses/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'analysis-id))))
+                                                             'analysis-id)
+                                                            common-lisp:t)))
                                                         "CreateAnalysis"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-analysis))
@@ -80563,14 +80570,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/dashboards/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dashboard-id))))
+                                                             'dashboard-id)
+                                                            common-lisp:t)))
                                                         "CreateDashboard"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-dashboard))
@@ -80606,10 +80615,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/data-sets"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))))
+                                                             'aws-account-id)
+                                                            common-lisp:t)))
                                                         "CreateDataSet"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-data-set))
@@ -80638,10 +80648,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/data-sources"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))))
+                                                             'aws-account-id)
+                                                            common-lisp:t)))
                                                         "CreateDataSource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-data-source))
@@ -80668,14 +80679,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/folders/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'folder-id))))
+                                                             'folder-id)
+                                                            common-lisp:t)))
                                                         "CreateFolder"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-folder))
@@ -80701,22 +80714,26 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/folders/~A/members/~A/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'folder-id))
-                                                           (quri.encode:url-encode
+                                                             'folder-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'member-type))
-                                                           (quri.encode:url-encode
+                                                             'member-type)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'member-id))))
+                                                             'member-id)
+                                                            common-lisp:t)))
                                                         "CreateFolderMembership"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-folder-membership))
@@ -80742,14 +80759,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/namespaces/~A/groups"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'namespace))))
+                                                             'namespace)
+                                                            common-lisp:t)))
                                                         "CreateGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-group))
@@ -80775,22 +80794,26 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/namespaces/~A/groups/~A/members/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'namespace))
-                                                           (quri.encode:url-encode
+                                                             'namespace)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'group-name))
-                                                           (quri.encode:url-encode
+                                                             'group-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'member-name))))
+                                                             'member-name)
+                                                            common-lisp:t)))
                                                         "CreateGroupMembership"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-group-membership))
@@ -80818,14 +80841,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/namespaces/~A/iam-policy-assignments/"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'namespace))))
+                                                             'namespace)
+                                                            common-lisp:t)))
                                                         "CreateIAMPolicyAssignment"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-iampolicy-assignment))
@@ -80852,18 +80877,21 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/data-sets/~A/ingestions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'data-set-id))
-                                                           (quri.encode:url-encode
+                                                             'data-set-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'ingestion-id))))
+                                                             'ingestion-id)
+                                                            common-lisp:t)))
                                                         "CreateIngestion"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-ingestion))
@@ -80889,10 +80917,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))))
+                                                             'aws-account-id)
+                                                            common-lisp:t)))
                                                         "CreateNamespace"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-namespace))
@@ -80917,14 +80946,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/data-sets/~A/refresh-schedules"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'data-set-id))))
+                                                             'data-set-id)
+                                                            common-lisp:t)))
                                                         "CreateRefreshSchedule"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-refresh-schedule))
@@ -80950,22 +80981,26 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/namespaces/~A/roles/~A/members/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'namespace))
-                                                           (quri.encode:url-encode
+                                                             'namespace)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'role))
-                                                           (quri.encode:url-encode
+                                                             'role)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'member-name))))
+                                                             'member-name)
+                                                            common-lisp:t)))
                                                         "CreateRoleMembership"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-role-membership))
@@ -80993,14 +81028,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/templates/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'template-id))))
+                                                             'template-id)
+                                                            common-lisp:t)))
                                                         "CreateTemplate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-template))
@@ -81027,18 +81064,21 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/templates/~A/aliases/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'template-id))
-                                                           (quri.encode:url-encode
+                                                             'template-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'alias-name))))
+                                                             'alias-name)
+                                                            common-lisp:t)))
                                                         "CreateTemplateAlias"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-template-alias))
@@ -81066,14 +81106,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/themes/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'theme-id))))
+                                                             'theme-id)
+                                                            common-lisp:t)))
                                                         "CreateTheme"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-theme))
@@ -81100,18 +81142,21 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/themes/~A/aliases/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'theme-id))
-                                                           (quri.encode:url-encode
+                                                             'theme-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'alias-name))))
+                                                             'alias-name)
+                                                            common-lisp:t)))
                                                         "CreateThemeAlias"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-theme-alias))
@@ -81136,10 +81181,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/topics"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))))
+                                                             'aws-account-id)
+                                                            common-lisp:t)))
                                                         "CreateTopic"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-topic))
@@ -81167,14 +81213,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/topics/~A/schedules"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'topic-id))))
+                                                             'topic-id)
+                                                            common-lisp:t)))
                                                         "CreateTopicRefreshSchedule"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-topic-refresh-schedule))
@@ -81201,10 +81249,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/vpc-connections"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))))
+                                                             'aws-account-id)
+                                                            common-lisp:t)))
                                                         "CreateVPCConnection"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-vpcconnection))
@@ -81229,10 +81278,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/customizations"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))))
+                                                             'aws-account-id)
+                                                            common-lisp:t)))
                                                         "DeleteAccountCustomization"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-account-customization))
@@ -81257,10 +81307,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/account/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))))
+                                                             'aws-account-id)
+                                                            common-lisp:t)))
                                                         "DeleteAccountSubscription"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-account-subscription))
@@ -81287,14 +81338,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/analyses/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'analysis-id))))
+                                                             'analysis-id)
+                                                            common-lisp:t)))
                                                         "DeleteAnalysis"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-analysis))
@@ -81320,14 +81373,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/dashboards/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dashboard-id))))
+                                                             'dashboard-id)
+                                                            common-lisp:t)))
                                                         "DeleteDashboard"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-dashboard))
@@ -81351,14 +81406,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/data-sets/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'data-set-id))))
+                                                             'data-set-id)
+                                                            common-lisp:t)))
                                                         "DeleteDataSet"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-data-set))
@@ -81383,14 +81440,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/data-sets/~A/refresh-properties"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'data-set-id))))
+                                                             'data-set-id)
+                                                            common-lisp:t)))
                                                         "DeleteDataSetRefreshProperties"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-data-set-refresh-properties))
@@ -81414,14 +81473,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/data-sources/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'data-source-id))))
+                                                             'data-source-id)
+                                                            common-lisp:t)))
                                                         "DeleteDataSource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-data-source))
@@ -81445,14 +81506,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/folders/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'folder-id))))
+                                                             'folder-id)
+                                                            common-lisp:t)))
                                                         "DeleteFolder"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-folder))
@@ -81478,22 +81541,26 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/folders/~A/members/~A/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'folder-id))
-                                                           (quri.encode:url-encode
+                                                             'folder-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'member-type))
-                                                           (quri.encode:url-encode
+                                                             'member-type)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'member-id))))
+                                                             'member-id)
+                                                            common-lisp:t)))
                                                         "DeleteFolderMembership"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-folder-membership))
@@ -81518,18 +81585,21 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/namespaces/~A/groups/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'namespace))
-                                                           (quri.encode:url-encode
+                                                             'namespace)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'group-name))))
+                                                             'group-name)
+                                                            common-lisp:t)))
                                                         "DeleteGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-group))
@@ -81555,22 +81625,26 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/namespaces/~A/groups/~A/members/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'namespace))
-                                                           (quri.encode:url-encode
+                                                             'namespace)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'group-name))
-                                                           (quri.encode:url-encode
+                                                             'group-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'member-name))))
+                                                             'member-name)
+                                                            common-lisp:t)))
                                                         "DeleteGroupMembership"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-group-membership))
@@ -81596,18 +81670,21 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/namespace/~A/iam-policy-assignments/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'namespace))
-                                                           (quri.encode:url-encode
+                                                             'namespace)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'assignment-name))))
+                                                             'assignment-name)
+                                                            common-lisp:t)))
                                                         "DeleteIAMPolicyAssignment"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-iampolicy-assignment))
@@ -81632,14 +81709,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/identity-propagation-config/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'service))))
+                                                             'service)
+                                                            common-lisp:t)))
                                                         "DeleteIdentityPropagationConfig"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-identity-propagation-config))
@@ -81663,14 +81742,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/namespaces/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'namespace))))
+                                                             'namespace)
+                                                            common-lisp:t)))
                                                         "DeleteNamespace"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-namespace))
@@ -81695,18 +81776,21 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/data-sets/~A/refresh-schedules/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'data-set-id))
-                                                           (quri.encode:url-encode
+                                                             'data-set-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'schedule-id))))
+                                                             'schedule-id)
+                                                            common-lisp:t)))
                                                         "DeleteRefreshSchedule"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-refresh-schedule))
@@ -81731,18 +81815,21 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/namespaces/~A/roles/~A/custom-permission"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'namespace))
-                                                           (quri.encode:url-encode
+                                                             'namespace)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'role))))
+                                                             'role)
+                                                            common-lisp:t)))
                                                         "DeleteRoleCustomPermission"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-role-custom-permission))
@@ -81768,22 +81855,26 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/namespaces/~A/roles/~A/members/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'namespace))
-                                                           (quri.encode:url-encode
+                                                             'namespace)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'role))
-                                                           (quri.encode:url-encode
+                                                             'role)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'member-name))))
+                                                             'member-name)
+                                                            common-lisp:t)))
                                                         "DeleteRoleMembership"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-role-membership))
@@ -81809,14 +81900,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/templates/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'template-id))))
+                                                             'template-id)
+                                                            common-lisp:t)))
                                                         "DeleteTemplate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-template))
@@ -81841,18 +81934,21 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/templates/~A/aliases/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'template-id))
-                                                           (quri.encode:url-encode
+                                                             'template-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'alias-name))))
+                                                             'alias-name)
+                                                            common-lisp:t)))
                                                         "DeleteTemplateAlias"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-template-alias))
@@ -81877,14 +81973,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/themes/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'theme-id))))
+                                                             'theme-id)
+                                                            common-lisp:t)))
                                                         "DeleteTheme"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-theme))
@@ -81909,18 +82007,21 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/themes/~A/aliases/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'theme-id))
-                                                           (quri.encode:url-encode
+                                                             'theme-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'alias-name))))
+                                                             'alias-name)
+                                                            common-lisp:t)))
                                                         "DeleteThemeAlias"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-theme-alias))
@@ -81944,14 +82045,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/topics/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'topic-id))))
+                                                             'topic-id)
+                                                            common-lisp:t)))
                                                         "DeleteTopic"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-topic))
@@ -81977,18 +82080,21 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/topics/~A/schedules/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'topic-id))
-                                                           (quri.encode:url-encode
+                                                             'topic-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dataset-id))))
+                                                             'dataset-id)
+                                                            common-lisp:t)))
                                                         "DeleteTopicRefreshSchedule"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-topic-refresh-schedule))
@@ -82013,18 +82119,21 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/namespaces/~A/users/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'namespace))
-                                                           (quri.encode:url-encode
+                                                             'namespace)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'user-name))))
+                                                             'user-name)
+                                                            common-lisp:t)))
                                                         "DeleteUser"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-user))
@@ -82050,18 +82159,21 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/namespaces/~A/user-principals/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'namespace))
-                                                           (quri.encode:url-encode
+                                                             'namespace)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'principal-id))))
+                                                             'principal-id)
+                                                            common-lisp:t)))
                                                         "DeleteUserByPrincipalId"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-user-by-principal-id))
@@ -82086,14 +82198,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/vpc-connections/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'vpcconnection-id))))
+                                                             'vpcconnection-id)
+                                                            common-lisp:t)))
                                                         "DeleteVPCConnection"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-vpcconnection))
@@ -82119,10 +82233,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/customizations"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))))
+                                                             'aws-account-id)
+                                                            common-lisp:t)))
                                                         "DescribeAccountCustomization"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-account-customization))
@@ -82147,10 +82262,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/settings"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))))
+                                                             'aws-account-id)
+                                                            common-lisp:t)))
                                                         "DescribeAccountSettings"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-account-settings))
@@ -82175,10 +82291,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/account/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))))
+                                                             'aws-account-id)
+                                                            common-lisp:t)))
                                                         "DescribeAccountSubscription"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-account-subscription))
@@ -82202,14 +82319,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/analyses/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'analysis-id))))
+                                                             'analysis-id)
+                                                            common-lisp:t)))
                                                         "DescribeAnalysis"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-analysis))
@@ -82234,14 +82353,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/analyses/~A/definition"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'analysis-id))))
+                                                             'analysis-id)
+                                                            common-lisp:t)))
                                                         "DescribeAnalysisDefinition"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-analysis-definition))
@@ -82266,14 +82387,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/analyses/~A/permissions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'analysis-id))))
+                                                             'analysis-id)
+                                                            common-lisp:t)))
                                                         "DescribeAnalysisPermissions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-analysis-permissions))
@@ -82300,14 +82423,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/asset-bundle-export-jobs/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'asset-bundle-export-job-id))))
+                                                             'asset-bundle-export-job-id)
+                                                            common-lisp:t)))
                                                         "DescribeAssetBundleExportJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-asset-bundle-export-job))
@@ -82334,14 +82459,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/asset-bundle-import-jobs/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'asset-bundle-import-job-id))))
+                                                             'asset-bundle-import-job-id)
+                                                            common-lisp:t)))
                                                         "DescribeAssetBundleImportJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-asset-bundle-import-job))
@@ -82368,14 +82495,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/dashboards/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dashboard-id))))
+                                                             'dashboard-id)
+                                                            common-lisp:t)))
                                                         "DescribeDashboard"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-dashboard))
@@ -82403,14 +82532,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/dashboards/~A/definition"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dashboard-id))))
+                                                             'dashboard-id)
+                                                            common-lisp:t)))
                                                         "DescribeDashboardDefinition"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-dashboard-definition))
@@ -82435,14 +82566,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/dashboards/~A/permissions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dashboard-id))))
+                                                             'dashboard-id)
+                                                            common-lisp:t)))
                                                         "DescribeDashboardPermissions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-dashboard-permissions))
@@ -82469,18 +82602,21 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/dashboards/~A/snapshot-jobs/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dashboard-id))
-                                                           (quri.encode:url-encode
+                                                             'dashboard-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'snapshot-job-id))))
+                                                             'snapshot-job-id)
+                                                            common-lisp:t)))
                                                         "DescribeDashboardSnapshotJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-dashboard-snapshot-job))
@@ -82507,18 +82643,21 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/dashboards/~A/snapshot-jobs/~A/result"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dashboard-id))
-                                                           (quri.encode:url-encode
+                                                             'dashboard-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'snapshot-job-id))))
+                                                             'snapshot-job-id)
+                                                            common-lisp:t)))
                                                         "DescribeDashboardSnapshotJobResult"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-dashboard-snapshot-job-result))
@@ -82542,14 +82681,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/data-sets/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'data-set-id))))
+                                                             'data-set-id)
+                                                            common-lisp:t)))
                                                         "DescribeDataSet"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-data-set))
@@ -82574,14 +82715,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/data-sets/~A/permissions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'data-set-id))))
+                                                             'data-set-id)
+                                                            common-lisp:t)))
                                                         "DescribeDataSetPermissions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-data-set-permissions))
@@ -82606,14 +82749,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/data-sets/~A/refresh-properties"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'data-set-id))))
+                                                             'data-set-id)
+                                                            common-lisp:t)))
                                                         "DescribeDataSetRefreshProperties"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-data-set-refresh-properties))
@@ -82637,14 +82782,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/data-sources/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'data-source-id))))
+                                                             'data-source-id)
+                                                            common-lisp:t)))
                                                         "DescribeDataSource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-data-source))
@@ -82669,14 +82816,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/data-sources/~A/permissions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'data-source-id))))
+                                                             'data-source-id)
+                                                            common-lisp:t)))
                                                         "DescribeDataSourcePermissions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-data-source-permissions))
@@ -82700,14 +82849,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/folders/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'folder-id))))
+                                                             'folder-id)
+                                                            common-lisp:t)))
                                                         "DescribeFolder"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-folder))
@@ -82735,14 +82886,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/folders/~A/permissions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'folder-id))))
+                                                             'folder-id)
+                                                            common-lisp:t)))
                                                         "DescribeFolderPermissions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-folder-permissions))
@@ -82770,14 +82923,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/folders/~A/resolved-permissions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'folder-id))))
+                                                             'folder-id)
+                                                            common-lisp:t)))
                                                         "DescribeFolderResolvedPermissions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-folder-resolved-permissions))
@@ -82802,18 +82957,21 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/namespaces/~A/groups/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'namespace))
-                                                           (quri.encode:url-encode
+                                                             'namespace)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'group-name))))
+                                                             'group-name)
+                                                            common-lisp:t)))
                                                         "DescribeGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-group))
@@ -82840,22 +82998,26 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/namespaces/~A/groups/~A/members/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'namespace))
-                                                           (quri.encode:url-encode
+                                                             'namespace)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'group-name))
-                                                           (quri.encode:url-encode
+                                                             'group-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'member-name))))
+                                                             'member-name)
+                                                            common-lisp:t)))
                                                         "DescribeGroupMembership"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-group-membership))
@@ -82881,18 +83043,21 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/namespaces/~A/iam-policy-assignments/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'namespace))
-                                                           (quri.encode:url-encode
+                                                             'namespace)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'assignment-name))))
+                                                             'assignment-name)
+                                                            common-lisp:t)))
                                                         "DescribeIAMPolicyAssignment"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-iampolicy-assignment))
@@ -82917,18 +83082,21 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/data-sets/~A/ingestions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'data-set-id))
-                                                           (quri.encode:url-encode
+                                                             'data-set-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'ingestion-id))))
+                                                             'ingestion-id)
+                                                            common-lisp:t)))
                                                         "DescribeIngestion"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-ingestion))
@@ -82952,10 +83120,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/ip-restriction"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))))
+                                                             'aws-account-id)
+                                                            common-lisp:t)))
                                                         "DescribeIpRestriction"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-ip-restriction))
@@ -82979,14 +83148,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/namespaces/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'namespace))))
+                                                             'namespace)
+                                                            common-lisp:t)))
                                                         "DescribeNamespace"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-namespace))
@@ -83012,18 +83183,21 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/data-sets/~A/refresh-schedules/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'data-set-id))
-                                                           (quri.encode:url-encode
+                                                             'data-set-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'schedule-id))))
+                                                             'schedule-id)
+                                                            common-lisp:t)))
                                                         "DescribeRefreshSchedule"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-refresh-schedule))
@@ -83048,18 +83222,21 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/namespaces/~A/roles/~A/custom-permission"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'namespace))
-                                                           (quri.encode:url-encode
+                                                             'namespace)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'role))))
+                                                             'role)
+                                                            common-lisp:t)))
                                                         "DescribeRoleCustomPermission"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-role-custom-permission))
@@ -83086,14 +83263,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/templates/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'template-id))))
+                                                             'template-id)
+                                                            common-lisp:t)))
                                                         "DescribeTemplate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-template))
@@ -83118,18 +83297,21 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/templates/~A/aliases/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'template-id))
-                                                           (quri.encode:url-encode
+                                                             'template-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'alias-name))))
+                                                             'alias-name)
+                                                            common-lisp:t)))
                                                         "DescribeTemplateAlias"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-template-alias))
@@ -83157,14 +83339,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/templates/~A/definition"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'template-id))))
+                                                             'template-id)
+                                                            common-lisp:t)))
                                                         "DescribeTemplateDefinition"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-template-definition))
@@ -83189,14 +83373,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/templates/~A/permissions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'template-id))))
+                                                             'template-id)
+                                                            common-lisp:t)))
                                                         "DescribeTemplatePermissions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-template-permissions))
@@ -83222,14 +83408,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/themes/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'theme-id))))
+                                                             'theme-id)
+                                                            common-lisp:t)))
                                                         "DescribeTheme"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-theme))
@@ -83254,18 +83442,21 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/themes/~A/aliases/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'theme-id))
-                                                           (quri.encode:url-encode
+                                                             'theme-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'alias-name))))
+                                                             'alias-name)
+                                                            common-lisp:t)))
                                                         "DescribeThemeAlias"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-theme-alias))
@@ -83290,14 +83481,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/themes/~A/permissions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'theme-id))))
+                                                             'theme-id)
+                                                            common-lisp:t)))
                                                         "DescribeThemePermissions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-theme-permissions))
@@ -83321,14 +83514,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/topics/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'topic-id))))
+                                                             'topic-id)
+                                                            common-lisp:t)))
                                                         "DescribeTopic"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-topic))
@@ -83353,14 +83548,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/topics/~A/permissions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'topic-id))))
+                                                             'topic-id)
+                                                            common-lisp:t)))
                                                         "DescribeTopicPermissions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-topic-permissions))
@@ -83385,18 +83582,21 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/topics/~A/refresh/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'topic-id))
-                                                           (quri.encode:url-encode
+                                                             'topic-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'refresh-id))))
+                                                             'refresh-id)
+                                                            common-lisp:t)))
                                                         "DescribeTopicRefresh"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-topic-refresh))
@@ -83422,18 +83622,21 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/topics/~A/schedules/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'topic-id))
-                                                           (quri.encode:url-encode
+                                                             'topic-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dataset-id))))
+                                                             'dataset-id)
+                                                            common-lisp:t)))
                                                         "DescribeTopicRefreshSchedule"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-topic-refresh-schedule))
@@ -83458,18 +83661,21 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/namespaces/~A/users/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'namespace))
-                                                           (quri.encode:url-encode
+                                                             'namespace)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'user-name))))
+                                                             'user-name)
+                                                            common-lisp:t)))
                                                         "DescribeUser"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-user))
@@ -83494,14 +83700,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/vpc-connections/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'vpcconnection-id))))
+                                                             'vpcconnection-id)
+                                                            common-lisp:t)))
                                                         "DescribeVPCConnection"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-vpcconnection))
@@ -83532,10 +83740,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/embed-url/anonymous-user"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))))
+                                                             'aws-account-id)
+                                                            common-lisp:t)))
                                                         "GenerateEmbedUrlForAnonymousUser"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'generate-embed-url-for-anonymous-user))
@@ -83564,10 +83773,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/embed-url/registered-user"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))))
+                                                             'aws-account-id)
+                                                            common-lisp:t)))
                                                         "GenerateEmbedUrlForRegisteredUser"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'generate-embed-url-for-registered-user))
@@ -83597,14 +83807,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/dashboards/~A/embed-url"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dashboard-id))))
+                                                             'dashboard-id)
+                                                            common-lisp:t)))
                                                         "GetDashboardEmbedUrl"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-dashboard-embed-url))
@@ -83631,10 +83843,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/session-embed-url"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))))
+                                                             'aws-account-id)
+                                                            common-lisp:t)))
                                                         "GetSessionEmbedUrl"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-session-embed-url))
@@ -83659,10 +83872,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/analyses"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))))
+                                                             'aws-account-id)
+                                                            common-lisp:t)))
                                                         "ListAnalyses"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-analyses))
@@ -83688,10 +83902,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/asset-bundle-export-jobs"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))))
+                                                             'aws-account-id)
+                                                            common-lisp:t)))
                                                         "ListAssetBundleExportJobs"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-asset-bundle-export-jobs))
@@ -83717,10 +83932,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/asset-bundle-import-jobs"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))))
+                                                             'aws-account-id)
+                                                            common-lisp:t)))
                                                         "ListAssetBundleImportJobs"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-asset-bundle-import-jobs))
@@ -83746,14 +83962,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/dashboards/~A/versions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dashboard-id))))
+                                                             'dashboard-id)
+                                                            common-lisp:t)))
                                                         "ListDashboardVersions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-dashboard-versions))
@@ -83778,10 +83996,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/dashboards"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))))
+                                                             'aws-account-id)
+                                                            common-lisp:t)))
                                                         "ListDashboards"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-dashboards))
@@ -83806,10 +84025,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/data-sets"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))))
+                                                             'aws-account-id)
+                                                            common-lisp:t)))
                                                         "ListDataSets"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-data-sets))
@@ -83834,10 +84054,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/data-sources"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))))
+                                                             'aws-account-id)
+                                                            common-lisp:t)))
                                                         "ListDataSources"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-data-sources))
@@ -83863,14 +84084,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/folders/~A/members"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'folder-id))))
+                                                             'folder-id)
+                                                            common-lisp:t)))
                                                         "ListFolderMembers"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-folder-members))
@@ -83895,10 +84118,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/folders"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))))
+                                                             'aws-account-id)
+                                                            common-lisp:t)))
                                                         "ListFolders"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-folders))
@@ -83925,18 +84149,21 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/namespaces/~A/groups/~A/members"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'namespace))
-                                                           (quri.encode:url-encode
+                                                             'namespace)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'group-name))))
+                                                             'group-name)
+                                                            common-lisp:t)))
                                                         "ListGroupMemberships"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-group-memberships))
@@ -83962,14 +84189,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/namespaces/~A/groups"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'namespace))))
+                                                             'namespace)
+                                                            common-lisp:t)))
                                                         "ListGroups"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-groups))
@@ -83997,14 +84226,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/namespaces/~A/v2/iam-policy-assignments"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'namespace))))
+                                                             'namespace)
+                                                            common-lisp:t)))
                                                         "ListIAMPolicyAssignments"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-iampolicy-assignments))
@@ -84032,18 +84263,21 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/namespaces/~A/users/~A/iam-policy-assignments"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'namespace))
-                                                           (quri.encode:url-encode
+                                                             'namespace)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'user-name))))
+                                                             'user-name)
+                                                            common-lisp:t)))
                                                         "ListIAMPolicyAssignmentsForUser"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-iampolicy-assignments-for-user))
@@ -84069,10 +84303,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/identity-propagation-config"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))))
+                                                             'aws-account-id)
+                                                            common-lisp:t)))
                                                         "ListIdentityPropagationConfigs"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-identity-propagation-configs))
@@ -84098,14 +84333,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/data-sets/~A/ingestions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'data-set-id))))
+                                                             'data-set-id)
+                                                            common-lisp:t)))
                                                         "ListIngestions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-ingestions))
@@ -84130,10 +84367,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/namespaces"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))))
+                                                             'aws-account-id)
+                                                            common-lisp:t)))
                                                         "ListNamespaces"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-namespaces))
@@ -84157,14 +84395,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/data-sets/~A/refresh-schedules"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'data-set-id))))
+                                                             'data-set-id)
+                                                            common-lisp:t)))
                                                         "ListRefreshSchedules"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-refresh-schedules))
@@ -84191,18 +84431,21 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/namespaces/~A/roles/~A/members"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'namespace))
-                                                           (quri.encode:url-encode
+                                                             'namespace)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'role))))
+                                                             'role)
+                                                            common-lisp:t)))
                                                         "ListRoleMemberships"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-role-memberships))
@@ -84226,10 +84469,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/resources/~A/tags"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -84255,14 +84499,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/templates/~A/aliases"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'template-id))))
+                                                             'template-id)
+                                                            common-lisp:t)))
                                                         "ListTemplateAliases"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-template-aliases))
@@ -84288,14 +84534,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/templates/~A/versions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'template-id))))
+                                                             'template-id)
+                                                            common-lisp:t)))
                                                         "ListTemplateVersions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-template-versions))
@@ -84320,10 +84568,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/templates"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))))
+                                                             'aws-account-id)
+                                                            common-lisp:t)))
                                                         "ListTemplates"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-templates))
@@ -84349,14 +84598,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/themes/~A/aliases"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'theme-id))))
+                                                             'theme-id)
+                                                            common-lisp:t)))
                                                         "ListThemeAliases"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-theme-aliases))
@@ -84382,14 +84633,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/themes/~A/versions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'theme-id))))
+                                                             'theme-id)
+                                                            common-lisp:t)))
                                                         "ListThemeVersions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-theme-versions))
@@ -84415,10 +84668,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/themes"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))))
+                                                             'aws-account-id)
+                                                            common-lisp:t)))
                                                         "ListThemes"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-themes))
@@ -84443,14 +84697,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/topics/~A/schedules"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'topic-id))))
+                                                             'topic-id)
+                                                            common-lisp:t)))
                                                         "ListTopicRefreshSchedules"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-topic-refresh-schedules))
@@ -84475,10 +84731,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/topics"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))))
+                                                             'aws-account-id)
+                                                            common-lisp:t)))
                                                         "ListTopics"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-topics))
@@ -84505,18 +84762,21 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/namespaces/~A/users/~A/groups"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'namespace))
-                                                           (quri.encode:url-encode
+                                                             'namespace)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'user-name))))
+                                                             'user-name)
+                                                            common-lisp:t)))
                                                         "ListUserGroups"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-user-groups))
@@ -84542,14 +84802,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/namespaces/~A/users"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'namespace))))
+                                                             'namespace)
+                                                            common-lisp:t)))
                                                         "ListUsers"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-users))
@@ -84574,10 +84836,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/vpc-connections"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))))
+                                                             'aws-account-id)
+                                                            common-lisp:t)))
                                                         "ListVPCConnections"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-vpcconnections))
@@ -84605,14 +84868,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/data-sets/~A/refresh-properties"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'data-set-id))))
+                                                             'data-set-id)
+                                                            common-lisp:t)))
                                                         "PutDataSetRefreshProperties"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-data-set-refresh-properties))
@@ -84644,14 +84909,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/namespaces/~A/users"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'namespace))))
+                                                             'namespace)
+                                                            common-lisp:t)))
                                                         "RegisterUser"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'register-user))
@@ -84675,14 +84942,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/restore/analyses/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'analysis-id))))
+                                                             'analysis-id)
+                                                            common-lisp:t)))
                                                         "RestoreAnalysis"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'restore-analysis))
@@ -84708,10 +84977,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/search/analyses"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))))
+                                                             'aws-account-id)
+                                                            common-lisp:t)))
                                                         "SearchAnalyses"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'search-analyses))
@@ -84737,10 +85007,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/search/dashboards"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))))
+                                                             'aws-account-id)
+                                                            common-lisp:t)))
                                                         "SearchDashboards"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'search-dashboards))
@@ -84766,10 +85037,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/search/data-sets"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))))
+                                                             'aws-account-id)
+                                                            common-lisp:t)))
                                                         "SearchDataSets"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'search-data-sets))
@@ -84795,10 +85067,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/search/data-sources"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))))
+                                                             'aws-account-id)
+                                                            common-lisp:t)))
                                                         "SearchDataSources"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'search-data-sources))
@@ -84824,10 +85097,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/search/folders"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))))
+                                                             'aws-account-id)
+                                                            common-lisp:t)))
                                                         "SearchFolders"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'search-folders))
@@ -84854,14 +85128,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/namespaces/~A/groups-search"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'namespace))))
+                                                             'namespace)
+                                                            common-lisp:t)))
                                                         "SearchGroups"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'search-groups))
@@ -84893,10 +85169,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/asset-bundle-export-jobs/export"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))))
+                                                             'aws-account-id)
+                                                            common-lisp:t)))
                                                         "StartAssetBundleExportJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'start-asset-bundle-export-job))
@@ -84927,10 +85204,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/asset-bundle-import-jobs/import"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))))
+                                                             'aws-account-id)
+                                                            common-lisp:t)))
                                                         "StartAssetBundleImportJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'start-asset-bundle-import-job))
@@ -84958,14 +85236,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/dashboards/~A/snapshot-jobs"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dashboard-id))))
+                                                             'dashboard-id)
+                                                            common-lisp:t)))
                                                         "StartDashboardSnapshotJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'start-dashboard-snapshot-job))
@@ -84989,10 +85269,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/resources/~A/tags"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -85016,10 +85297,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/resources/~A/tags"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -85046,10 +85328,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/customizations"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))))
+                                                             'aws-account-id)
+                                                            common-lisp:t)))
                                                         "UpdateAccountCustomization"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-account-customization))
@@ -85076,10 +85359,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/settings"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))))
+                                                             'aws-account-id)
+                                                            common-lisp:t)))
                                                         "UpdateAccountSettings"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-account-settings))
@@ -85107,14 +85391,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/analyses/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'analysis-id))))
+                                                             'analysis-id)
+                                                            common-lisp:t)))
                                                         "UpdateAnalysis"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-analysis))
@@ -85142,14 +85428,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/analyses/~A/permissions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'analysis-id))))
+                                                             'analysis-id)
+                                                            common-lisp:t)))
                                                         "UpdateAnalysisPermissions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-analysis-permissions))
@@ -85179,14 +85467,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/dashboards/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dashboard-id))))
+                                                             'dashboard-id)
+                                                            common-lisp:t)))
                                                         "UpdateDashboard"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-dashboard))
@@ -85212,14 +85502,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/dashboards/~A/linked-entities"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dashboard-id))))
+                                                             'dashboard-id)
+                                                            common-lisp:t)))
                                                         "UpdateDashboardLinks"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-dashboard-links))
@@ -85248,14 +85540,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/dashboards/~A/permissions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dashboard-id))))
+                                                             'dashboard-id)
+                                                            common-lisp:t)))
                                                         "UpdateDashboardPermissions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-dashboard-permissions))
@@ -85282,18 +85576,21 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/dashboards/~A/versions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dashboard-id))
-                                                           (quri.encode:url-encode
+                                                             'dashboard-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'version-number))))
+                                                             'version-number)
+                                                            common-lisp:t)))
                                                         "UpdateDashboardPublishedVersion"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-dashboard-published-version))
@@ -85327,14 +85624,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/data-sets/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'data-set-id))))
+                                                             'data-set-id)
+                                                            common-lisp:t)))
                                                         "UpdateDataSet"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-data-set))
@@ -85362,14 +85661,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/data-sets/~A/permissions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'data-set-id))))
+                                                             'data-set-id)
+                                                            common-lisp:t)))
                                                         "UpdateDataSetPermissions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-data-set-permissions))
@@ -85398,14 +85699,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/data-sources/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'data-source-id))))
+                                                             'data-source-id)
+                                                            common-lisp:t)))
                                                         "UpdateDataSource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-data-source))
@@ -85433,14 +85736,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/data-sources/~A/permissions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'data-source-id))))
+                                                             'data-source-id)
+                                                            common-lisp:t)))
                                                         "UpdateDataSourcePermissions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-data-source-permissions))
@@ -85464,14 +85769,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/folders/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'folder-id))))
+                                                             'folder-id)
+                                                            common-lisp:t)))
                                                         "UpdateFolder"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-folder))
@@ -85499,14 +85806,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/folders/~A/permissions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'folder-id))))
+                                                             'folder-id)
+                                                            common-lisp:t)))
                                                         "UpdateFolderPermissions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-folder-permissions))
@@ -85532,18 +85841,21 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/namespaces/~A/groups/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'namespace))
-                                                           (quri.encode:url-encode
+                                                             'namespace)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'group-name))))
+                                                             'group-name)
+                                                            common-lisp:t)))
                                                         "UpdateGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-group))
@@ -85571,18 +85883,21 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/namespaces/~A/iam-policy-assignments/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'namespace))
-                                                           (quri.encode:url-encode
+                                                             'namespace)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'assignment-name))))
+                                                             'assignment-name)
+                                                            common-lisp:t)))
                                                         "UpdateIAMPolicyAssignment"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-iampolicy-assignment))
@@ -85609,14 +85924,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/identity-propagation-config/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'service))))
+                                                             'service)
+                                                            common-lisp:t)))
                                                         "UpdateIdentityPropagationConfig"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-identity-propagation-config))
@@ -85642,10 +85959,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/ip-restriction"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))))
+                                                             'aws-account-id)
+                                                            common-lisp:t)))
                                                         "UpdateIpRestriction"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-ip-restriction))
@@ -85671,10 +85989,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/public-sharing-settings"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))))
+                                                             'aws-account-id)
+                                                            common-lisp:t)))
                                                         "UpdatePublicSharingSettings"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-public-sharing-settings))
@@ -85699,14 +86018,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/data-sets/~A/refresh-schedules"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'data-set-id))))
+                                                             'data-set-id)
+                                                            common-lisp:t)))
                                                         "UpdateRefreshSchedule"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-refresh-schedule))
@@ -85734,18 +86055,21 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/namespaces/~A/roles/~A/custom-permission"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'namespace))
-                                                           (quri.encode:url-encode
+                                                             'namespace)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'role))))
+                                                             'role)
+                                                            common-lisp:t)))
                                                         "UpdateRoleCustomPermission"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-role-custom-permission))
@@ -85772,14 +86096,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/templates/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'template-id))))
+                                                             'template-id)
+                                                            common-lisp:t)))
                                                         "UpdateTemplate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-template))
@@ -85806,18 +86132,21 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/templates/~A/aliases/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'template-id))
-                                                           (quri.encode:url-encode
+                                                             'template-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'alias-name))))
+                                                             'alias-name)
+                                                            common-lisp:t)))
                                                         "UpdateTemplateAlias"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-template-alias))
@@ -85845,14 +86174,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/templates/~A/permissions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'template-id))))
+                                                             'template-id)
+                                                            common-lisp:t)))
                                                         "UpdateTemplatePermissions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-template-permissions))
@@ -85879,14 +86210,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/themes/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'theme-id))))
+                                                             'theme-id)
+                                                            common-lisp:t)))
                                                         "UpdateTheme"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-theme))
@@ -85913,18 +86246,21 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/themes/~A/aliases/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'theme-id))
-                                                           (quri.encode:url-encode
+                                                             'theme-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'alias-name))))
+                                                             'alias-name)
+                                                            common-lisp:t)))
                                                         "UpdateThemeAlias"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-theme-alias))
@@ -85951,14 +86287,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/themes/~A/permissions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'theme-id))))
+                                                             'theme-id)
+                                                            common-lisp:t)))
                                                         "UpdateThemePermissions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-theme-permissions))
@@ -85982,14 +86320,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/topics/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'topic-id))))
+                                                             'topic-id)
+                                                            common-lisp:t)))
                                                         "UpdateTopic"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-topic))
@@ -86016,14 +86356,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/topics/~A/permissions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'topic-id))))
+                                                             'topic-id)
+                                                            common-lisp:t)))
                                                         "UpdateTopicPermissions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-topic-permissions))
@@ -86051,18 +86393,21 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/topics/~A/schedules/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'topic-id))
-                                                           (quri.encode:url-encode
+                                                             'topic-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dataset-id))))
+                                                             'dataset-id)
+                                                            common-lisp:t)))
                                                         "UpdateTopicRefreshSchedule"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-topic-refresh-schedule))
@@ -86093,18 +86438,21 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/namespaces/~A/users/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'namespace))
-                                                           (quri.encode:url-encode
+                                                             'namespace)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'user-name))))
+                                                             'user-name)
+                                                            common-lisp:t)))
                                                         "UpdateUser"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-user))
@@ -86131,14 +86479,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/~A/vpc-connections/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'aws-account-id))
-                                                           (quri.encode:url-encode
+                                                             'aws-account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'vpcconnection-id))))
+                                                             'vpcconnection-id)
+                                                            common-lisp:t)))
                                                         "UpdateVPCConnection"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-vpcconnection))

@@ -20,7 +20,7 @@
  (common-lisp:export 'securityhub-error))
 (common-lisp:progn
  (common-lisp:defclass securityhub-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "securityhub" :api-version
                         "2018-10-26" :host-prefix "securityhub" :signing-name
@@ -73164,10 +73164,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/configurationPolicy/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'identifier))))
+                                                             'identifier)
+                                                            common-lisp:t)))
                                                         "DeleteConfigurationPolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-configuration-policy))
@@ -73547,10 +73548,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/configurationPolicy/get/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'identifier))))
+                                                             'identifier)
+                                                            common-lisp:t)))
                                                         "GetConfigurationPolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-configuration-policy))
@@ -73980,10 +73982,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -74047,10 +74050,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -74074,10 +74078,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -74132,10 +74137,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/configurationPolicy/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'identifier))))
+                                                             'identifier)
+                                                            common-lisp:t)))
                                                         "UpdateConfigurationPolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-configuration-policy))

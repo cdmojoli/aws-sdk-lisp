@@ -20,7 +20,7 @@
  (common-lisp:export 'polly-error))
 (common-lisp:progn
  (common-lisp:defclass polly-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "polly" :api-version
                         "2016-06-10" :host-prefix "polly" :signing-name
@@ -1592,12 +1592,16 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-type))
-      (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-characters))
-      (common-lisp:cons "x-amzn-RequestCharacters"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amzn-RequestCharacters"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -1778,10 +1782,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/lexicons/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'lexicon-name))))
+                                                             'lexicon-name)
+                                                            common-lisp:t)))
                                                         "DeleteLexicon"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-lexicon))
@@ -1825,10 +1830,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/lexicons/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'lexicon-name))))
+                                                             'lexicon-name)
+                                                            common-lisp:t)))
                                                         "GetLexicon"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-lexicon))
@@ -1852,10 +1858,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/synthesisTasks/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'task-id))))
+                                                             'task-id)
+                                                            common-lisp:t)))
                                                         "GetSpeechSynthesisTask"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-speech-synthesis-task))
@@ -1915,10 +1922,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/lexicons/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'lexicon-name))))
+                                                             'lexicon-name)
+                                                            common-lisp:t)))
                                                         "PutLexicon"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-lexicon))

@@ -20,7 +20,7 @@
  (common-lisp:export 'savingsplans-error))
 (common-lisp:progn
  (common-lisp:defclass savingsplans-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "savingsplans" :api-version
                         "2019-06-28" :host-prefix "savingsplans" :signing-name

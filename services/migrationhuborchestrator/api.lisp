@@ -20,7 +20,7 @@
  (common-lisp:export 'migrationhuborchestrator-error))
 (common-lisp:progn
  (common-lisp:defclass migrationhuborchestrator-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "migrationhuborchestrator"
                         :api-version "2021-08-28" :host-prefix
@@ -6842,9 +6842,10 @@
         "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/template/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'id))))
+                                aws-sdk/generator/operation::input 'id)
+                               common-lisp:t)))
         "DeleteTemplate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-template))
@@ -6865,9 +6866,10 @@
         "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/migrationworkflow/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'id))))
+                                aws-sdk/generator/operation::input 'id)
+                               common-lisp:t)))
         "DeleteWorkflow"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-workflow))
@@ -6887,9 +6889,10 @@
         "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/workflowstep/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'id))))
+                                aws-sdk/generator/operation::input 'id)
+                               common-lisp:t)))
         "DeleteWorkflowStep"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-workflow-step))
@@ -6910,9 +6913,10 @@
         "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/workflowstepgroup/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'id))))
+                                aws-sdk/generator/operation::input 'id)
+                               common-lisp:t)))
         "DeleteWorkflowStepGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-workflow-step-group))
@@ -6933,9 +6937,10 @@
         "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/migrationworkflowtemplate/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'id))))
+                                aws-sdk/generator/operation::input 'id)
+                               common-lisp:t)))
         "GetTemplate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-template))
@@ -6955,9 +6960,10 @@
         "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/templatestep/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'id))))
+                                aws-sdk/generator/operation::input 'id)
+                               common-lisp:t)))
         "GetTemplateStep"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-template-step))
@@ -6977,13 +6983,15 @@
         "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/templates/~A/stepgroups/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'template-id))
-                              (quri.encode:url-encode
+                                'template-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'id))))
+                                aws-sdk/generator/operation::input 'id)
+                               common-lisp:t)))
         "GetTemplateStepGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-template-step-group))
@@ -7003,9 +7011,10 @@
         "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/migrationworkflow/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'id))))
+                                aws-sdk/generator/operation::input 'id)
+                               common-lisp:t)))
         "GetWorkflow"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-workflow))
@@ -7025,9 +7034,10 @@
         "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/workflowstep/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'id))))
+                                aws-sdk/generator/operation::input 'id)
+                               common-lisp:t)))
         "GetWorkflowStep"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-workflow-step))
@@ -7047,9 +7057,10 @@
         "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/workflowstepgroup/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'id))))
+                                aws-sdk/generator/operation::input 'id)
+                               common-lisp:t)))
         "GetWorkflowStepGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-workflow-step-group))
@@ -7085,10 +7096,11 @@
         "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -7110,10 +7122,11 @@
         "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/templatestepgroups/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'template-id))))
+                                'template-id)
+                               common-lisp:t)))
         "ListTemplateStepGroups"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-template-step-groups))
@@ -7189,14 +7202,16 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/workflow/~A/workflowstepgroups/~A/workflowsteps"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'workflow-id))
-                              (quri.encode:url-encode
+                                'workflow-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'step-group-id))))
+                                'step-group-id)
+                               common-lisp:t)))
         "ListWorkflowSteps"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-workflow-steps))
@@ -7235,9 +7250,10 @@
         "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/retryworkflowstep/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'id))))
+                                aws-sdk/generator/operation::input 'id)
+                               common-lisp:t)))
         "RetryWorkflowStep"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'retry-workflow-step))
@@ -7257,9 +7273,10 @@
         "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/migrationworkflow/~A/start"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'id))))
+                                aws-sdk/generator/operation::input 'id)
+                               common-lisp:t)))
         "StartWorkflow"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'start-workflow))
@@ -7279,9 +7296,10 @@
         "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/migrationworkflow/~A/stop"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'id))))
+                                aws-sdk/generator/operation::input 'id)
+                               common-lisp:t)))
         "StopWorkflow"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'stop-workflow))
@@ -7301,10 +7319,11 @@
         "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -7324,10 +7343,11 @@
         "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -7349,9 +7369,10 @@
         "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/template/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'id))))
+                                aws-sdk/generator/operation::input 'id)
+                               common-lisp:t)))
         "UpdateTemplate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-template))
@@ -7374,9 +7395,10 @@
         "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/migrationworkflow/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'id))))
+                                aws-sdk/generator/operation::input 'id)
+                               common-lisp:t)))
         "UpdateWorkflow"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-workflow))
@@ -7402,9 +7424,10 @@
         "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/workflowstep/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'id))))
+                                aws-sdk/generator/operation::input 'id)
+                               common-lisp:t)))
         "UpdateWorkflowStep"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-workflow-step))
@@ -7427,9 +7450,10 @@
         "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/workflowstepgroup/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'id))))
+                                aws-sdk/generator/operation::input 'id)
+                               common-lisp:t)))
         "UpdateWorkflowStepGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-workflow-step-group))

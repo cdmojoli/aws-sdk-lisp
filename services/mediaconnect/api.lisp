@@ -20,7 +20,7 @@
  (common-lisp:export 'mediaconnect-error))
 (common-lisp:progn
  (common-lisp:defclass mediaconnect-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "mediaconnect" :api-version
                         "2018-11-14" :host-prefix "mediaconnect" :signing-name
@@ -12425,10 +12425,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/bridges/~A/outputs"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bridge-arn))))
+                                                             'bridge-arn)
+                                                            common-lisp:t)))
                                                         "AddBridgeOutputs"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'add-bridge-outputs))
@@ -12452,10 +12453,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/bridges/~A/sources"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bridge-arn))))
+                                                             'bridge-arn)
+                                                            common-lisp:t)))
                                                         "AddBridgeSources"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'add-bridge-sources))
@@ -12479,10 +12481,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/flows/~A/mediaStreams"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'flow-arn))))
+                                                             'flow-arn)
+                                                            common-lisp:t)))
                                                         "AddFlowMediaStreams"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'add-flow-media-streams))
@@ -12506,10 +12509,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/flows/~A/outputs"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'flow-arn))))
+                                                             'flow-arn)
+                                                            common-lisp:t)))
                                                         "AddFlowOutputs"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'add-flow-outputs))
@@ -12533,10 +12537,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/flows/~A/source"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'flow-arn))))
+                                                             'flow-arn)
+                                                            common-lisp:t)))
                                                         "AddFlowSources"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'add-flow-sources))
@@ -12560,10 +12565,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/flows/~A/vpcInterfaces"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'flow-arn))))
+                                                             'flow-arn)
+                                                            common-lisp:t)))
                                                         "AddFlowVpcInterfaces"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'add-flow-vpc-interfaces))
@@ -12647,10 +12653,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/bridges/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bridge-arn))))
+                                                             'bridge-arn)
+                                                            common-lisp:t)))
                                                         "DeleteBridge"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-bridge))
@@ -12674,10 +12681,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/flows/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'flow-arn))))
+                                                             'flow-arn)
+                                                            common-lisp:t)))
                                                         "DeleteFlow"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-flow))
@@ -12701,10 +12709,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/gateways/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'gateway-arn))))
+                                                             'gateway-arn)
+                                                            common-lisp:t)))
                                                         "DeleteGateway"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-gateway))
@@ -12729,10 +12738,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/gateway-instances/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'gateway-instance-arn))))
+                                                             'gateway-instance-arn)
+                                                            common-lisp:t)))
                                                         "DeregisterGatewayInstance"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'deregister-gateway-instance))
@@ -12756,10 +12766,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/bridges/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bridge-arn))))
+                                                             'bridge-arn)
+                                                            common-lisp:t)))
                                                         "DescribeBridge"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-bridge))
@@ -12783,10 +12794,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/flows/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'flow-arn))))
+                                                             'flow-arn)
+                                                            common-lisp:t)))
                                                         "DescribeFlow"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-flow))
@@ -12811,10 +12823,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/flows/~A/source-metadata"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'flow-arn))))
+                                                             'flow-arn)
+                                                            common-lisp:t)))
                                                         "DescribeFlowSourceMetadata"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-flow-source-metadata))
@@ -12838,10 +12851,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/gateways/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'gateway-arn))))
+                                                             'gateway-arn)
+                                                            common-lisp:t)))
                                                         "DescribeGateway"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-gateway))
@@ -12866,10 +12880,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/gateway-instances/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'gateway-instance-arn))))
+                                                             'gateway-instance-arn)
+                                                            common-lisp:t)))
                                                         "DescribeGatewayInstance"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-gateway-instance))
@@ -12893,10 +12908,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/offerings/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'offering-arn))))
+                                                             'offering-arn)
+                                                            common-lisp:t)))
                                                         "DescribeOffering"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-offering))
@@ -12920,10 +12936,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/reservations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'reservation-arn))))
+                                                             'reservation-arn)
+                                                            common-lisp:t)))
                                                         "DescribeReservation"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-reservation))
@@ -12947,10 +12964,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/flows/~A/entitlements"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'flow-arn))))
+                                                             'flow-arn)
+                                                            common-lisp:t)))
                                                         "GrantFlowEntitlements"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'grant-flow-entitlements))
@@ -13098,10 +13116,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -13126,10 +13145,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/offerings/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'offering-arn))))
+                                                             'offering-arn)
+                                                            common-lisp:t)))
                                                         "PurchaseOffering"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'purchase-offering))
@@ -13153,14 +13173,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/bridges/~A/outputs/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bridge-arn))
-                                                           (quri.encode:url-encode
+                                                             'bridge-arn)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'output-name))))
+                                                             'output-name)
+                                                            common-lisp:t)))
                                                         "RemoveBridgeOutput"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'remove-bridge-output))
@@ -13184,14 +13206,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/bridges/~A/sources/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bridge-arn))
-                                                           (quri.encode:url-encode
+                                                             'bridge-arn)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'source-name))))
+                                                             'source-name)
+                                                            common-lisp:t)))
                                                         "RemoveBridgeSource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'remove-bridge-source))
@@ -13215,14 +13239,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/flows/~A/mediaStreams/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'flow-arn))
-                                                           (quri.encode:url-encode
+                                                             'flow-arn)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'media-stream-name))))
+                                                             'media-stream-name)
+                                                            common-lisp:t)))
                                                         "RemoveFlowMediaStream"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'remove-flow-media-stream))
@@ -13246,14 +13272,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/flows/~A/outputs/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'flow-arn))
-                                                           (quri.encode:url-encode
+                                                             'flow-arn)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'output-arn))))
+                                                             'output-arn)
+                                                            common-lisp:t)))
                                                         "RemoveFlowOutput"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'remove-flow-output))
@@ -13277,14 +13305,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/flows/~A/source/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'flow-arn))
-                                                           (quri.encode:url-encode
+                                                             'flow-arn)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'source-arn))))
+                                                             'source-arn)
+                                                            common-lisp:t)))
                                                         "RemoveFlowSource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'remove-flow-source))
@@ -13309,14 +13339,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/flows/~A/vpcInterfaces/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'flow-arn))
-                                                           (quri.encode:url-encode
+                                                             'flow-arn)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'vpc-interface-name))))
+                                                             'vpc-interface-name)
+                                                            common-lisp:t)))
                                                         "RemoveFlowVpcInterface"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'remove-flow-vpc-interface))
@@ -13340,14 +13372,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/flows/~A/entitlements/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'flow-arn))
-                                                           (quri.encode:url-encode
+                                                             'flow-arn)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'entitlement-arn))))
+                                                             'entitlement-arn)
+                                                            common-lisp:t)))
                                                         "RevokeFlowEntitlement"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'revoke-flow-entitlement))
@@ -13371,10 +13405,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/flows/start/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'flow-arn))))
+                                                             'flow-arn)
+                                                            common-lisp:t)))
                                                         "StartFlow"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'start-flow))
@@ -13398,10 +13433,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/flows/stop/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'flow-arn))))
+                                                             'flow-arn)
+                                                            common-lisp:t)))
                                                         "StopFlow"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'stop-flow))
@@ -13425,10 +13461,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -13452,10 +13489,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -13482,10 +13520,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/bridges/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bridge-arn))))
+                                                             'bridge-arn)
+                                                            common-lisp:t)))
                                                         "UpdateBridge"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-bridge))
@@ -13510,14 +13549,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/bridges/~A/outputs/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bridge-arn))
-                                                           (quri.encode:url-encode
+                                                             'bridge-arn)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'output-name))))
+                                                             'output-name)
+                                                            common-lisp:t)))
                                                         "UpdateBridgeOutput"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-bridge-output))
@@ -13543,14 +13584,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/bridges/~A/sources/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bridge-arn))
-                                                           (quri.encode:url-encode
+                                                             'bridge-arn)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'source-name))))
+                                                             'source-name)
+                                                            common-lisp:t)))
                                                         "UpdateBridgeSource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-bridge-source))
@@ -13574,10 +13617,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/bridges/~A/state"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bridge-arn))))
+                                                             'bridge-arn)
+                                                            common-lisp:t)))
                                                         "UpdateBridgeState"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-bridge-state))
@@ -13603,10 +13647,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/flows/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'flow-arn))))
+                                                             'flow-arn)
+                                                            common-lisp:t)))
                                                         "UpdateFlow"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-flow))
@@ -13633,14 +13678,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/flows/~A/entitlements/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'flow-arn))
-                                                           (quri.encode:url-encode
+                                                             'flow-arn)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'entitlement-arn))))
+                                                             'entitlement-arn)
+                                                            common-lisp:t)))
                                                         "UpdateFlowEntitlement"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-flow-entitlement))
@@ -13667,14 +13714,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/flows/~A/mediaStreams/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'flow-arn))
-                                                           (quri.encode:url-encode
+                                                             'flow-arn)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'media-stream-name))))
+                                                             'media-stream-name)
+                                                            common-lisp:t)))
                                                         "UpdateFlowMediaStream"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-flow-media-stream))
@@ -13707,14 +13756,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/flows/~A/outputs/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'flow-arn))
-                                                           (quri.encode:url-encode
+                                                             'flow-arn)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'output-arn))))
+                                                             'output-arn)
+                                                            common-lisp:t)))
                                                         "UpdateFlowOutput"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-flow-output))
@@ -13750,14 +13801,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/flows/~A/source/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'flow-arn))
-                                                           (quri.encode:url-encode
+                                                             'flow-arn)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'source-arn))))
+                                                             'source-arn)
+                                                            common-lisp:t)))
                                                         "UpdateFlowSource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-flow-source))
@@ -13782,10 +13835,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/gateway-instances/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'gateway-instance-arn))))
+                                                             'gateway-instance-arn)
+                                                            common-lisp:t)))
                                                         "UpdateGatewayInstance"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-gateway-instance))

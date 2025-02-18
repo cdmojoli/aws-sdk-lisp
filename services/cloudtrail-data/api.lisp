@@ -20,7 +20,7 @@
  (common-lisp:export 'cloudtrail-data-error))
 (common-lisp:progn
  (common-lisp:defclass cloudtrail-data-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "cloudtrail-data"
                         :api-version "2021-08-11" :host-prefix

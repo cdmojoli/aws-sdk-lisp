@@ -20,7 +20,7 @@
  (common-lisp:export 'iot-jobs-data-error))
 (common-lisp:progn
  (common-lisp:defclass iot-jobs-data-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "iot-jobs-data" :api-version
                         "2017-09-29" :host-prefix "data.jobs.iot" :signing-name
@@ -958,14 +958,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/things/~A/jobs/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'thing-name))
-                                                           (quri.encode:url-encode
+                                                             'thing-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'job-id))))
+                                                             'job-id)
+                                                            common-lisp:t)))
                                                         "DescribeJobExecution"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-job-execution))
@@ -990,10 +992,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/things/~A/jobs"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'thing-name))))
+                                                             'thing-name)
+                                                            common-lisp:t)))
                                                         "GetPendingJobExecutions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-pending-job-executions))
@@ -1020,10 +1023,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/things/~A/jobs/$next"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'thing-name))))
+                                                             'thing-name)
+                                                            common-lisp:t)))
                                                         "StartNextPendingJobExecution"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'start-next-pending-job-execution))
@@ -1053,14 +1057,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/things/~A/jobs/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'thing-name))
-                                                           (quri.encode:url-encode
+                                                             'thing-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'job-id))))
+                                                             'job-id)
+                                                            common-lisp:t)))
                                                         "UpdateJobExecution"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-job-execution))

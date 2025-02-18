@@ -20,7 +20,7 @@
  (common-lisp:export 'supplychain-error))
 (common-lisp:progn
  (common-lisp:defclass supplychain-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "supplychain" :api-version
                         "2024-01-01" :host-prefix "scn" :signing-name "scn"
@@ -385,10 +385,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/api/configuration/instances/~A/bill-of-materials-import-jobs"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'instance-id))))
+                                                             'instance-id)
+                                                            common-lisp:t)))
                                                         "CreateBillOfMaterialsImportJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-bill-of-materials-import-job))
@@ -413,14 +414,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/api/configuration/instances/~A/bill-of-materials-import-jobs/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'instance-id))
-                                                           (quri.encode:url-encode
+                                                             'instance-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'job-id))))
+                                                             'job-id)
+                                                            common-lisp:t)))
                                                         "GetBillOfMaterialsImportJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-bill-of-materials-import-job))

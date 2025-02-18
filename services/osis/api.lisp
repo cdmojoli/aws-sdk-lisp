@@ -20,7 +20,7 @@
  (common-lisp:export 'osis-error))
 (common-lisp:progn
  (common-lisp:defclass osis-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "osis" :api-version
                         "2022-01-01" :host-prefix "osis" :signing-name
@@ -2474,10 +2474,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2022-01-01/osis/deletePipeline/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'pipeline-name))))
+                                                             'pipeline-name)
+                                                            common-lisp:t)))
                                                         "DeletePipeline"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-pipeline))
@@ -2501,10 +2502,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2022-01-01/osis/getPipeline/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'pipeline-name))))
+                                                             'pipeline-name)
+                                                            common-lisp:t)))
                                                         "GetPipeline"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-pipeline))
@@ -2528,10 +2530,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2022-01-01/osis/getPipelineBlueprint/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'blueprint-name))))
+                                                             'blueprint-name)
+                                                            common-lisp:t)))
                                                         "GetPipelineBlueprint"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-pipeline-blueprint))
@@ -2556,10 +2559,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2022-01-01/osis/getPipelineChangeProgress/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'pipeline-name))))
+                                                             'pipeline-name)
+                                                            common-lisp:t)))
                                                         "GetPipelineChangeProgress"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-pipeline-change-progress))
@@ -2628,10 +2632,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2022-01-01/osis/startPipeline/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'pipeline-name))))
+                                                             'pipeline-name)
+                                                            common-lisp:t)))
                                                         "StartPipeline"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'start-pipeline))
@@ -2655,10 +2660,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2022-01-01/osis/stopPipeline/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'pipeline-name))))
+                                                             'pipeline-name)
+                                                            common-lisp:t)))
                                                         "StopPipeline"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'stop-pipeline))
@@ -2723,10 +2729,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2022-01-01/osis/updatePipeline/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'pipeline-name))))
+                                                             'pipeline-name)
+                                                            common-lisp:t)))
                                                         "UpdatePipeline"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-pipeline))

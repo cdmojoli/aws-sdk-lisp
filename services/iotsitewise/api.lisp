@@ -20,7 +20,7 @@
  (common-lisp:export 'iotsitewise-error))
 (common-lisp:progn
  (common-lisp:defclass iotsitewise-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "iotsitewise" :api-version
                         "2019-12-02" :host-prefix "iotsitewise" :signing-name
@@ -19098,10 +19098,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/assets/~A/associate"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'asset-id))))
+                                                             'asset-id)
+                                                            common-lisp:t)))
                                                         "AssociateAssets"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'associate-assets))
@@ -19147,10 +19148,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/projects/~A/assets/associate"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project-id))))
+                                                             'project-id)
+                                                            common-lisp:t)))
                                                         "BatchAssociateProjectAssets"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'batch-associate-project-assets))
@@ -19176,10 +19178,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/projects/~A/assets/disassociate"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project-id))))
+                                                             'project-id)
+                                                            common-lisp:t)))
                                                         "BatchDisassociateProjectAssets"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'batch-disassociate-project-assets))
@@ -19358,10 +19361,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/asset-models/~A/composite-models"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'asset-model-id))))
+                                                             'asset-model-id)
+                                                            common-lisp:t)))
                                                         "CreateAssetModelCompositeModel"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-asset-model-composite-model))
@@ -19489,10 +19493,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/access-policies/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'access-policy-id))))
+                                                             'access-policy-id)
+                                                            common-lisp:t)))
                                                         "DeleteAccessPolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-access-policy))
@@ -19516,10 +19521,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/assets/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'asset-id))))
+                                                             'asset-id)
+                                                            common-lisp:t)))
                                                         "DeleteAsset"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-asset))
@@ -19543,10 +19549,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/asset-models/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'asset-model-id))))
+                                                             'asset-model-id)
+                                                            common-lisp:t)))
                                                         "DeleteAssetModel"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-asset-model))
@@ -19574,14 +19581,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/asset-models/~A/composite-models/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'asset-model-id))
-                                                           (quri.encode:url-encode
+                                                             'asset-model-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'asset-model-composite-model-id))))
+                                                             'asset-model-composite-model-id)
+                                                            common-lisp:t)))
                                                         "DeleteAssetModelCompositeModel"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-asset-model-composite-model))
@@ -19605,10 +19614,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/dashboards/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dashboard-id))))
+                                                             'dashboard-id)
+                                                            common-lisp:t)))
                                                         "DeleteDashboard"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-dashboard))
@@ -19632,10 +19642,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/20200301/gateways/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'gateway-id))))
+                                                             'gateway-id)
+                                                            common-lisp:t)))
                                                         "DeleteGateway"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-gateway))
@@ -19659,10 +19670,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/portals/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'portal-id))))
+                                                             'portal-id)
+                                                            common-lisp:t)))
                                                         "DeletePortal"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-portal))
@@ -19686,10 +19698,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/projects/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project-id))))
+                                                             'project-id)
+                                                            common-lisp:t)))
                                                         "DeleteProject"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-project))
@@ -19732,10 +19745,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/access-policies/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'access-policy-id))))
+                                                             'access-policy-id)
+                                                            common-lisp:t)))
                                                         "DescribeAccessPolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-access-policy))
@@ -19759,10 +19773,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/actions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'action-id))))
+                                                             'action-id)
+                                                            common-lisp:t)))
                                                         "DescribeAction"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-action))
@@ -19786,10 +19801,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/assets/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'asset-id))))
+                                                             'asset-id)
+                                                            common-lisp:t)))
                                                         "DescribeAsset"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-asset))
@@ -19815,14 +19831,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/assets/~A/composite-models/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'asset-id))
-                                                           (quri.encode:url-encode
+                                                             'asset-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'asset-composite-model-id))))
+                                                             'asset-composite-model-id)
+                                                            common-lisp:t)))
                                                         "DescribeAssetCompositeModel"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-asset-composite-model))
@@ -19847,10 +19865,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/asset-models/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'asset-model-id))))
+                                                             'asset-model-id)
+                                                            common-lisp:t)))
                                                         "DescribeAssetModel"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-asset-model))
@@ -19877,14 +19896,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/asset-models/~A/composite-models/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'asset-model-id))
-                                                           (quri.encode:url-encode
+                                                             'asset-model-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'asset-model-composite-model-id))))
+                                                             'asset-model-composite-model-id)
+                                                            common-lisp:t)))
                                                         "DescribeAssetModelCompositeModel"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-asset-model-composite-model))
@@ -19908,14 +19929,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/assets/~A/properties/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'asset-id))
-                                                           (quri.encode:url-encode
+                                                             'asset-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'property-id))))
+                                                             'property-id)
+                                                            common-lisp:t)))
                                                         "DescribeAssetProperty"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-asset-property))
@@ -19939,10 +19962,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/jobs/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'job-id))))
+                                                             'job-id)
+                                                            common-lisp:t)))
                                                         "DescribeBulkImportJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-bulk-import-job))
@@ -19966,10 +19990,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/dashboards/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dashboard-id))))
+                                                             'dashboard-id)
+                                                            common-lisp:t)))
                                                         "DescribeDashboard"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-dashboard))
@@ -20002,10 +20027,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/20200301/gateways/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'gateway-id))))
+                                                             'gateway-id)
+                                                            common-lisp:t)))
                                                         "DescribeGateway"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-gateway))
@@ -20031,14 +20057,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/20200301/gateways/~A/capability/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'gateway-id))
-                                                           (quri.encode:url-encode
+                                                             'gateway-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'capability-namespace))))
+                                                             'capability-namespace)
+                                                            common-lisp:t)))
                                                         "DescribeGatewayCapabilityConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-gateway-capability-configuration))
@@ -20071,10 +20099,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/portals/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'portal-id))))
+                                                             'portal-id)
+                                                            common-lisp:t)))
                                                         "DescribePortal"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-portal))
@@ -20098,10 +20127,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/projects/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project-id))))
+                                                             'project-id)
+                                                            common-lisp:t)))
                                                         "DescribeProject"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-project))
@@ -20154,10 +20184,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/assets/~A/disassociate"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'asset-id))))
+                                                             'asset-id)
+                                                            common-lisp:t)))
                                                         "DisassociateAssets"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'disassociate-assets))
@@ -20376,10 +20407,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/asset-models/~A/composite-models"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'asset-model-id))))
+                                                             'asset-model-id)
+                                                            common-lisp:t)))
                                                         "ListAssetModelCompositeModels"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-asset-model-composite-models))
@@ -20406,10 +20438,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/asset-models/~A/properties"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'asset-model-id))))
+                                                             'asset-model-id)
+                                                            common-lisp:t)))
                                                         "ListAssetModelProperties"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-asset-model-properties))
@@ -20452,10 +20485,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/assets/~A/properties"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'asset-id))))
+                                                             'asset-id)
+                                                            common-lisp:t)))
                                                         "ListAssetProperties"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-asset-properties))
@@ -20481,10 +20515,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/assets/~A/assetRelationships"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'asset-id))))
+                                                             'asset-id)
+                                                            common-lisp:t)))
                                                         "ListAssetRelationships"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-asset-relationships))
@@ -20530,10 +20565,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/assets/~A/hierarchies"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'asset-id))))
+                                                             'asset-id)
+                                                            common-lisp:t)))
                                                         "ListAssociatedAssets"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-associated-assets))
@@ -20576,10 +20612,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/asset-models/~A/composition-relationships"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'asset-model-id))))
+                                                             'asset-model-id)
+                                                            common-lisp:t)))
                                                         "ListCompositionRelationships"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-composition-relationships))
@@ -20657,10 +20694,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/projects/~A/assets"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project-id))))
+                                                             'project-id)
+                                                            common-lisp:t)))
                                                         "ListProjectAssets"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-project-assets))
@@ -20837,10 +20875,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/access-policies/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'access-policy-id))))
+                                                             'access-policy-id)
+                                                            common-lisp:t)))
                                                         "UpdateAccessPolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-access-policy))
@@ -20867,10 +20906,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/assets/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'asset-id))))
+                                                             'asset-id)
+                                                            common-lisp:t)))
                                                         "UpdateAsset"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-asset))
@@ -20900,10 +20940,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/asset-models/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'asset-model-id))))
+                                                             'asset-model-id)
+                                                            common-lisp:t)))
                                                         "UpdateAssetModel"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-asset-model))
@@ -20937,14 +20978,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/asset-models/~A/composite-models/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'asset-model-id))
-                                                           (quri.encode:url-encode
+                                                             'asset-model-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'asset-model-composite-model-id))))
+                                                             'asset-model-composite-model-id)
+                                                            common-lisp:t)))
                                                         "UpdateAssetModelCompositeModel"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-asset-model-composite-model))
@@ -20971,14 +21014,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/assets/~A/properties/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'asset-id))
-                                                           (quri.encode:url-encode
+                                                             'asset-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'property-id))))
+                                                             'property-id)
+                                                            common-lisp:t)))
                                                         "UpdateAssetProperty"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-asset-property))
@@ -21005,10 +21050,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/dashboards/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dashboard-id))))
+                                                             'dashboard-id)
+                                                            common-lisp:t)))
                                                         "UpdateDashboard"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-dashboard))
@@ -21032,10 +21078,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/20200301/gateways/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'gateway-id))))
+                                                             'gateway-id)
+                                                            common-lisp:t)))
                                                         "UpdateGateway"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-gateway))
@@ -21063,10 +21110,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/20200301/gateways/~A/capability"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'gateway-id))))
+                                                             'gateway-id)
+                                                            common-lisp:t)))
                                                         "UpdateGatewayCapabilityConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-gateway-capability-configuration))
@@ -21095,10 +21143,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/portals/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'portal-id))))
+                                                             'portal-id)
+                                                            common-lisp:t)))
                                                         "UpdatePortal"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-portal))
@@ -21125,10 +21174,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/projects/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project-id))))
+                                                             'project-id)
+                                                            common-lisp:t)))
                                                         "UpdateProject"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-project))

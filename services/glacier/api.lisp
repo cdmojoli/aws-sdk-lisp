@@ -20,7 +20,7 @@
  (common-lisp:export 'glacier-error))
 (common-lisp:progn
  (common-lisp:defclass glacier-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "glacier" :api-version
                         "2012-06-01" :host-prefix "glacier" :signing-name
@@ -211,16 +211,22 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'location))
-      (common-lisp:cons "Location" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Location" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum))
-      (common-lisp:cons "x-amz-sha256-tree-hash"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-sha256-tree-hash"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'archive-id))
-      (common-lisp:cons "x-amz-archive-id" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-archive-id" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -468,12 +474,16 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'archive-size))
-      (common-lisp:cons "x-amz-archive-size" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-archive-size" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum))
-      (common-lisp:cons "x-amz-sha256-tree-hash"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-sha256-tree-hash"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -580,7 +590,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'location))
-      (common-lisp:cons "Location" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Location" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         ((aws-sdk/generator/shape::input create-vault-output))
    (common-lisp:append))
@@ -1168,7 +1180,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'range))
-      (common-lisp:cons "Range" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Range" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         ((aws-sdk/generator/shape::input get-job-output-input))
    (common-lisp:append))
@@ -1236,25 +1250,35 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum))
-      (common-lisp:cons "x-amz-sha256-tree-hash"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-sha256-tree-hash"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-range))
-      (common-lisp:cons "Content-Range" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Range" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'accept-ranges))
-      (common-lisp:cons "Accept-Ranges" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Accept-Ranges" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-type))
-      (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'archive-description))
-      (common-lisp:cons "x-amz-archive-description"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-archive-description"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -2061,16 +2085,22 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'location))
-      (common-lisp:cons "Location" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Location" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'job-id))
-      (common-lisp:cons "x-amz-job-id" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-job-id" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'job-output-path))
-      (common-lisp:cons "x-amz-job-output-path"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-job-output-path"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         ((aws-sdk/generator/shape::input initiate-job-output))
    (common-lisp:append))
@@ -2124,12 +2154,16 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'archive-description))
-      (common-lisp:cons "x-amz-archive-description"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-archive-description"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'part-size))
-      (common-lisp:cons "x-amz-part-size" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-part-size" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -2173,12 +2207,16 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'location))
-      (common-lisp:cons "Location" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Location" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'upload-id))
-      (common-lisp:cons "x-amz-multipart-upload-id"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-multipart-upload-id"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -2267,7 +2305,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'lock-id))
-      (common-lisp:cons "x-amz-lock-id" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-lock-id" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -3559,7 +3599,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'capacity-id))
-      (common-lisp:cons "x-amz-capacity-id" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-capacity-id" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -4087,13 +4129,17 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'archive-description))
-      (common-lisp:cons "x-amz-archive-description"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-archive-description"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum))
-      (common-lisp:cons "x-amz-sha256-tree-hash"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-sha256-tree-hash"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         ((aws-sdk/generator/shape::input upload-archive-input))
    (common-lisp:append
@@ -4251,12 +4297,16 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum))
-      (common-lisp:cons "x-amz-sha256-tree-hash"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-sha256-tree-hash"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'range))
-      (common-lisp:cons "Content-Range" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Range" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -4299,8 +4349,10 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum))
-      (common-lisp:cons "x-amz-sha256-tree-hash"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-sha256-tree-hash"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -4475,18 +4527,21 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/vaults/~A/multipart-uploads/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'account-id))
-                                                           (quri.encode:url-encode
+                                                             'account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'vault-name))
-                                                           (quri.encode:url-encode
+                                                             'vault-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'upload-id))))
+                                                             'upload-id)
+                                                            common-lisp:t)))
                                                         "AbortMultipartUpload"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'abort-multipart-upload))
@@ -4510,14 +4565,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/vaults/~A/lock-policy"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'account-id))
-                                                           (quri.encode:url-encode
+                                                             'account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'vault-name))))
+                                                             'vault-name)
+                                                            common-lisp:t)))
                                                         "AbortVaultLock"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'abort-vault-lock))
@@ -4541,14 +4598,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/vaults/~A/tags?operation=add"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'account-id))
-                                                           (quri.encode:url-encode
+                                                             'account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'vault-name))))
+                                                             'vault-name)
+                                                            common-lisp:t)))
                                                         "AddTagsToVault"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'add-tags-to-vault))
@@ -4575,18 +4634,21 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/vaults/~A/multipart-uploads/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'account-id))
-                                                           (quri.encode:url-encode
+                                                             'account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'vault-name))
-                                                           (quri.encode:url-encode
+                                                             'vault-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'upload-id))))
+                                                             'upload-id)
+                                                            common-lisp:t)))
                                                         "CompleteMultipartUpload"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'complete-multipart-upload))
@@ -4610,18 +4672,21 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/vaults/~A/lock-policy/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'account-id))
-                                                           (quri.encode:url-encode
+                                                             'account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'vault-name))
-                                                           (quri.encode:url-encode
+                                                             'vault-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'lock-id))))
+                                                             'lock-id)
+                                                            common-lisp:t)))
                                                         "CompleteVaultLock"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'complete-vault-lock))
@@ -4645,14 +4710,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/vaults/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'account-id))
-                                                           (quri.encode:url-encode
+                                                             'account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'vault-name))))
+                                                             'vault-name)
+                                                            common-lisp:t)))
                                                         "CreateVault"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-vault))
@@ -4677,18 +4744,21 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/vaults/~A/archives/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'account-id))
-                                                           (quri.encode:url-encode
+                                                             'account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'vault-name))
-                                                           (quri.encode:url-encode
+                                                             'vault-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'archive-id))))
+                                                             'archive-id)
+                                                            common-lisp:t)))
                                                         "DeleteArchive"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-archive))
@@ -4712,14 +4782,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/vaults/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'account-id))
-                                                           (quri.encode:url-encode
+                                                             'account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'vault-name))))
+                                                             'vault-name)
+                                                            common-lisp:t)))
                                                         "DeleteVault"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-vault))
@@ -4743,14 +4815,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/vaults/~A/access-policy"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'account-id))
-                                                           (quri.encode:url-encode
+                                                             'account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'vault-name))))
+                                                             'vault-name)
+                                                            common-lisp:t)))
                                                         "DeleteVaultAccessPolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-vault-access-policy))
@@ -4774,14 +4848,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/vaults/~A/notification-configuration"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'account-id))
-                                                           (quri.encode:url-encode
+                                                             'account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'vault-name))))
+                                                             'vault-name)
+                                                            common-lisp:t)))
                                                         "DeleteVaultNotifications"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-vault-notifications))
@@ -4805,18 +4881,21 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/vaults/~A/jobs/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'account-id))
-                                                           (quri.encode:url-encode
+                                                             'account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'vault-name))
-                                                           (quri.encode:url-encode
+                                                             'vault-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'job-id))))
+                                                             'job-id)
+                                                            common-lisp:t)))
                                                         "DescribeJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-job))
@@ -4840,14 +4919,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/vaults/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'account-id))
-                                                           (quri.encode:url-encode
+                                                             'account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'vault-name))))
+                                                             'vault-name)
+                                                            common-lisp:t)))
                                                         "DescribeVault"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-vault))
@@ -4871,10 +4952,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/policies/data-retrieval"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'account-id))))
+                                                             'account-id)
+                                                            common-lisp:t)))
                                                         "GetDataRetrievalPolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-data-retrieval-policy))
@@ -4899,18 +4981,21 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/vaults/~A/jobs/~A/output"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'account-id))
-                                                           (quri.encode:url-encode
+                                                             'account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'vault-name))
-                                                           (quri.encode:url-encode
+                                                             'vault-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'job-id))))
+                                                             'job-id)
+                                                            common-lisp:t)))
                                                         "GetJobOutput")
        :want-stream common-lisp:t)
       "blob" common-lisp:nil *error-map*)))
@@ -4935,14 +5020,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/vaults/~A/access-policy"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'account-id))
-                                                           (quri.encode:url-encode
+                                                             'account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'vault-name))))
+                                                             'vault-name)
+                                                            common-lisp:t)))
                                                         "GetVaultAccessPolicy"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'get-vault-access-policy))
@@ -4966,14 +5053,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/vaults/~A/lock-policy"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'account-id))
-                                                           (quri.encode:url-encode
+                                                             'account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'vault-name))))
+                                                             'vault-name)
+                                                            common-lisp:t)))
                                                         "GetVaultLock"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-vault-lock))
@@ -4997,14 +5086,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/vaults/~A/notification-configuration"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'account-id))
-                                                           (quri.encode:url-encode
+                                                             'account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'vault-name))))
+                                                             'vault-name)
+                                                            common-lisp:t)))
                                                         "GetVaultNotifications"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'get-vault-notifications))
@@ -5029,14 +5120,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/vaults/~A/jobs"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'account-id))
-                                                           (quri.encode:url-encode
+                                                             'account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'vault-name))))
+                                                             'vault-name)
+                                                            common-lisp:t)))
                                                         "InitiateJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'initiate-job))
@@ -5063,14 +5156,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/vaults/~A/multipart-uploads"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'account-id))
-                                                           (quri.encode:url-encode
+                                                             'account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'vault-name))))
+                                                             'vault-name)
+                                                            common-lisp:t)))
                                                         "InitiateMultipartUpload"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'initiate-multipart-upload))
@@ -5094,14 +5189,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/vaults/~A/lock-policy"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'account-id))
-                                                           (quri.encode:url-encode
+                                                             'account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'vault-name))))
+                                                             'vault-name)
+                                                            common-lisp:t)))
                                                         "InitiateVaultLock"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'initiate-vault-lock))
@@ -5128,14 +5225,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/vaults/~A/jobs"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'account-id))
-                                                           (quri.encode:url-encode
+                                                             'account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'vault-name))))
+                                                             'vault-name)
+                                                            common-lisp:t)))
                                                         "ListJobs"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-jobs))
@@ -5160,14 +5259,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/vaults/~A/multipart-uploads"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'account-id))
-                                                           (quri.encode:url-encode
+                                                             'account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'vault-name))))
+                                                             'vault-name)
+                                                            common-lisp:t)))
                                                         "ListMultipartUploads"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-multipart-uploads))
@@ -5193,18 +5294,21 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/vaults/~A/multipart-uploads/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'account-id))
-                                                           (quri.encode:url-encode
+                                                             'account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'vault-name))
-                                                           (quri.encode:url-encode
+                                                             'vault-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'upload-id))))
+                                                             'upload-id)
+                                                            common-lisp:t)))
                                                         "ListParts"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-parts))
@@ -5228,10 +5332,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/provisioned-capacity"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'account-id))))
+                                                             'account-id)
+                                                            common-lisp:t)))
                                                         "ListProvisionedCapacity"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-provisioned-capacity))
@@ -5255,14 +5360,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/vaults/~A/tags"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'account-id))
-                                                           (quri.encode:url-encode
+                                                             'account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'vault-name))))
+                                                             'vault-name)
+                                                            common-lisp:t)))
                                                         "ListTagsForVault"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-vault))
@@ -5286,10 +5393,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/vaults"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'account-id))))
+                                                             'account-id)
+                                                            common-lisp:t)))
                                                         "ListVaults"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-vaults))
@@ -5314,10 +5422,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/provisioned-capacity"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'account-id))))
+                                                             'account-id)
+                                                            common-lisp:t)))
                                                         "PurchaseProvisionedCapacity"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'purchase-provisioned-capacity))
@@ -5341,14 +5450,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/vaults/~A/tags?operation=remove"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'account-id))
-                                                           (quri.encode:url-encode
+                                                             'account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'vault-name))))
+                                                             'vault-name)
+                                                            common-lisp:t)))
                                                         "RemoveTagsFromVault"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'remove-tags-from-vault))
@@ -5372,10 +5483,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/policies/data-retrieval"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'account-id))))
+                                                             'account-id)
+                                                            common-lisp:t)))
                                                         "SetDataRetrievalPolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'set-data-retrieval-policy))
@@ -5399,14 +5511,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/vaults/~A/access-policy"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'account-id))
-                                                           (quri.encode:url-encode
+                                                             'account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'vault-name))))
+                                                             'vault-name)
+                                                            common-lisp:t)))
                                                         "SetVaultAccessPolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'set-vault-access-policy))
@@ -5432,14 +5546,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/vaults/~A/notification-configuration"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'account-id))
-                                                           (quri.encode:url-encode
+                                                             'account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'vault-name))))
+                                                             'vault-name)
+                                                            common-lisp:t)))
                                                         "SetVaultNotifications"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'set-vault-notifications))
@@ -5466,14 +5582,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/vaults/~A/archives"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'account-id))
-                                                           (quri.encode:url-encode
+                                                             'account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'vault-name))))
+                                                             'vault-name)
+                                                            common-lisp:t)))
                                                         "UploadArchive"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'upload-archive))
@@ -5500,18 +5618,21 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/~A/vaults/~A/multipart-uploads/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'account-id))
-                                                           (quri.encode:url-encode
+                                                             'account-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'vault-name))
-                                                           (quri.encode:url-encode
+                                                             'vault-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'upload-id))))
+                                                             'upload-id)
+                                                            common-lisp:t)))
                                                         "UploadMultipartPart"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'upload-multipart-part))

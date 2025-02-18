@@ -20,7 +20,7 @@
  (common-lisp:export 'migration-hub-refactor-spaces-error))
 (common-lisp:progn
  (common-lisp:defclass migration-hub-refactor-spaces-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service
                         "migration-hub-refactor-spaces" :api-version
@@ -5905,10 +5905,11 @@
         aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/environments/~A/applications"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'environment-identifier))))
+                                'environment-identifier)
+                               common-lisp:t)))
         "CreateApplication"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-application))
@@ -5953,14 +5954,16 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/environments/~A/applications/~A/routes"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'environment-identifier))
-                              (quri.encode:url-encode
+                                'environment-identifier)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'application-identifier))))
+                                'application-identifier)
+                               common-lisp:t)))
         "CreateRoute"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-route))
@@ -5986,14 +5989,16 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/environments/~A/applications/~A/services"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'environment-identifier))
-                              (quri.encode:url-encode
+                                'environment-identifier)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'application-identifier))))
+                                'application-identifier)
+                               common-lisp:t)))
         "CreateService"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-service))
@@ -6016,14 +6021,16 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/environments/~A/applications/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'environment-identifier))
-                              (quri.encode:url-encode
+                                'environment-identifier)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'application-identifier))))
+                                'application-identifier)
+                               common-lisp:t)))
         "DeleteApplication"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-application))
@@ -6043,10 +6050,11 @@
         aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/environments/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'environment-identifier))))
+                                'environment-identifier)
+                               common-lisp:t)))
         "DeleteEnvironment"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-environment))
@@ -6066,10 +6074,10 @@
         aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/resourcepolicy/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'identifier))))
+                                aws-sdk/generator/operation::input 'identifier)
+                               common-lisp:t)))
         "DeleteResourcePolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-resource-policy))
@@ -6093,18 +6101,21 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/environments/~A/applications/~A/routes/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'environment-identifier))
-                              (quri.encode:url-encode
+                                'environment-identifier)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'application-identifier))
-                              (quri.encode:url-encode
+                                'application-identifier)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'route-identifier))))
+                                'route-identifier)
+                               common-lisp:t)))
         "DeleteRoute"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-route))
@@ -6128,18 +6139,21 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/environments/~A/applications/~A/services/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'environment-identifier))
-                              (quri.encode:url-encode
+                                'environment-identifier)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'application-identifier))
-                              (quri.encode:url-encode
+                                'application-identifier)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'service-identifier))))
+                                'service-identifier)
+                               common-lisp:t)))
         "DeleteService"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-service))
@@ -6162,14 +6176,16 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/environments/~A/applications/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'environment-identifier))
-                              (quri.encode:url-encode
+                                'environment-identifier)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'application-identifier))))
+                                'application-identifier)
+                               common-lisp:t)))
         "GetApplication"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-application))
@@ -6189,10 +6205,11 @@
         aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/environments/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'environment-identifier))))
+                                'environment-identifier)
+                               common-lisp:t)))
         "GetEnvironment"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-environment))
@@ -6212,10 +6229,10 @@
         aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/resourcepolicy/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'identifier))))
+                                aws-sdk/generator/operation::input 'identifier)
+                               common-lisp:t)))
         "GetResourcePolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-resource-policy))
@@ -6239,18 +6256,21 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/environments/~A/applications/~A/routes/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'environment-identifier))
-                              (quri.encode:url-encode
+                                'environment-identifier)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'application-identifier))
-                              (quri.encode:url-encode
+                                'application-identifier)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'route-identifier))))
+                                'route-identifier)
+                               common-lisp:t)))
         "GetRoute"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-route))
@@ -6274,18 +6294,21 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/environments/~A/applications/~A/services/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'environment-identifier))
-                              (quri.encode:url-encode
+                                'environment-identifier)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'application-identifier))
-                              (quri.encode:url-encode
+                                'application-identifier)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'service-identifier))))
+                                'service-identifier)
+                               common-lisp:t)))
         "GetService"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-service))
@@ -6307,10 +6330,11 @@
         aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/environments/~A/applications"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'environment-identifier))))
+                                'environment-identifier)
+                               common-lisp:t)))
         "ListApplications"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-applications))
@@ -6332,10 +6356,11 @@
         aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/environments/~A/vpcs"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'environment-identifier))))
+                                'environment-identifier)
+                               common-lisp:t)))
         "ListEnvironmentVpcs"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-environment-vpcs))
@@ -6376,14 +6401,16 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/environments/~A/applications/~A/routes"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'environment-identifier))
-                              (quri.encode:url-encode
+                                'environment-identifier)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'application-identifier))))
+                                'application-identifier)
+                               common-lisp:t)))
         "ListRoutes"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-routes))
@@ -6407,14 +6434,16 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/environments/~A/applications/~A/services"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'environment-identifier))
-                              (quri.encode:url-encode
+                                'environment-identifier)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'application-identifier))))
+                                'application-identifier)
+                               common-lisp:t)))
         "ListServices"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-services))
@@ -6434,10 +6463,11 @@
         aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -6474,10 +6504,11 @@
         aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -6497,10 +6528,11 @@
         aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -6524,18 +6556,21 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/environments/~A/applications/~A/routes/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'environment-identifier))
-                              (quri.encode:url-encode
+                                'environment-identifier)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'application-identifier))
-                              (quri.encode:url-encode
+                                'application-identifier)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'route-identifier))))
+                                'route-identifier)
+                               common-lisp:t)))
         "UpdateRoute"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-route))

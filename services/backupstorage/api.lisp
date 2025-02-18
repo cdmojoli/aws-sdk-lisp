@@ -20,7 +20,7 @@
  (common-lisp:export 'backupstorage-error))
 (common-lisp:progn
  (common-lisp:defclass backupstorage-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "backupstorage" :api-version
                         "2018-04-10" :host-prefix "backupstorage" :signing-name
@@ -357,16 +357,22 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'length))
-      (common-lisp:cons "x-amz-data-length" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-data-length" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum))
-      (common-lisp:cons "x-amz-checksum" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-checksum" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-algorithm))
-      (common-lisp:cons "x-amz-checksum-algorithm"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-checksum-algorithm"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         ((aws-sdk/generator/shape::input get-chunk-output))
    (common-lisp:append
@@ -476,24 +482,32 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'metadata-string))
-      (common-lisp:cons "x-amz-metadata-string"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-metadata-string"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'metadata-blob-length))
-      (common-lisp:cons "x-amz-data-length" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-data-length" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'metadata-blob-checksum))
-      (common-lisp:cons "x-amz-checksum" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-checksum" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'metadata-blob-checksum-algorithm))
-      (common-lisp:cons "x-amz-checksum-algorithm"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-checksum-algorithm"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -1353,14 +1367,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backup-jobs/~A/object/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'job-id))
-                                                           (quri.encode:url-encode
+                                                             'job-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'object-name))))
+                                                             'object-name)
+                                                            common-lisp:t)))
                                                         "DeleteObject"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-object))
@@ -1384,14 +1400,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/restore-jobs/~A/chunk/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'job-id))
-                                                           (quri.encode:url-encode
+                                                             'job-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'chunk-token))))
+                                                             'chunk-token)
+                                                            common-lisp:t)))
                                                         "GetChunk")
        :want-stream common-lisp:t)
       "blob" common-lisp:nil *error-map*)))
@@ -1416,14 +1434,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/restore-jobs/~A/object/~A/metadata"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'job-id))
-                                                           (quri.encode:url-encode
+                                                             'job-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'object-token))))
+                                                             'object-token)
+                                                            common-lisp:t)))
                                                         "GetObjectMetadata")
        :want-stream common-lisp:t)
       "blob" common-lisp:nil *error-map*)))
@@ -1450,14 +1470,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/restore-jobs/~A/chunks/~A/list"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'job-id))
-                                                           (quri.encode:url-encode
+                                                             'job-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'object-token))))
+                                                             'object-token)
+                                                            common-lisp:t)))
                                                         "ListChunks"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-chunks))
@@ -1486,10 +1508,11 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/restore-jobs/~A/objects/list"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'job-id))))
+                                                             'job-id)
+                                                            common-lisp:t)))
                                                         "ListObjects"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-objects))
@@ -1520,14 +1543,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backup-jobs/~A/object/~A/complete"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'job-id))
-                                                           (quri.encode:url-encode
+                                                             'job-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'upload-id))))
+                                                             'upload-id)
+                                                            common-lisp:t)))
                                                         "NotifyObjectComplete"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'notify-object-complete))
@@ -1554,18 +1579,21 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backup-jobs/~A/chunk/~A/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'job-id))
-                                                           (quri.encode:url-encode
+                                                             'job-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'upload-id))
-                                                           (quri.encode:url-encode
+                                                             'upload-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'chunk-index))))
+                                                             'chunk-index)
+                                                            common-lisp:t)))
                                                         "PutChunk"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-chunk))
@@ -1596,14 +1624,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backup-jobs/~A/object/~A/put-object"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'job-id))
-                                                           (quri.encode:url-encode
+                                                             'job-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'object-name))))
+                                                             'object-name)
+                                                            common-lisp:t)))
                                                         "PutObject"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-object))
@@ -1629,14 +1659,16 @@ common-lisp:nil
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backup-jobs/~A/object/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'job-id))
-                                                           (quri.encode:url-encode
+                                                             'job-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'object-name))))
+                                                             'object-name)
+                                                            common-lisp:t)))
                                                         "StartObject"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'start-object))

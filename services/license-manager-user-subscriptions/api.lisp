@@ -22,7 +22,7 @@
  (common-lisp:export 'license-manager-user-subscriptions-error))
 (common-lisp:progn
  (common-lisp:defclass license-manager-user-subscriptions-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service
                         "license-manager-user-subscriptions" :api-version

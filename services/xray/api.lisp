@@ -20,7 +20,7 @@
  (common-lisp:export 'xray-error))
 (common-lisp:progn
  (common-lisp:defclass xray-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "xray" :api-version
                         "2016-04-12" :host-prefix "xray" :signing-name

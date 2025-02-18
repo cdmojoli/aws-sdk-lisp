@@ -20,7 +20,7 @@
  (common-lisp:export 'personalize-events-error))
 (common-lisp:progn
  (common-lisp:defclass personalize-events-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "personalize-events"
                         :api-version "2018-03-22" :host-prefix

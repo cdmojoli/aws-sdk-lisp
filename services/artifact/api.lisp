@@ -20,7 +20,7 @@
  (common-lisp:export 'artifact-error))
 (common-lisp:progn
  (common-lisp:defclass artifact-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "artifact" :api-version
                         "2018-05-10" :host-prefix "artifact" :signing-name

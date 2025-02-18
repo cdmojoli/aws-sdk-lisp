@@ -20,7 +20,7 @@
  (common-lisp:export 'schemas-error))
 (common-lisp:progn
  (common-lisp:defclass schemas-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "schemas" :api-version
                         "2019-12-02" :host-prefix "schemas" :signing-name
@@ -5554,10 +5554,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/registries/name/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'registry-name))))
+                                                             'registry-name)
+                                                            common-lisp:t)))
                                                         "CreateRegistry"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-registry))
@@ -5584,14 +5585,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/registries/name/~A/schemas/name/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'registry-name))
-                                                           (quri.encode:url-encode
+                                                             'registry-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'schema-name))))
+                                                             'schema-name)
+                                                            common-lisp:t)))
                                                         "CreateSchema"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-schema))
@@ -5615,10 +5618,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/discoverers/id/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'discoverer-id))))
+                                                             'discoverer-id)
+                                                            common-lisp:t)))
                                                         "DeleteDiscoverer"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-discoverer))
@@ -5642,10 +5646,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/registries/name/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'registry-name))))
+                                                             'registry-name)
+                                                            common-lisp:t)))
                                                         "DeleteRegistry"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-registry))
@@ -5686,14 +5691,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/registries/name/~A/schemas/name/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'registry-name))
-                                                           (quri.encode:url-encode
+                                                             'registry-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'schema-name))))
+                                                             'schema-name)
+                                                            common-lisp:t)))
                                                         "DeleteSchema"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-schema))
@@ -5718,18 +5725,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/registries/name/~A/schemas/name/~A/version/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'registry-name))
-                                                           (quri.encode:url-encode
+                                                             'registry-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'schema-name))
-                                                           (quri.encode:url-encode
+                                                             'schema-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'schema-version))))
+                                                             'schema-version)
+                                                            common-lisp:t)))
                                                         "DeleteSchemaVersion"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-schema-version))
@@ -5755,18 +5765,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/registries/name/~A/schemas/name/~A/language/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'registry-name))
-                                                           (quri.encode:url-encode
+                                                             'registry-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'schema-name))
-                                                           (quri.encode:url-encode
+                                                             'schema-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'language))))
+                                                             'language)
+                                                            common-lisp:t)))
                                                         "DescribeCodeBinding"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-code-binding))
@@ -5790,10 +5803,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/discoverers/id/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'discoverer-id))))
+                                                             'discoverer-id)
+                                                            common-lisp:t)))
                                                         "DescribeDiscoverer"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-discoverer))
@@ -5817,10 +5831,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/registries/name/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'registry-name))))
+                                                             'registry-name)
+                                                            common-lisp:t)))
                                                         "DescribeRegistry"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-registry))
@@ -5845,14 +5860,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/registries/name/~A/schemas/name/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'registry-name))
-                                                           (quri.encode:url-encode
+                                                             'registry-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'schema-name))))
+                                                             'schema-name)
+                                                            common-lisp:t)))
                                                         "DescribeSchema"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-schema))
@@ -5878,18 +5895,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/registries/name/~A/schemas/name/~A/language/~A/source"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'registry-name))
-                                                           (quri.encode:url-encode
+                                                             'registry-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'schema-name))
-                                                           (quri.encode:url-encode
+                                                             'schema-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'language))))
+                                                             'language)
+                                                            common-lisp:t)))
                                                         "GetCodeBindingSource")
        :want-stream common-lisp:t)
       "blob" common-lisp:nil *error-map*)))
@@ -5989,14 +6009,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/registries/name/~A/schemas/name/~A/versions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'registry-name))
-                                                           (quri.encode:url-encode
+                                                             'registry-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'schema-name))))
+                                                             'schema-name)
+                                                            common-lisp:t)))
                                                         "ListSchemaVersions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-schema-versions))
@@ -6022,10 +6044,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/registries/name/~A/schemas"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'registry-name))))
+                                                             'registry-name)
+                                                            common-lisp:t)))
                                                         "ListSchemas"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-schemas))
@@ -6049,10 +6072,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -6078,18 +6102,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/registries/name/~A/schemas/name/~A/language/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'registry-name))
-                                                           (quri.encode:url-encode
+                                                             'registry-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'schema-name))
-                                                           (quri.encode:url-encode
+                                                             'schema-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'language))))
+                                                             'language)
+                                                            common-lisp:t)))
                                                         "PutCodeBinding"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-code-binding))
@@ -6132,10 +6159,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/registries/name/~A/schemas/search"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'registry-name))))
+                                                             'registry-name)
+                                                            common-lisp:t)))
                                                         "SearchSchemas"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'search-schemas))
@@ -6159,10 +6187,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/discoverers/id/~A/start"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'discoverer-id))))
+                                                             'discoverer-id)
+                                                            common-lisp:t)))
                                                         "StartDiscoverer"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'start-discoverer))
@@ -6186,10 +6215,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/discoverers/id/~A/stop"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'discoverer-id))))
+                                                             'discoverer-id)
+                                                            common-lisp:t)))
                                                         "StopDiscoverer"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'stop-discoverer))
@@ -6213,10 +6243,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -6240,10 +6271,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -6268,10 +6300,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/discoverers/id/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'discoverer-id))))
+                                                             'discoverer-id)
+                                                            common-lisp:t)))
                                                         "UpdateDiscoverer"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-discoverer))
@@ -6295,10 +6328,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/registries/name/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'registry-name))))
+                                                             'registry-name)
+                                                            common-lisp:t)))
                                                         "UpdateRegistry"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-registry))
@@ -6325,14 +6359,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/registries/name/~A/schemas/name/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'registry-name))
-                                                           (quri.encode:url-encode
+                                                             'registry-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'schema-name))))
+                                                             'schema-name)
+                                                            common-lisp:t)))
                                                         "UpdateSchema"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-schema))
@@ -6358,14 +6394,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/registries/name/~A/schemas/name/~A/export"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'registry-name))
-                                                           (quri.encode:url-encode
+                                                             'registry-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'schema-name))))
+                                                             'schema-name)
+                                                            common-lisp:t)))
                                                         "ExportSchema"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'export-schema))

@@ -20,7 +20,7 @@
  (common-lisp:export 'braket-error))
 (common-lisp:progn
  (common-lisp:defclass braket-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "braket" :api-version
                         "2019-09-01" :host-prefix "braket" :signing-name
@@ -3585,10 +3585,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/job/~A/cancel"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'job-arn))))
+                                                             'job-arn)
+                                                            common-lisp:t)))
                                                         "CancelJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'cancel-job))
@@ -3612,10 +3613,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/quantum-task/~A/cancel"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'quantum-task-arn))))
+                                                             'quantum-task-arn)
+                                                            common-lisp:t)))
                                                         "CancelQuantumTask"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'cancel-quantum-task))
@@ -3686,10 +3688,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/device/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'device-arn))))
+                                                             'device-arn)
+                                                            common-lisp:t)))
                                                         "GetDevice"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-device))
@@ -3714,10 +3717,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/job/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'job-arn))))
+                                                             'job-arn)
+                                                            common-lisp:t)))
                                                         "GetJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-job))
@@ -3743,10 +3747,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/quantum-task/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'quantum-task-arn))))
+                                                             'quantum-task-arn)
+                                                            common-lisp:t)))
                                                         "GetQuantumTask"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-quantum-task))
@@ -3770,10 +3775,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -3848,10 +3854,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -3875,10 +3882,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))

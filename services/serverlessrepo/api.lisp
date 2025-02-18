@@ -20,7 +20,7 @@
  (common-lisp:export 'serverlessrepo-error))
 (common-lisp:progn
  (common-lisp:defclass serverlessrepo-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "serverlessrepo"
                         :api-version "2017-09-08" :host-prefix "serverlessrepo"
@@ -4587,14 +4587,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/applications/~A/versions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'application-id))
-                                                           (quri.encode:url-encode
+                                                             'application-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'semantic-version))))
+                                                             'semantic-version)
+                                                            common-lisp:t)))
                                                         "CreateApplicationVersion"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-application-version))
@@ -4626,10 +4628,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/applications/~A/changesets"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'application-id))))
+                                                             'application-id)
+                                                            common-lisp:t)))
                                                         "CreateCloudFormationChangeSet"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-cloud-formation-change-set))
@@ -4655,10 +4658,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/applications/~A/templates"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'application-id))))
+                                                             'application-id)
+                                                            common-lisp:t)))
                                                         "CreateCloudFormationTemplate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-cloud-formation-template))
@@ -4682,10 +4686,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/applications/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'application-id))))
+                                                             'application-id)
+                                                            common-lisp:t)))
                                                         "DeleteApplication"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-application))
@@ -4710,10 +4715,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/applications/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'application-id))))
+                                                             'application-id)
+                                                            common-lisp:t)))
                                                         "GetApplication"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-application))
@@ -4737,10 +4743,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/applications/~A/policy"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'application-id))))
+                                                             'application-id)
+                                                            common-lisp:t)))
                                                         "GetApplicationPolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-application-policy))
@@ -4765,14 +4772,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/applications/~A/templates/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'application-id))
-                                                           (quri.encode:url-encode
+                                                             'application-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'template-id))))
+                                                             'template-id)
+                                                            common-lisp:t)))
                                                         "GetCloudFormationTemplate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-cloud-formation-template))
@@ -4800,10 +4809,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/applications/~A/dependencies"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'application-id))))
+                                                             'application-id)
+                                                            common-lisp:t)))
                                                         "ListApplicationDependencies"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-application-dependencies))
@@ -4829,10 +4839,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/applications/~A/versions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'application-id))))
+                                                             'application-id)
+                                                            common-lisp:t)))
                                                         "ListApplicationVersions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-application-versions))
@@ -4873,10 +4884,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/applications/~A/policy"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'application-id))))
+                                                             'application-id)
+                                                            common-lisp:t)))
                                                         "PutApplicationPolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-application-policy))
@@ -4900,10 +4912,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/applications/~A/unshare"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'application-id))))
+                                                             'application-id)
+                                                            common-lisp:t)))
                                                         "UnshareApplication"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'unshare-application))
@@ -4930,10 +4943,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/applications/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'application-id))))
+                                                             'application-id)
+                                                            common-lisp:t)))
                                                         "UpdateApplication"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-application))

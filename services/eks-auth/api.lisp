@@ -20,7 +20,7 @@
  (common-lisp:export 'eks-auth-error))
 (common-lisp:progn
  (common-lisp:defclass eks-auth-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "eks-auth" :api-version
                         "2023-11-26" :host-prefix "eks-auth" :signing-name
@@ -484,10 +484,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/clusters/~A/assume-role-for-pod-identity"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'cluster-name))))
+                                                             'cluster-name)
+                                                            common-lisp:t)))
                                                         "AssumeRoleForPodIdentity"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'assume-role-for-pod-identity))

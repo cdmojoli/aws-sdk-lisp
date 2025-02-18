@@ -20,7 +20,7 @@
  (common-lisp:export 'internetmonitor-error))
 (common-lisp:progn
  (common-lisp:defclass internetmonitor-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "internetmonitor"
                         :api-version "2021-06-03" :host-prefix
@@ -3027,10 +3027,11 @@
         'internetmonitor-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/v20210603/Monitors/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'monitor-name))))
+                                'monitor-name)
+                               common-lisp:t)))
         "DeleteMonitor"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-monitor))
@@ -3050,14 +3051,15 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/v20210603/Monitors/~A/HealthEvents/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'monitor-name))
-                              (quri.encode:url-encode
+                                'monitor-name)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'event-id))))
+                                aws-sdk/generator/operation::input 'event-id)
+                               common-lisp:t)))
         "GetHealthEvent"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-health-event))
@@ -3076,10 +3078,11 @@
         'internetmonitor-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/v20210603/Monitors/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'monitor-name))))
+                                'monitor-name)
+                               common-lisp:t)))
         "GetMonitor"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-monitor))
@@ -3101,14 +3104,15 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/v20210603/Monitors/~A/Queries/~A/Results"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'monitor-name))
-                              (quri.encode:url-encode
+                                'monitor-name)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'query-id))))
+                                aws-sdk/generator/operation::input 'query-id)
+                               common-lisp:t)))
         "GetQueryResults"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-query-results))
@@ -3128,14 +3132,15 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/v20210603/Monitors/~A/Queries/~A/Status"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'monitor-name))
-                              (quri.encode:url-encode
+                                'monitor-name)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'query-id))))
+                                aws-sdk/generator/operation::input 'query-id)
+                               common-lisp:t)))
         "GetQueryStatus"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-query-status))
@@ -3158,10 +3163,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/v20210603/Monitors/~A/HealthEvents"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'monitor-name))))
+                                'monitor-name)
+                               common-lisp:t)))
         "ListHealthEvents"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-health-events))
@@ -3197,10 +3203,11 @@
         'internetmonitor-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -3222,10 +3229,11 @@
         'internetmonitor-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/v20210603/Monitors/~A/Queries"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'monitor-name))))
+                                'monitor-name)
+                               common-lisp:t)))
         "StartQuery"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'start-query))
@@ -3245,14 +3253,15 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/v20210603/Monitors/~A/Queries/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'monitor-name))
-                              (quri.encode:url-encode
+                                'monitor-name)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'query-id))))
+                                aws-sdk/generator/operation::input 'query-id)
+                               common-lisp:t)))
         "StopQuery"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'stop-query))
@@ -3271,10 +3280,11 @@
         'internetmonitor-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -3293,10 +3303,11 @@
         'internetmonitor-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -3323,10 +3334,11 @@
         'internetmonitor-request aws-sdk/generator/operation::input "PATCH"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/v20210603/Monitors/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'monitor-name))))
+                                'monitor-name)
+                               common-lisp:t)))
         "UpdateMonitor"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-monitor))

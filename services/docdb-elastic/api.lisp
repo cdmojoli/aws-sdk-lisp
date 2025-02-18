@@ -20,7 +20,7 @@
  (common-lisp:export 'docdb-elastic-error))
 (common-lisp:progn
  (common-lisp:defclass docdb-elastic-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "docdb-elastic" :api-version
                         "2022-11-28" :host-prefix "docdb-elastic" :signing-name
@@ -2484,10 +2484,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/cluster-snapshot/~A/copy"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'snapshot-arn))))
+                                                             'snapshot-arn)
+                                                            common-lisp:t)))
                                                         "CopyClusterSnapshot"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'copy-cluster-snapshot))
@@ -2555,10 +2556,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/cluster/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'cluster-arn))))
+                                                             'cluster-arn)
+                                                            common-lisp:t)))
                                                         "DeleteCluster"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-cluster))
@@ -2582,10 +2584,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/cluster-snapshot/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'snapshot-arn))))
+                                                             'snapshot-arn)
+                                                            common-lisp:t)))
                                                         "DeleteClusterSnapshot"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-cluster-snapshot))
@@ -2609,10 +2612,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/cluster/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'cluster-arn))))
+                                                             'cluster-arn)
+                                                            common-lisp:t)))
                                                         "GetCluster"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-cluster))
@@ -2636,10 +2640,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/cluster-snapshot/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'snapshot-arn))))
+                                                             'snapshot-arn)
+                                                            common-lisp:t)))
                                                         "GetClusterSnapshot"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-cluster-snapshot))
@@ -2700,10 +2705,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -2732,10 +2738,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/cluster-snapshot/~A/restore"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'snapshot-arn))))
+                                                             'snapshot-arn)
+                                                            common-lisp:t)))
                                                         "RestoreClusterFromSnapshot"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'restore-cluster-from-snapshot))
@@ -2759,10 +2766,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/cluster/~A/start"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'cluster-arn))))
+                                                             'cluster-arn)
+                                                            common-lisp:t)))
                                                         "StartCluster"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'start-cluster))
@@ -2786,10 +2794,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/cluster/~A/stop"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'cluster-arn))))
+                                                             'cluster-arn)
+                                                            common-lisp:t)))
                                                         "StopCluster"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'stop-cluster))
@@ -2813,10 +2822,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -2840,10 +2850,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -2875,10 +2886,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/cluster/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'cluster-arn))))
+                                                             'cluster-arn)
+                                                            common-lisp:t)))
                                                         "UpdateCluster"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-cluster))

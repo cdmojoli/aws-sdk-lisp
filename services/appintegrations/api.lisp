@@ -20,7 +20,7 @@
  (common-lisp:export 'appintegrations-error))
 (common-lisp:progn
  (common-lisp:defclass appintegrations-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "appintegrations"
                         :api-version "2020-07-29" :host-prefix
@@ -3639,10 +3639,11 @@
         'appintegrations-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/applications/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'application-identifier))))
+                                'application-identifier)
+                               common-lisp:t)))
         "DeleteApplication"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-application))
@@ -3661,10 +3662,10 @@
         'appintegrations-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/dataIntegrations/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'identifier))))
+                                aws-sdk/generator/operation::input 'identifier)
+                               common-lisp:t)))
         "DeleteDataIntegration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-data-integration))
@@ -3683,9 +3684,10 @@
         'appintegrations-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/eventIntegrations/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'name))))
+                                aws-sdk/generator/operation::input 'name)
+                               common-lisp:t)))
         "DeleteEventIntegration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-event-integration))
@@ -3704,10 +3706,11 @@
         'appintegrations-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/applications/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'application-identifier))))
+                                'application-identifier)
+                               common-lisp:t)))
         "GetApplication"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-application))
@@ -3726,10 +3729,10 @@
         'appintegrations-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/dataIntegrations/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'identifier))))
+                                aws-sdk/generator/operation::input 'identifier)
+                               common-lisp:t)))
         "GetDataIntegration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-data-integration))
@@ -3748,9 +3751,10 @@
         'appintegrations-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/eventIntegrations/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'name))))
+                                aws-sdk/generator/operation::input 'name)
+                               common-lisp:t)))
         "GetEventIntegration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-event-integration))
@@ -3771,10 +3775,11 @@
         'appintegrations-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/applications/~A/associations"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'application-identifier))))
+                                'application-identifier)
+                               common-lisp:t)))
         "ListApplicationAssociations"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-application-associations))
@@ -3813,10 +3818,10 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/dataIntegrations/~A/associations"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'identifier))))
+                                aws-sdk/generator/operation::input 'identifier)
+                               common-lisp:t)))
         "ListDataIntegrationAssociations"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-data-integration-associations))
@@ -3855,9 +3860,10 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/eventIntegrations/~A/associations"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'name))))
+                                aws-sdk/generator/operation::input 'name)
+                               common-lisp:t)))
         "ListEventIntegrationAssociations"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-event-integration-associations))
@@ -3892,10 +3898,11 @@
         'appintegrations-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -3914,10 +3921,11 @@
         'appintegrations-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -3936,10 +3944,11 @@
         'appintegrations-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -3962,10 +3971,11 @@
         'appintegrations-request aws-sdk/generator/operation::input "PATCH"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/applications/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'application-identifier))))
+                                'application-identifier)
+                               common-lisp:t)))
         "UpdateApplication"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-application))
@@ -3984,10 +3994,10 @@
         'appintegrations-request aws-sdk/generator/operation::input "PATCH"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/dataIntegrations/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'identifier))))
+                                aws-sdk/generator/operation::input 'identifier)
+                               common-lisp:t)))
         "UpdateDataIntegration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-data-integration))
@@ -4006,9 +4016,10 @@
         'appintegrations-request aws-sdk/generator/operation::input "PATCH"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/eventIntegrations/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'name))))
+                                aws-sdk/generator/operation::input 'name)
+                               common-lisp:t)))
         "UpdateEventIntegration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-event-integration))

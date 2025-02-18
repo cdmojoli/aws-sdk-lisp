@@ -20,7 +20,7 @@
  (common-lisp:export 'arc-zonal-shift-error))
 (common-lisp:progn
  (common-lisp:defclass arc-zonal-shift-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "arc-zonal-shift"
                         :api-version "2022-10-30" :host-prefix
@@ -2215,10 +2215,11 @@
         'arc-zonal-shift-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/zonalshifts/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'zonal-shift-id))))
+                                'zonal-shift-id)
+                               common-lisp:t)))
         "CancelZonalShift"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'cancel-zonal-shift))
@@ -2258,10 +2259,11 @@
         'arc-zonal-shift-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/configuration/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-identifier))))
+                                'resource-identifier)
+                               common-lisp:t)))
         "DeletePracticeRunConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-practice-run-configuration))
@@ -2280,10 +2282,11 @@
         'arc-zonal-shift-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/managedresources/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-identifier))))
+                                'resource-identifier)
+                               common-lisp:t)))
         "GetManagedResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-managed-resource))
@@ -2374,10 +2377,11 @@
         'arc-zonal-shift-request aws-sdk/generator/operation::input "PATCH"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/configuration/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-identifier))))
+                                'resource-identifier)
+                               common-lisp:t)))
         "UpdatePracticeRunConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-practice-run-configuration))
@@ -2399,10 +2403,11 @@
         'arc-zonal-shift-request aws-sdk/generator/operation::input "PUT"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/managedresources/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-identifier))))
+                                'resource-identifier)
+                               common-lisp:t)))
         "UpdateZonalAutoshiftConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-zonal-autoshift-configuration))
@@ -2422,10 +2427,11 @@
         'arc-zonal-shift-request aws-sdk/generator/operation::input "PATCH"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/zonalshifts/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'zonal-shift-id))))
+                                'zonal-shift-id)
+                               common-lisp:t)))
         "UpdateZonalShift"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-zonal-shift))

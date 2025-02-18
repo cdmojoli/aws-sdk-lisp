@@ -20,7 +20,7 @@
  (common-lisp:export 'outposts-error))
 (common-lisp:progn
  (common-lisp:defclass outposts-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "outposts" :api-version
                         "2019-12-03" :host-prefix "outposts" :signing-name
@@ -4433,10 +4433,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/orders/~A/cancel"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'order-id))))
+                                                             'order-id)
+                                                            common-lisp:t)))
                                                         "CancelOrder"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'cancel-order))
@@ -4522,10 +4523,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/outposts/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'outpost-id))))
+                                                             'outpost-id)
+                                                            common-lisp:t)))
                                                         "DeleteOutpost"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-outpost))
@@ -4549,10 +4551,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/sites/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'site-id))))
+                                                             'site-id)
+                                                            common-lisp:t)))
                                                         "DeleteSite"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-site))
@@ -4576,10 +4579,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/catalog/item/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'catalog-item-id))))
+                                                             'catalog-item-id)
+                                                            common-lisp:t)))
                                                         "GetCatalogItem"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-catalog-item))
@@ -4603,10 +4607,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/connections/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'connection-id))))
+                                                             'connection-id)
+                                                            common-lisp:t)))
                                                         "GetConnection"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-connection))
@@ -4630,10 +4635,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/orders/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'order-id))))
+                                                             'order-id)
+                                                            common-lisp:t)))
                                                         "GetOrder"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-order))
@@ -4657,10 +4663,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/outposts/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'outpost-id))))
+                                                             'outpost-id)
+                                                            common-lisp:t)))
                                                         "GetOutpost"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-outpost))
@@ -4685,10 +4692,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/outposts/~A/instanceTypes"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'outpost-id))))
+                                                             'outpost-id)
+                                                            common-lisp:t)))
                                                         "GetOutpostInstanceTypes"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-outpost-instance-types))
@@ -4712,10 +4720,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/sites/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'site-id))))
+                                                             'site-id)
+                                                            common-lisp:t)))
                                                         "GetSite"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-site))
@@ -4739,10 +4748,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/sites/~A/address"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'site-id))))
+                                                             'site-id)
+                                                            common-lisp:t)))
                                                         "GetSiteAddress"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-site-address))
@@ -4769,10 +4779,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/outposts/~A/assets"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'outpost-id))))
+                                                             'outpost-id)
+                                                            common-lisp:t)))
                                                         "ListAssets"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-assets))
@@ -4879,10 +4890,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -4926,10 +4938,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -4953,10 +4966,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -4983,10 +4997,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/outposts/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'outpost-id))))
+                                                             'outpost-id)
+                                                            common-lisp:t)))
                                                         "UpdateOutpost"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-outpost))
@@ -5010,10 +5025,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/sites/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'site-id))))
+                                                             'site-id)
+                                                            common-lisp:t)))
                                                         "UpdateSite"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-site))
@@ -5037,10 +5053,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/sites/~A/address"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'site-id))))
+                                                             'site-id)
+                                                            common-lisp:t)))
                                                         "UpdateSiteAddress"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-site-address))
@@ -5071,10 +5088,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/sites/~A/rackPhysicalProperties"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'site-id))))
+                                                             'site-id)
+                                                            common-lisp:t)))
                                                         "UpdateSiteRackPhysicalProperties"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-site-rack-physical-properties))

@@ -20,7 +20,7 @@
  (common-lisp:export 'sms-voice-error))
 (common-lisp:progn
  (common-lisp:defclass sms-voice-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "sms-voice" :api-version
                         "2018-09-05" :host-prefix "sms-voice.pinpoint"
@@ -1417,10 +1417,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/sms-voice/configuration-sets/~A/event-destinations"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'configuration-set-name))))
+                                                             'configuration-set-name)
+                                                            common-lisp:t)))
                                                         "CreateConfigurationSetEventDestination"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-configuration-set-event-destination))
@@ -1444,10 +1445,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/sms-voice/configuration-sets/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'configuration-set-name))))
+                                                             'configuration-set-name)
+                                                            common-lisp:t)))
                                                         "DeleteConfigurationSet"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-configuration-set))
@@ -1474,14 +1476,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/sms-voice/configuration-sets/~A/event-destinations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'configuration-set-name))
-                                                           (quri.encode:url-encode
+                                                             'configuration-set-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'event-destination-name))))
+                                                             'event-destination-name)
+                                                            common-lisp:t)))
                                                         "DeleteConfigurationSetEventDestination"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-configuration-set-event-destination))
@@ -1506,10 +1510,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/sms-voice/configuration-sets/~A/event-destinations"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'configuration-set-name))))
+                                                             'configuration-set-name)
+                                                            common-lisp:t)))
                                                         "GetConfigurationSetEventDestinations"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-configuration-set-event-destinations))
@@ -1576,14 +1581,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/sms-voice/configuration-sets/~A/event-destinations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'configuration-set-name))
-                                                           (quri.encode:url-encode
+                                                             'configuration-set-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'event-destination-name))))
+                                                             'event-destination-name)
+                                                            common-lisp:t)))
                                                         "UpdateConfigurationSetEventDestination"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-configuration-set-event-destination))

@@ -19,8 +19,7 @@
      common-lisp:nil)
  (common-lisp:export 'mq-error))
 (common-lisp:progn
- (common-lisp:defclass mq-request
-                       (aws-sdk/generator/service::rest-json-request)
+ (common-lisp:defclass mq-request (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "mq" :api-version
                         "2017-11-27" :host-prefix "mq" :signing-name "mq"
@@ -7932,10 +7931,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "CreateTags"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-tags))
@@ -7962,14 +7962,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/brokers/~A/users/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'broker-id))
-                                                           (quri.encode:url-encode
+                                                             'broker-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'username))))
+                                                             'username)
+                                                            common-lisp:t)))
                                                         "CreateUser"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-user))
@@ -7993,10 +7995,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/brokers/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'broker-id))))
+                                                             'broker-id)
+                                                            common-lisp:t)))
                                                         "DeleteBroker"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-broker))
@@ -8020,10 +8023,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "DeleteTags"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-tags))
@@ -8047,14 +8051,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/brokers/~A/users/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'broker-id))
-                                                           (quri.encode:url-encode
+                                                             'broker-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'username))))
+                                                             'username)
+                                                            common-lisp:t)))
                                                         "DeleteUser"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-user))
@@ -8078,10 +8084,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/brokers/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'broker-id))))
+                                                             'broker-id)
+                                                            common-lisp:t)))
                                                         "DescribeBroker"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-broker))
@@ -8147,10 +8154,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/configurations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'configuration-id))))
+                                                             'configuration-id)
+                                                            common-lisp:t)))
                                                         "DescribeConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-configuration))
@@ -8176,14 +8184,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/configurations/~A/revisions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'configuration-id))
-                                                           (quri.encode:url-encode
+                                                             'configuration-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'configuration-revision))))
+                                                             'configuration-revision)
+                                                            common-lisp:t)))
                                                         "DescribeConfigurationRevision"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-configuration-revision))
@@ -8207,14 +8217,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/brokers/~A/users/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'broker-id))
-                                                           (quri.encode:url-encode
+                                                             'broker-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'username))))
+                                                             'username)
+                                                            common-lisp:t)))
                                                         "DescribeUser"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-user))
@@ -8257,10 +8269,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/configurations/~A/revisions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'configuration-id))))
+                                                             'configuration-id)
+                                                            common-lisp:t)))
                                                         "ListConfigurationRevisions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-configuration-revisions))
@@ -8302,10 +8315,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "ListTags"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags))
@@ -8330,10 +8344,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/brokers/~A/users"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'broker-id))))
+                                                             'broker-id)
+                                                            common-lisp:t)))
                                                         "ListUsers"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-users))
@@ -8357,10 +8372,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/brokers/~A/promote"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'broker-id))))
+                                                             'broker-id)
+                                                            common-lisp:t)))
                                                         "Promote"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'promote))
@@ -8384,10 +8400,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/brokers/~A/reboot"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'broker-id))))
+                                                             'broker-id)
+                                                            common-lisp:t)))
                                                         "RebootBroker"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'reboot-broker))
@@ -8419,10 +8436,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/brokers/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'broker-id))))
+                                                             'broker-id)
+                                                            common-lisp:t)))
                                                         "UpdateBroker"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-broker))
@@ -8447,10 +8465,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/configurations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'configuration-id))))
+                                                             'configuration-id)
+                                                            common-lisp:t)))
                                                         "UpdateConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-configuration))
@@ -8477,14 +8496,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/brokers/~A/users/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'broker-id))
-                                                           (quri.encode:url-encode
+                                                             'broker-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'username))))
+                                                             'username)
+                                                            common-lisp:t)))
                                                         "UpdateUser"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-user))

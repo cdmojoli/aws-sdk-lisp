@@ -20,7 +20,7 @@
  (common-lisp:export 'dlm-error))
 (common-lisp:progn
  (common-lisp:defclass dlm-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "dlm" :api-version
                         "2018-01-12" :host-prefix "dlm" :signing-name "dlm"
@@ -3199,10 +3199,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/policies/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'policy-id))))
+                                                             'policy-id)
+                                                            common-lisp:t)))
                                                         "DeleteLifecyclePolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-lifecycle-policy))
@@ -3246,10 +3247,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/policies/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'policy-id))))
+                                                             'policy-id)
+                                                            common-lisp:t)))
                                                         "GetLifecyclePolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-lifecycle-policy))
@@ -3273,10 +3275,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -3300,10 +3303,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -3327,10 +3331,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -3360,10 +3365,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/policies/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'policy-id))))
+                                                             'policy-id)
+                                                            common-lisp:t)))
                                                         "UpdateLifecyclePolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-lifecycle-policy))

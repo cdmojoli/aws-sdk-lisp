@@ -20,7 +20,7 @@
  (common-lisp:export 'tnb-error))
 (common-lisp:progn
  (common-lisp:defclass tnb-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "tnb" :api-version
                         "2008-10-21" :host-prefix "tnb" :signing-name "tnb"
@@ -1055,7 +1055,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'accept))
-      (common-lisp:cons "Accept" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Accept" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -1098,7 +1100,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-type))
-      (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -1150,7 +1154,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'accept))
-      (common-lisp:cons "Accept" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Accept" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -1194,7 +1200,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-type))
-      (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -2177,7 +2185,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'accept))
-      (common-lisp:cons "Accept" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Accept" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -2220,7 +2230,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-type))
-      (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -2304,7 +2316,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-type))
-      (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -4722,7 +4736,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-type))
-      (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -4929,7 +4945,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-type))
-      (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -5747,7 +5765,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-type))
-      (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -5956,7 +5976,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-type))
-      (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -6183,10 +6205,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/sol/nslcm/v1/ns_lcm_op_occs/~A/cancel"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'ns-lcm-op-occ-id))))
+                                                             'ns-lcm-op-occ-id)
+                                                            common-lisp:t)))
                                                         "CancelSolNetworkOperation"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'cancel-sol-network-operation))
@@ -6268,10 +6291,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/sol/vnfpkgm/v1/vnf_packages/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'vnf-pkg-id))))
+                                                             'vnf-pkg-id)
+                                                            common-lisp:t)))
                                                         "DeleteSolFunctionPackage"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-sol-function-package))
@@ -6296,10 +6320,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/sol/nslcm/v1/ns_instances/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'ns-instance-id))))
+                                                             'ns-instance-id)
+                                                            common-lisp:t)))
                                                         "DeleteSolNetworkInstance"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-sol-network-instance))
@@ -6323,10 +6348,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/sol/nsd/v1/ns_descriptors/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'nsd-info-id))))
+                                                             'nsd-info-id)
+                                                            common-lisp:t)))
                                                         "DeleteSolNetworkPackage"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-sol-network-package))
@@ -6350,10 +6376,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/sol/vnflcm/v1/vnf_instances/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'vnf-instance-id))))
+                                                             'vnf-instance-id)
+                                                            common-lisp:t)))
                                                         "GetSolFunctionInstance"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-sol-function-instance))
@@ -6377,10 +6404,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/sol/vnfpkgm/v1/vnf_packages/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'vnf-pkg-id))))
+                                                             'vnf-pkg-id)
+                                                            common-lisp:t)))
                                                         "GetSolFunctionPackage"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-sol-function-package))
@@ -6405,10 +6433,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/sol/vnfpkgm/v1/vnf_packages/~A/package_content"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'vnf-pkg-id))))
+                                                             'vnf-pkg-id)
+                                                            common-lisp:t)))
                                                         "GetSolFunctionPackageContent")
        :want-stream common-lisp:t)
       "blob" common-lisp:nil *error-map*)))
@@ -6434,10 +6463,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/sol/vnfpkgm/v1/vnf_packages/~A/vnfd"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'vnf-pkg-id))))
+                                                             'vnf-pkg-id)
+                                                            common-lisp:t)))
                                                         "GetSolFunctionPackageDescriptor")
        :want-stream common-lisp:t)
       "blob" common-lisp:nil *error-map*)))
@@ -6462,10 +6492,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/sol/nslcm/v1/ns_instances/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'ns-instance-id))))
+                                                             'ns-instance-id)
+                                                            common-lisp:t)))
                                                         "GetSolNetworkInstance"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-sol-network-instance))
@@ -6489,10 +6520,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/sol/nslcm/v1/ns_lcm_op_occs/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'ns-lcm-op-occ-id))))
+                                                             'ns-lcm-op-occ-id)
+                                                            common-lisp:t)))
                                                         "GetSolNetworkOperation"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-sol-network-operation))
@@ -6516,10 +6548,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/sol/nsd/v1/ns_descriptors/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'nsd-info-id))))
+                                                             'nsd-info-id)
+                                                            common-lisp:t)))
                                                         "GetSolNetworkPackage"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-sol-network-package))
@@ -6544,10 +6577,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/sol/nsd/v1/ns_descriptors/~A/nsd_content"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'nsd-info-id))))
+                                                             'nsd-info-id)
+                                                            common-lisp:t)))
                                                         "GetSolNetworkPackageContent")
        :want-stream common-lisp:t)
       "blob" common-lisp:nil *error-map*)))
@@ -6573,10 +6607,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/sol/nsd/v1/ns_descriptors/~A/nsd"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'nsd-info-id))))
+                                                             'nsd-info-id)
+                                                            common-lisp:t)))
                                                         "GetSolNetworkPackageDescriptor")
        :want-stream common-lisp:t)
       "blob" common-lisp:nil *error-map*)))
@@ -6602,10 +6637,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/sol/nslcm/v1/ns_instances/~A/instantiate"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'ns-instance-id))))
+                                                             'ns-instance-id)
+                                                            common-lisp:t)))
                                                         "InstantiateSolNetworkInstance"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'instantiate-sol-network-instance))
@@ -6721,10 +6757,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -6749,10 +6786,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/sol/vnfpkgm/v1/vnf_packages/~A/package_content"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'vnf-pkg-id))))
+                                                             'vnf-pkg-id)
+                                                            common-lisp:t)))
                                                         "PutSolFunctionPackageContent"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-sol-function-package-content))
@@ -6777,10 +6815,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/sol/nsd/v1/ns_descriptors/~A/nsd_content"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'nsd-info-id))))
+                                                             'nsd-info-id)
+                                                            common-lisp:t)))
                                                         "PutSolNetworkPackageContent"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-sol-network-package-content))
@@ -6804,10 +6843,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -6832,10 +6872,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/sol/nslcm/v1/ns_instances/~A/terminate"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'ns-instance-id))))
+                                                             'ns-instance-id)
+                                                            common-lisp:t)))
                                                         "TerminateSolNetworkInstance"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'terminate-sol-network-instance))
@@ -6859,10 +6900,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -6887,10 +6929,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/sol/vnfpkgm/v1/vnf_packages/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'vnf-pkg-id))))
+                                                             'vnf-pkg-id)
+                                                            common-lisp:t)))
                                                         "UpdateSolFunctionPackage"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-sol-function-package))
@@ -6916,10 +6959,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/sol/nslcm/v1/ns_instances/~A/update"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'ns-instance-id))))
+                                                             'ns-instance-id)
+                                                            common-lisp:t)))
                                                         "UpdateSolNetworkInstance"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-sol-network-instance))
@@ -6944,10 +6988,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/sol/nsd/v1/ns_descriptors/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'nsd-info-id))))
+                                                             'nsd-info-id)
+                                                            common-lisp:t)))
                                                         "UpdateSolNetworkPackage"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-sol-network-package))
@@ -6972,10 +7017,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/sol/vnfpkgm/v1/vnf_packages/~A/package_content/validate"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'vnf-pkg-id))))
+                                                             'vnf-pkg-id)
+                                                            common-lisp:t)))
                                                         "ValidateSolFunctionPackageContent"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'validate-sol-function-package-content))
@@ -7000,10 +7046,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/sol/nsd/v1/ns_descriptors/~A/nsd_content/validate"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'nsd-info-id))))
+                                                             'nsd-info-id)
+                                                            common-lisp:t)))
                                                         "ValidateSolNetworkPackageContent"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'validate-sol-network-package-content))

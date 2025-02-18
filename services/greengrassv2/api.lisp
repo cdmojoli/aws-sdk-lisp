@@ -20,7 +20,7 @@
  (common-lisp:export 'greengrassv2-error))
 (common-lisp:progn
  (common-lisp:defclass greengrassv2-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "greengrassv2" :api-version
                         "2020-11-30" :host-prefix "greengrass" :signing-name
@@ -6525,10 +6525,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/v2/coreDevices/~A/associateClientDevices"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'core-device-thing-name))))
+                                                             'core-device-thing-name)
+                                                            common-lisp:t)))
                                                         "BatchAssociateClientDeviceWithCoreDevice"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'batch-associate-client-device-with-core-device))
@@ -6553,10 +6554,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/v2/coreDevices/~A/disassociateClientDevices"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'core-device-thing-name))))
+                                                             'core-device-thing-name)
+                                                            common-lisp:t)))
                                                         "BatchDisassociateClientDeviceFromCoreDevice"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'batch-disassociate-client-device-from-core-device))
@@ -6580,10 +6582,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/v2/deployments/~A/cancel"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'deployment-id))))
+                                                             'deployment-id)
+                                                            common-lisp:t)))
                                                         "CancelDeployment"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'cancel-deployment))
@@ -6650,10 +6653,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/v2/components/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'arn))))
+                                                             'arn)
+                                                            common-lisp:t)))
                                                         "DeleteComponent"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-component))
@@ -6677,10 +6681,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/v2/coreDevices/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'core-device-thing-name))))
+                                                             'core-device-thing-name)
+                                                            common-lisp:t)))
                                                         "DeleteCoreDevice"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-core-device))
@@ -6704,10 +6709,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/v2/deployments/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'deployment-id))))
+                                                             'deployment-id)
+                                                            common-lisp:t)))
                                                         "DeleteDeployment"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-deployment))
@@ -6731,10 +6737,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/v2/components/~A/metadata"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'arn))))
+                                                             'arn)
+                                                            common-lisp:t)))
                                                         "DescribeComponent"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-component))
@@ -6767,10 +6774,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/v2/components/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'arn))))
+                                                             'arn)
+                                                            common-lisp:t)))
                                                         "GetComponent"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-component))
@@ -6795,10 +6803,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/v2/components/~A/artifacts/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'arn))
+                                                             'arn)
+                                                            common-lisp:t)
                                                            (common-lisp:slot-value
                                                             aws-sdk/generator/operation::input
                                                             'artifact-name)))
@@ -6825,10 +6834,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/things/~A/connectivityInfo"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'thing-name))))
+                                                             'thing-name)
+                                                            common-lisp:t)))
                                                         "GetConnectivityInfo"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-connectivity-info))
@@ -6852,10 +6862,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/v2/coreDevices/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'core-device-thing-name))))
+                                                             'core-device-thing-name)
+                                                            common-lisp:t)))
                                                         "GetCoreDevice"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-core-device))
@@ -6879,10 +6890,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/v2/deployments/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'deployment-id))))
+                                                             'deployment-id)
+                                                            common-lisp:t)))
                                                         "GetDeployment"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-deployment))
@@ -6918,10 +6930,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/v2/coreDevices/~A/associatedClientDevices"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'core-device-thing-name))))
+                                                             'core-device-thing-name)
+                                                            common-lisp:t)))
                                                         "ListClientDevicesAssociatedWithCoreDevice"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-client-devices-associated-with-core-device))
@@ -6945,10 +6958,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/v2/components/~A/versions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'arn))))
+                                                             'arn)
+                                                            common-lisp:t)))
                                                         "ListComponentVersions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-component-versions))
@@ -7034,10 +7048,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/v2/coreDevices/~A/effectiveDeployments"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'core-device-thing-name))))
+                                                             'core-device-thing-name)
+                                                            common-lisp:t)))
                                                         "ListEffectiveDeployments"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-effective-deployments))
@@ -7065,10 +7080,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/v2/coreDevices/~A/installedComponents"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'core-device-thing-name))))
+                                                             'core-device-thing-name)
+                                                            common-lisp:t)))
                                                         "ListInstalledComponents"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-installed-components))
@@ -7092,10 +7108,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -7138,10 +7155,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -7165,10 +7183,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -7192,10 +7211,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/things/~A/connectivityInfo"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'thing-name))))
+                                                             'thing-name)
+                                                            common-lisp:t)))
                                                         "UpdateConnectivityInfo"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-connectivity-info))

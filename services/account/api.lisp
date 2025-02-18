@@ -20,7 +20,7 @@
  (common-lisp:export 'account-error))
 (common-lisp:progn
  (common-lisp:defclass account-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "account" :api-version
                         "2021-02-01" :host-prefix "account" :signing-name

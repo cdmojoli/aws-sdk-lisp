@@ -20,7 +20,7 @@
  (common-lisp:export 'iot-data-error))
 (common-lisp:progn
  (common-lisp:defclass iot-data-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "iot-data" :api-version
                         "2015-05-28" :host-prefix "data-ats.iot" :signing-name
@@ -637,19 +637,25 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'user-properties))
-      (common-lisp:cons "x-amz-mqtt5-user-properties"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-mqtt5-user-properties"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'payload-format-indicator))
-      (common-lisp:cons "x-amz-mqtt5-payload-format-indicator"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-mqtt5-payload-format-indicator"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'correlation-data))
-      (common-lisp:cons "x-amz-mqtt5-correlation-data"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-mqtt5-correlation-data"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         ((aws-sdk/generator/shape::input publish-request))
    (common-lisp:append
@@ -914,10 +920,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/things/~A/shadow"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'thing-name))))
+                                                             'thing-name)
+                                                            common-lisp:t)))
                                                         "DeleteThingShadow")
        :want-stream common-lisp:t)
       "blob" common-lisp:nil *error-map*)))
@@ -942,10 +949,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/retainedMessage/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'topic))))
+                                                             'topic)
+                                                            common-lisp:t)))
                                                         "GetRetainedMessage"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-retained-message))
@@ -969,10 +977,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/things/~A/shadow"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'thing-name))))
+                                                             'thing-name)
+                                                            common-lisp:t)))
                                                         "GetThingShadow")
        :want-stream common-lisp:t)
       "blob" common-lisp:nil *error-map*)))
@@ -999,10 +1008,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/api/things/shadow/ListNamedShadowsForThing/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'thing-name))))
+                                                             'thing-name)
+                                                            common-lisp:t)))
                                                         "ListNamedShadowsForThing"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-named-shadows-for-thing))
@@ -1049,10 +1059,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/topics/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'topic))))
+                                                             'topic)
+                                                            common-lisp:t)))
                                                         "Publish"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'publish))
@@ -1076,10 +1087,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/things/~A/shadow"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'thing-name))))
+                                                             'thing-name)
+                                                            common-lisp:t)))
                                                         "UpdateThingShadow")
        :want-stream common-lisp:t)
       "blob" common-lisp:nil *error-map*)))

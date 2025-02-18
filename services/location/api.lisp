@@ -20,7 +20,7 @@
  (common-lisp:export 'location-error))
 (common-lisp:progn
  (common-lisp:defclass location-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "location" :api-version
                         "2020-11-19" :host-prefix "geo" :signing-name "geo"
@@ -5749,11 +5749,15 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'cache-control))
-      (common-lisp:cons "Cache-Control" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Cache-Control" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-type))
-      (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -5851,11 +5855,15 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'cache-control))
-      (common-lisp:cons "Cache-Control" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Cache-Control" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-type))
-      (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -5947,11 +5955,15 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'cache-control))
-      (common-lisp:cons "Cache-Control" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Cache-Control" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-type))
-      (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -6055,11 +6067,15 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'cache-control))
-      (common-lisp:cons "Cache-Control" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Cache-Control" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-type))
-      (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -11592,10 +11608,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tracking/v0/trackers/~A/consumers"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'tracker-name))))
+                                                             'tracker-name)
+                                                            common-lisp:t)))
                                                         "AssociateTrackerConsumer"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'associate-tracker-consumer))
@@ -11620,10 +11637,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tracking/v0/trackers/~A/delete-positions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'tracker-name))))
+                                                             'tracker-name)
+                                                            common-lisp:t)))
                                                         "BatchDeleteDevicePositionHistory"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'batch-delete-device-position-history))
@@ -11647,10 +11665,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/geofencing/v0/collections/~A/delete-geofences"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'collection-name))))
+                                                             'collection-name)
+                                                            common-lisp:t)))
                                                         "BatchDeleteGeofence"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'batch-delete-geofence))
@@ -11675,10 +11694,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/geofencing/v0/collections/~A/positions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'collection-name))))
+                                                             'collection-name)
+                                                            common-lisp:t)))
                                                         "BatchEvaluateGeofences"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'batch-evaluate-geofences))
@@ -11703,10 +11723,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tracking/v0/trackers/~A/get-positions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'tracker-name))))
+                                                             'tracker-name)
+                                                            common-lisp:t)))
                                                         "BatchGetDevicePosition"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'batch-get-device-position))
@@ -11730,10 +11751,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/geofencing/v0/collections/~A/put-geofences"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'collection-name))))
+                                                             'collection-name)
+                                                            common-lisp:t)))
                                                         "BatchPutGeofence"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'batch-put-geofence))
@@ -11758,10 +11780,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tracking/v0/trackers/~A/positions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'tracker-name))))
+                                                             'tracker-name)
+                                                            common-lisp:t)))
                                                         "BatchUpdateDevicePosition"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'batch-update-device-position))
@@ -11793,10 +11816,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/routes/v0/calculators/~A/calculate/route"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'calculator-name))))
+                                                             'calculator-name)
+                                                            common-lisp:t)))
                                                         "CalculateRoute"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'calculate-route))
@@ -11826,10 +11850,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/routes/v0/calculators/~A/calculate/route-matrix"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'calculator-name))))
+                                                             'calculator-name)
+                                                            common-lisp:t)))
                                                         "CalculateRouteMatrix"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'calculate-route-matrix))
@@ -11983,10 +12008,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/geofencing/v0/collections/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'collection-name))))
+                                                             'collection-name)
+                                                            common-lisp:t)))
                                                         "DeleteGeofenceCollection"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-geofence-collection))
@@ -12010,10 +12036,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/metadata/v0/keys/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'key-name))))
+                                                             'key-name)
+                                                            common-lisp:t)))
                                                         "DeleteKey"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-key))
@@ -12037,10 +12064,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/maps/v0/maps/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'map-name))))
+                                                             'map-name)
+                                                            common-lisp:t)))
                                                         "DeleteMap"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-map))
@@ -12064,10 +12092,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/places/v0/indexes/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'index-name))))
+                                                             'index-name)
+                                                            common-lisp:t)))
                                                         "DeletePlaceIndex"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-place-index))
@@ -12091,10 +12120,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/routes/v0/calculators/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'calculator-name))))
+                                                             'calculator-name)
+                                                            common-lisp:t)))
                                                         "DeleteRouteCalculator"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-route-calculator))
@@ -12118,10 +12148,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tracking/v0/trackers/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'tracker-name))))
+                                                             'tracker-name)
+                                                            common-lisp:t)))
                                                         "DeleteTracker"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-tracker))
@@ -12146,10 +12177,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/geofencing/v0/collections/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'collection-name))))
+                                                             'collection-name)
+                                                            common-lisp:t)))
                                                         "DescribeGeofenceCollection"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-geofence-collection))
@@ -12173,10 +12205,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/metadata/v0/keys/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'key-name))))
+                                                             'key-name)
+                                                            common-lisp:t)))
                                                         "DescribeKey"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-key))
@@ -12200,10 +12233,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/maps/v0/maps/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'map-name))))
+                                                             'map-name)
+                                                            common-lisp:t)))
                                                         "DescribeMap"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-map))
@@ -12227,10 +12261,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/places/v0/indexes/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'index-name))))
+                                                             'index-name)
+                                                            common-lisp:t)))
                                                         "DescribePlaceIndex"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-place-index))
@@ -12255,10 +12290,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/routes/v0/calculators/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'calculator-name))))
+                                                             'calculator-name)
+                                                            common-lisp:t)))
                                                         "DescribeRouteCalculator"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-route-calculator))
@@ -12282,10 +12318,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tracking/v0/trackers/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'tracker-name))))
+                                                             'tracker-name)
+                                                            common-lisp:t)))
                                                         "DescribeTracker"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-tracker))
@@ -12310,14 +12347,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tracking/v0/trackers/~A/consumers/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'tracker-name))
-                                                           (quri.encode:url-encode
+                                                             'tracker-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'consumer-arn))))
+                                                             'consumer-arn)
+                                                            common-lisp:t)))
                                                         "DisassociateTrackerConsumer"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'disassociate-tracker-consumer))
@@ -12341,14 +12380,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tracking/v0/trackers/~A/devices/~A/positions/latest"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'tracker-name))
-                                                           (quri.encode:url-encode
+                                                             'tracker-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'device-id))))
+                                                             'device-id)
+                                                            common-lisp:t)))
                                                         "GetDevicePosition"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-device-position))
@@ -12376,14 +12417,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tracking/v0/trackers/~A/devices/~A/list-positions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'tracker-name))
-                                                           (quri.encode:url-encode
+                                                             'tracker-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'device-id))))
+                                                             'device-id)
+                                                            common-lisp:t)))
                                                         "GetDevicePositionHistory"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-device-position-history))
@@ -12407,14 +12450,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/geofencing/v0/collections/~A/geofences/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'collection-name))
-                                                           (quri.encode:url-encode
+                                                             'collection-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'geofence-id))))
+                                                             'geofence-id)
+                                                            common-lisp:t)))
                                                         "GetGeofence"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-geofence))
@@ -12440,18 +12485,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/maps/v0/maps/~A/glyphs/~A/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'map-name))
-                                                           (quri.encode:url-encode
+                                                             'map-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'font-stack))
-                                                           (quri.encode:url-encode
+                                                             'font-stack)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'font-unicode-range))))
+                                                             'font-unicode-range)
+                                                            common-lisp:t)))
                                                         "GetMapGlyphs")
        :want-stream common-lisp:t)
       "blob" common-lisp:nil *error-map*)))
@@ -12476,14 +12524,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/maps/v0/maps/~A/sprites/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'map-name))
-                                                           (quri.encode:url-encode
+                                                             'map-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'file-name))))
+                                                             'file-name)
+                                                            common-lisp:t)))
                                                         "GetMapSprites")
        :want-stream common-lisp:t)
       "blob" common-lisp:nil *error-map*)))
@@ -12508,10 +12558,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/maps/v0/maps/~A/style-descriptor"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'map-name))))
+                                                             'map-name)
+                                                            common-lisp:t)))
                                                         "GetMapStyleDescriptor")
        :want-stream common-lisp:t)
       "blob" common-lisp:nil *error-map*)))
@@ -12536,22 +12587,26 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/maps/v0/maps/~A/tiles/~A/~A/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'map-name))
-                                                           (quri.encode:url-encode
+                                                             'map-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'z))
-                                                           (quri.encode:url-encode
+                                                             'z)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'x))
-                                                           (quri.encode:url-encode
+                                                             'x)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'y))))
+                                                             'y)
+                                                            common-lisp:t)))
                                                         "GetMapTile")
        :want-stream common-lisp:t)
       "blob" common-lisp:nil *error-map*)))
@@ -12577,14 +12632,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/places/v0/indexes/~A/places/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'index-name))
-                                                           (quri.encode:url-encode
+                                                             'index-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'place-id))))
+                                                             'place-id)
+                                                            common-lisp:t)))
                                                         "GetPlace"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-place))
@@ -12611,10 +12668,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tracking/v0/trackers/~A/list-positions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'tracker-name))))
+                                                             'tracker-name)
+                                                            common-lisp:t)))
                                                         "ListDevicePositions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-device-positions))
@@ -12658,10 +12716,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/geofencing/v0/collections/~A/list-geofences"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'collection-name))))
+                                                             'collection-name)
+                                                            common-lisp:t)))
                                                         "ListGeofences"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-geofences))
@@ -12757,10 +12816,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -12785,10 +12845,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tracking/v0/trackers/~A/list-consumers"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'tracker-name))))
+                                                             'tracker-name)
+                                                            common-lisp:t)))
                                                         "ListTrackerConsumers"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tracker-consumers))
@@ -12833,14 +12894,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/geofencing/v0/collections/~A/geofences/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'collection-name))
-                                                           (quri.encode:url-encode
+                                                             'collection-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'geofence-id))))
+                                                             'geofence-id)
+                                                            common-lisp:t)))
                                                         "PutGeofence"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-geofence))
@@ -12867,10 +12930,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/places/v0/indexes/~A/search/position"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'index-name))))
+                                                             'index-name)
+                                                            common-lisp:t)))
                                                         "SearchPlaceIndexForPosition"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'search-place-index-for-position))
@@ -12899,10 +12963,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/places/v0/indexes/~A/search/suggestions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'index-name))))
+                                                             'index-name)
+                                                            common-lisp:t)))
                                                         "SearchPlaceIndexForSuggestions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'search-place-index-for-suggestions))
@@ -12931,10 +12996,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/places/v0/indexes/~A/search/text"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'index-name))))
+                                                             'index-name)
+                                                            common-lisp:t)))
                                                         "SearchPlaceIndexForText"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'search-place-index-for-text))
@@ -12958,10 +13024,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -12985,10 +13052,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -13016,10 +13084,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/geofencing/v0/collections/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'collection-name))))
+                                                             'collection-name)
+                                                            common-lisp:t)))
                                                         "UpdateGeofenceCollection"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-geofence-collection))
@@ -13046,10 +13115,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/metadata/v0/keys/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'key-name))))
+                                                             'key-name)
+                                                            common-lisp:t)))
                                                         "UpdateKey"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-key))
@@ -13076,10 +13146,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/maps/v0/maps/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'map-name))))
+                                                             'map-name)
+                                                            common-lisp:t)))
                                                         "UpdateMap"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-map))
@@ -13106,10 +13177,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/places/v0/indexes/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'index-name))))
+                                                             'index-name)
+                                                            common-lisp:t)))
                                                         "UpdatePlaceIndex"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-place-index))
@@ -13134,10 +13206,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/routes/v0/calculators/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'calculator-name))))
+                                                             'calculator-name)
+                                                            common-lisp:t)))
                                                         "UpdateRouteCalculator"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-route-calculator))
@@ -13166,10 +13239,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tracking/v0/trackers/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'tracker-name))))
+                                                             'tracker-name)
+                                                            common-lisp:t)))
                                                         "UpdateTracker"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-tracker))

@@ -20,7 +20,7 @@
  (common-lisp:export 'lookoutvision-error))
 (common-lisp:progn
  (common-lisp:defclass lookoutvision-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "lookoutvision" :api-version
                         "2020-11-20" :host-prefix "lookoutvision" :signing-name
@@ -161,8 +161,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'client-token))
-      (common-lisp:cons "X-Amzn-Client-Token"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amzn-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -280,8 +281,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'client-token))
-      (common-lisp:cons "X-Amzn-Client-Token"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amzn-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         ((aws-sdk/generator/shape::input create-model-request))
    (common-lisp:append
@@ -385,8 +387,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'client-token))
-      (common-lisp:cons "X-Amzn-Client-Token"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amzn-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -825,8 +828,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'client-token))
-      (common-lisp:cons "X-Amzn-Client-Token"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amzn-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -898,8 +902,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'client-token))
-      (common-lisp:cons "X-Amzn-Client-Token"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amzn-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         ((aws-sdk/generator/shape::input delete-model-request))
    (common-lisp:append))
@@ -974,8 +979,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'client-token))
-      (common-lisp:cons "X-Amzn-Client-Token"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amzn-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -1375,7 +1381,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-type))
-      (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -3551,8 +3559,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'client-token))
-      (common-lisp:cons "X-Amzn-Client-Token"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amzn-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -3684,8 +3693,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'client-token))
-      (common-lisp:cons "X-Amzn-Client-Token"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amzn-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         ((aws-sdk/generator/shape::input start-model-request))
    (common-lisp:append
@@ -3771,8 +3781,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'client-token))
-      (common-lisp:cons "X-Amzn-Client-Token"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amzn-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         ((aws-sdk/generator/shape::input stop-model-request))
    (common-lisp:append))
@@ -4113,8 +4124,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'client-token))
-      (common-lisp:cons "X-Amzn-Client-Token"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amzn-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -4201,10 +4213,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-11-20/projects/~A/datasets"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project-name))))
+                                                             'project-name)
+                                                            common-lisp:t)))
                                                         "CreateDataset"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-dataset))
@@ -4231,10 +4244,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-11-20/projects/~A/models"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project-name))))
+                                                             'project-name)
+                                                            common-lisp:t)))
                                                         "CreateModel"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-model))
@@ -4277,14 +4291,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-11-20/projects/~A/datasets/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project-name))
-                                                           (quri.encode:url-encode
+                                                             'project-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dataset-type))))
+                                                             'dataset-type)
+                                                            common-lisp:t)))
                                                         "DeleteDataset"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-dataset))
@@ -4309,14 +4325,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-11-20/projects/~A/models/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project-name))
-                                                           (quri.encode:url-encode
+                                                             'project-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'model-version))))
+                                                             'model-version)
+                                                            common-lisp:t)))
                                                         "DeleteModel"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-model))
@@ -4340,10 +4358,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-11-20/projects/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project-name))))
+                                                             'project-name)
+                                                            common-lisp:t)))
                                                         "DeleteProject"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-project))
@@ -4367,14 +4386,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-11-20/projects/~A/datasets/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project-name))
-                                                           (quri.encode:url-encode
+                                                             'project-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dataset-type))))
+                                                             'dataset-type)
+                                                            common-lisp:t)))
                                                         "DescribeDataset"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-dataset))
@@ -4398,14 +4419,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-11-20/projects/~A/models/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project-name))
-                                                           (quri.encode:url-encode
+                                                             'project-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'model-version))))
+                                                             'model-version)
+                                                            common-lisp:t)))
                                                         "DescribeModel"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-model))
@@ -4430,14 +4453,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-11-20/projects/~A/modelpackagingjobs/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project-name))
-                                                           (quri.encode:url-encode
+                                                             'project-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'job-name))))
+                                                             'job-name)
+                                                            common-lisp:t)))
                                                         "DescribeModelPackagingJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-model-packaging-job))
@@ -4461,10 +4486,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-11-20/projects/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project-name))))
+                                                             'project-name)
+                                                            common-lisp:t)))
                                                         "DescribeProject"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-project))
@@ -4490,14 +4516,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-11-20/projects/~A/models/~A/detect"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project-name))
-                                                           (quri.encode:url-encode
+                                                             'project-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'model-version))))
+                                                             'model-version)
+                                                            common-lisp:t)))
                                                         "DetectAnomalies"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'detect-anomalies))
@@ -4526,14 +4554,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-11-20/projects/~A/datasets/~A/entries"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project-name))
-                                                           (quri.encode:url-encode
+                                                             'project-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dataset-type))))
+                                                             'dataset-type)
+                                                            common-lisp:t)))
                                                         "ListDatasetEntries"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-dataset-entries))
@@ -4559,10 +4589,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-11-20/projects/~A/modelpackagingjobs"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project-name))))
+                                                             'project-name)
+                                                            common-lisp:t)))
                                                         "ListModelPackagingJobs"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-model-packaging-jobs))
@@ -4587,10 +4618,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-11-20/projects/~A/models"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project-name))))
+                                                             'project-name)
+                                                            common-lisp:t)))
                                                         "ListModels"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-models))
@@ -4632,10 +4664,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-11-20/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -4662,14 +4695,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-11-20/projects/~A/models/~A/start"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project-name))
-                                                           (quri.encode:url-encode
+                                                             'project-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'model-version))))
+                                                             'model-version)
+                                                            common-lisp:t)))
                                                         "StartModel"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'start-model))
@@ -4697,10 +4732,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-11-20/projects/~A/modelpackagingjobs"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project-name))))
+                                                             'project-name)
+                                                            common-lisp:t)))
                                                         "StartModelPackagingJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'start-model-packaging-job))
@@ -4725,14 +4761,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-11-20/projects/~A/models/~A/stop"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project-name))
-                                                           (quri.encode:url-encode
+                                                             'project-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'model-version))))
+                                                             'model-version)
+                                                            common-lisp:t)))
                                                         "StopModel"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'stop-model))
@@ -4756,10 +4794,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-11-20/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -4783,10 +4822,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-11-20/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -4812,14 +4852,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-11-20/projects/~A/datasets/~A/entries"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project-name))
-                                                           (quri.encode:url-encode
+                                                             'project-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dataset-type))))
+                                                             'dataset-type)
+                                                            common-lisp:t)))
                                                         "UpdateDatasetEntries"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-dataset-entries))

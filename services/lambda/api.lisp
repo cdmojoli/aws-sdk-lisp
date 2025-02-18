@@ -20,7 +20,7 @@
  (common-lisp:export 'lambda-error))
 (common-lisp:progn
  (common-lisp:defclass lambda-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "lambda" :api-version
                         "2015-03-31" :host-prefix "lambda" :signing-name
@@ -6282,27 +6282,25 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'invocation-type))
-      (common-lisp:cons "X-Amz-Invocation-Type"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amz-Invocation-Type"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'log-type))
-      (common-lisp:cons "X-Amz-Log-Type" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amz-Log-Type" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'client-context))
-      (common-lisp:cons "X-Amz-Client-Context"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amz-Client-Context" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         ((aws-sdk/generator/shape::input invocation-request))
-   (common-lisp:append
-    (alexandria:when-let (aws-sdk/generator/shape::value
-                          (common-lisp:slot-value
-                           aws-sdk/generator/shape::input 'payload))
-      (common-lisp:list
-       (common-lisp:cons "Payload"
-                         (aws-sdk/generator/shape::input-params
-                          aws-sdk/generator/shape::value))))))
+   (common-lisp:append))
  (common-lisp:defmethod aws-sdk/generator/shape::input-payload
                         ((aws-sdk/generator/shape::input invocation-request))
    (common-lisp:slot-value aws-sdk/generator/shape::input 'payload)))
@@ -6350,26 +6348,25 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'function-error))
-      (common-lisp:cons "X-Amz-Function-Error" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amz-Function-Error" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'log-result))
-      (common-lisp:cons "X-Amz-Log-Result" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amz-Log-Result" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'executed-version))
-      (common-lisp:cons "X-Amz-Executed-Version"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amz-Executed-Version"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         ((aws-sdk/generator/shape::input invocation-response))
-   (common-lisp:append
-    (alexandria:when-let (aws-sdk/generator/shape::value
-                          (common-lisp:slot-value
-                           aws-sdk/generator/shape::input 'payload))
-      (common-lisp:list
-       (common-lisp:cons "Payload"
-                         (aws-sdk/generator/shape::input-params
-                          aws-sdk/generator/shape::value))))))
+   (common-lisp:append))
  (common-lisp:defmethod aws-sdk/generator/shape::input-payload
                         ((aws-sdk/generator/shape::input invocation-response))
    (common-lisp:slot-value aws-sdk/generator/shape::input 'payload)))
@@ -6469,14 +6466,7 @@
                         (
                          (aws-sdk/generator/shape::input
                           invoke-response-stream-update))
-   (common-lisp:append
-    (alexandria:when-let (aws-sdk/generator/shape::value
-                          (common-lisp:slot-value
-                           aws-sdk/generator/shape::input 'payload))
-      (common-lisp:list
-       (common-lisp:cons "Payload"
-                         (aws-sdk/generator/shape::input-params
-                          aws-sdk/generator/shape::value))))))
+   (common-lisp:append))
  (common-lisp:defmethod aws-sdk/generator/shape::input-payload
                         (
                          (aws-sdk/generator/shape::input
@@ -6606,29 +6596,27 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'invocation-type))
-      (common-lisp:cons "X-Amz-Invocation-Type"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amz-Invocation-Type"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'log-type))
-      (common-lisp:cons "X-Amz-Log-Type" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amz-Log-Type" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'client-context))
-      (common-lisp:cons "X-Amz-Client-Context"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amz-Client-Context" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
                           invoke-with-response-stream-request))
-   (common-lisp:append
-    (alexandria:when-let (aws-sdk/generator/shape::value
-                          (common-lisp:slot-value
-                           aws-sdk/generator/shape::input 'payload))
-      (common-lisp:list
-       (common-lisp:cons "Payload"
-                         (aws-sdk/generator/shape::input-params
-                          aws-sdk/generator/shape::value))))))
+   (common-lisp:append))
  (common-lisp:defmethod aws-sdk/generator/shape::input-payload
                         (
                          (aws-sdk/generator/shape::input
@@ -6682,13 +6670,17 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'executed-version))
-      (common-lisp:cons "X-Amz-Executed-Version"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amz-Executed-Version"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'response-stream-content-type))
-      (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -11847,14 +11839,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2018-10-31/layers/~A/versions/~A/policy"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'layer-name))
-                                                           (quri.encode:url-encode
+                                                             'layer-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'version-number))))
+                                                             'version-number)
+                                                            common-lisp:t)))
                                                         "AddLayerVersionPermission"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'add-layer-version-permission))
@@ -11884,10 +11878,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2015-03-31/functions/~A/policy"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'function-name))))
+                                                             'function-name)
+                                                            common-lisp:t)))
                                                         "AddPermission"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'add-permission))
@@ -11914,10 +11909,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2015-03-31/functions/~A/aliases"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'function-name))))
+                                                             'function-name)
+                                                            common-lisp:t)))
                                                         "CreateAlias"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-alias))
@@ -12033,10 +12029,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2021-10-31/functions/~A/url"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'function-name))))
+                                                             'function-name)
+                                                            common-lisp:t)))
                                                         "CreateFunctionUrlConfig"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-function-url-config))
@@ -12060,14 +12057,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2015-03-31/functions/~A/aliases/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'function-name))
-                                                           (quri.encode:url-encode
+                                                             'function-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "DeleteAlias"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-alias))
@@ -12092,10 +12091,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-04-22/code-signing-configs/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'code-signing-config-arn))))
+                                                             'code-signing-config-arn)
+                                                            common-lisp:t)))
                                                         "DeleteCodeSigningConfig"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-code-signing-config))
@@ -12120,10 +12120,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2015-03-31/event-source-mappings/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'uuid))))
+                                                             'uuid)
+                                                            common-lisp:t)))
                                                         "DeleteEventSourceMapping"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-event-source-mapping))
@@ -12147,10 +12148,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2015-03-31/functions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'function-name))))
+                                                             'function-name)
+                                                            common-lisp:t)))
                                                         "DeleteFunction"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-function))
@@ -12175,10 +12177,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-06-30/functions/~A/code-signing-config"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'function-name))))
+                                                             'function-name)
+                                                            common-lisp:t)))
                                                         "DeleteFunctionCodeSigningConfig"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-function-code-signing-config))
@@ -12203,10 +12206,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2017-10-31/functions/~A/concurrency"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'function-name))))
+                                                             'function-name)
+                                                            common-lisp:t)))
                                                         "DeleteFunctionConcurrency"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-function-concurrency))
@@ -12231,10 +12235,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2019-09-25/functions/~A/event-invoke-config"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'function-name))))
+                                                             'function-name)
+                                                            common-lisp:t)))
                                                         "DeleteFunctionEventInvokeConfig"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-function-event-invoke-config))
@@ -12259,10 +12264,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2021-10-31/functions/~A/url"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'function-name))))
+                                                             'function-name)
+                                                            common-lisp:t)))
                                                         "DeleteFunctionUrlConfig"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-function-url-config))
@@ -12286,14 +12292,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2018-10-31/layers/~A/versions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'layer-name))
-                                                           (quri.encode:url-encode
+                                                             'layer-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'version-number))))
+                                                             'version-number)
+                                                            common-lisp:t)))
                                                         "DeleteLayerVersion"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-layer-version))
@@ -12318,10 +12326,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2019-09-30/functions/~A/provisioned-concurrency"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'function-name))))
+                                                             'function-name)
+                                                            common-lisp:t)))
                                                         "DeleteProvisionedConcurrencyConfig"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-provisioned-concurrency-config))
@@ -12354,14 +12363,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2015-03-31/functions/~A/aliases/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'function-name))
-                                                           (quri.encode:url-encode
+                                                             'function-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "GetAlias"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-alias))
@@ -12385,10 +12396,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-04-22/code-signing-configs/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'code-signing-config-arn))))
+                                                             'code-signing-config-arn)
+                                                            common-lisp:t)))
                                                         "GetCodeSigningConfig"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-code-signing-config))
@@ -12412,10 +12424,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2015-03-31/event-source-mappings/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'uuid))))
+                                                             'uuid)
+                                                            common-lisp:t)))
                                                         "GetEventSourceMapping"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-event-source-mapping))
@@ -12439,10 +12452,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2015-03-31/functions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'function-name))))
+                                                             'function-name)
+                                                            common-lisp:t)))
                                                         "GetFunction"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-function))
@@ -12467,10 +12481,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-06-30/functions/~A/code-signing-config"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'function-name))))
+                                                             'function-name)
+                                                            common-lisp:t)))
                                                         "GetFunctionCodeSigningConfig"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-function-code-signing-config))
@@ -12494,10 +12509,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2019-09-30/functions/~A/concurrency"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'function-name))))
+                                                             'function-name)
+                                                            common-lisp:t)))
                                                         "GetFunctionConcurrency"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-function-concurrency))
@@ -12522,10 +12538,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2015-03-31/functions/~A/configuration"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'function-name))))
+                                                             'function-name)
+                                                            common-lisp:t)))
                                                         "GetFunctionConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-function-configuration))
@@ -12550,10 +12567,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2019-09-25/functions/~A/event-invoke-config"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'function-name))))
+                                                             'function-name)
+                                                            common-lisp:t)))
                                                         "GetFunctionEventInvokeConfig"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-function-event-invoke-config))
@@ -12577,10 +12595,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2021-10-31/functions/~A/url"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'function-name))))
+                                                             'function-name)
+                                                            common-lisp:t)))
                                                         "GetFunctionUrlConfig"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-function-url-config))
@@ -12604,14 +12623,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2018-10-31/layers/~A/versions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'layer-name))
-                                                           (quri.encode:url-encode
+                                                             'layer-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'version-number))))
+                                                             'version-number)
+                                                            common-lisp:t)))
                                                         "GetLayerVersion"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-layer-version))
@@ -12653,14 +12674,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2018-10-31/layers/~A/versions/~A/policy"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'layer-name))
-                                                           (quri.encode:url-encode
+                                                             'layer-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'version-number))))
+                                                             'version-number)
+                                                            common-lisp:t)))
                                                         "GetLayerVersionPolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-layer-version-policy))
@@ -12684,10 +12707,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2015-03-31/functions/~A/policy"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'function-name))))
+                                                             'function-name)
+                                                            common-lisp:t)))
                                                         "GetPolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-policy))
@@ -12712,10 +12736,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2019-09-30/functions/~A/provisioned-concurrency"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'function-name))))
+                                                             'function-name)
+                                                            common-lisp:t)))
                                                         "GetProvisionedConcurrencyConfig"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-provisioned-concurrency-config))
@@ -12740,10 +12765,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2021-07-20/functions/~A/runtime-management-config"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'function-name))))
+                                                             'function-name)
+                                                            common-lisp:t)))
                                                         "GetRuntimeManagementConfig"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-runtime-management-config))
@@ -12770,10 +12796,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2015-03-31/functions/~A/invocations"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'function-name))))
+                                                             'function-name)
+                                                            common-lisp:t)))
                                                         "Invoke")
        :want-stream common-lisp:t)
       "blob" common-lisp:nil *error-map*)))
@@ -12798,10 +12825,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2014-11-13/functions/~A/invoke-async/"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'function-name))))
+                                                             'function-name)
+                                                            common-lisp:t)))
                                                         "InvokeAsync"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'invoke-async))
@@ -12829,10 +12857,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2021-11-15/functions/~A/response-streaming-invocations"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'function-name))))
+                                                             'function-name)
+                                                            common-lisp:t)))
                                                         "InvokeWithResponseStream"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'invoke-with-response-stream))
@@ -12858,10 +12887,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2015-03-31/functions/~A/aliases"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'function-name))))
+                                                             'function-name)
+                                                            common-lisp:t)))
                                                         "ListAliases"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-aliases))
@@ -12926,10 +12956,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2019-09-25/functions/~A/event-invoke-config/list"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'function-name))))
+                                                             'function-name)
+                                                            common-lisp:t)))
                                                         "ListFunctionEventInvokeConfigs"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-function-event-invoke-configs))
@@ -12954,10 +12985,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2021-10-31/functions/~A/urls"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'function-name))))
+                                                             'function-name)
+                                                            common-lisp:t)))
                                                         "ListFunctionUrlConfigs"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-function-url-configs))
@@ -13003,10 +13035,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-04-22/code-signing-configs/~A/functions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'code-signing-config-arn))))
+                                                             'code-signing-config-arn)
+                                                            common-lisp:t)))
                                                         "ListFunctionsByCodeSigningConfig"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-functions-by-code-signing-config))
@@ -13033,10 +13066,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2018-10-31/layers/~A/versions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'layer-name))))
+                                                             'layer-name)
+                                                            common-lisp:t)))
                                                         "ListLayerVersions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-layer-versions))
@@ -13082,10 +13116,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2019-09-30/functions/~A/provisioned-concurrency?List=ALL"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'function-name))))
+                                                             'function-name)
+                                                            common-lisp:t)))
                                                         "ListProvisionedConcurrencyConfigs"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-provisioned-concurrency-configs))
@@ -13109,10 +13144,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2017-03-31/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'arn))))
+                                                             'arn)
+                                                            common-lisp:t)))
                                                         "ListTags"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags))
@@ -13137,10 +13173,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2015-03-31/functions/~A/versions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'function-name))))
+                                                             'function-name)
+                                                            common-lisp:t)))
                                                         "ListVersionsByFunction"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-versions-by-function))
@@ -13167,10 +13204,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2018-10-31/layers/~A/versions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'layer-name))))
+                                                             'layer-name)
+                                                            common-lisp:t)))
                                                         "PublishLayerVersion"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'publish-layer-version))
@@ -13196,10 +13234,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2015-03-31/functions/~A/versions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'function-name))))
+                                                             'function-name)
+                                                            common-lisp:t)))
                                                         "PublishVersion"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'publish-version))
@@ -13225,10 +13264,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-06-30/functions/~A/code-signing-config"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'function-name))))
+                                                             'function-name)
+                                                            common-lisp:t)))
                                                         "PutFunctionCodeSigningConfig"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-function-code-signing-config))
@@ -13254,10 +13294,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2017-10-31/functions/~A/concurrency"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'function-name))))
+                                                             'function-name)
+                                                            common-lisp:t)))
                                                         "PutFunctionConcurrency"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-function-concurrency))
@@ -13286,10 +13327,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2019-09-25/functions/~A/event-invoke-config"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'function-name))))
+                                                             'function-name)
+                                                            common-lisp:t)))
                                                         "PutFunctionEventInvokeConfig"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-function-event-invoke-config))
@@ -13317,10 +13359,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2019-09-30/functions/~A/provisioned-concurrency"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'function-name))))
+                                                             'function-name)
+                                                            common-lisp:t)))
                                                         "PutProvisionedConcurrencyConfig"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-provisioned-concurrency-config))
@@ -13348,10 +13391,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2021-07-20/functions/~A/runtime-management-config"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'function-name))))
+                                                             'function-name)
+                                                            common-lisp:t)))
                                                         "PutRuntimeManagementConfig"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-runtime-management-config))
@@ -13378,18 +13422,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2018-10-31/layers/~A/versions/~A/policy/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'layer-name))
-                                                           (quri.encode:url-encode
+                                                             'layer-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'version-number))
-                                                           (quri.encode:url-encode
+                                                             'version-number)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'statement-id))))
+                                                             'statement-id)
+                                                            common-lisp:t)))
                                                         "RemoveLayerVersionPermission"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'remove-layer-version-permission))
@@ -13415,14 +13462,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2015-03-31/functions/~A/policy/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'function-name))
-                                                           (quri.encode:url-encode
+                                                             'function-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'statement-id))))
+                                                             'statement-id)
+                                                            common-lisp:t)))
                                                         "RemovePermission"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'remove-permission))
@@ -13446,10 +13495,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2017-03-31/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'arn))))
+                                                             'arn)
+                                                            common-lisp:t)))
                                                         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -13473,10 +13523,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2017-03-31/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'arn))))
+                                                             'arn)
+                                                            common-lisp:t)))
                                                         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -13503,14 +13554,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2015-03-31/functions/~A/aliases/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'function-name))
-                                                           (quri.encode:url-encode
+                                                             'function-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "UpdateAlias"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-alias))
@@ -13538,10 +13591,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2020-04-22/code-signing-configs/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'code-signing-config-arn))))
+                                                             'code-signing-config-arn)
+                                                            common-lisp:t)))
                                                         "UpdateCodeSigningConfig"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-code-signing-config))
@@ -13578,10 +13632,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2015-03-31/event-source-mappings/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'uuid))))
+                                                             'uuid)
+                                                            common-lisp:t)))
                                                         "UpdateEventSourceMapping"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-event-source-mapping))
@@ -13609,10 +13664,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2015-03-31/functions/~A/code"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'function-name))))
+                                                             'function-name)
+                                                            common-lisp:t)))
                                                         "UpdateFunctionCode"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-function-code))
@@ -13645,10 +13701,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2015-03-31/functions/~A/configuration"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'function-name))))
+                                                             'function-name)
+                                                            common-lisp:t)))
                                                         "UpdateFunctionConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-function-configuration))
@@ -13677,10 +13734,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2019-09-25/functions/~A/event-invoke-config"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'function-name))))
+                                                             'function-name)
+                                                            common-lisp:t)))
                                                         "UpdateFunctionEventInvokeConfig"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-function-event-invoke-config))
@@ -13707,10 +13765,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2021-10-31/functions/~A/url"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'function-name))))
+                                                             'function-name)
+                                                            common-lisp:t)))
                                                         "UpdateFunctionUrlConfig"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-function-url-config))

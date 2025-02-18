@@ -20,7 +20,7 @@
  (common-lisp:export 'inspector-scan-error))
 (common-lisp:progn
  (common-lisp:defclass inspector-scan-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "inspector-scan"
                         :api-version "2023-08-08" :host-prefix "inspector-scan"

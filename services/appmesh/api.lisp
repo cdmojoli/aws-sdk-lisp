@@ -20,7 +20,7 @@
  (common-lisp:export 'appmesh-error))
 (common-lisp:progn
  (common-lisp:defclass appmesh-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "appmesh" :api-version
                         "2019-01-25" :host-prefix "appmesh" :signing-name
@@ -12516,14 +12516,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v20190125/meshes/~A/virtualGateway/~A/gatewayRoutes"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'mesh-name))
-                                                           (quri.encode:url-encode
+                                                             'mesh-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'virtual-gateway-name))))
+                                                             'virtual-gateway-name)
+                                                            common-lisp:t)))
                                                         "CreateGatewayRoute"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'create-gateway-route))
@@ -12569,14 +12571,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v20190125/meshes/~A/virtualRouter/~A/routes"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'mesh-name))
-                                                           (quri.encode:url-encode
+                                                             'mesh-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'virtual-router-name))))
+                                                             'virtual-router-name)
+                                                            common-lisp:t)))
                                                         "CreateRoute"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'create-route))
@@ -12603,10 +12607,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v20190125/meshes/~A/virtualGateways"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'mesh-name))))
+                                                             'mesh-name)
+                                                            common-lisp:t)))
                                                         "CreateVirtualGateway"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'create-virtual-gateway))
@@ -12633,10 +12638,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v20190125/meshes/~A/virtualNodes"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'mesh-name))))
+                                                             'mesh-name)
+                                                            common-lisp:t)))
                                                         "CreateVirtualNode"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'create-virtual-node))
@@ -12663,10 +12669,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v20190125/meshes/~A/virtualRouters"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'mesh-name))))
+                                                             'mesh-name)
+                                                            common-lisp:t)))
                                                         "CreateVirtualRouter"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'create-virtual-router))
@@ -12693,10 +12700,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v20190125/meshes/~A/virtualServices"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'mesh-name))))
+                                                             'mesh-name)
+                                                            common-lisp:t)))
                                                         "CreateVirtualService"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'create-virtual-service))
@@ -12723,18 +12731,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v20190125/meshes/~A/virtualGateway/~A/gatewayRoutes/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'mesh-name))
-                                                           (quri.encode:url-encode
+                                                             'mesh-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'virtual-gateway-name))
-                                                           (quri.encode:url-encode
+                                                             'virtual-gateway-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'gateway-route-name))))
+                                                             'gateway-route-name)
+                                                            common-lisp:t)))
                                                         "DeleteGatewayRoute"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-gateway-route))
@@ -12758,10 +12769,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v20190125/meshes/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'mesh-name))))
+                                                             'mesh-name)
+                                                            common-lisp:t)))
                                                         "DeleteMesh"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-mesh))
@@ -12788,18 +12800,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v20190125/meshes/~A/virtualRouter/~A/routes/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'mesh-name))
-                                                           (quri.encode:url-encode
+                                                             'mesh-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'virtual-router-name))
-                                                           (quri.encode:url-encode
+                                                             'virtual-router-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'route-name))))
+                                                             'route-name)
+                                                            common-lisp:t)))
                                                         "DeleteRoute"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-route))
@@ -12825,14 +12840,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v20190125/meshes/~A/virtualGateways/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'mesh-name))
-                                                           (quri.encode:url-encode
+                                                             'mesh-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'virtual-gateway-name))))
+                                                             'virtual-gateway-name)
+                                                            common-lisp:t)))
                                                         "DeleteVirtualGateway"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-virtual-gateway))
@@ -12857,14 +12874,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v20190125/meshes/~A/virtualNodes/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'mesh-name))
-                                                           (quri.encode:url-encode
+                                                             'mesh-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'virtual-node-name))))
+                                                             'virtual-node-name)
+                                                            common-lisp:t)))
                                                         "DeleteVirtualNode"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-virtual-node))
@@ -12889,14 +12908,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v20190125/meshes/~A/virtualRouters/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'mesh-name))
-                                                           (quri.encode:url-encode
+                                                             'mesh-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'virtual-router-name))))
+                                                             'virtual-router-name)
+                                                            common-lisp:t)))
                                                         "DeleteVirtualRouter"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-virtual-router))
@@ -12922,14 +12943,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v20190125/meshes/~A/virtualServices/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'mesh-name))
-                                                           (quri.encode:url-encode
+                                                             'mesh-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'virtual-service-name))))
+                                                             'virtual-service-name)
+                                                            common-lisp:t)))
                                                         "DeleteVirtualService"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-virtual-service))
@@ -12956,18 +12979,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v20190125/meshes/~A/virtualGateway/~A/gatewayRoutes/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'mesh-name))
-                                                           (quri.encode:url-encode
+                                                             'mesh-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'virtual-gateway-name))
-                                                           (quri.encode:url-encode
+                                                             'virtual-gateway-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'gateway-route-name))))
+                                                             'gateway-route-name)
+                                                            common-lisp:t)))
                                                         "DescribeGatewayRoute"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-gateway-route))
@@ -12991,10 +13017,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v20190125/meshes/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'mesh-name))))
+                                                             'mesh-name)
+                                                            common-lisp:t)))
                                                         "DescribeMesh"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-mesh))
@@ -13021,18 +13048,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v20190125/meshes/~A/virtualRouter/~A/routes/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'mesh-name))
-                                                           (quri.encode:url-encode
+                                                             'mesh-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'virtual-router-name))
-                                                           (quri.encode:url-encode
+                                                             'virtual-router-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'route-name))))
+                                                             'route-name)
+                                                            common-lisp:t)))
                                                         "DescribeRoute"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-route))
@@ -13058,14 +13088,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v20190125/meshes/~A/virtualGateways/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'mesh-name))
-                                                           (quri.encode:url-encode
+                                                             'mesh-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'virtual-gateway-name))))
+                                                             'virtual-gateway-name)
+                                                            common-lisp:t)))
                                                         "DescribeVirtualGateway"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-virtual-gateway))
@@ -13090,14 +13122,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v20190125/meshes/~A/virtualNodes/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'mesh-name))
-                                                           (quri.encode:url-encode
+                                                             'mesh-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'virtual-node-name))))
+                                                             'virtual-node-name)
+                                                            common-lisp:t)))
                                                         "DescribeVirtualNode"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-virtual-node))
@@ -13122,14 +13156,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v20190125/meshes/~A/virtualRouters/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'mesh-name))
-                                                           (quri.encode:url-encode
+                                                             'mesh-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'virtual-router-name))))
+                                                             'virtual-router-name)
+                                                            common-lisp:t)))
                                                         "DescribeVirtualRouter"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-virtual-router))
@@ -13155,14 +13191,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v20190125/meshes/~A/virtualServices/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'mesh-name))
-                                                           (quri.encode:url-encode
+                                                             'mesh-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'virtual-service-name))))
+                                                             'virtual-service-name)
+                                                            common-lisp:t)))
                                                         "DescribeVirtualService"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-virtual-service))
@@ -13189,14 +13227,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v20190125/meshes/~A/virtualGateway/~A/gatewayRoutes"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'mesh-name))
-                                                           (quri.encode:url-encode
+                                                             'mesh-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'virtual-gateway-name))))
+                                                             'virtual-gateway-name)
+                                                            common-lisp:t)))
                                                         "ListGatewayRoutes"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-gateway-routes))
@@ -13241,14 +13281,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v20190125/meshes/~A/virtualRouter/~A/routes"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'mesh-name))
-                                                           (quri.encode:url-encode
+                                                             'mesh-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'virtual-router-name))))
+                                                             'virtual-router-name)
+                                                            common-lisp:t)))
                                                         "ListRoutes"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-routes))
@@ -13290,10 +13332,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v20190125/meshes/~A/virtualGateways"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'mesh-name))))
+                                                             'mesh-name)
+                                                            common-lisp:t)))
                                                         "ListVirtualGateways"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-virtual-gateways))
@@ -13318,10 +13361,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v20190125/meshes/~A/virtualNodes"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'mesh-name))))
+                                                             'mesh-name)
+                                                            common-lisp:t)))
                                                         "ListVirtualNodes"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-virtual-nodes))
@@ -13346,10 +13390,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v20190125/meshes/~A/virtualRouters"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'mesh-name))))
+                                                             'mesh-name)
+                                                            common-lisp:t)))
                                                         "ListVirtualRouters"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-virtual-routers))
@@ -13374,10 +13419,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v20190125/meshes/~A/virtualServices"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'mesh-name))))
+                                                             'mesh-name)
+                                                            common-lisp:t)))
                                                         "ListVirtualServices"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-virtual-services))
@@ -13439,18 +13485,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v20190125/meshes/~A/virtualGateway/~A/gatewayRoutes/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'mesh-name))
-                                                           (quri.encode:url-encode
+                                                             'mesh-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'virtual-gateway-name))
-                                                           (quri.encode:url-encode
+                                                             'virtual-gateway-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'gateway-route-name))))
+                                                             'gateway-route-name)
+                                                            common-lisp:t)))
                                                         "UpdateGatewayRoute"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'update-gateway-route))
@@ -13474,10 +13523,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v20190125/meshes/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'mesh-name))))
+                                                             'mesh-name)
+                                                            common-lisp:t)))
                                                         "UpdateMesh"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'update-mesh))
@@ -13504,18 +13554,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v20190125/meshes/~A/virtualRouter/~A/routes/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'mesh-name))
-                                                           (quri.encode:url-encode
+                                                             'mesh-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'virtual-router-name))
-                                                           (quri.encode:url-encode
+                                                             'virtual-router-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'route-name))))
+                                                             'route-name)
+                                                            common-lisp:t)))
                                                         "UpdateRoute"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'update-route))
@@ -13542,14 +13595,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v20190125/meshes/~A/virtualGateways/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'mesh-name))
-                                                           (quri.encode:url-encode
+                                                             'mesh-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'virtual-gateway-name))))
+                                                             'virtual-gateway-name)
+                                                            common-lisp:t)))
                                                         "UpdateVirtualGateway"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'update-virtual-gateway))
@@ -13576,14 +13631,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v20190125/meshes/~A/virtualNodes/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'mesh-name))
-                                                           (quri.encode:url-encode
+                                                             'mesh-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'virtual-node-name))))
+                                                             'virtual-node-name)
+                                                            common-lisp:t)))
                                                         "UpdateVirtualNode"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'update-virtual-node))
@@ -13610,14 +13667,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v20190125/meshes/~A/virtualRouters/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'mesh-name))
-                                                           (quri.encode:url-encode
+                                                             'mesh-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'virtual-router-name))))
+                                                             'virtual-router-name)
+                                                            common-lisp:t)))
                                                         "UpdateVirtualRouter"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'update-virtual-router))
@@ -13644,14 +13703,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v20190125/meshes/~A/virtualServices/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'mesh-name))
-                                                           (quri.encode:url-encode
+                                                             'mesh-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'virtual-service-name))))
+                                                             'virtual-service-name)
+                                                            common-lisp:t)))
                                                         "UpdateVirtualService"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'update-virtual-service))

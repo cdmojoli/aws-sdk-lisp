@@ -20,7 +20,7 @@
  (common-lisp:export 'connectparticipant-error))
 (common-lisp:progn
  (common-lisp:defclass connectparticipant-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "connectparticipant"
                         :api-version "2018-09-07" :host-prefix
@@ -181,7 +181,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'connection-token))
-      (common-lisp:cons "X-Amz-Bearer" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amz-Bearer" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -342,7 +344,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'participant-token))
-      (common-lisp:cons "X-Amz-Bearer" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amz-Bearer" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -454,7 +458,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'connection-token))
-      (common-lisp:cons "X-Amz-Bearer" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amz-Bearer" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -535,7 +541,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'connection-token))
-      (common-lisp:cons "X-Amz-Bearer" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amz-Bearer" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -613,7 +621,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'connection-token))
-      (common-lisp:cons "X-Amz-Bearer" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amz-Bearer" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -746,7 +756,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'connection-token))
-      (common-lisp:cons "X-Amz-Bearer" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amz-Bearer" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -1217,7 +1229,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'connection-token))
-      (common-lisp:cons "X-Amz-Bearer" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amz-Bearer" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         ((aws-sdk/generator/shape::input send-event-request))
    (common-lisp:append
@@ -1331,7 +1345,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'connection-token))
-      (common-lisp:cons "X-Amz-Bearer" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amz-Bearer" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         ((aws-sdk/generator/shape::input send-message-request))
    (common-lisp:append
@@ -1478,7 +1494,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'connection-token))
-      (common-lisp:cons "X-Amz-Bearer" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amz-Bearer" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -1955,10 +1973,10 @@
         'connectparticipant-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/participant/views/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'view-token))))
+                                aws-sdk/generator/operation::input 'view-token)
+                               common-lisp:t)))
         "DescribeView"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-view))

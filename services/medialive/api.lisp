@@ -20,7 +20,7 @@
  (common-lisp:export 'medialive-error))
 (common-lisp:progn
  (common-lisp:defclass medialive-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "medialive" :api-version
                         "2017-10-14" :host-prefix "medialive" :signing-name
@@ -8630,7 +8630,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'accept))
-      (common-lisp:cons "accept" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "accept" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -8692,19 +8694,27 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-type))
-      (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-length))
-      (common-lisp:cons "Content-Length" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Length" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'etag))
-      (common-lisp:cons "ETag" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "ETag" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'last-modified))
-      (common-lisp:cons "Last-Modified" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Last-Modified" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -34440,10 +34450,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/prod/inputDevices/~A/accept"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'input-device-id))))
+                                                             'input-device-id)
+                                                            common-lisp:t)))
                                                         "AcceptInputDeviceTransfer"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'accept-input-device-transfer))
@@ -34524,10 +34535,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/prod/channels/~A/schedule"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'channel-id))))
+                                                             'channel-id)
+                                                            common-lisp:t)))
                                                         "BatchUpdateSchedule"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'batch-update-schedule))
@@ -34552,10 +34564,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/prod/inputDevices/~A/cancel"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'input-device-id))))
+                                                             'input-device-id)
+                                                            common-lisp:t)))
                                                         "CancelInputDeviceTransfer"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'cancel-input-device-transfer))
@@ -34684,10 +34697,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/prod/multiplexes/~A/programs"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'multiplex-id))))
+                                                             'multiplex-id)
+                                                            common-lisp:t)))
                                                         "CreateMultiplexProgram"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-multiplex-program))
@@ -34711,10 +34725,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/prod/inputs/~A/partners"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'input-id))))
+                                                             'input-id)
+                                                            common-lisp:t)))
                                                         "CreatePartnerInput"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-partner-input))
@@ -34738,10 +34753,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/prod/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "CreateTags"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-tags))
@@ -34765,10 +34781,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/prod/channels/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'channel-id))))
+                                                             'channel-id)
+                                                            common-lisp:t)))
                                                         "DeleteChannel"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-channel))
@@ -34792,10 +34809,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/prod/inputs/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'input-id))))
+                                                             'input-id)
+                                                            common-lisp:t)))
                                                         "DeleteInput"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-input))
@@ -34820,10 +34838,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/prod/inputSecurityGroups/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'input-security-group-id))))
+                                                             'input-security-group-id)
+                                                            common-lisp:t)))
                                                         "DeleteInputSecurityGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-input-security-group))
@@ -34847,10 +34866,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/prod/multiplexes/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'multiplex-id))))
+                                                             'multiplex-id)
+                                                            common-lisp:t)))
                                                         "DeleteMultiplex"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-multiplex))
@@ -34874,14 +34894,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/prod/multiplexes/~A/programs/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'multiplex-id))
-                                                           (quri.encode:url-encode
+                                                             'multiplex-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'program-name))))
+                                                             'program-name)
+                                                            common-lisp:t)))
                                                         "DeleteMultiplexProgram"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-multiplex-program))
@@ -34905,10 +34927,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/prod/reservations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'reservation-id))))
+                                                             'reservation-id)
+                                                            common-lisp:t)))
                                                         "DeleteReservation"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-reservation))
@@ -34932,10 +34955,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/prod/channels/~A/schedule"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'channel-id))))
+                                                             'channel-id)
+                                                            common-lisp:t)))
                                                         "DeleteSchedule"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-schedule))
@@ -34959,10 +34983,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/prod/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "DeleteTags"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-tags))
@@ -34995,10 +35020,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/prod/channels/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'channel-id))))
+                                                             'channel-id)
+                                                            common-lisp:t)))
                                                         "DescribeChannel"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-channel))
@@ -35022,10 +35048,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/prod/inputs/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'input-id))))
+                                                             'input-id)
+                                                            common-lisp:t)))
                                                         "DescribeInput"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-input))
@@ -35049,10 +35076,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/prod/inputDevices/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'input-device-id))))
+                                                             'input-device-id)
+                                                            common-lisp:t)))
                                                         "DescribeInputDevice"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-input-device))
@@ -35077,10 +35105,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/prod/inputDevices/~A/thumbnailData"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'input-device-id))))
+                                                             'input-device-id)
+                                                            common-lisp:t)))
                                                         "DescribeInputDeviceThumbnail")
        :want-stream common-lisp:t)
       "blob" common-lisp:nil *error-map*)))
@@ -35106,10 +35135,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/prod/inputSecurityGroups/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'input-security-group-id))))
+                                                             'input-security-group-id)
+                                                            common-lisp:t)))
                                                         "DescribeInputSecurityGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-input-security-group))
@@ -35133,10 +35163,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/prod/multiplexes/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'multiplex-id))))
+                                                             'multiplex-id)
+                                                            common-lisp:t)))
                                                         "DescribeMultiplex"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-multiplex))
@@ -35161,14 +35192,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/prod/multiplexes/~A/programs/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'multiplex-id))
-                                                           (quri.encode:url-encode
+                                                             'multiplex-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'program-name))))
+                                                             'program-name)
+                                                            common-lisp:t)))
                                                         "DescribeMultiplexProgram"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-multiplex-program))
@@ -35192,10 +35225,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/prod/offerings/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'offering-id))))
+                                                             'offering-id)
+                                                            common-lisp:t)))
                                                         "DescribeOffering"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-offering))
@@ -35219,10 +35253,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/prod/reservations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'reservation-id))))
+                                                             'reservation-id)
+                                                            common-lisp:t)))
                                                         "DescribeReservation"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-reservation))
@@ -35247,10 +35282,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/prod/channels/~A/schedule"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'channel-id))))
+                                                             'channel-id)
+                                                            common-lisp:t)))
                                                         "DescribeSchedule"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-schedule))
@@ -35275,10 +35311,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/prod/channels/~A/thumbnails"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'channel-id))))
+                                                             'channel-id)
+                                                            common-lisp:t)))
                                                         "DescribeThumbnails"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-thumbnails))
@@ -35394,10 +35431,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/prod/multiplexes/~A/programs"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'multiplex-id))))
+                                                             'multiplex-id)
+                                                            common-lisp:t)))
                                                         "ListMultiplexPrograms"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-multiplex-programs))
@@ -35485,10 +35523,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/prod/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -35515,10 +35554,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/prod/offerings/~A/purchase"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'offering-id))))
+                                                             'offering-id)
+                                                            common-lisp:t)))
                                                         "PurchaseOffering"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'purchase-offering))
@@ -35542,10 +35582,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/prod/inputDevices/~A/reboot"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'input-device-id))))
+                                                             'input-device-id)
+                                                            common-lisp:t)))
                                                         "RebootInputDevice"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'reboot-input-device))
@@ -35570,10 +35611,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/prod/inputDevices/~A/reject"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'input-device-id))))
+                                                             'input-device-id)
+                                                            common-lisp:t)))
                                                         "RejectInputDeviceTransfer"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'reject-input-device-transfer))
@@ -35597,10 +35639,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/prod/channels/~A/start"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'channel-id))))
+                                                             'channel-id)
+                                                            common-lisp:t)))
                                                         "StartChannel"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'start-channel))
@@ -35624,10 +35667,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/prod/inputDevices/~A/start"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'input-device-id))))
+                                                             'input-device-id)
+                                                            common-lisp:t)))
                                                         "StartInputDevice"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'start-input-device))
@@ -35652,10 +35696,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/prod/inputDevices/~A/startInputDeviceMaintenanceWindow"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'input-device-id))))
+                                                             'input-device-id)
+                                                            common-lisp:t)))
                                                         "StartInputDeviceMaintenanceWindow"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'start-input-device-maintenance-window))
@@ -35679,10 +35724,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/prod/multiplexes/~A/start"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'multiplex-id))))
+                                                             'multiplex-id)
+                                                            common-lisp:t)))
                                                         "StartMultiplex"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'start-multiplex))
@@ -35706,10 +35752,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/prod/channels/~A/stop"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'channel-id))))
+                                                             'channel-id)
+                                                            common-lisp:t)))
                                                         "StopChannel"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'stop-channel))
@@ -35733,10 +35780,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/prod/inputDevices/~A/stop"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'input-device-id))))
+                                                             'input-device-id)
+                                                            common-lisp:t)))
                                                         "StopInputDevice"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'stop-input-device))
@@ -35760,10 +35808,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/prod/multiplexes/~A/stop"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'multiplex-id))))
+                                                             'multiplex-id)
+                                                            common-lisp:t)))
                                                         "StopMultiplex"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'stop-multiplex))
@@ -35790,10 +35839,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/prod/inputDevices/~A/transfer"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'input-device-id))))
+                                                             'input-device-id)
+                                                            common-lisp:t)))
                                                         "TransferInputDevice"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'transfer-input-device))
@@ -35841,10 +35891,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/prod/channels/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'channel-id))))
+                                                             'channel-id)
+                                                            common-lisp:t)))
                                                         "UpdateChannel"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-channel))
@@ -35869,10 +35920,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/prod/channels/~A/channelClass"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'channel-id))))
+                                                             'channel-id)
+                                                            common-lisp:t)))
                                                         "UpdateChannelClass"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-channel-class))
@@ -35900,10 +35952,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/prod/inputs/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'input-id))))
+                                                             'input-id)
+                                                            common-lisp:t)))
                                                         "UpdateInput"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-input))
@@ -35930,10 +35983,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/prod/inputDevices/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'input-device-id))))
+                                                             'input-device-id)
+                                                            common-lisp:t)))
                                                         "UpdateInputDevice"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-input-device))
@@ -35960,10 +36014,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/prod/inputSecurityGroups/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'input-security-group-id))))
+                                                             'input-security-group-id)
+                                                            common-lisp:t)))
                                                         "UpdateInputSecurityGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-input-security-group))
@@ -35988,10 +36043,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/prod/multiplexes/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'multiplex-id))))
+                                                             'multiplex-id)
+                                                            common-lisp:t)))
                                                         "UpdateMultiplex"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-multiplex))
@@ -36018,14 +36074,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/prod/multiplexes/~A/programs/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'multiplex-id))
-                                                           (quri.encode:url-encode
+                                                             'multiplex-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'program-name))))
+                                                             'program-name)
+                                                            common-lisp:t)))
                                                         "UpdateMultiplexProgram"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-multiplex-program))
@@ -36050,10 +36108,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/prod/reservations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'reservation-id))))
+                                                             'reservation-id)
+                                                            common-lisp:t)))
                                                         "UpdateReservation"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-reservation))
@@ -36078,10 +36137,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/prod/channels/~A/restartChannelPipelines"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'channel-id))))
+                                                             'channel-id)
+                                                            common-lisp:t)))
                                                         "RestartChannelPipelines"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'restart-channel-pipelines))

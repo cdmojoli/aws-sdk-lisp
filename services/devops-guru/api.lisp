@@ -20,7 +20,7 @@
  (common-lisp:export 'devops-guru-error))
 (common-lisp:progn
  (common-lisp:defclass devops-guru-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "devops-guru" :api-version
                         "2020-12-01" :host-prefix "devops-guru" :signing-name
@@ -10768,10 +10768,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/insights/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "DeleteInsight"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-insight))
@@ -10823,10 +10824,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/anomalies/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "DescribeAnomaly"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-anomaly))
@@ -10876,10 +10878,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/insights/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "DescribeInsight"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-insight))
@@ -10970,10 +10973,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/accounts/health/resource-collection/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-collection-type))))
+                                                             'resource-collection-type)
+                                                            common-lisp:t)))
                                                         "DescribeResourceCollectionHealth"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-resource-collection-health))
@@ -11025,10 +11029,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/resource-collections/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-collection-type))))
+                                                             'resource-collection-type)
+                                                            common-lisp:t)))
                                                         "GetResourceCollection"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-resource-collection))
@@ -11056,10 +11061,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/anomalies/insight/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'insight-id))))
+                                                             'insight-id)
+                                                            common-lisp:t)))
                                                         "ListAnomaliesForInsight"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-anomalies-for-insight))
@@ -11235,10 +11241,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/channels/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "RemoveNotificationChannel"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'remove-notification-channel))

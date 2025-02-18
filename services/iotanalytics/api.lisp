@@ -20,7 +20,7 @@
  (common-lisp:export 'iotanalytics-error))
 (common-lisp:progn
  (common-lisp:defclass iotanalytics-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "iotanalytics" :api-version
                         "2017-11-27" :host-prefix "iotanalytics" :signing-name
@@ -7955,14 +7955,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/pipelines/~A/reprocessing/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'pipeline-name))
-                                                           (quri.encode:url-encode
+                                                             'pipeline-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'reprocessing-id))))
+                                                             'reprocessing-id)
+                                                            common-lisp:t)))
                                                         "CancelPipelineReprocessing"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'cancel-pipeline-reprocessing))
@@ -8026,10 +8028,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/datasets/~A/content"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dataset-name))))
+                                                             'dataset-name)
+                                                            common-lisp:t)))
                                                         "CreateDatasetContent"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-dataset-content))
@@ -8092,10 +8095,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/channels/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'channel-name))))
+                                                             'channel-name)
+                                                            common-lisp:t)))
                                                         "DeleteChannel"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-channel))
@@ -8119,10 +8123,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/datasets/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dataset-name))))
+                                                             'dataset-name)
+                                                            common-lisp:t)))
                                                         "DeleteDataset"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-dataset))
@@ -8146,10 +8151,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/datasets/~A/content"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dataset-name))))
+                                                             'dataset-name)
+                                                            common-lisp:t)))
                                                         "DeleteDatasetContent"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-dataset-content))
@@ -8173,10 +8179,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/datastores/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'datastore-name))))
+                                                             'datastore-name)
+                                                            common-lisp:t)))
                                                         "DeleteDatastore"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-datastore))
@@ -8200,10 +8207,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/pipelines/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'pipeline-name))))
+                                                             'pipeline-name)
+                                                            common-lisp:t)))
                                                         "DeletePipeline"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-pipeline))
@@ -8228,10 +8236,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/channels/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'channel-name))))
+                                                             'channel-name)
+                                                            common-lisp:t)))
                                                         "DescribeChannel"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-channel))
@@ -8255,10 +8264,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/datasets/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dataset-name))))
+                                                             'dataset-name)
+                                                            common-lisp:t)))
                                                         "DescribeDataset"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-dataset))
@@ -8283,10 +8293,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/datastores/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'datastore-name))))
+                                                             'datastore-name)
+                                                            common-lisp:t)))
                                                         "DescribeDatastore"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-datastore))
@@ -8319,10 +8330,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/pipelines/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'pipeline-name))))
+                                                             'pipeline-name)
+                                                            common-lisp:t)))
                                                         "DescribePipeline"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-pipeline))
@@ -8346,10 +8358,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/datasets/~A/content"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dataset-name))))
+                                                             'dataset-name)
+                                                            common-lisp:t)))
                                                         "GetDatasetContent"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-dataset-content))
@@ -8393,10 +8406,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/datasets/~A/contents"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dataset-name))))
+                                                             'dataset-name)
+                                                            common-lisp:t)))
                                                         "ListDatasetContents"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-dataset-contents))
@@ -8525,10 +8539,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/channels/~A/sample"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'channel-name))))
+                                                             'channel-name)
+                                                            common-lisp:t)))
                                                         "SampleChannelData"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'sample-channel-data))
@@ -8555,10 +8570,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/pipelines/~A/reprocessing"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'pipeline-name))))
+                                                             'pipeline-name)
+                                                            common-lisp:t)))
                                                         "StartPipelineReprocessing"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'start-pipeline-reprocessing))
@@ -8618,10 +8634,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/channels/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'channel-name))))
+                                                             'channel-name)
+                                                            common-lisp:t)))
                                                         "UpdateChannel"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-channel))
@@ -8649,10 +8666,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/datasets/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dataset-name))))
+                                                             'dataset-name)
+                                                            common-lisp:t)))
                                                         "UpdateDataset"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-dataset))
@@ -8679,10 +8697,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/datastores/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'datastore-name))))
+                                                             'datastore-name)
+                                                            common-lisp:t)))
                                                         "UpdateDatastore"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-datastore))
@@ -8707,10 +8726,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/pipelines/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'pipeline-name))))
+                                                             'pipeline-name)
+                                                            common-lisp:t)))
                                                         "UpdatePipeline"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-pipeline))

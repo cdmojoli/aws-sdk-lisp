@@ -20,7 +20,7 @@
  (common-lisp:export 'customer-profiles-error))
 (common-lisp:progn
  (common-lisp:defclass customer-profiles-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "customer-profiles"
                         :api-version "2020-08-15" :host-prefix "profile"
@@ -13308,10 +13308,11 @@ common-lisp:nil
         'customer-profiles-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/domains/~A/profiles/keys"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'domain-name))))
+                                'domain-name)
+                               common-lisp:t)))
         "AddProfileKey"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'add-profile-key))
@@ -13336,14 +13337,16 @@ common-lisp:nil
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/domains/~A/calculated-attributes/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'domain-name))
-                              (quri.encode:url-encode
+                                'domain-name)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'calculated-attribute-name))))
+                                'calculated-attribute-name)
+                               common-lisp:t)))
         "CreateCalculatedAttributeDefinition"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-calculated-attribute-definition))
@@ -13367,10 +13370,11 @@ common-lisp:nil
         'customer-profiles-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/domains/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'domain-name))))
+                                'domain-name)
+                               common-lisp:t)))
         "CreateDomain"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-domain))
@@ -13390,14 +13394,16 @@ common-lisp:nil
         'customer-profiles-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/domains/~A/event-streams/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'domain-name))
-                              (quri.encode:url-encode
+                                'domain-name)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'event-stream-name))))
+                                'event-stream-name)
+                               common-lisp:t)))
         "CreateEventStream"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-event-stream))
@@ -13421,10 +13427,11 @@ common-lisp:nil
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/domains/~A/workflows/integrations"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'domain-name))))
+                                'domain-name)
+                               common-lisp:t)))
         "CreateIntegrationWorkflow"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-integration-workflow))
@@ -13456,10 +13463,11 @@ common-lisp:nil
         'customer-profiles-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/domains/~A/profiles"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'domain-name))))
+                                'domain-name)
+                               common-lisp:t)))
         "CreateProfile"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-profile))
@@ -13481,14 +13489,16 @@ common-lisp:nil
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/domains/~A/calculated-attributes/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'domain-name))
-                              (quri.encode:url-encode
+                                'domain-name)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'calculated-attribute-name))))
+                                'calculated-attribute-name)
+                               common-lisp:t)))
         "DeleteCalculatedAttributeDefinition"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-calculated-attribute-definition))
@@ -13507,10 +13517,11 @@ common-lisp:nil
         'customer-profiles-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/domains/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'domain-name))))
+                                'domain-name)
+                               common-lisp:t)))
         "DeleteDomain"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-domain))
@@ -13529,14 +13540,16 @@ common-lisp:nil
         'customer-profiles-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/domains/~A/event-streams/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'domain-name))
-                              (quri.encode:url-encode
+                                'domain-name)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'event-stream-name))))
+                                'event-stream-name)
+                               common-lisp:t)))
         "DeleteEventStream"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-event-stream))
@@ -13555,10 +13568,11 @@ common-lisp:nil
         'customer-profiles-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/domains/~A/integrations/delete"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'domain-name))))
+                                'domain-name)
+                               common-lisp:t)))
         "DeleteIntegration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-integration))
@@ -13577,10 +13591,11 @@ common-lisp:nil
         'customer-profiles-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/domains/~A/profiles/delete"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'domain-name))))
+                                'domain-name)
+                               common-lisp:t)))
         "DeleteProfile"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-profile))
@@ -13601,10 +13616,11 @@ common-lisp:nil
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/domains/~A/profiles/keys/delete"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'domain-name))))
+                                'domain-name)
+                               common-lisp:t)))
         "DeleteProfileKey"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-profile-key))
@@ -13627,10 +13643,11 @@ common-lisp:nil
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/domains/~A/profiles/objects/delete"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'domain-name))))
+                                'domain-name)
+                               common-lisp:t)))
         "DeleteProfileObject"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-profile-object))
@@ -13650,14 +13667,16 @@ common-lisp:nil
         'customer-profiles-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/domains/~A/object-types/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'domain-name))
-                              (quri.encode:url-encode
+                                'domain-name)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'object-type-name))))
+                                'object-type-name)
+                               common-lisp:t)))
         "DeleteProfileObjectType"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-profile-object-type))
@@ -13676,14 +13695,16 @@ common-lisp:nil
         'customer-profiles-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/domains/~A/workflows/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'domain-name))
-                              (quri.encode:url-encode
+                                'domain-name)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'workflow-id))))
+                                'workflow-id)
+                               common-lisp:t)))
         "DeleteWorkflow"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-workflow))
@@ -13703,10 +13724,11 @@ common-lisp:nil
         'customer-profiles-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/domains/~A/detect/object-types"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'domain-name))))
+                                'domain-name)
+                               common-lisp:t)))
         "DetectProfileObjectType"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'detect-profile-object-type))
@@ -13730,10 +13752,11 @@ common-lisp:nil
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/domains/~A/identity-resolution-jobs/auto-merging-preview"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'domain-name))))
+                                'domain-name)
+                               common-lisp:t)))
         "GetAutoMergingPreview"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-auto-merging-preview))
@@ -13755,14 +13778,16 @@ common-lisp:nil
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/domains/~A/calculated-attributes/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'domain-name))
-                              (quri.encode:url-encode
+                                'domain-name)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'calculated-attribute-name))))
+                                'calculated-attribute-name)
+                               common-lisp:t)))
         "GetCalculatedAttributeDefinition"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-calculated-attribute-definition))
@@ -13785,18 +13810,20 @@ common-lisp:nil
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/domains/~A/profile/~A/calculated-attributes/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'domain-name))
-                              (quri.encode:url-encode
+                                'domain-name)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
+                               (common-lisp:slot-value
+                                aws-sdk/generator/operation::input 'profile-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'profile-id))
-                              (quri.encode:url-encode
-                               (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'calculated-attribute-name))))
+                                'calculated-attribute-name)
+                               common-lisp:t)))
         "GetCalculatedAttributeForProfile"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-calculated-attribute-for-profile))
@@ -13815,10 +13842,11 @@ common-lisp:nil
         'customer-profiles-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/domains/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'domain-name))))
+                                'domain-name)
+                               common-lisp:t)))
         "GetDomain"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-domain))
@@ -13837,14 +13865,16 @@ common-lisp:nil
         'customer-profiles-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/domains/~A/event-streams/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'domain-name))
-                              (quri.encode:url-encode
+                                'domain-name)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'event-stream-name))))
+                                'event-stream-name)
+                               common-lisp:t)))
         "GetEventStream"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-event-stream))
@@ -13865,13 +13895,15 @@ common-lisp:nil
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/domains/~A/identity-resolution-jobs/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'domain-name))
-                              (quri.encode:url-encode
+                                'domain-name)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'job-id))))
+                                aws-sdk/generator/operation::input 'job-id)
+                               common-lisp:t)))
         "GetIdentityResolutionJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-identity-resolution-job))
@@ -13890,10 +13922,11 @@ common-lisp:nil
         'customer-profiles-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/domains/~A/integrations"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'domain-name))))
+                                'domain-name)
+                               common-lisp:t)))
         "GetIntegration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-integration))
@@ -13913,10 +13946,11 @@ common-lisp:nil
         'customer-profiles-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/domains/~A/matches"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'domain-name))))
+                                'domain-name)
+                               common-lisp:t)))
         "GetMatches"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-matches))
@@ -13935,14 +13969,16 @@ common-lisp:nil
         'customer-profiles-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/domains/~A/object-types/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'domain-name))
-                              (quri.encode:url-encode
+                                'domain-name)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'object-type-name))))
+                                'object-type-name)
+                               common-lisp:t)))
         "GetProfileObjectType"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-profile-object-type))
@@ -13962,10 +13998,11 @@ common-lisp:nil
         'customer-profiles-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/templates/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'template-id))))
+                                'template-id)
+                               common-lisp:t)))
         "GetProfileObjectTypeTemplate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-profile-object-type-template))
@@ -13987,10 +14024,11 @@ common-lisp:nil
         'customer-profiles-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/domains/~A/matches"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'domain-name))))
+                                'domain-name)
+                               common-lisp:t)))
         "GetSimilarProfiles"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-similar-profiles))
@@ -14009,14 +14047,16 @@ common-lisp:nil
         'customer-profiles-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/domains/~A/workflows/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'domain-name))
-                              (quri.encode:url-encode
+                                'domain-name)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'workflow-id))))
+                                'workflow-id)
+                               common-lisp:t)))
         "GetWorkflow"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-workflow))
@@ -14037,14 +14077,16 @@ common-lisp:nil
         'customer-profiles-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/domains/~A/workflows/~A/steps"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'domain-name))
-                              (quri.encode:url-encode
+                                'domain-name)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'workflow-id))))
+                                'workflow-id)
+                               common-lisp:t)))
         "GetWorkflowSteps"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-workflow-steps))
@@ -14085,10 +14127,11 @@ common-lisp:nil
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/domains/~A/calculated-attributes"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'domain-name))))
+                                'domain-name)
+                               common-lisp:t)))
         "ListCalculatedAttributeDefinitions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-calculated-attribute-definitions))
@@ -14111,14 +14154,15 @@ common-lisp:nil
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/domains/~A/profile/~A/calculated-attributes"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'domain-name))
-                              (quri.encode:url-encode
+                                'domain-name)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'profile-id))))
+                                aws-sdk/generator/operation::input 'profile-id)
+                               common-lisp:t)))
         "ListCalculatedAttributesForProfile"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-calculated-attributes-for-profile))
@@ -14154,10 +14198,11 @@ common-lisp:nil
         'customer-profiles-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/domains/~A/event-streams"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'domain-name))))
+                                'domain-name)
+                               common-lisp:t)))
         "ListEventStreams"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-event-streams))
@@ -14179,10 +14224,11 @@ common-lisp:nil
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/domains/~A/identity-resolution-jobs"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'domain-name))))
+                                'domain-name)
+                               common-lisp:t)))
         "ListIdentityResolutionJobs"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-identity-resolution-jobs))
@@ -14203,10 +14249,11 @@ common-lisp:nil
         'customer-profiles-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/domains/~A/integrations"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'domain-name))))
+                                'domain-name)
+                               common-lisp:t)))
         "ListIntegrations"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-integrations))
@@ -14244,10 +14291,11 @@ common-lisp:nil
         'customer-profiles-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/domains/~A/object-types"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'domain-name))))
+                                'domain-name)
+                               common-lisp:t)))
         "ListProfileObjectTypes"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-profile-object-types))
@@ -14269,10 +14317,11 @@ common-lisp:nil
         'customer-profiles-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/domains/~A/profiles/objects"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'domain-name))))
+                                'domain-name)
+                               common-lisp:t)))
         "ListProfileObjects"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-profile-objects))
@@ -14293,10 +14342,11 @@ common-lisp:nil
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/domains/~A/profiles/ruleBasedMatches"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'domain-name))))
+                                'domain-name)
+                               common-lisp:t)))
         "ListRuleBasedMatches"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-rule-based-matches))
@@ -14315,10 +14365,11 @@ common-lisp:nil
         'customer-profiles-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -14340,10 +14391,11 @@ common-lisp:nil
         'customer-profiles-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/domains/~A/workflows"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'domain-name))))
+                                'domain-name)
+                               common-lisp:t)))
         "ListWorkflows"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-workflows))
@@ -14366,10 +14418,11 @@ common-lisp:nil
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/domains/~A/profiles/objects/merge"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'domain-name))))
+                                'domain-name)
+                               common-lisp:t)))
         "MergeProfiles"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'merge-profiles))
@@ -14391,10 +14444,11 @@ common-lisp:nil
         'customer-profiles-request aws-sdk/generator/operation::input "PUT"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/domains/~A/integrations"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'domain-name))))
+                                'domain-name)
+                               common-lisp:t)))
         "PutIntegration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-integration))
@@ -14414,10 +14468,11 @@ common-lisp:nil
         'customer-profiles-request aws-sdk/generator/operation::input "PUT"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/domains/~A/profiles/objects"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'domain-name))))
+                                'domain-name)
+                               common-lisp:t)))
         "PutProfileObject"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-profile-object))
@@ -14442,14 +14497,16 @@ common-lisp:nil
         'customer-profiles-request aws-sdk/generator/operation::input "PUT"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/domains/~A/object-types/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'domain-name))
-                              (quri.encode:url-encode
+                                'domain-name)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'object-type-name))))
+                                'object-type-name)
+                               common-lisp:t)))
         "PutProfileObjectType"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-profile-object-type))
@@ -14471,10 +14528,11 @@ common-lisp:nil
         'customer-profiles-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/domains/~A/profiles/search"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'domain-name))))
+                                'domain-name)
+                               common-lisp:t)))
         "SearchProfiles"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'search-profiles))
@@ -14493,10 +14551,11 @@ common-lisp:nil
         'customer-profiles-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -14515,10 +14574,11 @@ common-lisp:nil
         'customer-profiles-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -14542,14 +14602,16 @@ common-lisp:nil
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/domains/~A/calculated-attributes/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'domain-name))
-                              (quri.encode:url-encode
+                                'domain-name)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'calculated-attribute-name))))
+                                'calculated-attribute-name)
+                               common-lisp:t)))
         "UpdateCalculatedAttributeDefinition"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-calculated-attribute-definition))
@@ -14573,10 +14635,11 @@ common-lisp:nil
         'customer-profiles-request aws-sdk/generator/operation::input "PUT"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/domains/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'domain-name))))
+                                'domain-name)
+                               common-lisp:t)))
         "UpdateDomain"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-domain))
@@ -14608,10 +14671,11 @@ common-lisp:nil
         'customer-profiles-request aws-sdk/generator/operation::input "PUT"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/domains/~A/profiles"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'domain-name))))
+                                'domain-name)
+                               common-lisp:t)))
         "UpdateProfile"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-profile))

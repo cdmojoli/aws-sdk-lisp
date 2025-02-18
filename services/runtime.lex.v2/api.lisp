@@ -20,7 +20,7 @@
  (common-lisp:export 'runtime.lex.v2-error))
 (common-lisp:progn
  (common-lisp:defclass runtime.lex.v2-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "runtime.lex.v2"
                         :api-version "2020-08-07" :host-prefix "runtime-v2-lex"
@@ -1619,8 +1619,9 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'response-content-type))
-      (common-lisp:cons "ResponseContentType"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "ResponseContentType" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         ((aws-sdk/generator/shape::input put-session-request))
    (common-lisp:append
@@ -1703,26 +1704,35 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-type))
-      (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'messages))
-      (common-lisp:cons "x-amz-lex-messages" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-lex-messages" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'session-state))
-      (common-lisp:cons "x-amz-lex-session-state"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-lex-session-state"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-attributes))
-      (common-lisp:cons "x-amz-lex-request-attributes"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-lex-request-attributes"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'session-id))
-      (common-lisp:cons "x-amz-lex-session-id"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-lex-session-id" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         ((aws-sdk/generator/shape::input put-session-response))
    (common-lisp:append
@@ -2014,24 +2024,32 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'session-state))
-      (common-lisp:cons "x-amz-lex-session-state"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-lex-session-state"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-attributes))
-      (common-lisp:cons "x-amz-lex-request-attributes"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-lex-request-attributes"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'request-content-type))
-      (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'response-content-type))
-      (common-lisp:cons "Response-Content-Type"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Response-Content-Type"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -2136,45 +2154,63 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'input-mode))
-      (common-lisp:cons "x-amz-lex-input-mode" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-lex-input-mode" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-type))
-      (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'messages))
-      (common-lisp:cons "x-amz-lex-messages" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-lex-messages" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'interpretations))
-      (common-lisp:cons "x-amz-lex-interpretations"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-lex-interpretations"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'session-state))
-      (common-lisp:cons "x-amz-lex-session-state"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-lex-session-state"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'request-attributes))
-      (common-lisp:cons "x-amz-lex-request-attributes"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-lex-request-attributes"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'session-id))
-      (common-lisp:cons "x-amz-lex-session-id" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-lex-session-id" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'input-transcript))
-      (common-lisp:cons "x-amz-lex-input-transcript"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-lex-input-transcript"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'recognized-bot-member))
-      (common-lisp:cons "x-amz-lex-recognized-bot-member"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-lex-recognized-bot-member"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -2725,8 +2761,10 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'conversation-mode))
-      (common-lisp:cons "x-amz-lex-conversation-mode"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-lex-conversation-mode"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -3406,22 +3444,26 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/bots/~A/botAliases/~A/botLocales/~A/sessions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bot-id))
-                                                           (quri.encode:url-encode
+                                                             'bot-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bot-alias-id))
-                                                           (quri.encode:url-encode
+                                                             'bot-alias-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'locale-id))
-                                                           (quri.encode:url-encode
+                                                             'locale-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'session-id))))
+                                                             'session-id)
+                                                            common-lisp:t)))
                                                         "DeleteSession"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-session))
@@ -3446,22 +3488,26 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/bots/~A/botAliases/~A/botLocales/~A/sessions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bot-id))
-                                                           (quri.encode:url-encode
+                                                             'bot-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bot-alias-id))
-                                                           (quri.encode:url-encode
+                                                             'bot-alias-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'locale-id))
-                                                           (quri.encode:url-encode
+                                                             'locale-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'session-id))))
+                                                             'session-id)
+                                                            common-lisp:t)))
                                                         "GetSession"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-session))
@@ -3489,22 +3535,26 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/bots/~A/botAliases/~A/botLocales/~A/sessions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bot-id))
-                                                           (quri.encode:url-encode
+                                                             'bot-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bot-alias-id))
-                                                           (quri.encode:url-encode
+                                                             'bot-alias-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'locale-id))
-                                                           (quri.encode:url-encode
+                                                             'locale-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'session-id))))
+                                                             'session-id)
+                                                            common-lisp:t)))
                                                         "PutSession")
        :want-stream common-lisp:t)
       "blob" common-lisp:nil *error-map*)))
@@ -3532,22 +3582,26 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/bots/~A/botAliases/~A/botLocales/~A/sessions/~A/text"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bot-id))
-                                                           (quri.encode:url-encode
+                                                             'bot-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bot-alias-id))
-                                                           (quri.encode:url-encode
+                                                             'bot-alias-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'locale-id))
-                                                           (quri.encode:url-encode
+                                                             'locale-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'session-id))))
+                                                             'session-id)
+                                                            common-lisp:t)))
                                                         "RecognizeText"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'recognize-text))
@@ -3576,22 +3630,26 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/bots/~A/botAliases/~A/botLocales/~A/sessions/~A/utterance"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bot-id))
-                                                           (quri.encode:url-encode
+                                                             'bot-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bot-alias-id))
-                                                           (quri.encode:url-encode
+                                                             'bot-alias-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'locale-id))
-                                                           (quri.encode:url-encode
+                                                             'locale-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'session-id))))
+                                                             'session-id)
+                                                            common-lisp:t)))
                                                         "RecognizeUtterance")
        :want-stream common-lisp:t)
       "blob" common-lisp:nil *error-map*)))
@@ -3619,22 +3677,26 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/bots/~A/botAliases/~A/botLocales/~A/sessions/~A/conversation"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bot-id))
-                                                           (quri.encode:url-encode
+                                                             'bot-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bot-alias-id))
-                                                           (quri.encode:url-encode
+                                                             'bot-alias-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'locale-id))
-                                                           (quri.encode:url-encode
+                                                             'locale-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'session-id))))
+                                                             'session-id)
+                                                            common-lisp:t)))
                                                         "StartConversation"))
       "structure" common-lisp:nil *error-map*)))
  (common-lisp:export 'start-conversation))

@@ -20,7 +20,7 @@
  (common-lisp:export 'amplifybackend-error))
 (common-lisp:progn
  (common-lisp:defclass amplifybackend-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "amplifybackend"
                         :api-version "2020-08-11" :host-prefix "amplifybackend"
@@ -10056,14 +10056,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backend/~A/environments/~A/clone"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-id))
-                                                           (quri.encode:url-encode
+                                                             'app-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'backend-environment-name))))
+                                                             'backend-environment-name)
+                                                            common-lisp:t)))
                                                         "CloneBackend"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'clone-backend))
@@ -10110,10 +10112,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backend/~A/api"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-id))))
+                                                             'app-id)
+                                                            common-lisp:t)))
                                                         "CreateBackendAPI"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-backend-api))
@@ -10140,10 +10143,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backend/~A/auth"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-id))))
+                                                             'app-id)
+                                                            common-lisp:t)))
                                                         "CreateBackendAuth"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-backend-auth))
@@ -10167,10 +10171,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backend/~A/config"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-id))))
+                                                             'app-id)
+                                                            common-lisp:t)))
                                                         "CreateBackendConfig"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-backend-config))
@@ -10197,10 +10202,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backend/~A/storage"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-id))))
+                                                             'app-id)
+                                                            common-lisp:t)))
                                                         "CreateBackendStorage"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-backend-storage))
@@ -10224,10 +10230,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backend/~A/challenge"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-id))))
+                                                             'app-id)
+                                                            common-lisp:t)))
                                                         "CreateToken"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-token))
@@ -10252,14 +10259,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backend/~A/environments/~A/remove"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-id))
-                                                           (quri.encode:url-encode
+                                                             'app-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'backend-environment-name))))
+                                                             'backend-environment-name)
+                                                            common-lisp:t)))
                                                         "DeleteBackend"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-backend))
@@ -10286,14 +10295,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backend/~A/api/~A/remove"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-id))
-                                                           (quri.encode:url-encode
+                                                             'app-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'backend-environment-name))))
+                                                             'backend-environment-name)
+                                                            common-lisp:t)))
                                                         "DeleteBackendAPI"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-backend-api))
@@ -10319,14 +10330,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backend/~A/auth/~A/remove"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-id))
-                                                           (quri.encode:url-encode
+                                                             'app-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'backend-environment-name))))
+                                                             'backend-environment-name)
+                                                            common-lisp:t)))
                                                         "DeleteBackendAuth"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-backend-auth))
@@ -10353,14 +10366,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backend/~A/storage/~A/remove"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-id))
-                                                           (quri.encode:url-encode
+                                                             'app-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'backend-environment-name))))
+                                                             'backend-environment-name)
+                                                            common-lisp:t)))
                                                         "DeleteBackendStorage"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-backend-storage))
@@ -10384,14 +10399,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backend/~A/challenge/~A/remove"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-id))
-                                                           (quri.encode:url-encode
+                                                             'app-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'session-id))))
+                                                             'session-id)
+                                                            common-lisp:t)))
                                                         "DeleteToken"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-token))
@@ -10418,14 +10435,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backend/~A/api/~A/generateModels"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-id))
-                                                           (quri.encode:url-encode
+                                                             'app-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'backend-environment-name))))
+                                                             'backend-environment-name)
+                                                            common-lisp:t)))
                                                         "GenerateBackendAPIModels"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'generate-backend-apimodels))
@@ -10450,10 +10469,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backend/~A/details"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-id))))
+                                                             'app-id)
+                                                            common-lisp:t)))
                                                         "GetBackend"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-backend))
@@ -10480,14 +10500,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backend/~A/api/~A/details"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-id))
-                                                           (quri.encode:url-encode
+                                                             'app-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'backend-environment-name))))
+                                                             'backend-environment-name)
+                                                            common-lisp:t)))
                                                         "GetBackendAPI"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-backend-api))
@@ -10513,14 +10535,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backend/~A/api/~A/getModels"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-id))
-                                                           (quri.encode:url-encode
+                                                             'app-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'backend-environment-name))))
+                                                             'backend-environment-name)
+                                                            common-lisp:t)))
                                                         "GetBackendAPIModels"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-backend-apimodels))
@@ -10546,14 +10570,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backend/~A/auth/~A/details"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-id))
-                                                           (quri.encode:url-encode
+                                                             'app-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'backend-environment-name))))
+                                                             'backend-environment-name)
+                                                            common-lisp:t)))
                                                         "GetBackendAuth"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-backend-auth))
@@ -10578,18 +10604,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backend/~A/job/~A/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-id))
-                                                           (quri.encode:url-encode
+                                                             'app-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'backend-environment-name))
-                                                           (quri.encode:url-encode
+                                                             'backend-environment-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'job-id))))
+                                                             'job-id)
+                                                            common-lisp:t)))
                                                         "GetBackendJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-backend-job))
@@ -10615,14 +10644,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backend/~A/storage/~A/details"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-id))
-                                                           (quri.encode:url-encode
+                                                             'app-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'backend-environment-name))))
+                                                             'backend-environment-name)
+                                                            common-lisp:t)))
                                                         "GetBackendStorage"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-backend-storage))
@@ -10646,14 +10677,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backend/~A/challenge/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-id))
-                                                           (quri.encode:url-encode
+                                                             'app-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'session-id))))
+                                                             'session-id)
+                                                            common-lisp:t)))
                                                         "GetToken"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-token))
@@ -10681,14 +10714,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backend/~A/auth/~A/import"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-id))
-                                                           (quri.encode:url-encode
+                                                             'app-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'backend-environment-name))))
+                                                             'backend-environment-name)
+                                                            common-lisp:t)))
                                                         "ImportBackendAuth"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'import-backend-auth))
@@ -10715,14 +10750,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backend/~A/storage/~A/import"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-id))
-                                                           (quri.encode:url-encode
+                                                             'app-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'backend-environment-name))))
+                                                             'backend-environment-name)
+                                                            common-lisp:t)))
                                                         "ImportBackendStorage"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'import-backend-storage))
@@ -10749,14 +10786,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backend/~A/job/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-id))
-                                                           (quri.encode:url-encode
+                                                             'app-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'backend-environment-name))))
+                                                             'backend-environment-name)
+                                                            common-lisp:t)))
                                                         "ListBackendJobs"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-backend-jobs))
@@ -10797,10 +10836,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backend/~A/remove"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-id))))
+                                                             'app-id)
+                                                            common-lisp:t)))
                                                         "RemoveAllBackends"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'remove-all-backends))
@@ -10824,10 +10864,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backend/~A/config/remove"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-id))))
+                                                             'app-id)
+                                                            common-lisp:t)))
                                                         "RemoveBackendConfig"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'remove-backend-config))
@@ -10854,14 +10895,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backend/~A/api/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-id))
-                                                           (quri.encode:url-encode
+                                                             'app-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'backend-environment-name))))
+                                                             'backend-environment-name)
+                                                            common-lisp:t)))
                                                         "UpdateBackendAPI"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-backend-api))
@@ -10888,14 +10931,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backend/~A/auth/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-id))
-                                                           (quri.encode:url-encode
+                                                             'app-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'backend-environment-name))))
+                                                             'backend-environment-name)
+                                                            common-lisp:t)))
                                                         "UpdateBackendAuth"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-backend-auth))
@@ -10919,10 +10964,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backend/~A/config/update"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-id))))
+                                                             'app-id)
+                                                            common-lisp:t)))
                                                         "UpdateBackendConfig"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-backend-config))
@@ -10949,18 +10995,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backend/~A/job/~A/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-id))
-                                                           (quri.encode:url-encode
+                                                             'app-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'backend-environment-name))
-                                                           (quri.encode:url-encode
+                                                             'backend-environment-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'job-id))))
+                                                             'job-id)
+                                                            common-lisp:t)))
                                                         "UpdateBackendJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-backend-job))
@@ -10987,14 +11036,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/backend/~A/storage/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-id))
-                                                           (quri.encode:url-encode
+                                                             'app-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'backend-environment-name))))
+                                                             'backend-environment-name)
+                                                            common-lisp:t)))
                                                         "UpdateBackendStorage"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-backend-storage))

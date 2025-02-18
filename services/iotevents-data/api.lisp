@@ -20,7 +20,7 @@
  (common-lisp:export 'iotevents-data-error))
 (common-lisp:progn
  (common-lisp:defclass iotevents-data-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "iotevents-data"
                         :api-version "2018-10-23" :host-prefix "data.iotevents"
@@ -3640,10 +3640,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/alarms/~A/keyValues/"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'alarm-model-name))))
+                                                             'alarm-model-name)
+                                                            common-lisp:t)))
                                                         "DescribeAlarm"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-alarm))
@@ -3667,10 +3668,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/detectors/~A/keyValues/"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'detector-model-name))))
+                                                             'detector-model-name)
+                                                            common-lisp:t)))
                                                         "DescribeDetector"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-detector))
@@ -3695,10 +3697,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/alarms/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'alarm-model-name))))
+                                                             'alarm-model-name)
+                                                            common-lisp:t)))
                                                         "ListAlarms"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-alarms))
@@ -3725,10 +3728,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/detectors/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'detector-model-name))))
+                                                             'detector-model-name)
+                                                            common-lisp:t)))
                                                         "ListDetectors"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-detectors))

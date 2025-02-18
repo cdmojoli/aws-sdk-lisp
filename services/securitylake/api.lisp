@@ -20,7 +20,7 @@
  (common-lisp:export 'securitylake-error))
 (common-lisp:progn
  (common-lisp:defclass securitylake-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "securitylake" :api-version
                         "2018-05-10" :host-prefix "securitylake" :signing-name
@@ -5041,10 +5041,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/subscribers/~A/notification"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'subscriber-id))))
+                                                             'subscriber-id)
+                                                            common-lisp:t)))
                                                         "CreateSubscriberNotification"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-subscriber-notification))
@@ -5086,10 +5087,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/datalake/logsources/custom/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'source-name))))
+                                                             'source-name)
+                                                            common-lisp:t)))
                                                         "DeleteCustomLogSource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-custom-log-source))
@@ -5160,10 +5162,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/subscribers/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'subscriber-id))))
+                                                             'subscriber-id)
+                                                            common-lisp:t)))
                                                         "DeleteSubscriber"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-subscriber))
@@ -5188,10 +5191,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/subscribers/~A/notification"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'subscriber-id))))
+                                                             'subscriber-id)
+                                                            common-lisp:t)))
                                                         "DeleteSubscriberNotification"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-subscriber-notification))
@@ -5262,10 +5266,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/subscribers/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'subscriber-id))))
+                                                             'subscriber-id)
+                                                            common-lisp:t)))
                                                         "GetSubscriber"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-subscriber))
@@ -5362,10 +5367,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -5408,10 +5414,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -5435,10 +5442,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -5506,10 +5514,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/subscribers/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'subscriber-id))))
+                                                             'subscriber-id)
+                                                            common-lisp:t)))
                                                         "UpdateSubscriber"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-subscriber))
@@ -5534,10 +5543,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/subscribers/~A/notification"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'subscriber-id))))
+                                                             'subscriber-id)
+                                                            common-lisp:t)))
                                                         "UpdateSubscriberNotification"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-subscriber-notification))

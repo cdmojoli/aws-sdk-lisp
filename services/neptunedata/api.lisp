@@ -20,7 +20,7 @@
  (common-lisp:export 'neptunedata-error))
 (common-lisp:progn
  (common-lisp:defclass neptunedata-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "neptunedata" :api-version
                         "2023-08-01" :host-prefix "neptune-db" :signing-name
@@ -1623,7 +1623,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'serializer))
-      (common-lisp:cons "accept" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "accept" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -2945,7 +2947,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'encoding))
-      (common-lisp:cons "Accept-Encoding" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Accept-Encoding" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -3211,7 +3215,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'encoding))
-      (common-lisp:cons "Accept-Encoding" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Accept-Encoding" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -7040,10 +7046,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/gremlin/status/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'query-id))))
+                                                             'query-id)
+                                                            common-lisp:t)))
                                                         "CancelGremlinQuery"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'cancel-gremlin-query))
@@ -7067,10 +7074,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/loader/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'load-id))))
+                                                             'load-id)
+                                                            common-lisp:t)))
                                                         "CancelLoaderJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'cancel-loader-job))
@@ -7095,10 +7103,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/ml/dataprocessing/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "CancelMLDataProcessingJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'cancel-mldata-processing-job))
@@ -7123,10 +7132,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/ml/modeltraining/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "CancelMLModelTrainingJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'cancel-mlmodel-training-job))
@@ -7151,10 +7161,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/ml/modeltransform/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "CancelMLModelTransformJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'cancel-mlmodel-transform-job))
@@ -7178,10 +7189,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/opencypher/status/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'query-id))))
+                                                             'query-id)
+                                                            common-lisp:t)))
                                                         "CancelOpenCypherQuery"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'cancel-open-cypher-query))
@@ -7228,10 +7240,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/ml/endpoints/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "DeleteMLEndpoint"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-mlendpoint))
@@ -7379,10 +7392,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/gremlin/status/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'query-id))))
+                                                             'query-id)
+                                                            common-lisp:t)))
                                                         "GetGremlinQueryStatus"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-gremlin-query-status))
@@ -7406,10 +7420,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/ml/dataprocessing/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetMLDataProcessingJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-mldata-processing-job))
@@ -7433,10 +7448,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/ml/endpoints/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetMLEndpoint"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-mlendpoint))
@@ -7460,10 +7476,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/ml/modeltraining/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetMLModelTrainingJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-mlmodel-training-job))
@@ -7487,10 +7504,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/ml/modeltransform/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetMLModelTransformJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-mlmodel-transform-job))
@@ -7515,10 +7533,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/opencypher/status/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'query-id))))
+                                                             'query-id)
+                                                            common-lisp:t)))
                                                         "GetOpenCypherQueryStatus"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-open-cypher-query-status))

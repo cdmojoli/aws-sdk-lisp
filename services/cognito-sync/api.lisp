@@ -20,7 +20,7 @@
  (common-lisp:export 'cognito-sync-error))
 (common-lisp:progn
  (common-lisp:defclass cognito-sync-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "cognito-sync" :api-version
                         "2014-06-30" :host-prefix "cognito-sync" :signing-name
@@ -2391,8 +2391,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'client-context))
-      (common-lisp:cons "x-amz-Client-Context"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-Client-Context" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -2480,10 +2481,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/identitypools/~A/bulkpublish"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'identity-pool-id))))
+                                                             'identity-pool-id)
+                                                            common-lisp:t)))
                                                         "BulkPublish"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'bulk-publish))
@@ -2509,18 +2511,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/identitypools/~A/identities/~A/datasets/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'identity-pool-id))
-                                                           (quri.encode:url-encode
+                                                             'identity-pool-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'identity-id))
-                                                           (quri.encode:url-encode
+                                                             'identity-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dataset-name))))
+                                                             'dataset-name)
+                                                            common-lisp:t)))
                                                         "DeleteDataset"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-dataset))
@@ -2546,18 +2551,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/identitypools/~A/identities/~A/datasets/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'identity-pool-id))
-                                                           (quri.encode:url-encode
+                                                             'identity-pool-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'identity-id))
-                                                           (quri.encode:url-encode
+                                                             'identity-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dataset-name))))
+                                                             'dataset-name)
+                                                            common-lisp:t)))
                                                         "DescribeDataset"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-dataset))
@@ -2582,10 +2590,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/identitypools/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'identity-pool-id))))
+                                                             'identity-pool-id)
+                                                            common-lisp:t)))
                                                         "DescribeIdentityPoolUsage"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-identity-pool-usage))
@@ -2609,14 +2618,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/identitypools/~A/identities/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'identity-pool-id))
-                                                           (quri.encode:url-encode
+                                                             'identity-pool-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'identity-id))))
+                                                             'identity-id)
+                                                            common-lisp:t)))
                                                         "DescribeIdentityUsage"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-identity-usage))
@@ -2640,10 +2651,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/identitypools/~A/getBulkPublishDetails"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'identity-pool-id))))
+                                                             'identity-pool-id)
+                                                            common-lisp:t)))
                                                         "GetBulkPublishDetails"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-bulk-publish-details))
@@ -2667,10 +2679,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/identitypools/~A/events"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'identity-pool-id))))
+                                                             'identity-pool-id)
+                                                            common-lisp:t)))
                                                         "GetCognitoEvents"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-cognito-events))
@@ -2695,10 +2708,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/identitypools/~A/configuration"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'identity-pool-id))))
+                                                             'identity-pool-id)
+                                                            common-lisp:t)))
                                                         "GetIdentityPoolConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-identity-pool-configuration))
@@ -2725,14 +2739,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/identitypools/~A/identities/~A/datasets"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'identity-pool-id))
-                                                           (quri.encode:url-encode
+                                                             'identity-pool-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'identity-id))))
+                                                             'identity-id)
+                                                            common-lisp:t)))
                                                         "ListDatasets"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-datasets))
@@ -2776,18 +2792,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/identitypools/~A/identities/~A/datasets/~A/records"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'identity-pool-id))
-                                                           (quri.encode:url-encode
+                                                             'identity-pool-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'identity-id))
-                                                           (quri.encode:url-encode
+                                                             'identity-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dataset-name))))
+                                                             'dataset-name)
+                                                            common-lisp:t)))
                                                         "ListRecords"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-records))
@@ -2813,14 +2832,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/identitypools/~A/identity/~A/device"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'identity-pool-id))
-                                                           (quri.encode:url-encode
+                                                             'identity-pool-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'identity-id))))
+                                                             'identity-id)
+                                                            common-lisp:t)))
                                                         "RegisterDevice"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'register-device))
@@ -2844,10 +2865,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/identitypools/~A/events"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'identity-pool-id))))
+                                                             'identity-pool-id)
+                                                            common-lisp:t)))
                                                         "SetCognitoEvents"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'set-cognito-events))
@@ -2874,10 +2896,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/identitypools/~A/configuration"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'identity-pool-id))))
+                                                             'identity-pool-id)
+                                                            common-lisp:t)))
                                                         "SetIdentityPoolConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'set-identity-pool-configuration))
@@ -2904,22 +2927,26 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/identitypools/~A/identities/~A/datasets/~A/subscriptions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'identity-pool-id))
-                                                           (quri.encode:url-encode
+                                                             'identity-pool-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'identity-id))
-                                                           (quri.encode:url-encode
+                                                             'identity-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dataset-name))
-                                                           (quri.encode:url-encode
+                                                             'dataset-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'device-id))))
+                                                             'device-id)
+                                                            common-lisp:t)))
                                                         "SubscribeToDataset"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'subscribe-to-dataset))
@@ -2946,22 +2973,26 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/identitypools/~A/identities/~A/datasets/~A/subscriptions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'identity-pool-id))
-                                                           (quri.encode:url-encode
+                                                             'identity-pool-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'identity-id))
-                                                           (quri.encode:url-encode
+                                                             'identity-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dataset-name))
-                                                           (quri.encode:url-encode
+                                                             'dataset-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'device-id))))
+                                                             'device-id)
+                                                            common-lisp:t)))
                                                         "UnsubscribeFromDataset"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'unsubscribe-from-dataset))
@@ -2989,18 +3020,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/identitypools/~A/identities/~A/datasets/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'identity-pool-id))
-                                                           (quri.encode:url-encode
+                                                             'identity-pool-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'identity-id))
-                                                           (quri.encode:url-encode
+                                                             'identity-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dataset-name))))
+                                                             'dataset-name)
+                                                            common-lisp:t)))
                                                         "UpdateRecords"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-records))

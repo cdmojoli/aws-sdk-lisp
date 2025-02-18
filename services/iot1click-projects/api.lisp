@@ -20,7 +20,7 @@
  (common-lisp:export 'iot1click-projects-error))
 (common-lisp:progn
  (common-lisp:defclass iot1click-projects-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "iot1click-projects"
                         :api-version "2018-05-14" :host-prefix
@@ -1881,18 +1881,21 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/projects/~A/placements/~A/devices/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'project-name))
-                              (quri.encode:url-encode
+                                'project-name)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'placement-name))
-                              (quri.encode:url-encode
+                                'placement-name)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'device-template-name))))
+                                'device-template-name)
+                               common-lisp:t)))
         "AssociateDeviceWithPlacement"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'associate-device-with-placement))
@@ -1912,10 +1915,11 @@
         'iot1click-projects-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/projects/~A/placements"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'project-name))))
+                                'project-name)
+                               common-lisp:t)))
         "CreatePlacement"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-placement))
@@ -1952,14 +1956,16 @@
         'iot1click-projects-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/projects/~A/placements/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'project-name))
-                              (quri.encode:url-encode
+                                'project-name)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'placement-name))))
+                                'placement-name)
+                               common-lisp:t)))
         "DeletePlacement"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-placement))
@@ -1978,10 +1984,11 @@
         'iot1click-projects-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/projects/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'project-name))))
+                                'project-name)
+                               common-lisp:t)))
         "DeleteProject"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-project))
@@ -2000,14 +2007,16 @@
         'iot1click-projects-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/projects/~A/placements/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'project-name))
-                              (quri.encode:url-encode
+                                'project-name)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'placement-name))))
+                                'placement-name)
+                               common-lisp:t)))
         "DescribePlacement"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-placement))
@@ -2026,10 +2035,11 @@
         'iot1click-projects-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/projects/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'project-name))))
+                                'project-name)
+                               common-lisp:t)))
         "DescribeProject"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-project))
@@ -2052,18 +2062,21 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/projects/~A/placements/~A/devices/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'project-name))
-                              (quri.encode:url-encode
+                                'project-name)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'placement-name))
-                              (quri.encode:url-encode
+                                'placement-name)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'device-template-name))))
+                                'device-template-name)
+                               common-lisp:t)))
         "DisassociateDeviceFromPlacement"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'disassociate-device-from-placement))
@@ -2083,14 +2096,16 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/projects/~A/placements/~A/devices"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'project-name))
-                              (quri.encode:url-encode
+                                'project-name)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'placement-name))))
+                                'placement-name)
+                               common-lisp:t)))
         "GetDevicesInPlacement"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-devices-in-placement))
@@ -2110,10 +2125,11 @@
         'iot1click-projects-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/projects/~A/placements"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'project-name))))
+                                'project-name)
+                               common-lisp:t)))
         "ListPlacements"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-placements))
@@ -2148,10 +2164,11 @@
         'iot1click-projects-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -2170,10 +2187,11 @@
         'iot1click-projects-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -2192,10 +2210,11 @@
         'iot1click-projects-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -2215,14 +2234,16 @@
         'iot1click-projects-request aws-sdk/generator/operation::input "PUT"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/projects/~A/placements/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'project-name))
-                              (quri.encode:url-encode
+                                'project-name)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'placement-name))))
+                                'placement-name)
+                               common-lisp:t)))
         "UpdatePlacement"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-placement))
@@ -2243,10 +2264,11 @@
         'iot1click-projects-request aws-sdk/generator/operation::input "PUT"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/projects/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'project-name))))
+                                'project-name)
+                               common-lisp:t)))
         "UpdateProject"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-project))

@@ -20,7 +20,7 @@
  (common-lisp:export 'rolesanywhere-error))
 (common-lisp:progn
  (common-lisp:defclass rolesanywhere-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "rolesanywhere" :api-version
                         "2018-05-10" :host-prefix "rolesanywhere" :signing-name
@@ -2847,10 +2847,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/crl/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'crl-id))))
+                                                             'crl-id)
+                                                            common-lisp:t)))
                                                         "DeleteCrl"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-crl))
@@ -2874,10 +2875,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/profile/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'profile-id))))
+                                                             'profile-id)
+                                                            common-lisp:t)))
                                                         "DeleteProfile"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-profile))
@@ -2901,10 +2903,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/trustanchor/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'trust-anchor-id))))
+                                                             'trust-anchor-id)
+                                                            common-lisp:t)))
                                                         "DeleteTrustAnchor"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-trust-anchor))
@@ -2928,10 +2931,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/crl/~A/disable"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'crl-id))))
+                                                             'crl-id)
+                                                            common-lisp:t)))
                                                         "DisableCrl"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'disable-crl))
@@ -2955,10 +2959,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/profile/~A/disable"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'profile-id))))
+                                                             'profile-id)
+                                                            common-lisp:t)))
                                                         "DisableProfile"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'disable-profile))
@@ -2982,10 +2987,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/trustanchor/~A/disable"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'trust-anchor-id))))
+                                                             'trust-anchor-id)
+                                                            common-lisp:t)))
                                                         "DisableTrustAnchor"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'disable-trust-anchor))
@@ -3009,10 +3015,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/crl/~A/enable"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'crl-id))))
+                                                             'crl-id)
+                                                            common-lisp:t)))
                                                         "EnableCrl"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'enable-crl))
@@ -3036,10 +3043,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/profile/~A/enable"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'profile-id))))
+                                                             'profile-id)
+                                                            common-lisp:t)))
                                                         "EnableProfile"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'enable-profile))
@@ -3063,10 +3071,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/trustanchor/~A/enable"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'trust-anchor-id))))
+                                                             'trust-anchor-id)
+                                                            common-lisp:t)))
                                                         "EnableTrustAnchor"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'enable-trust-anchor))
@@ -3090,10 +3099,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/crl/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'crl-id))))
+                                                             'crl-id)
+                                                            common-lisp:t)))
                                                         "GetCrl"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-crl))
@@ -3117,10 +3127,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/profile/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'profile-id))))
+                                                             'profile-id)
+                                                            common-lisp:t)))
                                                         "GetProfile"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-profile))
@@ -3144,10 +3155,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/subject/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'subject-id))))
+                                                             'subject-id)
+                                                            common-lisp:t)))
                                                         "GetSubject"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-subject))
@@ -3171,10 +3183,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/trustanchor/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'trust-anchor-id))))
+                                                             'trust-anchor-id)
+                                                            common-lisp:t)))
                                                         "GetTrustAnchor"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-trust-anchor))
@@ -3378,10 +3391,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/crl/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'crl-id))))
+                                                             'crl-id)
+                                                            common-lisp:t)))
                                                         "UpdateCrl"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-crl))
@@ -3408,10 +3422,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/profile/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'profile-id))))
+                                                             'profile-id)
+                                                            common-lisp:t)))
                                                         "UpdateProfile"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-profile))
@@ -3435,10 +3450,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/trustanchor/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'trust-anchor-id))))
+                                                             'trust-anchor-id)
+                                                            common-lisp:t)))
                                                         "UpdateTrustAnchor"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-trust-anchor))

@@ -20,7 +20,7 @@
  (common-lisp:export 'workdocs-error))
 (common-lisp:progn
  (common-lisp:defclass workdocs-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "workdocs" :api-version
                         "2016-05-01" :host-prefix "workdocs" :signing-name
@@ -100,7 +100,9 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'authentication-token))
-      (common-lisp:cons "Authentication" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Authentication" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -142,7 +144,9 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'authentication-token))
-      (common-lisp:cons "Authentication" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Authentication" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -374,7 +378,9 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'authentication-token))
-      (common-lisp:cons "Authentication" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Authentication" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -788,7 +794,9 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'authentication-token))
-      (common-lisp:cons "Authentication" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Authentication" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -922,7 +930,9 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'authentication-token))
-      (common-lisp:cons "Authentication" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Authentication" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -1006,7 +1016,9 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'authentication-token))
-      (common-lisp:cons "Authentication" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Authentication" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -1107,7 +1119,9 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'authentication-token))
-      (common-lisp:cons "Authentication" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Authentication" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -1346,7 +1360,9 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'authentication-token))
-      (common-lisp:cons "Authentication" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Authentication" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         ((aws-sdk/generator/shape::input create-user-request))
    (common-lisp:append
@@ -1540,7 +1556,9 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'authentication-token))
-      (common-lisp:cons "Authentication" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Authentication" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -1605,7 +1623,9 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'authentication-token))
-      (common-lisp:cons "Authentication" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Authentication" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -1673,7 +1693,9 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'authentication-token))
-      (common-lisp:cons "Authentication" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Authentication" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -1744,7 +1766,9 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'authentication-token))
-      (common-lisp:cons "Authentication" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Authentication" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -1807,7 +1831,9 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'authentication-token))
-      (common-lisp:cons "Authentication" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Authentication" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -1853,7 +1879,9 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'authentication-token))
-      (common-lisp:cons "Authentication" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Authentication" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -1896,7 +1924,9 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'authentication-token))
-      (common-lisp:cons "Authentication" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Authentication" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -1952,7 +1982,9 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'authentication-token))
-      (common-lisp:cons "Authentication" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Authentication" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -2056,7 +2088,9 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'authentication-token))
-      (common-lisp:cons "Authentication" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Authentication" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         ((aws-sdk/generator/shape::input delete-user-request))
    (common-lisp:append))
@@ -2148,7 +2182,9 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'authentication-token))
-      (common-lisp:cons "Authentication" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Authentication" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -2265,7 +2301,9 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'authentication-token))
-      (common-lisp:cons "Authentication" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Authentication" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -2388,7 +2426,9 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'authentication-token))
-      (common-lisp:cons "Authentication" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Authentication" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -2525,7 +2565,9 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'authentication-token))
-      (common-lisp:cons "Authentication" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Authentication" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -2655,7 +2697,9 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'authentication-token))
-      (common-lisp:cons "Authentication" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Authentication" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -2869,7 +2913,9 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'authentication-token))
-      (common-lisp:cons "Authentication" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Authentication" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -2977,7 +3023,9 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'authentication-token))
-      (common-lisp:cons "Authentication" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Authentication" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -3117,7 +3165,9 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'authentication-token))
-      (common-lisp:cons "Authentication" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Authentication" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -3969,7 +4019,9 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'authentication-token))
-      (common-lisp:cons "Authentication" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Authentication" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -4069,7 +4121,9 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'authentication-token))
-      (common-lisp:cons "Authentication" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Authentication" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -4155,7 +4209,9 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'authentication-token))
-      (common-lisp:cons "Authentication" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Authentication" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         ((aws-sdk/generator/shape::input get-document-request))
    (common-lisp:append))
@@ -4269,7 +4325,9 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'authentication-token))
-      (common-lisp:cons "Authentication" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Authentication" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -4383,7 +4441,9 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'authentication-token))
-      (common-lisp:cons "Authentication" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Authentication" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -4467,7 +4527,9 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'authentication-token))
-      (common-lisp:cons "Authentication" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Authentication" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         ((aws-sdk/generator/shape::input get-folder-request))
    (common-lisp:append))
@@ -4569,7 +4631,9 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'authentication-token))
-      (common-lisp:cons "Authentication" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Authentication" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -4783,7 +4847,9 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'authentication-token))
-      (common-lisp:cons "Authentication" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Authentication" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -5245,7 +5311,9 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'authentication-token))
-      (common-lisp:cons "Authentication" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Authentication" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -5304,7 +5372,9 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'authentication-token))
-      (common-lisp:cons "Authentication" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Authentication" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -5675,7 +5745,9 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'authentication-token))
-      (common-lisp:cons "Authentication" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Authentication" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -5891,7 +5963,9 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'authentication-token))
-      (common-lisp:cons "Authentication" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Authentication" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -6480,7 +6554,9 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'authentication-token))
-      (common-lisp:cons "Authentication" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Authentication" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -6563,7 +6639,9 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'authentication-token))
-      (common-lisp:cons "Authentication" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Authentication" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -6632,7 +6710,9 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'authentication-token))
-      (common-lisp:cons "Authentication" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Authentication" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -6739,7 +6819,9 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'authentication-token))
-      (common-lisp:cons "Authentication" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Authentication" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         ((aws-sdk/generator/shape::input update-user-request))
    (common-lisp:append
@@ -7259,14 +7341,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/api/v1/documents/~A/versions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'document-id))
-                                                           (quri.encode:url-encode
+                                                             'document-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'version-id))))
+                                                             'version-id)
+                                                            common-lisp:t)))
                                                         "AbortDocumentVersionUpload"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'abort-document-version-upload))
@@ -7290,10 +7374,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/api/v1/users/~A/activation"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'user-id))))
+                                                             'user-id)
+                                                            common-lisp:t)))
                                                         "ActivateUser"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'activate-user))
@@ -7320,10 +7405,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/api/v1/resources/~A/permissions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-id))))
+                                                             'resource-id)
+                                                            common-lisp:t)))
                                                         "AddResourcePermissions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'add-resource-permissions))
@@ -7351,14 +7437,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/api/v1/documents/~A/versions/~A/comment"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'document-id))
-                                                           (quri.encode:url-encode
+                                                             'document-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'version-id))))
+                                                             'version-id)
+                                                            common-lisp:t)))
                                                         "CreateComment"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-comment))
@@ -7385,10 +7473,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/api/v1/resources/~A/customMetadata"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-id))))
+                                                             'resource-id)
+                                                            common-lisp:t)))
                                                         "CreateCustomMetadata"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-custom-metadata))
@@ -7433,10 +7522,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/api/v1/resources/~A/labels"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-id))))
+                                                             'resource-id)
+                                                            common-lisp:t)))
                                                         "CreateLabels"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-labels))
@@ -7464,10 +7554,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/api/v1/organizations/~A/subscriptions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'organization-id))))
+                                                             'organization-id)
+                                                            common-lisp:t)))
                                                         "CreateNotificationSubscription"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-notification-subscription))
@@ -7512,10 +7603,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/api/v1/users/~A/activation"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'user-id))))
+                                                             'user-id)
+                                                            common-lisp:t)))
                                                         "DeactivateUser"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'deactivate-user))
@@ -7542,18 +7634,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/api/v1/documents/~A/versions/~A/comment/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'document-id))
-                                                           (quri.encode:url-encode
+                                                             'document-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'version-id))
-                                                           (quri.encode:url-encode
+                                                             'version-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'comment-id))))
+                                                             'comment-id)
+                                                            common-lisp:t)))
                                                         "DeleteComment"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-comment))
@@ -7580,10 +7675,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/api/v1/resources/~A/customMetadata"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-id))))
+                                                             'resource-id)
+                                                            common-lisp:t)))
                                                         "DeleteCustomMetadata"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-custom-metadata))
@@ -7608,10 +7704,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/api/v1/documents/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'document-id))))
+                                                             'document-id)
+                                                            common-lisp:t)))
                                                         "DeleteDocument"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-document))
@@ -7638,14 +7735,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/api/v1/documentVersions/~A/versions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'document-id))
-                                                           (quri.encode:url-encode
+                                                             'document-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'version-id))))
+                                                             'version-id)
+                                                            common-lisp:t)))
                                                         "DeleteDocumentVersion"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-document-version))
@@ -7669,10 +7768,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/api/v1/folders/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'folder-id))))
+                                                             'folder-id)
+                                                            common-lisp:t)))
                                                         "DeleteFolder"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-folder))
@@ -7696,10 +7796,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/api/v1/folders/~A/contents"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'folder-id))))
+                                                             'folder-id)
+                                                            common-lisp:t)))
                                                         "DeleteFolderContents"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-folder-contents))
@@ -7725,10 +7826,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/api/v1/resources/~A/labels"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-id))))
+                                                             'resource-id)
+                                                            common-lisp:t)))
                                                         "DeleteLabels"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-labels))
@@ -7754,14 +7856,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/api/v1/organizations/~A/subscriptions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'organization-id))
-                                                           (quri.encode:url-encode
+                                                             'organization-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'subscription-id))))
+                                                             'subscription-id)
+                                                            common-lisp:t)))
                                                         "DeleteNotificationSubscription"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-notification-subscription))
@@ -7785,10 +7889,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/api/v1/users/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'user-id))))
+                                                             'user-id)
+                                                            common-lisp:t)))
                                                         "DeleteUser"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-user))
@@ -7838,14 +7943,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/api/v1/documents/~A/versions/~A/comments"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'document-id))
-                                                           (quri.encode:url-encode
+                                                             'document-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'version-id))))
+                                                             'version-id)
+                                                            common-lisp:t)))
                                                         "DescribeComments"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-comments))
@@ -7873,10 +7980,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/api/v1/documents/~A/versions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'document-id))))
+                                                             'document-id)
+                                                            common-lisp:t)))
                                                         "DescribeDocumentVersions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-document-versions))
@@ -7903,10 +8011,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/api/v1/folders/~A/contents"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'folder-id))))
+                                                             'folder-id)
+                                                            common-lisp:t)))
                                                         "DescribeFolderContents"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-folder-contents))
@@ -7951,10 +8060,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/api/v1/organizations/~A/subscriptions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'organization-id))))
+                                                             'organization-id)
+                                                            common-lisp:t)))
                                                         "DescribeNotificationSubscriptions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-notification-subscriptions))
@@ -7982,10 +8092,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/api/v1/resources/~A/permissions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-id))))
+                                                             'resource-id)
+                                                            common-lisp:t)))
                                                         "DescribeResourcePermissions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-resource-permissions))
@@ -8067,10 +8178,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/api/v1/documents/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'document-id))))
+                                                             'document-id)
+                                                            common-lisp:t)))
                                                         "GetDocument"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-document))
@@ -8097,10 +8209,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/api/v1/documents/~A/path"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'document-id))))
+                                                             'document-id)
+                                                            common-lisp:t)))
                                                         "GetDocumentPath"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-document-path))
@@ -8127,14 +8240,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/api/v1/documents/~A/versions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'document-id))
-                                                           (quri.encode:url-encode
+                                                             'document-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'version-id))))
+                                                             'version-id)
+                                                            common-lisp:t)))
                                                         "GetDocumentVersion"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-document-version))
@@ -8161,10 +8276,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/api/v1/folders/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'folder-id))))
+                                                             'folder-id)
+                                                            common-lisp:t)))
                                                         "GetFolder"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-folder))
@@ -8190,10 +8306,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/api/v1/folders/~A/path"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'folder-id))))
+                                                             'folder-id)
+                                                            common-lisp:t)))
                                                         "GetFolderPath"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-folder-path))
@@ -8264,10 +8381,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/api/v1/resources/~A/permissions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-id))))
+                                                             'resource-id)
+                                                            common-lisp:t)))
                                                         "RemoveAllResourcePermissions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'remove-all-resource-permissions))
@@ -8295,14 +8413,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/api/v1/resources/~A/permissions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-id))
-                                                           (quri.encode:url-encode
+                                                             'resource-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'principal-id))))
+                                                             'principal-id)
+                                                            common-lisp:t)))
                                                         "RemoveResourcePermission"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'remove-resource-permission))
@@ -8328,10 +8448,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/api/v1/documentVersions/restore/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'document-id))))
+                                                             'document-id)
+                                                            common-lisp:t)))
                                                         "RestoreDocumentVersions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'restore-document-versions))
@@ -8379,10 +8500,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/api/v1/documents/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'document-id))))
+                                                             'document-id)
+                                                            common-lisp:t)))
                                                         "UpdateDocument"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-document))
@@ -8409,14 +8531,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/api/v1/documents/~A/versions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'document-id))
-                                                           (quri.encode:url-encode
+                                                             'document-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'version-id))))
+                                                             'version-id)
+                                                            common-lisp:t)))
                                                         "UpdateDocumentVersion"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-document-version))
@@ -8443,10 +8567,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/api/v1/folders/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'folder-id))))
+                                                             'folder-id)
+                                                            common-lisp:t)))
                                                         "UpdateFolder"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-folder))
@@ -8474,10 +8599,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/api/v1/users/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'user-id))))
+                                                             'user-id)
+                                                            common-lisp:t)))
                                                         "UpdateUser"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-user))

@@ -20,7 +20,7 @@
  (common-lisp:export 'bedrock-agent-error))
 (common-lisp:progn
  (common-lisp:defclass bedrock-agent-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "bedrock-agent" :api-version
                         "2023-06-05" :host-prefix "bedrock-agent" :signing-name
@@ -8936,14 +8936,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/agents/~A/agentversions/~A/knowledgebases/"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'agent-id))
-                                                           (quri.encode:url-encode
+                                                             'agent-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'agent-version))))
+                                                             'agent-version)
+                                                            common-lisp:t)))
                                                         "AssociateAgentKnowledgeBase"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'associate-agent-knowledge-base))
@@ -8996,14 +8998,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/agents/~A/agentversions/~A/actiongroups/"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'agent-id))
-                                                           (quri.encode:url-encode
+                                                             'agent-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'agent-version))))
+                                                             'agent-version)
+                                                            common-lisp:t)))
                                                         "CreateAgentActionGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-agent-action-group))
@@ -9030,10 +9034,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/agents/~A/agentaliases/"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'agent-id))))
+                                                             'agent-id)
+                                                            common-lisp:t)))
                                                         "CreateAgentAlias"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-agent-alias))
@@ -9063,10 +9068,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/knowledgebases/~A/datasources/"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'knowledge-base-id))))
+                                                             'knowledge-base-id)
+                                                            common-lisp:t)))
                                                         "CreateDataSource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-data-source))
@@ -9112,10 +9118,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/agents/~A/"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'agent-id))))
+                                                             'agent-id)
+                                                            common-lisp:t)))
                                                         "DeleteAgent"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-agent))
@@ -9143,18 +9150,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/agents/~A/agentversions/~A/actiongroups/~A/"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'agent-id))
-                                                           (quri.encode:url-encode
+                                                             'agent-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'agent-version))
-                                                           (quri.encode:url-encode
+                                                             'agent-version)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'action-group-id))))
+                                                             'action-group-id)
+                                                            common-lisp:t)))
                                                         "DeleteAgentActionGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-agent-action-group))
@@ -9178,14 +9188,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/agents/~A/agentaliases/~A/"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'agent-id))
-                                                           (quri.encode:url-encode
+                                                             'agent-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'agent-alias-id))))
+                                                             'agent-alias-id)
+                                                            common-lisp:t)))
                                                         "DeleteAgentAlias"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-agent-alias))
@@ -9211,14 +9223,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/agents/~A/agentversions/~A/"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'agent-id))
-                                                           (quri.encode:url-encode
+                                                             'agent-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'agent-version))))
+                                                             'agent-version)
+                                                            common-lisp:t)))
                                                         "DeleteAgentVersion"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-agent-version))
@@ -9243,14 +9257,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/knowledgebases/~A/datasources/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'knowledge-base-id))
-                                                           (quri.encode:url-encode
+                                                             'knowledge-base-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'data-source-id))))
+                                                             'data-source-id)
+                                                            common-lisp:t)))
                                                         "DeleteDataSource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-data-source))
@@ -9274,10 +9290,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/knowledgebases/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'knowledge-base-id))))
+                                                             'knowledge-base-id)
+                                                            common-lisp:t)))
                                                         "DeleteKnowledgeBase"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-knowledge-base))
@@ -9303,18 +9320,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/agents/~A/agentversions/~A/knowledgebases/~A/"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'agent-id))
-                                                           (quri.encode:url-encode
+                                                             'agent-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'agent-version))
-                                                           (quri.encode:url-encode
+                                                             'agent-version)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'knowledge-base-id))))
+                                                             'knowledge-base-id)
+                                                            common-lisp:t)))
                                                         "DisassociateAgentKnowledgeBase"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'disassociate-agent-knowledge-base))
@@ -9338,10 +9358,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/agents/~A/"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'agent-id))))
+                                                             'agent-id)
+                                                            common-lisp:t)))
                                                         "GetAgent"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-agent))
@@ -9366,18 +9387,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/agents/~A/agentversions/~A/actiongroups/~A/"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'agent-id))
-                                                           (quri.encode:url-encode
+                                                             'agent-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'agent-version))
-                                                           (quri.encode:url-encode
+                                                             'agent-version)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'action-group-id))))
+                                                             'action-group-id)
+                                                            common-lisp:t)))
                                                         "GetAgentActionGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-agent-action-group))
@@ -9401,14 +9425,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/agents/~A/agentaliases/~A/"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'agent-id))
-                                                           (quri.encode:url-encode
+                                                             'agent-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'agent-alias-id))))
+                                                             'agent-alias-id)
+                                                            common-lisp:t)))
                                                         "GetAgentAlias"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-agent-alias))
@@ -9433,18 +9459,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/agents/~A/agentversions/~A/knowledgebases/~A/"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'agent-id))
-                                                           (quri.encode:url-encode
+                                                             'agent-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'agent-version))
-                                                           (quri.encode:url-encode
+                                                             'agent-version)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'knowledge-base-id))))
+                                                             'knowledge-base-id)
+                                                            common-lisp:t)))
                                                         "GetAgentKnowledgeBase"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-agent-knowledge-base))
@@ -9468,14 +9497,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/agents/~A/agentversions/~A/"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'agent-id))
-                                                           (quri.encode:url-encode
+                                                             'agent-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'agent-version))))
+                                                             'agent-version)
+                                                            common-lisp:t)))
                                                         "GetAgentVersion"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-agent-version))
@@ -9500,14 +9531,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/knowledgebases/~A/datasources/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'knowledge-base-id))
-                                                           (quri.encode:url-encode
+                                                             'knowledge-base-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'data-source-id))))
+                                                             'data-source-id)
+                                                            common-lisp:t)))
                                                         "GetDataSource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-data-source))
@@ -9533,18 +9566,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/knowledgebases/~A/datasources/~A/ingestionjobs/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'knowledge-base-id))
-                                                           (quri.encode:url-encode
+                                                             'knowledge-base-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'data-source-id))
-                                                           (quri.encode:url-encode
+                                                             'data-source-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'ingestion-job-id))))
+                                                             'ingestion-job-id)
+                                                            common-lisp:t)))
                                                         "GetIngestionJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-ingestion-job))
@@ -9568,10 +9604,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/knowledgebases/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'knowledge-base-id))))
+                                                             'knowledge-base-id)
+                                                            common-lisp:t)))
                                                         "GetKnowledgeBase"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-knowledge-base))
@@ -9597,14 +9634,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/agents/~A/agentversions/~A/actiongroups/"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'agent-id))
-                                                           (quri.encode:url-encode
+                                                             'agent-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'agent-version))))
+                                                             'agent-version)
+                                                            common-lisp:t)))
                                                         "ListAgentActionGroups"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-agent-action-groups))
@@ -9629,10 +9668,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/agents/~A/agentaliases/"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'agent-id))))
+                                                             'agent-id)
+                                                            common-lisp:t)))
                                                         "ListAgentAliases"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-agent-aliases))
@@ -9659,14 +9699,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/agents/~A/agentversions/~A/knowledgebases/"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'agent-id))
-                                                           (quri.encode:url-encode
+                                                             'agent-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'agent-version))))
+                                                             'agent-version)
+                                                            common-lisp:t)))
                                                         "ListAgentKnowledgeBases"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-agent-knowledge-bases))
@@ -9691,10 +9733,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/agents/~A/agentversions/"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'agent-id))))
+                                                             'agent-id)
+                                                            common-lisp:t)))
                                                         "ListAgentVersions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-agent-versions))
@@ -9736,10 +9779,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/knowledgebases/~A/datasources/"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'knowledge-base-id))))
+                                                             'knowledge-base-id)
+                                                            common-lisp:t)))
                                                         "ListDataSources"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-data-sources))
@@ -9766,14 +9810,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/knowledgebases/~A/datasources/~A/ingestionjobs/"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'knowledge-base-id))
-                                                           (quri.encode:url-encode
+                                                             'knowledge-base-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'data-source-id))))
+                                                             'data-source-id)
+                                                            common-lisp:t)))
                                                         "ListIngestionJobs"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-ingestion-jobs))
@@ -9815,10 +9861,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -9842,10 +9889,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/agents/~A/"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'agent-id))))
+                                                             'agent-id)
+                                                            common-lisp:t)))
                                                         "PrepareAgent"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'prepare-agent))
@@ -9872,14 +9920,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/knowledgebases/~A/datasources/~A/ingestionjobs/"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'knowledge-base-id))
-                                                           (quri.encode:url-encode
+                                                             'knowledge-base-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'data-source-id))))
+                                                             'data-source-id)
+                                                            common-lisp:t)))
                                                         "StartIngestionJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'start-ingestion-job))
@@ -9903,10 +9953,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -9930,10 +9981,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -9963,10 +10015,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/agents/~A/"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'agent-id))))
+                                                             'agent-id)
+                                                            common-lisp:t)))
                                                         "UpdateAgent"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-agent))
@@ -9997,18 +10050,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/agents/~A/agentversions/~A/actiongroups/~A/"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'agent-id))
-                                                           (quri.encode:url-encode
+                                                             'agent-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'agent-version))
-                                                           (quri.encode:url-encode
+                                                             'agent-version)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'action-group-id))))
+                                                             'action-group-id)
+                                                            common-lisp:t)))
                                                         "UpdateAgentActionGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-agent-action-group))
@@ -10035,14 +10091,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/agents/~A/agentaliases/~A/"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'agent-id))
-                                                           (quri.encode:url-encode
+                                                             'agent-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'agent-alias-id))))
+                                                             'agent-alias-id)
+                                                            common-lisp:t)))
                                                         "UpdateAgentAlias"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-agent-alias))
@@ -10070,18 +10128,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/agents/~A/agentversions/~A/knowledgebases/~A/"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'agent-id))
-                                                           (quri.encode:url-encode
+                                                             'agent-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'agent-version))
-                                                           (quri.encode:url-encode
+                                                             'agent-version)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'knowledge-base-id))))
+                                                             'knowledge-base-id)
+                                                            common-lisp:t)))
                                                         "UpdateAgentKnowledgeBase"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-agent-knowledge-base))
@@ -10111,14 +10172,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/knowledgebases/~A/datasources/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'knowledge-base-id))
-                                                           (quri.encode:url-encode
+                                                             'knowledge-base-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'data-source-id))))
+                                                             'data-source-id)
+                                                            common-lisp:t)))
                                                         "UpdateDataSource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-data-source))
@@ -10146,10 +10209,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/knowledgebases/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'knowledge-base-id))))
+                                                             'knowledge-base-id)
+                                                            common-lisp:t)))
                                                         "UpdateKnowledgeBase"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-knowledge-base))

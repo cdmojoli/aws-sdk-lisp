@@ -26024,13 +26024,6 @@
       (common-lisp:list
        (common-lisp:cons "Qualifier"
                          (aws-sdk/generator/shape::input-params
-                          aws-sdk/generator/shape::value))))
-    (alexandria:when-let (aws-sdk/generator/shape::value
-                          (common-lisp:slot-value
-                           aws-sdk/generator/shape::input 'payload))
-      (common-lisp:list
-       (common-lisp:cons "Payload"
-                         (aws-sdk/generator/shape::input-params
                           aws-sdk/generator/shape::value))))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-payload
                         (
@@ -34485,13 +34478,6 @@
                            aws-sdk/generator/shape::input 'signal-type))
       (common-lisp:list
        (common-lisp:cons "SignalType"
-                         (aws-sdk/generator/shape::input-params
-                          aws-sdk/generator/shape::value))))
-    (alexandria:when-let (aws-sdk/generator/shape::value
-                          (common-lisp:slot-value
-                           aws-sdk/generator/shape::input 'payload))
-      (common-lisp:list
-       (common-lisp:cons "Payload"
                          (aws-sdk/generator/shape::input-params
                           aws-sdk/generator/shape::value))))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-payload

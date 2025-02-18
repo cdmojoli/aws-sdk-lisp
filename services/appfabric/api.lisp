@@ -20,7 +20,7 @@
  (common-lisp:export 'appfabric-error))
 (common-lisp:progn
  (common-lisp:defclass appfabric-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "appfabric" :api-version
                         "2023-05-19" :host-prefix "appfabric" :signing-name
@@ -4255,14 +4255,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/appbundles/~A/appauthorizations/~A/connect"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-bundle-identifier))
-                                                           (quri.encode:url-encode
+                                                             'app-bundle-identifier)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-authorization-identifier))))
+                                                             'app-authorization-identifier)
+                                                            common-lisp:t)))
                                                         "ConnectAppAuthorization"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'connect-app-authorization))
@@ -4289,10 +4291,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/appbundles/~A/appauthorizations"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-bundle-identifier))))
+                                                             'app-bundle-identifier)
+                                                            common-lisp:t)))
                                                         "CreateAppAuthorization"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-app-authorization))
@@ -4338,10 +4341,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/appbundles/~A/ingestions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-bundle-identifier))))
+                                                             'app-bundle-identifier)
+                                                            common-lisp:t)))
                                                         "CreateIngestion"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-ingestion))
@@ -4370,14 +4374,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/appbundles/~A/ingestions/~A/ingestiondestinations"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-bundle-identifier))
-                                                           (quri.encode:url-encode
+                                                             'app-bundle-identifier)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'ingestion-identifier))))
+                                                             'ingestion-identifier)
+                                                            common-lisp:t)))
                                                         "CreateIngestionDestination"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-ingestion-destination))
@@ -4403,14 +4409,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/appbundles/~A/appauthorizations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-bundle-identifier))
-                                                           (quri.encode:url-encode
+                                                             'app-bundle-identifier)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-authorization-identifier))))
+                                                             'app-authorization-identifier)
+                                                            common-lisp:t)))
                                                         "DeleteAppAuthorization"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-app-authorization))
@@ -4434,10 +4442,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/appbundles/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-bundle-identifier))))
+                                                             'app-bundle-identifier)
+                                                            common-lisp:t)))
                                                         "DeleteAppBundle"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-app-bundle))
@@ -4463,14 +4472,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/appbundles/~A/ingestions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-bundle-identifier))
-                                                           (quri.encode:url-encode
+                                                             'app-bundle-identifier)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'ingestion-identifier))))
+                                                             'ingestion-identifier)
+                                                            common-lisp:t)))
                                                         "DeleteIngestion"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-ingestion))
@@ -4498,18 +4509,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/appbundles/~A/ingestions/~A/ingestiondestinations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-bundle-identifier))
-                                                           (quri.encode:url-encode
+                                                             'app-bundle-identifier)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'ingestion-identifier))
-                                                           (quri.encode:url-encode
+                                                             'ingestion-identifier)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'ingestion-destination-identifier))))
+                                                             'ingestion-destination-identifier)
+                                                            common-lisp:t)))
                                                         "DeleteIngestionDestination"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-ingestion-destination))
@@ -4535,14 +4549,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/appbundles/~A/appauthorizations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-bundle-identifier))
-                                                           (quri.encode:url-encode
+                                                             'app-bundle-identifier)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-authorization-identifier))))
+                                                             'app-authorization-identifier)
+                                                            common-lisp:t)))
                                                         "GetAppAuthorization"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-app-authorization))
@@ -4566,10 +4582,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/appbundles/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-bundle-identifier))))
+                                                             'app-bundle-identifier)
+                                                            common-lisp:t)))
                                                         "GetAppBundle"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-app-bundle))
@@ -4595,14 +4612,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/appbundles/~A/ingestions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-bundle-identifier))
-                                                           (quri.encode:url-encode
+                                                             'app-bundle-identifier)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'ingestion-identifier))))
+                                                             'ingestion-identifier)
+                                                            common-lisp:t)))
                                                         "GetIngestion"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-ingestion))
@@ -4630,18 +4649,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/appbundles/~A/ingestions/~A/ingestiondestinations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-bundle-identifier))
-                                                           (quri.encode:url-encode
+                                                             'app-bundle-identifier)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'ingestion-identifier))
-                                                           (quri.encode:url-encode
+                                                             'ingestion-identifier)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'ingestion-destination-identifier))))
+                                                             'ingestion-destination-identifier)
+                                                            common-lisp:t)))
                                                         "GetIngestionDestination"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-ingestion-destination))
@@ -4667,10 +4689,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/appbundles/~A/appauthorizations"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-bundle-identifier))))
+                                                             'app-bundle-identifier)
+                                                            common-lisp:t)))
                                                         "ListAppAuthorizations"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-app-authorizations))
@@ -4715,14 +4738,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/appbundles/~A/ingestions/~A/ingestiondestinations"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-bundle-identifier))
-                                                           (quri.encode:url-encode
+                                                             'app-bundle-identifier)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'ingestion-identifier))))
+                                                             'ingestion-identifier)
+                                                            common-lisp:t)))
                                                         "ListIngestionDestinations"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-ingestion-destinations))
@@ -4748,10 +4773,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/appbundles/~A/ingestions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-bundle-identifier))))
+                                                             'app-bundle-identifier)
+                                                            common-lisp:t)))
                                                         "ListIngestions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-ingestions))
@@ -4775,10 +4801,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -4804,14 +4831,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/appbundles/~A/ingestions/~A/start"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-bundle-identifier))
-                                                           (quri.encode:url-encode
+                                                             'app-bundle-identifier)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'ingestion-identifier))))
+                                                             'ingestion-identifier)
+                                                            common-lisp:t)))
                                                         "StartIngestion"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'start-ingestion))
@@ -4855,14 +4884,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/appbundles/~A/ingestions/~A/stop"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-bundle-identifier))
-                                                           (quri.encode:url-encode
+                                                             'app-bundle-identifier)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'ingestion-identifier))))
+                                                             'ingestion-identifier)
+                                                            common-lisp:t)))
                                                         "StopIngestion"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'stop-ingestion))
@@ -4886,10 +4917,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -4913,10 +4945,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -4943,14 +4976,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/appbundles/~A/appauthorizations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-bundle-identifier))
-                                                           (quri.encode:url-encode
+                                                             'app-bundle-identifier)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-authorization-identifier))))
+                                                             'app-authorization-identifier)
+                                                            common-lisp:t)))
                                                         "UpdateAppAuthorization"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-app-authorization))
@@ -4979,18 +5014,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/appbundles/~A/ingestions/~A/ingestiondestinations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-bundle-identifier))
-                                                           (quri.encode:url-encode
+                                                             'app-bundle-identifier)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'ingestion-identifier))
-                                                           (quri.encode:url-encode
+                                                             'ingestion-identifier)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'ingestion-destination-identifier))))
+                                                             'ingestion-destination-identifier)
+                                                            common-lisp:t)))
                                                         "UpdateIngestionDestination"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-ingestion-destination))

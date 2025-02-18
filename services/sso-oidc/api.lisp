@@ -20,7 +20,7 @@
  (common-lisp:export 'sso-oidc-error))
 (common-lisp:progn
  (common-lisp:defclass sso-oidc-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "sso-oidc" :api-version
                         "2019-06-10" :host-prefix "oidc" :signing-name

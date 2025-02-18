@@ -20,7 +20,7 @@
  (common-lisp:export 'greengrass-error))
 (common-lisp:progn
  (common-lisp:defclass greengrass-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "greengrass" :api-version
                         "2017-06-07" :host-prefix "greengrass" :signing-name
@@ -782,8 +782,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'amzn-client-token))
-      (common-lisp:cons "X-Amzn-Client-Token"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amzn-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -973,8 +974,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'amzn-client-token))
-      (common-lisp:cons "X-Amzn-Client-Token"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amzn-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -1112,8 +1114,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'amzn-client-token))
-      (common-lisp:cons "X-Amzn-Client-Token"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amzn-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -1300,8 +1303,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'amzn-client-token))
-      (common-lisp:cons "X-Amzn-Client-Token"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amzn-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -1444,8 +1448,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'amzn-client-token))
-      (common-lisp:cons "X-Amzn-Client-Token"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amzn-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -1571,8 +1576,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'amzn-client-token))
-      (common-lisp:cons "X-Amzn-Client-Token"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amzn-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -1761,8 +1767,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'amzn-client-token))
-      (common-lisp:cons "X-Amzn-Client-Token"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amzn-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -1900,8 +1907,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'amzn-client-token))
-      (common-lisp:cons "X-Amzn-Client-Token"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amzn-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -2099,8 +2107,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'amzn-client-token))
-      (common-lisp:cons "X-Amzn-Client-Token"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amzn-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -2234,8 +2243,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'amzn-client-token))
-      (common-lisp:cons "X-Amzn-Client-Token"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amzn-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -2327,8 +2337,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'amzn-client-token))
-      (common-lisp:cons "X-Amzn-Client-Token"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amzn-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         ((aws-sdk/generator/shape::input create-group-request))
    (common-lisp:append
@@ -2549,8 +2560,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'amzn-client-token))
-      (common-lisp:cons "X-Amzn-Client-Token"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amzn-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -2736,8 +2748,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'amzn-client-token))
-      (common-lisp:cons "X-Amzn-Client-Token"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amzn-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -2926,8 +2939,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'amzn-client-token))
-      (common-lisp:cons "X-Amzn-Client-Token"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amzn-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -3065,8 +3079,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'amzn-client-token))
-      (common-lisp:cons "X-Amzn-Client-Token"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amzn-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -3256,8 +3271,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'amzn-client-token))
-      (common-lisp:cons "X-Amzn-Client-Token"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amzn-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -3433,8 +3449,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'amzn-client-token))
-      (common-lisp:cons "X-Amzn-Client-Token"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amzn-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -3600,8 +3617,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'amzn-client-token))
-      (common-lisp:cons "X-Amzn-Client-Token"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amzn-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -3792,8 +3810,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'amzn-client-token))
-      (common-lisp:cons "X-Amzn-Client-Token"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amzn-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -11486,8 +11505,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'amzn-client-token))
-      (common-lisp:cons "X-Amzn-Client-Token"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amzn-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -12188,8 +12208,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'amzn-client-token))
-      (common-lisp:cons "X-Amzn-Client-Token"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-Amzn-Client-Token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -13708,10 +13729,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/groups/~A/role"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'group-id))))
+                                                             'group-id)
+                                                            common-lisp:t)))
                                                         "AssociateRoleToGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'associate-role-to-group))
@@ -13779,10 +13801,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/definition/connectors/~A/versions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'connector-definition-id))))
+                                                             'connector-definition-id)
+                                                            common-lisp:t)))
                                                         "CreateConnectorDefinitionVersion"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-connector-definition-version))
@@ -13829,10 +13852,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/definition/cores/~A/versions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'core-definition-id))))
+                                                             'core-definition-id)
+                                                            common-lisp:t)))
                                                         "CreateCoreDefinitionVersion"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-core-definition-version))
@@ -13859,10 +13883,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/groups/~A/deployments"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'group-id))))
+                                                             'group-id)
+                                                            common-lisp:t)))
                                                         "CreateDeployment"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-deployment))
@@ -13909,10 +13934,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/definition/devices/~A/versions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'device-definition-id))))
+                                                             'device-definition-id)
+                                                            common-lisp:t)))
                                                         "CreateDeviceDefinitionVersion"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-device-definition-version))
@@ -13961,10 +13987,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/definition/functions/~A/versions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'function-definition-id))))
+                                                             'function-definition-id)
+                                                            common-lisp:t)))
                                                         "CreateFunctionDefinitionVersion"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-function-definition-version))
@@ -14009,10 +14036,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/groups/~A/certificateauthorities"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'group-id))))
+                                                             'group-id)
+                                                            common-lisp:t)))
                                                         "CreateGroupCertificateAuthority"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-group-certificate-authority))
@@ -14046,10 +14074,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/groups/~A/versions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'group-id))))
+                                                             'group-id)
+                                                            common-lisp:t)))
                                                         "CreateGroupVersion"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-group-version))
@@ -14096,10 +14125,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/definition/loggers/~A/versions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'logger-definition-id))))
+                                                             'logger-definition-id)
+                                                            common-lisp:t)))
                                                         "CreateLoggerDefinitionVersion"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-logger-definition-version))
@@ -14147,10 +14177,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/definition/resources/~A/versions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-definition-id))))
+                                                             'resource-definition-id)
+                                                            common-lisp:t)))
                                                         "CreateResourceDefinitionVersion"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-resource-definition-version))
@@ -14224,10 +14255,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/definition/subscriptions/~A/versions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'subscription-definition-id))))
+                                                             'subscription-definition-id)
+                                                            common-lisp:t)))
                                                         "CreateSubscriptionDefinitionVersion"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-subscription-definition-version))
@@ -14252,10 +14284,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/definition/connectors/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'connector-definition-id))))
+                                                             'connector-definition-id)
+                                                            common-lisp:t)))
                                                         "DeleteConnectorDefinition"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-connector-definition))
@@ -14279,10 +14312,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/definition/cores/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'core-definition-id))))
+                                                             'core-definition-id)
+                                                            common-lisp:t)))
                                                         "DeleteCoreDefinition"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-core-definition))
@@ -14306,10 +14340,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/definition/devices/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'device-definition-id))))
+                                                             'device-definition-id)
+                                                            common-lisp:t)))
                                                         "DeleteDeviceDefinition"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-device-definition))
@@ -14334,10 +14369,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/definition/functions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'function-definition-id))))
+                                                             'function-definition-id)
+                                                            common-lisp:t)))
                                                         "DeleteFunctionDefinition"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-function-definition))
@@ -14361,10 +14397,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/groups/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'group-id))))
+                                                             'group-id)
+                                                            common-lisp:t)))
                                                         "DeleteGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-group))
@@ -14388,10 +14425,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/definition/loggers/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'logger-definition-id))))
+                                                             'logger-definition-id)
+                                                            common-lisp:t)))
                                                         "DeleteLoggerDefinition"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-logger-definition))
@@ -14416,10 +14454,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/definition/resources/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-definition-id))))
+                                                             'resource-definition-id)
+                                                            common-lisp:t)))
                                                         "DeleteResourceDefinition"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-resource-definition))
@@ -14444,10 +14483,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/definition/subscriptions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'subscription-definition-id))))
+                                                             'subscription-definition-id)
+                                                            common-lisp:t)))
                                                         "DeleteSubscriptionDefinition"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-subscription-definition))
@@ -14472,10 +14512,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/groups/~A/role"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'group-id))))
+                                                             'group-id)
+                                                            common-lisp:t)))
                                                         "DisassociateRoleFromGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'disassociate-role-from-group))
@@ -14508,10 +14549,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/groups/~A/role"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'group-id))))
+                                                             'group-id)
+                                                            common-lisp:t)))
                                                         "GetAssociatedRole"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-associated-role))
@@ -14536,10 +14578,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/bulk/deployments/~A/status"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bulk-deployment-id))))
+                                                             'bulk-deployment-id)
+                                                            common-lisp:t)))
                                                         "GetBulkDeploymentStatus"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-bulk-deployment-status))
@@ -14563,10 +14606,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/things/~A/connectivityInfo"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'thing-name))))
+                                                             'thing-name)
+                                                            common-lisp:t)))
                                                         "GetConnectivityInfo"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-connectivity-info))
@@ -14590,10 +14634,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/definition/connectors/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'connector-definition-id))))
+                                                             'connector-definition-id)
+                                                            common-lisp:t)))
                                                         "GetConnectorDefinition"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-connector-definition))
@@ -14621,14 +14666,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/definition/connectors/~A/versions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'connector-definition-id))
-                                                           (quri.encode:url-encode
+                                                             'connector-definition-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'connector-definition-version-id))))
+                                                             'connector-definition-version-id)
+                                                            common-lisp:t)))
                                                         "GetConnectorDefinitionVersion"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-connector-definition-version))
@@ -14652,10 +14699,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/definition/cores/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'core-definition-id))))
+                                                             'core-definition-id)
+                                                            common-lisp:t)))
                                                         "GetCoreDefinition"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-core-definition))
@@ -14682,14 +14730,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/definition/cores/~A/versions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'core-definition-id))
-                                                           (quri.encode:url-encode
+                                                             'core-definition-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'core-definition-version-id))))
+                                                             'core-definition-version-id)
+                                                            common-lisp:t)))
                                                         "GetCoreDefinitionVersion"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-core-definition-version))
@@ -14713,14 +14763,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/groups/~A/deployments/~A/status"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'group-id))
-                                                           (quri.encode:url-encode
+                                                             'group-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'deployment-id))))
+                                                             'deployment-id)
+                                                            common-lisp:t)))
                                                         "GetDeploymentStatus"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-deployment-status))
@@ -14744,10 +14796,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/definition/devices/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'device-definition-id))))
+                                                             'device-definition-id)
+                                                            common-lisp:t)))
                                                         "GetDeviceDefinition"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-device-definition))
@@ -14775,14 +14828,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/definition/devices/~A/versions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'device-definition-id))
-                                                           (quri.encode:url-encode
+                                                             'device-definition-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'device-definition-version-id))))
+                                                             'device-definition-version-id)
+                                                            common-lisp:t)))
                                                         "GetDeviceDefinitionVersion"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-device-definition-version))
@@ -14806,10 +14861,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/definition/functions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'function-definition-id))))
+                                                             'function-definition-id)
+                                                            common-lisp:t)))
                                                         "GetFunctionDefinition"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-function-definition))
@@ -14837,14 +14893,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/definition/functions/~A/versions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'function-definition-id))
-                                                           (quri.encode:url-encode
+                                                             'function-definition-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'function-definition-version-id))))
+                                                             'function-definition-version-id)
+                                                            common-lisp:t)))
                                                         "GetFunctionDefinitionVersion"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-function-definition-version))
@@ -14868,10 +14926,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/groups/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'group-id))))
+                                                             'group-id)
+                                                            common-lisp:t)))
                                                         "GetGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-group))
@@ -14897,14 +14956,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/groups/~A/certificateauthorities/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'group-id))
-                                                           (quri.encode:url-encode
+                                                             'group-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'certificate-authority-id))))
+                                                             'certificate-authority-id)
+                                                            common-lisp:t)))
                                                         "GetGroupCertificateAuthority"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-group-certificate-authority))
@@ -14929,10 +14990,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/groups/~A/certificateauthorities/configuration/expiry"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'group-id))))
+                                                             'group-id)
+                                                            common-lisp:t)))
                                                         "GetGroupCertificateConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-group-certificate-configuration))
@@ -14956,14 +15018,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/groups/~A/versions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'group-id))
-                                                           (quri.encode:url-encode
+                                                             'group-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'group-version-id))))
+                                                             'group-version-id)
+                                                            common-lisp:t)))
                                                         "GetGroupVersion"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-group-version))
@@ -14987,10 +15051,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/definition/loggers/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'logger-definition-id))))
+                                                             'logger-definition-id)
+                                                            common-lisp:t)))
                                                         "GetLoggerDefinition"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-logger-definition))
@@ -15018,14 +15083,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/definition/loggers/~A/versions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'logger-definition-id))
-                                                           (quri.encode:url-encode
+                                                             'logger-definition-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'logger-definition-version-id))))
+                                                             'logger-definition-version-id)
+                                                            common-lisp:t)))
                                                         "GetLoggerDefinitionVersion"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-logger-definition-version))
@@ -15049,10 +15116,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/definition/resources/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-definition-id))))
+                                                             'resource-definition-id)
+                                                            common-lisp:t)))
                                                         "GetResourceDefinition"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-resource-definition))
@@ -15080,14 +15148,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/definition/resources/~A/versions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-definition-id))
-                                                           (quri.encode:url-encode
+                                                             'resource-definition-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-definition-version-id))))
+                                                             'resource-definition-version-id)
+                                                            common-lisp:t)))
                                                         "GetResourceDefinitionVersion"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-resource-definition-version))
@@ -15121,10 +15191,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/definition/subscriptions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'subscription-definition-id))))
+                                                             'subscription-definition-id)
+                                                            common-lisp:t)))
                                                         "GetSubscriptionDefinition"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-subscription-definition))
@@ -15152,14 +15223,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/definition/subscriptions/~A/versions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'subscription-definition-id))
-                                                           (quri.encode:url-encode
+                                                             'subscription-definition-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'subscription-definition-version-id))))
+                                                             'subscription-definition-version-id)
+                                                            common-lisp:t)))
                                                         "GetSubscriptionDefinitionVersion"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-subscription-definition-version))
@@ -15184,10 +15257,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/things/~A/runtimeconfig"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'thing-name))))
+                                                             'thing-name)
+                                                            common-lisp:t)))
                                                         "GetThingRuntimeConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-thing-runtime-configuration))
@@ -15214,10 +15288,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/bulk/deployments/~A/detailed-reports"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bulk-deployment-id))))
+                                                             'bulk-deployment-id)
+                                                            common-lisp:t)))
                                                         "ListBulkDeploymentDetailedReports"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-bulk-deployment-detailed-reports))
@@ -15262,10 +15337,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/definition/connectors/~A/versions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'connector-definition-id))))
+                                                             'connector-definition-id)
+                                                            common-lisp:t)))
                                                         "ListConnectorDefinitionVersions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-connector-definition-versions))
@@ -15311,10 +15387,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/definition/cores/~A/versions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'core-definition-id))))
+                                                             'core-definition-id)
+                                                            common-lisp:t)))
                                                         "ListCoreDefinitionVersions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-core-definition-versions))
@@ -15357,10 +15434,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/groups/~A/deployments"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'group-id))))
+                                                             'group-id)
+                                                            common-lisp:t)))
                                                         "ListDeployments"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-deployments))
@@ -15387,10 +15465,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/definition/devices/~A/versions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'device-definition-id))))
+                                                             'device-definition-id)
+                                                            common-lisp:t)))
                                                         "ListDeviceDefinitionVersions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-device-definition-versions))
@@ -15435,10 +15514,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/definition/functions/~A/versions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'function-definition-id))))
+                                                             'function-definition-id)
+                                                            common-lisp:t)))
                                                         "ListFunctionDefinitionVersions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-function-definition-versions))
@@ -15482,10 +15562,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/groups/~A/certificateauthorities"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'group-id))))
+                                                             'group-id)
+                                                            common-lisp:t)))
                                                         "ListGroupCertificateAuthorities"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-group-certificate-authorities))
@@ -15510,10 +15591,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/groups/~A/versions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'group-id))))
+                                                             'group-id)
+                                                            common-lisp:t)))
                                                         "ListGroupVersions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-group-versions))
@@ -15558,10 +15640,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/definition/loggers/~A/versions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'logger-definition-id))))
+                                                             'logger-definition-id)
+                                                            common-lisp:t)))
                                                         "ListLoggerDefinitionVersions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-logger-definition-versions))
@@ -15606,10 +15689,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/definition/resources/~A/versions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-definition-id))))
+                                                             'resource-definition-id)
+                                                            common-lisp:t)))
                                                         "ListResourceDefinitionVersions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-resource-definition-versions))
@@ -15655,10 +15739,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/definition/subscriptions/~A/versions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'subscription-definition-id))))
+                                                             'subscription-definition-id)
+                                                            common-lisp:t)))
                                                         "ListSubscriptionDefinitionVersions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-subscription-definition-versions))
@@ -15701,10 +15786,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -15729,10 +15815,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/groups/~A/deployments/$reset"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'group-id))))
+                                                             'group-id)
+                                                            common-lisp:t)))
                                                         "ResetDeployments"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'reset-deployments))
@@ -15777,10 +15864,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/bulk/deployments/~A/$stop"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bulk-deployment-id))))
+                                                             'bulk-deployment-id)
+                                                            common-lisp:t)))
                                                         "StopBulkDeployment"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'stop-bulk-deployment))
@@ -15804,10 +15892,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -15831,10 +15920,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -15858,10 +15948,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/things/~A/connectivityInfo"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'thing-name))))
+                                                             'thing-name)
+                                                            common-lisp:t)))
                                                         "UpdateConnectivityInfo"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-connectivity-info))
@@ -15886,10 +15977,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/definition/connectors/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'connector-definition-id))))
+                                                             'connector-definition-id)
+                                                            common-lisp:t)))
                                                         "UpdateConnectorDefinition"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-connector-definition))
@@ -15913,10 +16005,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/definition/cores/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'core-definition-id))))
+                                                             'core-definition-id)
+                                                            common-lisp:t)))
                                                         "UpdateCoreDefinition"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-core-definition))
@@ -15940,10 +16033,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/definition/devices/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'device-definition-id))))
+                                                             'device-definition-id)
+                                                            common-lisp:t)))
                                                         "UpdateDeviceDefinition"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-device-definition))
@@ -15968,10 +16062,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/definition/functions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'function-definition-id))))
+                                                             'function-definition-id)
+                                                            common-lisp:t)))
                                                         "UpdateFunctionDefinition"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-function-definition))
@@ -15995,10 +16090,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/groups/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'group-id))))
+                                                             'group-id)
+                                                            common-lisp:t)))
                                                         "UpdateGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-group))
@@ -16025,10 +16121,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/groups/~A/certificateauthorities/configuration/expiry"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'group-id))))
+                                                             'group-id)
+                                                            common-lisp:t)))
                                                         "UpdateGroupCertificateConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-group-certificate-configuration))
@@ -16052,10 +16149,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/definition/loggers/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'logger-definition-id))))
+                                                             'logger-definition-id)
+                                                            common-lisp:t)))
                                                         "UpdateLoggerDefinition"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-logger-definition))
@@ -16080,10 +16178,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/definition/resources/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-definition-id))))
+                                                             'resource-definition-id)
+                                                            common-lisp:t)))
                                                         "UpdateResourceDefinition"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-resource-definition))
@@ -16109,10 +16208,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/definition/subscriptions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'subscription-definition-id))))
+                                                             'subscription-definition-id)
+                                                            common-lisp:t)))
                                                         "UpdateSubscriptionDefinition"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-subscription-definition))
@@ -16138,10 +16238,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/greengrass/things/~A/runtimeconfig"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'thing-name))))
+                                                             'thing-name)
+                                                            common-lisp:t)))
                                                         "UpdateThingRuntimeConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-thing-runtime-configuration))

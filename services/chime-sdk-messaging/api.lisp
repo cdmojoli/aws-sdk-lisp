@@ -20,7 +20,7 @@
  (common-lisp:export 'chime-sdk-messaging-error))
 (common-lisp:progn
  (common-lisp:defclass chime-sdk-messaging-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "chime-sdk-messaging"
                         :api-version "2021-05-15" :host-prefix
@@ -144,7 +144,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'chime-bearer))
-      (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -389,7 +391,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'chime-bearer))
-      (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -2361,7 +2365,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'chime-bearer))
-      (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -2618,7 +2624,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'chime-bearer))
-      (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -2756,7 +2764,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'chime-bearer))
-      (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -2932,7 +2942,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'chime-bearer))
-      (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -3102,7 +3114,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'chime-bearer))
-      (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -3189,7 +3203,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'chime-bearer))
-      (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -3244,7 +3260,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'chime-bearer))
-      (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -3295,7 +3313,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'chime-bearer))
-      (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -3335,7 +3355,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'chime-bearer))
-      (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -3416,7 +3438,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'chime-bearer))
-      (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -3576,7 +3600,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'chime-bearer))
-      (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -3673,7 +3699,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'chime-bearer))
-      (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -3765,7 +3793,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'chime-bearer))
-      (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -3860,7 +3890,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'chime-bearer))
-      (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -3940,7 +3972,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'chime-bearer))
-      (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -4027,7 +4061,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'chime-bearer))
-      (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -4224,7 +4260,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'chime-bearer))
-      (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -4346,7 +4384,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'chime-bearer))
-      (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -4440,7 +4480,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'chime-bearer))
-      (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -4770,7 +4812,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'chime-bearer))
-      (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -4990,7 +5034,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'chime-bearer))
-      (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -5117,7 +5163,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'chime-bearer))
-      (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -5264,7 +5312,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'chime-bearer))
-      (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -5400,7 +5450,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'chime-bearer))
-      (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -5627,7 +5679,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'chime-bearer))
-      (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -5744,7 +5798,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'chime-bearer))
-      (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -5848,7 +5904,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'chime-bearer))
-      (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -6408,7 +6466,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'chime-bearer))
-      (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -6525,7 +6585,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'chime-bearer))
-      (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -6752,7 +6814,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'chime-bearer))
-      (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -6890,7 +6954,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'chime-bearer))
-      (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -7139,7 +7205,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'chime-bearer))
-      (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -7814,7 +7882,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'chime-bearer))
-      (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -7965,7 +8035,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'chime-bearer))
-      (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -8060,7 +8132,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'chime-bearer))
-      (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-chime-bearer" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -8147,10 +8221,11 @@
         'chime-sdk-messaging-request aws-sdk/generator/operation::input "PUT"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/channels/~A/channel-flow"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'channel-arn))))
+                                'channel-arn)
+                               common-lisp:t)))
         "AssociateChannelFlow"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'associate-channel-flow))
@@ -8174,10 +8249,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/channels/~A/memberships?operation=batch-create"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'channel-arn))))
+                                'channel-arn)
+                               common-lisp:t)))
         "BatchCreateChannelMembership"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'batch-create-channel-membership))
@@ -8200,10 +8276,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/channels/~A?operation=channel-flow-callback"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'channel-arn))))
+                                'channel-arn)
+                               common-lisp:t)))
         "ChannelFlowCallback"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'channel-flow-callback))
@@ -8245,10 +8322,11 @@
         'chime-sdk-messaging-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/channels/~A/bans"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'channel-arn))))
+                                'channel-arn)
+                               common-lisp:t)))
         "CreateChannelBan"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-channel-ban))
@@ -8290,10 +8368,11 @@
         'chime-sdk-messaging-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/channels/~A/memberships"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'channel-arn))))
+                                'channel-arn)
+                               common-lisp:t)))
         "CreateChannelMembership"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-channel-membership))
@@ -8314,10 +8393,11 @@
         'chime-sdk-messaging-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/channels/~A/moderators"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'channel-arn))))
+                                'channel-arn)
+                               common-lisp:t)))
         "CreateChannelModerator"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-channel-moderator))
@@ -8337,10 +8417,11 @@
         "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/channels/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'channel-arn))))
+                                'channel-arn)
+                               common-lisp:t)))
         "DeleteChannel"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-channel))
@@ -8361,14 +8442,15 @@
         "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/channels/~A/bans/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'channel-arn))
-                              (quri.encode:url-encode
+                                'channel-arn)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'member-arn))))
+                                aws-sdk/generator/operation::input 'member-arn)
+                               common-lisp:t)))
         "DeleteChannelBan"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-channel-ban))
@@ -8388,10 +8470,11 @@
         "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/channel-flows/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'channel-flow-arn))))
+                                'channel-flow-arn)
+                               common-lisp:t)))
         "DeleteChannelFlow"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-channel-flow))
@@ -8414,14 +8497,15 @@
         "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/channels/~A/memberships/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'channel-arn))
-                              (quri.encode:url-encode
+                                'channel-arn)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'member-arn))))
+                                aws-sdk/generator/operation::input 'member-arn)
+                               common-lisp:t)))
         "DeleteChannelMembership"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-channel-membership))
@@ -8443,14 +8527,15 @@
         "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/channels/~A/messages/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'channel-arn))
-                              (quri.encode:url-encode
+                                'channel-arn)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'message-id))))
+                                aws-sdk/generator/operation::input 'message-id)
+                               common-lisp:t)))
         "DeleteChannelMessage"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-channel-message))
@@ -8472,14 +8557,16 @@
         "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/channels/~A/moderators/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'channel-arn))
-                              (quri.encode:url-encode
+                                'channel-arn)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'channel-moderator-arn))))
+                                'channel-moderator-arn)
+                               common-lisp:t)))
         "DeleteChannelModerator"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-channel-moderator))
@@ -8501,10 +8588,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/app-instances/~A/streaming-configurations"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'app-instance-arn))))
+                                'app-instance-arn)
+                               common-lisp:t)))
         "DeleteMessagingStreamingConfigurations"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-messaging-streaming-configurations))
@@ -8523,10 +8611,11 @@
         'chime-sdk-messaging-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/channels/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'channel-arn))))
+                                'channel-arn)
+                               common-lisp:t)))
         "DescribeChannel"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-channel))
@@ -8546,14 +8635,15 @@
         'chime-sdk-messaging-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/channels/~A/bans/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'channel-arn))
-                              (quri.encode:url-encode
+                                'channel-arn)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'member-arn))))
+                                aws-sdk/generator/operation::input 'member-arn)
+                               common-lisp:t)))
         "DescribeChannelBan"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-channel-ban))
@@ -8572,10 +8662,11 @@
         'chime-sdk-messaging-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/channel-flows/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'channel-flow-arn))))
+                                'channel-flow-arn)
+                               common-lisp:t)))
         "DescribeChannelFlow"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-channel-flow))
@@ -8597,14 +8688,15 @@
         'chime-sdk-messaging-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/channels/~A/memberships/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'channel-arn))
-                              (quri.encode:url-encode
+                                'channel-arn)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'member-arn))))
+                                aws-sdk/generator/operation::input 'member-arn)
+                               common-lisp:t)))
         "DescribeChannelMembership"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-channel-membership))
@@ -8627,10 +8719,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/channels/~A?scope=app-instance-user-membership"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'channel-arn))))
+                                'channel-arn)
+                               common-lisp:t)))
         "DescribeChannelMembershipForAppInstanceUser"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-channel-membership-for-app-instance-user))
@@ -8653,10 +8746,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/channels/~A?scope=app-instance-user-moderated-channel"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'channel-arn))))
+                                'channel-arn)
+                               common-lisp:t)))
         "DescribeChannelModeratedByAppInstanceUser"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-channel-moderated-by-app-instance-user))
@@ -8678,14 +8772,16 @@
         'chime-sdk-messaging-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/channels/~A/moderators/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'channel-arn))
-                              (quri.encode:url-encode
+                                'channel-arn)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'channel-moderator-arn))))
+                                'channel-moderator-arn)
+                               common-lisp:t)))
         "DescribeChannelModerator"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-channel-moderator))
@@ -8708,14 +8804,16 @@
         "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/channels/~A/channel-flow/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'channel-arn))
-                              (quri.encode:url-encode
+                                'channel-arn)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'channel-flow-arn))))
+                                'channel-flow-arn)
+                               common-lisp:t)))
         "DisassociateChannelFlow"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'disassociate-channel-flow))
@@ -8737,14 +8835,15 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/channels/~A/memberships/~A/preferences"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'channel-arn))
-                              (quri.encode:url-encode
+                                'channel-arn)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'member-arn))))
+                                aws-sdk/generator/operation::input 'member-arn)
+                               common-lisp:t)))
         "GetChannelMembershipPreferences"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-channel-membership-preferences))
@@ -8765,14 +8864,15 @@
         'chime-sdk-messaging-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/channels/~A/messages/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'channel-arn))
-                              (quri.encode:url-encode
+                                'channel-arn)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'message-id))))
+                                aws-sdk/generator/operation::input 'message-id)
+                               common-lisp:t)))
         "GetChannelMessage"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-channel-message))
@@ -8795,14 +8895,15 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/channels/~A/messages/~A?scope=message-status"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'channel-arn))
-                              (quri.encode:url-encode
+                                'channel-arn)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'message-id))))
+                                aws-sdk/generator/operation::input 'message-id)
+                               common-lisp:t)))
         "GetChannelMessageStatus"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-channel-message-status))
@@ -8832,10 +8933,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/app-instances/~A/streaming-configurations"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'app-instance-arn))))
+                                'app-instance-arn)
+                               common-lisp:t)))
         "GetMessagingStreamingConfigurations"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-messaging-streaming-configurations))
@@ -8856,10 +8958,11 @@
         'chime-sdk-messaging-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/channels/~A/bans"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'channel-arn))))
+                                'channel-arn)
+                               common-lisp:t)))
         "ListChannelBans"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-channel-bans))
@@ -8898,10 +9001,11 @@
         'chime-sdk-messaging-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/channels/~A/memberships"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'channel-arn))))
+                                'channel-arn)
+                               common-lisp:t)))
         "ListChannelMemberships"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-channel-memberships))
@@ -8945,10 +9049,11 @@
         'chime-sdk-messaging-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/channels/~A/messages"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'channel-arn))))
+                                'channel-arn)
+                               common-lisp:t)))
         "ListChannelMessages"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-channel-messages))
@@ -8969,10 +9074,11 @@
         'chime-sdk-messaging-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/channels/~A/moderators"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'channel-arn))))
+                                'channel-arn)
+                               common-lisp:t)))
         "ListChannelModerators"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-channel-moderators))
@@ -9052,10 +9158,11 @@
         'chime-sdk-messaging-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/channels/~A/subchannels"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'channel-arn))))
+                                'channel-arn)
+                               common-lisp:t)))
         "ListSubChannels"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-sub-channels))
@@ -9094,10 +9201,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/channels/~A/expiration-settings"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'channel-arn))))
+                                'channel-arn)
+                               common-lisp:t)))
         "PutChannelExpirationSettings"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-channel-expiration-settings))
@@ -9120,14 +9228,15 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/channels/~A/memberships/~A/preferences"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'channel-arn))
-                              (quri.encode:url-encode
+                                'channel-arn)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'member-arn))))
+                                aws-sdk/generator/operation::input 'member-arn)
+                               common-lisp:t)))
         "PutChannelMembershipPreferences"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-channel-membership-preferences))
@@ -9150,10 +9259,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/app-instances/~A/streaming-configurations"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'app-instance-arn))))
+                                'app-instance-arn)
+                               common-lisp:t)))
         "PutMessagingStreamingConfigurations"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-messaging-streaming-configurations))
@@ -9175,14 +9285,15 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/channels/~A/messages/~A?operation=redact"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'channel-arn))
-                              (quri.encode:url-encode
+                                'channel-arn)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'message-id))))
+                                aws-sdk/generator/operation::input 'message-id)
+                               common-lisp:t)))
         "RedactChannelMessage"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'redact-channel-message))
@@ -9225,10 +9336,11 @@
         'chime-sdk-messaging-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/channels/~A/messages"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'channel-arn))))
+                                'channel-arn)
+                               common-lisp:t)))
         "SendChannelMessage"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'send-channel-message))
@@ -9281,10 +9393,11 @@
         'chime-sdk-messaging-request aws-sdk/generator/operation::input "PUT"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/channels/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'channel-arn))))
+                                'channel-arn)
+                               common-lisp:t)))
         "UpdateChannel"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-channel))
@@ -9304,10 +9417,11 @@
         'chime-sdk-messaging-request aws-sdk/generator/operation::input "PUT"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/channel-flows/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'channel-flow-arn))))
+                                'channel-flow-arn)
+                               common-lisp:t)))
         "UpdateChannelFlow"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-channel-flow))
@@ -9329,14 +9443,15 @@
         'chime-sdk-messaging-request aws-sdk/generator/operation::input "PUT"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/channels/~A/messages/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'channel-arn))
-                              (quri.encode:url-encode
+                                'channel-arn)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'message-id))))
+                                aws-sdk/generator/operation::input 'message-id)
+                               common-lisp:t)))
         "UpdateChannelMessage"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-channel-message))
@@ -9356,10 +9471,11 @@
         'chime-sdk-messaging-request aws-sdk/generator/operation::input "PUT"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/channels/~A/readMarker"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'channel-arn))))
+                                'channel-arn)
+                               common-lisp:t)))
         "UpdateChannelReadMarker"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-channel-read-marker))

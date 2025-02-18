@@ -20,7 +20,7 @@
  (common-lisp:export 'codeartifact-error))
 (common-lisp:progn
  (common-lisp:defclass codeartifact-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "codeartifact" :api-version
                         "2018-09-22" :host-prefix "codeartifact" :signing-name
@@ -2454,17 +2454,23 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'asset-name))
-      (common-lisp:cons "X-AssetName" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "X-AssetName" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'package-version))
-      (common-lisp:cons "X-PackageVersion" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "X-PackageVersion" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'package-version-revision))
-      (common-lisp:cons "X-PackageVersionRevision"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "X-PackageVersionRevision"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -4912,8 +4918,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'asset-sha256))
-      (common-lisp:cons "x-amz-content-sha256"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-content-sha256" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input

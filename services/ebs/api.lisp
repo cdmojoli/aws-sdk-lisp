@@ -20,7 +20,7 @@
  (common-lisp:export 'ebs-error))
 (common-lisp:progn
  (common-lisp:defclass ebs-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "ebs" :api-version
                         "2019-11-02" :host-prefix "ebs" :signing-name
@@ -229,23 +229,31 @@
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'changed-blocks-count))
-      (common-lisp:cons "x-amz-ChangedBlocksCount"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-ChangedBlocksCount"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum))
-      (common-lisp:cons "x-amz-Checksum" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-Checksum" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-algorithm))
-      (common-lisp:cons "x-amz-Checksum-Algorithm"
-                        aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-Checksum-Algorithm"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'checksum-aggregation-method))
-      (common-lisp:cons "x-amz-Checksum-Aggregation-Method"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-Checksum-Aggregation-Method"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -402,16 +410,22 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'data-length))
-      (common-lisp:cons "x-amz-Data-Length" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-Data-Length" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum))
-      (common-lisp:cons "x-amz-Checksum" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-Checksum" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-algorithm))
-      (common-lisp:cons "x-amz-Checksum-Algorithm"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-Checksum-Algorithm"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -805,20 +819,28 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'data-length))
-      (common-lisp:cons "x-amz-Data-Length" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-Data-Length" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'progress))
-      (common-lisp:cons "x-amz-Progress" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-Progress" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum))
-      (common-lisp:cons "x-amz-Checksum" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-Checksum" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-algorithm))
-      (common-lisp:cons "x-amz-Checksum-Algorithm"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-Checksum-Algorithm"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -867,12 +889,16 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum))
-      (common-lisp:cons "x-amz-Checksum" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-Checksum" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'checksum-algorithm))
-      (common-lisp:cons "x-amz-Checksum-Algorithm"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-Checksum-Algorithm"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -1308,10 +1334,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/snapshots/completion/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'snapshot-id))))
+                                                             'snapshot-id)
+                                                            common-lisp:t)))
                                                         "CompleteSnapshot"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'complete-snapshot))
@@ -1336,14 +1363,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/snapshots/~A/blocks/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'snapshot-id))
-                                                           (quri.encode:url-encode
+                                                             'snapshot-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'block-index))))
+                                                             'block-index)
+                                                            common-lisp:t)))
                                                         "GetSnapshotBlock")
        :want-stream common-lisp:t)
       "blob" common-lisp:nil *error-map*)))
@@ -1371,10 +1400,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/snapshots/~A/changedblocks"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'second-snapshot-id))))
+                                                             'second-snapshot-id)
+                                                            common-lisp:t)))
                                                         "ListChangedBlocks"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-changed-blocks))
@@ -1401,10 +1431,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/snapshots/~A/blocks"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'snapshot-id))))
+                                                             'snapshot-id)
+                                                            common-lisp:t)))
                                                         "ListSnapshotBlocks"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-snapshot-blocks))
@@ -1431,14 +1462,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/snapshots/~A/blocks/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'snapshot-id))
-                                                           (quri.encode:url-encode
+                                                             'snapshot-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'block-index))))
+                                                             'block-index)
+                                                            common-lisp:t)))
                                                         "PutSnapshotBlock"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-snapshot-block))

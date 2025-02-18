@@ -20,7 +20,7 @@
  (common-lisp:export 'finspace-data-error))
 (common-lisp:progn
  (common-lisp:defclass finspace-data-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "finspace-data" :api-version
                         "2020-07-13" :host-prefix "finspace-api" :signing-name
@@ -5703,14 +5703,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/permission-group/~A/users/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'permission-group-id))
-                                                           (quri.encode:url-encode
+                                                             'permission-group-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'user-id))))
+                                                             'user-id)
+                                                            common-lisp:t)))
                                                         "AssociateUserToPermissionGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'associate-user-to-permission-group))
@@ -5737,10 +5739,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/datasets/~A/changesetsv2"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dataset-id))))
+                                                             'dataset-id)
+                                                            common-lisp:t)))
                                                         "CreateChangeset"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-changeset))
@@ -5768,10 +5771,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/datasets/~A/dataviewsv2"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dataset-id))))
+                                                             'dataset-id)
+                                                            common-lisp:t)))
                                                         "CreateDataView"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-data-view))
@@ -5857,10 +5861,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/datasetsv2/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dataset-id))))
+                                                             'dataset-id)
+                                                            common-lisp:t)))
                                                         "DeleteDataset"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-dataset))
@@ -5885,10 +5890,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/permission-group/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'permission-group-id))))
+                                                             'permission-group-id)
+                                                            common-lisp:t)))
                                                         "DeletePermissionGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-permission-group))
@@ -5912,10 +5918,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/user/~A/disable"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'user-id))))
+                                                             'user-id)
+                                                            common-lisp:t)))
                                                         "DisableUser"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'disable-user))
@@ -5941,14 +5948,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/permission-group/~A/users/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'permission-group-id))
-                                                           (quri.encode:url-encode
+                                                             'permission-group-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'user-id))))
+                                                             'user-id)
+                                                            common-lisp:t)))
                                                         "DisassociateUserFromPermissionGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'disassociate-user-from-permission-group))
@@ -5972,10 +5981,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/user/~A/enable"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'user-id))))
+                                                             'user-id)
+                                                            common-lisp:t)))
                                                         "EnableUser"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'enable-user))
@@ -5999,14 +6009,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/datasets/~A/changesetsv2/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dataset-id))
-                                                           (quri.encode:url-encode
+                                                             'dataset-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'changeset-id))))
+                                                             'changeset-id)
+                                                            common-lisp:t)))
                                                         "GetChangeset"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-changeset))
@@ -6030,14 +6042,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/datasets/~A/dataviewsv2/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dataset-id))
-                                                           (quri.encode:url-encode
+                                                             'dataset-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dataview-id))))
+                                                             'dataview-id)
+                                                            common-lisp:t)))
                                                         "GetDataView"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-data-view))
@@ -6061,10 +6075,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/datasetsv2/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dataset-id))))
+                                                             'dataset-id)
+                                                            common-lisp:t)))
                                                         "GetDataset"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-dataset))
@@ -6089,14 +6104,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/datasets/~A/dataviewsv2/~A/external-access-details"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dataset-id))
-                                                           (quri.encode:url-encode
+                                                             'dataset-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dataview-id))))
+                                                             'dataview-id)
+                                                            common-lisp:t)))
                                                         "GetExternalDataViewAccessDetails"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-external-data-view-access-details))
@@ -6120,10 +6137,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/permission-group/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'permission-group-id))))
+                                                             'permission-group-id)
+                                                            common-lisp:t)))
                                                         "GetPermissionGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-permission-group))
@@ -6167,10 +6185,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/user/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'user-id))))
+                                                             'user-id)
+                                                            common-lisp:t)))
                                                         "GetUser"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-user))
@@ -6213,10 +6232,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/datasets/~A/changesetsv2"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dataset-id))))
+                                                             'dataset-id)
+                                                            common-lisp:t)))
                                                         "ListChangesets"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-changesets))
@@ -6241,10 +6261,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/datasets/~A/dataviewsv2"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dataset-id))))
+                                                             'dataset-id)
+                                                            common-lisp:t)))
                                                         "ListDataViews"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-data-views))
@@ -6304,10 +6325,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/user/~A/permission-groups"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'user-id))))
+                                                             'user-id)
+                                                            common-lisp:t)))
                                                         "ListPermissionGroupsByUser"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-permission-groups-by-user))
@@ -6351,10 +6373,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/permission-group/~A/users"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'permission-group-id))))
+                                                             'permission-group-id)
+                                                            common-lisp:t)))
                                                         "ListUsersByPermissionGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-users-by-permission-group))
@@ -6378,10 +6401,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/user/~A/password"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'user-id))))
+                                                             'user-id)
+                                                            common-lisp:t)))
                                                         "ResetUserPassword"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'reset-user-password))
@@ -6408,14 +6432,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/datasets/~A/changesetsv2/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dataset-id))
-                                                           (quri.encode:url-encode
+                                                             'dataset-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'changeset-id))))
+                                                             'changeset-id)
+                                                            common-lisp:t)))
                                                         "UpdateChangeset"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-changeset))
@@ -6442,10 +6468,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/datasetsv2/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dataset-id))))
+                                                             'dataset-id)
+                                                            common-lisp:t)))
                                                         "UpdateDataset"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-dataset))
@@ -6472,10 +6499,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/permission-group/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'permission-group-id))))
+                                                             'permission-group-id)
+                                                            common-lisp:t)))
                                                         "UpdatePermissionGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-permission-group))
@@ -6502,10 +6530,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/user/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'user-id))))
+                                                             'user-id)
+                                                            common-lisp:t)))
                                                         "UpdateUser"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-user))

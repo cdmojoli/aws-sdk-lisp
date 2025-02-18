@@ -20,7 +20,7 @@
  (common-lisp:export 'chime-sdk-media-pipelines-error))
 (common-lisp:progn
  (common-lisp:defclass chime-sdk-media-pipelines-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "chime-sdk-media-pipelines"
                         :api-version "2021-07-15" :host-prefix
@@ -9149,10 +9149,11 @@
         "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/sdk-media-capture-pipelines/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'media-pipeline-id))))
+                                'media-pipeline-id)
+                               common-lisp:t)))
         "DeleteMediaCapturePipeline"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-media-capture-pipeline))
@@ -9174,10 +9175,10 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/media-insights-pipeline-configurations/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'identifier))))
+                                aws-sdk/generator/operation::input 'identifier)
+                               common-lisp:t)))
         "DeleteMediaInsightsPipelineConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-media-insights-pipeline-configuration))
@@ -9197,10 +9198,11 @@
         "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/sdk-media-pipelines/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'media-pipeline-id))))
+                                'media-pipeline-id)
+                               common-lisp:t)))
         "DeleteMediaPipeline"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-media-pipeline))
@@ -9222,10 +9224,10 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/media-pipeline-kinesis-video-stream-pools/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'identifier))))
+                                aws-sdk/generator/operation::input 'identifier)
+                               common-lisp:t)))
         "DeleteMediaPipelineKinesisVideoStreamPool"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-media-pipeline-kinesis-video-stream-pool))
@@ -9246,10 +9248,11 @@
         "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/sdk-media-capture-pipelines/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'media-pipeline-id))))
+                                'media-pipeline-id)
+                               common-lisp:t)))
         "GetMediaCapturePipeline"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-media-capture-pipeline))
@@ -9271,10 +9274,10 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/media-insights-pipeline-configurations/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'identifier))))
+                                aws-sdk/generator/operation::input 'identifier)
+                               common-lisp:t)))
         "GetMediaInsightsPipelineConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-media-insights-pipeline-configuration))
@@ -9294,10 +9297,11 @@
         "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/sdk-media-pipelines/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'media-pipeline-id))))
+                                'media-pipeline-id)
+                               common-lisp:t)))
         "GetMediaPipeline"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-media-pipeline))
@@ -9319,10 +9323,10 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/media-pipeline-kinesis-video-stream-pools/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'identifier))))
+                                aws-sdk/generator/operation::input 'identifier)
+                               common-lisp:t)))
         "GetMediaPipelineKinesisVideoStreamPool"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-media-pipeline-kinesis-video-stream-pool))
@@ -9344,14 +9348,15 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/media-insights-pipelines/~A/speaker-search-tasks/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
+                               (common-lisp:slot-value
+                                aws-sdk/generator/operation::input 'identifier)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'identifier))
-                              (quri.encode:url-encode
-                               (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'speaker-search-task-id))))
+                                'speaker-search-task-id)
+                               common-lisp:t)))
         "GetSpeakerSearchTask"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-speaker-search-task))
@@ -9374,14 +9379,15 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/media-insights-pipelines/~A/voice-tone-analysis-tasks/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
+                               (common-lisp:slot-value
+                                aws-sdk/generator/operation::input 'identifier)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'identifier))
-                              (quri.encode:url-encode
-                               (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'voice-tone-analysis-task-id))))
+                                'voice-tone-analysis-task-id)
+                               common-lisp:t)))
         "GetVoiceToneAnalysisTask"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-voice-tone-analysis-task))
@@ -9492,10 +9498,10 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/media-insights-pipelines/~A/speaker-search-tasks?operation=start"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'identifier))))
+                                aws-sdk/generator/operation::input 'identifier)
+                               common-lisp:t)))
         "StartSpeakerSearchTask"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'start-speaker-search-task))
@@ -9521,10 +9527,10 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/media-insights-pipelines/~A/voice-tone-analysis-tasks?operation=start"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'identifier))))
+                                aws-sdk/generator/operation::input 'identifier)
+                               common-lisp:t)))
         "StartVoiceToneAnalysisTask"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'start-voice-tone-analysis-task))
@@ -9546,14 +9552,15 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/media-insights-pipelines/~A/speaker-search-tasks/~A?operation=stop"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
+                               (common-lisp:slot-value
+                                aws-sdk/generator/operation::input 'identifier)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'identifier))
-                              (quri.encode:url-encode
-                               (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'speaker-search-task-id))))
+                                'speaker-search-task-id)
+                               common-lisp:t)))
         "StopSpeakerSearchTask"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'stop-speaker-search-task))
@@ -9576,14 +9583,15 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/media-insights-pipelines/~A/voice-tone-analysis-tasks/~A?operation=stop"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
+                               (common-lisp:slot-value
+                                aws-sdk/generator/operation::input 'identifier)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'identifier))
-                              (quri.encode:url-encode
-                               (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'voice-tone-analysis-task-id))))
+                                'voice-tone-analysis-task-id)
+                               common-lisp:t)))
         "StopVoiceToneAnalysisTask"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'stop-voice-tone-analysis-task))
@@ -9640,10 +9648,10 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/media-insights-pipeline-configurations/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'identifier))))
+                                aws-sdk/generator/operation::input 'identifier)
+                               common-lisp:t)))
         "UpdateMediaInsightsPipelineConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-media-insights-pipeline-configuration))
@@ -9665,10 +9673,10 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/media-insights-pipeline-status/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'identifier))))
+                                aws-sdk/generator/operation::input 'identifier)
+                               common-lisp:t)))
         "UpdateMediaInsightsPipelineStatus"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-media-insights-pipeline-status))
@@ -9691,10 +9699,10 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/media-pipeline-kinesis-video-stream-pools/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'identifier))))
+                                aws-sdk/generator/operation::input 'identifier)
+                               common-lisp:t)))
         "UpdateMediaPipelineKinesisVideoStreamPool"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-media-pipeline-kinesis-video-stream-pool))

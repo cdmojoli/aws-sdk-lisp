@@ -20,7 +20,7 @@
  (common-lisp:export 'trustedadvisor-error))
 (common-lisp:progn
  (common-lisp:defclass trustedadvisor-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "trustedadvisor"
                         :api-version "2022-09-15" :host-prefix "trustedadvisor"
@@ -3287,10 +3287,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/organization-recommendations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'organization-recommendation-identifier))))
+                                                             'organization-recommendation-identifier)
+                                                            common-lisp:t)))
                                                         "GetOrganizationRecommendation"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-organization-recommendation))
@@ -3314,10 +3315,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/recommendations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'recommendation-identifier))))
+                                                             'recommendation-identifier)
+                                                            common-lisp:t)))
                                                         "GetRecommendation"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-recommendation))
@@ -3365,10 +3367,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/organization-recommendations/~A/accounts"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'organization-recommendation-identifier))))
+                                                             'organization-recommendation-identifier)
+                                                            common-lisp:t)))
                                                         "ListOrganizationRecommendationAccounts"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-organization-recommendation-accounts))
@@ -3397,10 +3400,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/organization-recommendations/~A/resources"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'organization-recommendation-identifier))))
+                                                             'organization-recommendation-identifier)
+                                                            common-lisp:t)))
                                                         "ListOrganizationRecommendationResources"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-organization-recommendation-resources))
@@ -3452,10 +3456,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/recommendations/~A/resources"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'recommendation-identifier))))
+                                                             'recommendation-identifier)
+                                                            common-lisp:t)))
                                                         "ListRecommendationResources"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-recommendation-resources))
@@ -3507,10 +3512,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/organization-recommendations/~A/lifecycle"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'organization-recommendation-identifier))))
+                                                             'organization-recommendation-identifier)
+                                                            common-lisp:t)))
                                                         "UpdateOrganizationRecommendationLifecycle"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-organization-recommendation-lifecycle))
@@ -3538,10 +3544,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/recommendations/~A/lifecycle"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'recommendation-identifier))))
+                                                             'recommendation-identifier)
+                                                            common-lisp:t)))
                                                         "UpdateRecommendationLifecycle"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-recommendation-lifecycle))

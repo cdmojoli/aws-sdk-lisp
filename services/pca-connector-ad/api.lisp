@@ -20,7 +20,7 @@
  (common-lisp:export 'pca-connector-ad-error))
 (common-lisp:progn
  (common-lisp:defclass pca-connector-ad-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "pca-connector-ad"
                         :api-version "2018-05-10" :host-prefix
@@ -5995,14 +5995,16 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/directoryRegistrations/~A/servicePrincipalNames/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'directory-registration-arn))
-                              (quri.encode:url-encode
+                                'directory-registration-arn)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'connector-arn))))
+                                'connector-arn)
+                               common-lisp:t)))
         "CreateServicePrincipalName"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-service-principal-name))
@@ -6044,10 +6046,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/templates/~A/accessControlEntries"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'template-arn))))
+                                'template-arn)
+                               common-lisp:t)))
         "CreateTemplateGroupAccessControlEntry"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-template-group-access-control-entry))
@@ -6066,10 +6069,11 @@
         'pca-connector-ad-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/connectors/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'connector-arn))))
+                                'connector-arn)
+                               common-lisp:t)))
         "DeleteConnector"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-connector))
@@ -6089,10 +6093,11 @@
         'pca-connector-ad-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/directoryRegistrations/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'directory-registration-arn))))
+                                'directory-registration-arn)
+                               common-lisp:t)))
         "DeleteDirectoryRegistration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-directory-registration))
@@ -6114,14 +6119,16 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/directoryRegistrations/~A/servicePrincipalNames/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'directory-registration-arn))
-                              (quri.encode:url-encode
+                                'directory-registration-arn)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'connector-arn))))
+                                'connector-arn)
+                               common-lisp:t)))
         "DeleteServicePrincipalName"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-service-principal-name))
@@ -6140,10 +6147,11 @@
         'pca-connector-ad-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/templates/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'template-arn))))
+                                'template-arn)
+                               common-lisp:t)))
         "DeleteTemplate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-template))
@@ -6165,14 +6173,16 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/templates/~A/accessControlEntries/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'template-arn))
-                              (quri.encode:url-encode
+                                'template-arn)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'group-security-identifier))))
+                                'group-security-identifier)
+                               common-lisp:t)))
         "DeleteTemplateGroupAccessControlEntry"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-template-group-access-control-entry))
@@ -6191,10 +6201,11 @@
         'pca-connector-ad-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/connectors/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'connector-arn))))
+                                'connector-arn)
+                               common-lisp:t)))
         "GetConnector"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-connector))
@@ -6214,10 +6225,11 @@
         'pca-connector-ad-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/directoryRegistrations/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'directory-registration-arn))))
+                                'directory-registration-arn)
+                               common-lisp:t)))
         "GetDirectoryRegistration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-directory-registration))
@@ -6239,14 +6251,16 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/directoryRegistrations/~A/servicePrincipalNames/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'directory-registration-arn))
-                              (quri.encode:url-encode
+                                'directory-registration-arn)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'connector-arn))))
+                                'connector-arn)
+                               common-lisp:t)))
         "GetServicePrincipalName"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-service-principal-name))
@@ -6265,10 +6279,11 @@
         'pca-connector-ad-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/templates/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'template-arn))))
+                                'template-arn)
+                               common-lisp:t)))
         "GetTemplate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-template))
@@ -6290,14 +6305,16 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/templates/~A/accessControlEntries/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'template-arn))
-                              (quri.encode:url-encode
+                                'template-arn)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'group-security-identifier))))
+                                'group-security-identifier)
+                               common-lisp:t)))
         "GetTemplateGroupAccessControlEntry"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-template-group-access-control-entry))
@@ -6353,10 +6370,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/directoryRegistrations/~A/servicePrincipalNames"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'directory-registration-arn))))
+                                'directory-registration-arn)
+                               common-lisp:t)))
         "ListServicePrincipalNames"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-service-principal-names))
@@ -6375,10 +6393,11 @@
         'pca-connector-ad-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -6400,10 +6419,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/templates/~A/accessControlEntries"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'template-arn))))
+                                'template-arn)
+                               common-lisp:t)))
         "ListTemplateGroupAccessControlEntries"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-template-group-access-control-entries))
@@ -6439,10 +6459,11 @@
         'pca-connector-ad-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -6461,10 +6482,11 @@
         'pca-connector-ad-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -6486,10 +6508,11 @@
         'pca-connector-ad-request aws-sdk/generator/operation::input "PATCH"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/templates/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'template-arn))))
+                                'template-arn)
+                               common-lisp:t)))
         "UpdateTemplate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-template))
@@ -6513,14 +6536,16 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/templates/~A/accessControlEntries/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'template-arn))
-                              (quri.encode:url-encode
+                                'template-arn)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'group-security-identifier))))
+                                'group-security-identifier)
+                               common-lisp:t)))
         "UpdateTemplateGroupAccessControlEntry"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-template-group-access-control-entry))

@@ -20,7 +20,7 @@
  (common-lisp:export 'codeguru-reviewer-error))
 (common-lisp:progn
  (common-lisp:defclass codeguru-reviewer-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "codeguru-reviewer"
                         :api-version "2019-09-19" :host-prefix
@@ -3746,10 +3746,11 @@
         'codeguru-reviewer-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/codereviews/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'code-review-arn))))
+                                'code-review-arn)
+                               common-lisp:t)))
         "DescribeCodeReview"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-code-review))
@@ -3771,10 +3772,11 @@
         'codeguru-reviewer-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/feedback/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'code-review-arn))))
+                                'code-review-arn)
+                               common-lisp:t)))
         "DescribeRecommendationFeedback"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-recommendation-feedback))
@@ -3794,10 +3796,11 @@
         'codeguru-reviewer-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/associations/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'association-arn))))
+                                'association-arn)
+                               common-lisp:t)))
         "DescribeRepositoryAssociation"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-repository-association))
@@ -3816,10 +3819,11 @@
         'codeguru-reviewer-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/associations/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'association-arn))))
+                                'association-arn)
+                               common-lisp:t)))
         "DisassociateRepository"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'disassociate-repository))
@@ -3862,10 +3866,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/feedback/~A/RecommendationFeedback"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'code-review-arn))))
+                                'code-review-arn)
+                               common-lisp:t)))
         "ListRecommendationFeedback"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-recommendation-feedback))
@@ -3885,10 +3890,11 @@
         'codeguru-reviewer-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/codereviews/~A/Recommendations"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'code-review-arn))))
+                                'code-review-arn)
+                               common-lisp:t)))
         "ListRecommendations"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-recommendations))
@@ -3927,10 +3933,11 @@
         'codeguru-reviewer-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -3968,10 +3975,11 @@
         'codeguru-reviewer-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -3990,10 +3998,11 @@
         'codeguru-reviewer-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))

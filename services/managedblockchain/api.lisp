@@ -20,7 +20,7 @@
  (common-lisp:export 'managedblockchain-error))
 (common-lisp:progn
  (common-lisp:defclass managedblockchain-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "managedblockchain"
                         :api-version "2018-09-24" :host-prefix
@@ -5321,10 +5321,10 @@
         'managedblockchain-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/networks/~A/members"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'network-id))))
+                                aws-sdk/generator/operation::input 'network-id)
+                               common-lisp:t)))
         "CreateMember"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-member))
@@ -5367,10 +5367,10 @@
         'managedblockchain-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/networks/~A/nodes"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'network-id))))
+                                aws-sdk/generator/operation::input 'network-id)
+                               common-lisp:t)))
         "CreateNode"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-node))
@@ -5392,10 +5392,10 @@
         'managedblockchain-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/networks/~A/proposals"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'network-id))))
+                                aws-sdk/generator/operation::input 'network-id)
+                               common-lisp:t)))
         "CreateProposal"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-proposal))
@@ -5414,10 +5414,11 @@
         'managedblockchain-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/accessors/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'accessor-id))))
+                                'accessor-id)
+                               common-lisp:t)))
         "DeleteAccessor"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-accessor))
@@ -5436,14 +5437,14 @@
         'managedblockchain-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/networks/~A/members/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'network-id))
-                              (quri.encode:url-encode
+                                aws-sdk/generator/operation::input 'network-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'member-id))))
+                                aws-sdk/generator/operation::input 'member-id)
+                               common-lisp:t)))
         "DeleteMember"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-member))
@@ -5462,13 +5463,14 @@
         'managedblockchain-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/networks/~A/nodes/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'network-id))
-                              (quri.encode:url-encode
+                                aws-sdk/generator/operation::input 'network-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'node-id))))
+                                aws-sdk/generator/operation::input 'node-id)
+                               common-lisp:t)))
         "DeleteNode"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-node))
@@ -5487,10 +5489,11 @@
         'managedblockchain-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/accessors/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'accessor-id))))
+                                'accessor-id)
+                               common-lisp:t)))
         "GetAccessor"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-accessor))
@@ -5509,14 +5512,14 @@
         'managedblockchain-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/networks/~A/members/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'network-id))
-                              (quri.encode:url-encode
+                                aws-sdk/generator/operation::input 'network-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'member-id))))
+                                aws-sdk/generator/operation::input 'member-id)
+                               common-lisp:t)))
         "GetMember"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-member))
@@ -5535,10 +5538,10 @@
         'managedblockchain-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/networks/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'network-id))))
+                                aws-sdk/generator/operation::input 'network-id)
+                               common-lisp:t)))
         "GetNetwork"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-network))
@@ -5557,13 +5560,14 @@
         'managedblockchain-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/networks/~A/nodes/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'network-id))
-                              (quri.encode:url-encode
+                                aws-sdk/generator/operation::input 'network-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'node-id))))
+                                aws-sdk/generator/operation::input 'node-id)
+                               common-lisp:t)))
         "GetNode"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-node))
@@ -5582,14 +5586,15 @@
         'managedblockchain-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/networks/~A/proposals/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
+                               (common-lisp:slot-value
+                                aws-sdk/generator/operation::input 'network-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'network-id))
-                              (quri.encode:url-encode
-                               (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'proposal-id))))
+                                'proposal-id)
+                               common-lisp:t)))
         "GetProposal"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-proposal))
@@ -5644,10 +5649,10 @@
         'managedblockchain-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/networks/~A/members"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'network-id))))
+                                aws-sdk/generator/operation::input 'network-id)
+                               common-lisp:t)))
         "ListMembers"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-members))
@@ -5686,10 +5691,10 @@
         'managedblockchain-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/networks/~A/nodes"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'network-id))))
+                                aws-sdk/generator/operation::input 'network-id)
+                               common-lisp:t)))
         "ListNodes"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-nodes))
@@ -5710,14 +5715,15 @@
         'managedblockchain-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/networks/~A/proposals/~A/votes"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
+                               (common-lisp:slot-value
+                                aws-sdk/generator/operation::input 'network-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'network-id))
-                              (quri.encode:url-encode
-                               (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'proposal-id))))
+                                'proposal-id)
+                               common-lisp:t)))
         "ListProposalVotes"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-proposal-votes))
@@ -5737,10 +5743,10 @@
         'managedblockchain-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/networks/~A/proposals"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'network-id))))
+                                aws-sdk/generator/operation::input 'network-id)
+                               common-lisp:t)))
         "ListProposals"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-proposals))
@@ -5759,10 +5765,11 @@
         'managedblockchain-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -5781,10 +5788,11 @@
         'managedblockchain-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/invitations/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'invitation-id))))
+                                'invitation-id)
+                               common-lisp:t)))
         "RejectInvitation"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'reject-invitation))
@@ -5803,10 +5811,11 @@
         'managedblockchain-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -5825,10 +5834,11 @@
         'managedblockchain-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -5849,14 +5859,14 @@
         'managedblockchain-request aws-sdk/generator/operation::input "PATCH"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/networks/~A/members/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'network-id))
-                              (quri.encode:url-encode
+                                aws-sdk/generator/operation::input 'network-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'member-id))))
+                                aws-sdk/generator/operation::input 'member-id)
+                               common-lisp:t)))
         "UpdateMember"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-member))
@@ -5878,13 +5888,14 @@
         'managedblockchain-request aws-sdk/generator/operation::input "PATCH"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/networks/~A/nodes/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'network-id))
-                              (quri.encode:url-encode
+                                aws-sdk/generator/operation::input 'network-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'node-id))))
+                                aws-sdk/generator/operation::input 'node-id)
+                               common-lisp:t)))
         "UpdateNode"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-node))
@@ -5905,14 +5916,15 @@
         'managedblockchain-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/networks/~A/proposals/~A/votes"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
+                               (common-lisp:slot-value
+                                aws-sdk/generator/operation::input 'network-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'network-id))
-                              (quri.encode:url-encode
-                               (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'proposal-id))))
+                                'proposal-id)
+                               common-lisp:t)))
         "VoteOnProposal"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'vote-on-proposal))

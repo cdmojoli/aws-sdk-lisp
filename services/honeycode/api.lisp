@@ -20,7 +20,7 @@
  (common-lisp:export 'honeycode-error))
 (common-lisp:progn
  (common-lisp:defclass honeycode-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "honeycode" :api-version
                         "2020-03-01" :host-prefix "honeycode" :signing-name
@@ -3338,14 +3338,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/workbooks/~A/tables/~A/rows/batchcreate"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'workbook-id))
-                                                           (quri.encode:url-encode
+                                                             'workbook-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'table-id))))
+                                                             'table-id)
+                                                            common-lisp:t)))
                                                         "BatchCreateTableRows"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'batch-create-table-rows))
@@ -3371,14 +3373,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/workbooks/~A/tables/~A/rows/batchdelete"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'workbook-id))
-                                                           (quri.encode:url-encode
+                                                             'workbook-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'table-id))))
+                                                             'table-id)
+                                                            common-lisp:t)))
                                                         "BatchDeleteTableRows"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'batch-delete-table-rows))
@@ -3405,14 +3409,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/workbooks/~A/tables/~A/rows/batchupdate"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'workbook-id))
-                                                           (quri.encode:url-encode
+                                                             'workbook-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'table-id))))
+                                                             'table-id)
+                                                            common-lisp:t)))
                                                         "BatchUpdateTableRows"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'batch-update-table-rows))
@@ -3439,14 +3445,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/workbooks/~A/tables/~A/rows/batchupsert"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'workbook-id))
-                                                           (quri.encode:url-encode
+                                                             'workbook-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'table-id))))
+                                                             'table-id)
+                                                            common-lisp:t)))
                                                         "BatchUpsertTableRows"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'batch-upsert-table-rows))
@@ -3471,18 +3479,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/workbooks/~A/tables/~A/import/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'workbook-id))
-                                                           (quri.encode:url-encode
+                                                             'workbook-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'table-id))
-                                                           (quri.encode:url-encode
+                                                             'table-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'job-id))))
+                                                             'job-id)
+                                                            common-lisp:t)))
                                                         "DescribeTableDataImportJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-table-data-import-job))
@@ -3530,22 +3541,26 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/workbooks/~A/apps/~A/screens/~A/automations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'workbook-id))
-                                                           (quri.encode:url-encode
+                                                             'workbook-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-id))
-                                                           (quri.encode:url-encode
+                                                             'app-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'screen-id))
-                                                           (quri.encode:url-encode
+                                                             'screen-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'automation-id))))
+                                                             'automation-id)
+                                                            common-lisp:t)))
                                                         "InvokeScreenAutomation"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'invoke-screen-automation))
@@ -3570,14 +3585,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/workbooks/~A/tables/~A/columns"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'workbook-id))
-                                                           (quri.encode:url-encode
+                                                             'workbook-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'table-id))))
+                                                             'table-id)
+                                                            common-lisp:t)))
                                                         "ListTableColumns"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-table-columns))
@@ -3604,14 +3621,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/workbooks/~A/tables/~A/rows/list"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'workbook-id))
-                                                           (quri.encode:url-encode
+                                                             'workbook-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'table-id))))
+                                                             'table-id)
+                                                            common-lisp:t)))
                                                         "ListTableRows"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-table-rows))
@@ -3636,10 +3655,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/workbooks/~A/tables"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'workbook-id))))
+                                                             'workbook-id)
+                                                            common-lisp:t)))
                                                         "ListTables"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tables))
@@ -3663,10 +3683,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -3693,14 +3714,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/workbooks/~A/tables/~A/rows/query"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'workbook-id))
-                                                           (quri.encode:url-encode
+                                                             'workbook-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'table-id))))
+                                                             'table-id)
+                                                            common-lisp:t)))
                                                         "QueryTableRows"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'query-table-rows))
@@ -3728,14 +3751,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/workbooks/~A/tables/~A/import"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'workbook-id))
-                                                           (quri.encode:url-encode
+                                                             'workbook-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'table-id))))
+                                                             'table-id)
+                                                            common-lisp:t)))
                                                         "StartTableDataImportJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'start-table-data-import-job))
@@ -3759,10 +3784,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -3786,10 +3812,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))

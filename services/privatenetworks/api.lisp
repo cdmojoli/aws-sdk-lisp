@@ -20,7 +20,7 @@
  (common-lisp:export 'privatenetworks-error))
 (common-lisp:progn
  (common-lisp:defclass privatenetworks-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "privatenetworks"
                         :api-version "2021-12-03" :host-prefix
@@ -4583,10 +4583,11 @@
         'privatenetworks-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/v1/networks/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'network-arn))))
+                                'network-arn)
+                               common-lisp:t)))
         "DeleteNetwork"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-network))
@@ -4605,10 +4606,11 @@
         'privatenetworks-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/v1/network-sites/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'network-site-arn))))
+                                'network-site-arn)
+                               common-lisp:t)))
         "DeleteNetworkSite"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-network-site))
@@ -4627,10 +4629,11 @@
         'privatenetworks-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/v1/device-identifiers/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'device-identifier-arn))))
+                                'device-identifier-arn)
+                               common-lisp:t)))
         "GetDeviceIdentifier"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-device-identifier))
@@ -4649,10 +4652,11 @@
         'privatenetworks-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/v1/networks/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'network-arn))))
+                                'network-arn)
+                               common-lisp:t)))
         "GetNetwork"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-network))
@@ -4671,10 +4675,11 @@
         'privatenetworks-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/v1/network-resources/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'network-resource-arn))))
+                                'network-resource-arn)
+                               common-lisp:t)))
         "GetNetworkResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-network-resource))
@@ -4693,10 +4698,11 @@
         'privatenetworks-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/v1/network-sites/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'network-site-arn))))
+                                'network-site-arn)
+                               common-lisp:t)))
         "GetNetworkSite"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-network-site))
@@ -4715,10 +4721,10 @@
         'privatenetworks-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/v1/orders/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'order-arn))))
+                                aws-sdk/generator/operation::input 'order-arn)
+                               common-lisp:t)))
         "GetOrder"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-order))
@@ -4826,10 +4832,11 @@
         'privatenetworks-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -4877,10 +4884,11 @@
         'privatenetworks-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -4899,10 +4907,11 @@
         'privatenetworks-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))

@@ -20,7 +20,7 @@
  (common-lisp:export 'pipes-error))
 (common-lisp:progn
  (common-lisp:defclass pipes-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "pipes" :api-version
                         "2015-10-07" :host-prefix "pipes" :signing-name "pipes"
@@ -7214,10 +7214,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/pipes/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "CreatePipe"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-pipe))
@@ -7241,10 +7242,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/pipes/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "DeletePipe"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-pipe))
@@ -7268,10 +7270,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/pipes/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "DescribePipe"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-pipe))
@@ -7315,10 +7318,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -7342,10 +7346,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/pipes/~A/start"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "StartPipe"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'start-pipe))
@@ -7369,10 +7374,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/pipes/~A/stop"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "StopPipe"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'stop-pipe))
@@ -7396,10 +7402,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -7423,10 +7430,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -7455,10 +7463,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/pipes/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "UpdatePipe"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-pipe))

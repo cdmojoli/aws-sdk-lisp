@@ -20,7 +20,7 @@
  (common-lisp:export 'rbin-error))
 (common-lisp:progn
  (common-lisp:defclass rbin-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "rbin" :api-version
                         "2021-06-15" :host-prefix "rbin" :signing-name "rbin"
@@ -1825,10 +1825,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/rules/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'identifier))))
+                                                             'identifier)
+                                                            common-lisp:t)))
                                                         "DeleteRule"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-rule))
@@ -1852,10 +1853,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/rules/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'identifier))))
+                                                             'identifier)
+                                                            common-lisp:t)))
                                                         "GetRule"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-rule))
@@ -1899,10 +1901,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -1926,10 +1929,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/rules/~A/lock"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'identifier))))
+                                                             'identifier)
+                                                            common-lisp:t)))
                                                         "LockRule"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'lock-rule))
@@ -1953,10 +1957,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -1980,10 +1985,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/rules/~A/unlock"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'identifier))))
+                                                             'identifier)
+                                                            common-lisp:t)))
                                                         "UnlockRule"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'unlock-rule))
@@ -2007,10 +2013,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -2037,10 +2044,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/rules/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'identifier))))
+                                                             'identifier)
+                                                            common-lisp:t)))
                                                         "UpdateRule"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-rule))

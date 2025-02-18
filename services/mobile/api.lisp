@@ -20,7 +20,7 @@
  (common-lisp:export 'mobile-error))
 (common-lisp:progn
  (common-lisp:defclass mobile-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "mobile" :api-version
                         "2017-07-01" :host-prefix "mobile" :signing-name
@@ -1248,10 +1248,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/projects/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project-id))))
+                                                             'project-id)
+                                                            common-lisp:t)))
                                                         "DeleteProject"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-project))
@@ -1275,10 +1276,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/bundles/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bundle-id))))
+                                                             'bundle-id)
+                                                            common-lisp:t)))
                                                         "DescribeBundle"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-bundle))
@@ -1319,10 +1321,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/bundles/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'bundle-id))))
+                                                             'bundle-id)
+                                                            common-lisp:t)))
                                                         "ExportBundle"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'export-bundle))
@@ -1346,10 +1349,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/exports/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project-id))))
+                                                             'project-id)
+                                                            common-lisp:t)))
                                                         "ExportProject"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'export-project))

@@ -20,7 +20,7 @@
  (common-lisp:export 'chatbot-error))
 (common-lisp:progn
  (common-lisp:defclass chatbot-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "chatbot" :api-version
                         "2017-10-11" :host-prefix "chatbot" :signing-name

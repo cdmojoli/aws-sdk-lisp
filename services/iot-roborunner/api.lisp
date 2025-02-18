@@ -20,7 +20,7 @@
  (common-lisp:export 'iot-roborunner-error))
 (common-lisp:progn
  (common-lisp:defclass iot-roborunner-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "iot-roborunner"
                         :api-version "2018-05-10" :host-prefix "iotroborunner"

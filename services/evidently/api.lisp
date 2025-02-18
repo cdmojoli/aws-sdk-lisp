@@ -20,7 +20,7 @@
  (common-lisp:export 'evidently-error))
 (common-lisp:progn
  (common-lisp:defclass evidently-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "evidently" :api-version
                         "2021-02-01" :host-prefix "evidently" :signing-name
@@ -7963,10 +7963,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/projects/~A/evaluations"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project))))
+                                                             'project)
+                                                            common-lisp:t)))
                                                         "BatchEvaluateFeature"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'batch-evaluate-feature))
@@ -7994,10 +7995,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/projects/~A/experiments"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project))))
+                                                             'project)
+                                                            common-lisp:t)))
                                                         "CreateExperiment"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-experiment))
@@ -8025,10 +8027,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/projects/~A/features"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project))))
+                                                             'project)
+                                                            common-lisp:t)))
                                                         "CreateFeature"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-feature))
@@ -8055,10 +8058,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/projects/~A/launches"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project))))
+                                                             'project)
+                                                            common-lisp:t)))
                                                         "CreateLaunch"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-launch))
@@ -8119,14 +8123,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/projects/~A/experiments/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project))
-                                                           (quri.encode:url-encode
+                                                             'project)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'experiment))))
+                                                             'experiment)
+                                                            common-lisp:t)))
                                                         "DeleteExperiment"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-experiment))
@@ -8150,14 +8156,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/projects/~A/features/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project))
-                                                           (quri.encode:url-encode
+                                                             'project)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'feature))))
+                                                             'feature)
+                                                            common-lisp:t)))
                                                         "DeleteFeature"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-feature))
@@ -8181,14 +8189,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/projects/~A/launches/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project))
-                                                           (quri.encode:url-encode
+                                                             'project)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'launch))))
+                                                             'launch)
+                                                            common-lisp:t)))
                                                         "DeleteLaunch"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-launch))
@@ -8212,10 +8222,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/projects/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project))))
+                                                             'project)
+                                                            common-lisp:t)))
                                                         "DeleteProject"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-project))
@@ -8239,10 +8250,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/segments/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'segment))))
+                                                             'segment)
+                                                            common-lisp:t)))
                                                         "DeleteSegment"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-segment))
@@ -8268,14 +8280,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/projects/~A/evaluations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project))
-                                                           (quri.encode:url-encode
+                                                             'project)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'feature))))
+                                                             'feature)
+                                                            common-lisp:t)))
                                                         "EvaluateFeature"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'evaluate-feature))
@@ -8299,14 +8313,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/projects/~A/experiments/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project))
-                                                           (quri.encode:url-encode
+                                                             'project)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'experiment))))
+                                                             'experiment)
+                                                            common-lisp:t)))
                                                         "GetExperiment"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-experiment))
@@ -8334,14 +8350,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/projects/~A/experiments/~A/results"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project))
-                                                           (quri.encode:url-encode
+                                                             'project)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'experiment))))
+                                                             'experiment)
+                                                            common-lisp:t)))
                                                         "GetExperimentResults"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-experiment-results))
@@ -8365,14 +8383,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/projects/~A/features/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project))
-                                                           (quri.encode:url-encode
+                                                             'project)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'feature))))
+                                                             'feature)
+                                                            common-lisp:t)))
                                                         "GetFeature"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-feature))
@@ -8396,14 +8416,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/projects/~A/launches/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project))
-                                                           (quri.encode:url-encode
+                                                             'project)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'launch))))
+                                                             'launch)
+                                                            common-lisp:t)))
                                                         "GetLaunch"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-launch))
@@ -8427,10 +8449,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/projects/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project))))
+                                                             'project)
+                                                            common-lisp:t)))
                                                         "GetProject"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-project))
@@ -8454,10 +8477,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/segments/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'segment))))
+                                                             'segment)
+                                                            common-lisp:t)))
                                                         "GetSegment"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-segment))
@@ -8482,10 +8506,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/projects/~A/experiments"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project))))
+                                                             'project)
+                                                            common-lisp:t)))
                                                         "ListExperiments"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-experiments))
@@ -8509,10 +8534,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/projects/~A/features"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project))))
+                                                             'project)
+                                                            common-lisp:t)))
                                                         "ListFeatures"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-features))
@@ -8537,10 +8563,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/projects/~A/launches"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project))))
+                                                             'project)
+                                                            common-lisp:t)))
                                                         "ListLaunches"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-launches))
@@ -8582,10 +8609,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/segments/~A/references"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'segment))))
+                                                             'segment)
+                                                            common-lisp:t)))
                                                         "ListSegmentReferences"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-segment-references))
@@ -8626,10 +8654,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -8653,10 +8682,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/events/projects/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project))))
+                                                             'project)
+                                                            common-lisp:t)))
                                                         "PutProjectEvents"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-project-events))
@@ -8682,14 +8712,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/projects/~A/experiments/~A/start"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project))
-                                                           (quri.encode:url-encode
+                                                             'project)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'experiment))))
+                                                             'experiment)
+                                                            common-lisp:t)))
                                                         "StartExperiment"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'start-experiment))
@@ -8713,14 +8745,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/projects/~A/launches/~A/start"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project))
-                                                           (quri.encode:url-encode
+                                                             'project)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'launch))))
+                                                             'launch)
+                                                            common-lisp:t)))
                                                         "StartLaunch"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'start-launch))
@@ -8745,14 +8779,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/projects/~A/experiments/~A/cancel"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project))
-                                                           (quri.encode:url-encode
+                                                             'project)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'experiment))))
+                                                             'experiment)
+                                                            common-lisp:t)))
                                                         "StopExperiment"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'stop-experiment))
@@ -8777,14 +8813,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/projects/~A/launches/~A/cancel"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project))
-                                                           (quri.encode:url-encode
+                                                             'project)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'launch))))
+                                                             'launch)
+                                                            common-lisp:t)))
                                                         "StopLaunch"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'stop-launch))
@@ -8808,10 +8846,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -8853,10 +8892,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -8885,14 +8925,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/projects/~A/experiments/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project))
-                                                           (quri.encode:url-encode
+                                                             'project)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'experiment))))
+                                                             'experiment)
+                                                            common-lisp:t)))
                                                         "UpdateExperiment"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-experiment))
@@ -8921,14 +8963,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/projects/~A/features/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project))
-                                                           (quri.encode:url-encode
+                                                             'project)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'feature))))
+                                                             'feature)
+                                                            common-lisp:t)))
                                                         "UpdateFeature"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-feature))
@@ -8955,14 +8999,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/projects/~A/launches/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project))
-                                                           (quri.encode:url-encode
+                                                             'project)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'launch))))
+                                                             'launch)
+                                                            common-lisp:t)))
                                                         "UpdateLaunch"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-launch))
@@ -8987,10 +9033,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/projects/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project))))
+                                                             'project)
+                                                            common-lisp:t)))
                                                         "UpdateProject"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-project))
@@ -9016,10 +9063,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/projects/~A/data-delivery"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'project))))
+                                                             'project)
+                                                            common-lisp:t)))
                                                         "UpdateProjectDataDelivery"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-project-data-delivery))

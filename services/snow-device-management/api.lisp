@@ -20,7 +20,7 @@
  (common-lisp:export 'snow-device-management-error))
 (common-lisp:progn
  (common-lisp:defclass snow-device-management-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "snow-device-management"
                         :api-version "2021-08-04" :host-prefix
@@ -2576,9 +2576,10 @@
         "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/task/~A/cancel"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'task-id))))
+                                aws-sdk/generator/operation::input 'task-id)
+                               common-lisp:t)))
         "CancelTask"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'cancel-task))
@@ -2616,10 +2617,11 @@
         "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/managed-device/~A/describe"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'managed-device-id))))
+                                'managed-device-id)
+                               common-lisp:t)))
         "DescribeDevice"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-device))
@@ -2640,10 +2642,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/managed-device/~A/resources/ec2/describe"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'managed-device-id))))
+                                'managed-device-id)
+                               common-lisp:t)))
         "DescribeDeviceEc2Instances"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-device-ec2instances))
@@ -2663,13 +2666,15 @@
         "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/task/~A/execution/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'task-id))
-                              (quri.encode:url-encode
+                                aws-sdk/generator/operation::input 'task-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'managed-device-id))))
+                                'managed-device-id)
+                               common-lisp:t)))
         "DescribeExecution"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-execution))
@@ -2689,9 +2694,10 @@
         "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/task/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'task-id))))
+                                aws-sdk/generator/operation::input 'task-id)
+                               common-lisp:t)))
         "DescribeTask"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-task))
@@ -2713,10 +2719,11 @@
         "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/managed-device/~A/resources"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'managed-device-id))))
+                                'managed-device-id)
+                               common-lisp:t)))
         "ListDeviceResources"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-device-resources))
@@ -2769,10 +2776,11 @@
         "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -2808,10 +2816,11 @@
         "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -2831,10 +2840,11 @@
         "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))

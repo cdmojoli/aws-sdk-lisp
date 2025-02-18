@@ -20,7 +20,7 @@
  (common-lisp:export 'chime-sdk-voice-error))
 (common-lisp:progn
  (common-lisp:defclass chime-sdk-voice-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "chime-sdk-voice"
                         :api-version "2022-08-03" :host-prefix "voice-chime"
@@ -12024,10 +12024,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/voice-connectors/~A?operation=associate-phone-numbers"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'voice-connector-id))))
+                                'voice-connector-id)
+                               common-lisp:t)))
         "AssociatePhoneNumbersWithVoiceConnector"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'associate-phone-numbers-with-voice-connector))
@@ -12051,10 +12052,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/voice-connector-groups/~A?operation=associate-phone-numbers"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'voice-connector-group-id))))
+                                'voice-connector-group-id)
+                               common-lisp:t)))
         "AssociatePhoneNumbersWithVoiceConnectorGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'associate-phone-numbers-with-voice-connector-group))
@@ -12133,10 +12135,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/voice-connectors/~A/proxy-sessions"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'voice-connector-id))))
+                                'voice-connector-id)
+                               common-lisp:t)))
         "CreateProxySession"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-proxy-session))
@@ -12177,10 +12180,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/sip-media-applications/~A/calls"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'sip-media-application-id))))
+                                'sip-media-application-id)
+                               common-lisp:t)))
         "CreateSipMediaApplicationCall"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-sip-media-application-call))
@@ -12289,10 +12293,11 @@
         'chime-sdk-voice-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/phone-numbers/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'phone-number-id))))
+                                'phone-number-id)
+                               common-lisp:t)))
         "DeletePhoneNumber"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-phone-number))
@@ -12313,14 +12318,16 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/voice-connectors/~A/proxy-sessions/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'voice-connector-id))
-                              (quri.encode:url-encode
+                                'voice-connector-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'proxy-session-id))))
+                                'proxy-session-id)
+                               common-lisp:t)))
         "DeleteProxySession"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-proxy-session))
@@ -12340,10 +12347,11 @@
         'chime-sdk-voice-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/sip-media-applications/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'sip-media-application-id))))
+                                'sip-media-application-id)
+                               common-lisp:t)))
         "DeleteSipMediaApplication"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-sip-media-application))
@@ -12362,10 +12370,11 @@
         'chime-sdk-voice-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/sip-rules/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'sip-rule-id))))
+                                'sip-rule-id)
+                               common-lisp:t)))
         "DeleteSipRule"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-sip-rule))
@@ -12384,10 +12393,11 @@
         'chime-sdk-voice-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/voice-connectors/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'voice-connector-id))))
+                                'voice-connector-id)
+                               common-lisp:t)))
         "DeleteVoiceConnector"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-voice-connector))
@@ -12408,10 +12418,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/voice-connectors/~A/emergency-calling-configuration"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'voice-connector-id))))
+                                'voice-connector-id)
+                               common-lisp:t)))
         "DeleteVoiceConnectorEmergencyCallingConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-voice-connector-emergency-calling-configuration))
@@ -12431,10 +12442,11 @@
         'chime-sdk-voice-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/voice-connector-groups/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'voice-connector-group-id))))
+                                'voice-connector-group-id)
+                               common-lisp:t)))
         "DeleteVoiceConnectorGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-voice-connector-group))
@@ -12455,10 +12467,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/voice-connectors/~A/origination"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'voice-connector-id))))
+                                'voice-connector-id)
+                               common-lisp:t)))
         "DeleteVoiceConnectorOrigination"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-voice-connector-origination))
@@ -12479,10 +12492,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/voice-connectors/~A/programmable-numbers/proxy"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'voice-connector-id))))
+                                'voice-connector-id)
+                               common-lisp:t)))
         "DeleteVoiceConnectorProxy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-voice-connector-proxy))
@@ -12503,10 +12517,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/voice-connectors/~A/streaming-configuration"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'voice-connector-id))))
+                                'voice-connector-id)
+                               common-lisp:t)))
         "DeleteVoiceConnectorStreamingConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-voice-connector-streaming-configuration))
@@ -12527,10 +12542,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/voice-connectors/~A/termination"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'voice-connector-id))))
+                                'voice-connector-id)
+                               common-lisp:t)))
         "DeleteVoiceConnectorTermination"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-voice-connector-termination))
@@ -12551,10 +12567,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/voice-connectors/~A/termination/credentials?operation=delete"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'voice-connector-id))))
+                                'voice-connector-id)
+                               common-lisp:t)))
         "DeleteVoiceConnectorTerminationCredentials"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-voice-connector-termination-credentials))
@@ -12573,10 +12590,11 @@
         'chime-sdk-voice-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/voice-profiles/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'voice-profile-id))))
+                                'voice-profile-id)
+                               common-lisp:t)))
         "DeleteVoiceProfile"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-voice-profile))
@@ -12596,10 +12614,11 @@
         'chime-sdk-voice-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/voice-profile-domains/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'voice-profile-domain-id))))
+                                'voice-profile-domain-id)
+                               common-lisp:t)))
         "DeleteVoiceProfileDomain"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-voice-profile-domain))
@@ -12621,10 +12640,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/voice-connectors/~A?operation=disassociate-phone-numbers"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'voice-connector-id))))
+                                'voice-connector-id)
+                               common-lisp:t)))
         "DisassociatePhoneNumbersFromVoiceConnector"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'disassociate-phone-numbers-from-voice-connector))
@@ -12647,10 +12667,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/voice-connector-groups/~A?operation=disassociate-phone-numbers"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'voice-connector-group-id))))
+                                'voice-connector-group-id)
+                               common-lisp:t)))
         "DisassociatePhoneNumbersFromVoiceConnectorGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'disassociate-phone-numbers-from-voice-connector-group))
@@ -12677,10 +12698,11 @@
         'chime-sdk-voice-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/phone-numbers/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'phone-number-id))))
+                                'phone-number-id)
+                               common-lisp:t)))
         "GetPhoneNumber"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-phone-number))
@@ -12699,10 +12721,11 @@
         'chime-sdk-voice-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/phone-number-orders/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'phone-number-order-id))))
+                                'phone-number-order-id)
+                               common-lisp:t)))
         "GetPhoneNumberOrder"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-phone-number-order))
@@ -12732,14 +12755,16 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/voice-connectors/~A/proxy-sessions/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'voice-connector-id))
-                              (quri.encode:url-encode
+                                'voice-connector-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'proxy-session-id))))
+                                'proxy-session-id)
+                               common-lisp:t)))
         "GetProxySession"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-proxy-session))
@@ -12759,10 +12784,11 @@
         'chime-sdk-voice-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/sip-media-applications/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'sip-media-application-id))))
+                                'sip-media-application-id)
+                               common-lisp:t)))
         "GetSipMediaApplication"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-sip-media-application))
@@ -12783,10 +12809,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/sip-media-applications/~A/alexa-skill-configuration"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'sip-media-application-id))))
+                                'sip-media-application-id)
+                               common-lisp:t)))
         "GetSipMediaApplicationAlexaSkillConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-sip-media-application-alexa-skill-configuration))
@@ -12807,10 +12834,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/sip-media-applications/~A/logging-configuration"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'sip-media-application-id))))
+                                'sip-media-application-id)
+                               common-lisp:t)))
         "GetSipMediaApplicationLoggingConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-sip-media-application-logging-configuration))
@@ -12829,10 +12857,11 @@
         'chime-sdk-voice-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/sip-rules/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'sip-rule-id))))
+                                'sip-rule-id)
+                               common-lisp:t)))
         "GetSipRule"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-sip-rule))
@@ -12854,14 +12883,16 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/voice-connectors/~A/speaker-search-tasks/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'voice-connector-id))
-                              (quri.encode:url-encode
+                                'voice-connector-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'speaker-search-task-id))))
+                                'speaker-search-task-id)
+                               common-lisp:t)))
         "GetSpeakerSearchTask"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-speaker-search-task))
@@ -12880,10 +12911,11 @@
         'chime-sdk-voice-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/voice-connectors/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'voice-connector-id))))
+                                'voice-connector-id)
+                               common-lisp:t)))
         "GetVoiceConnector"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-voice-connector))
@@ -12904,10 +12936,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/voice-connectors/~A/emergency-calling-configuration"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'voice-connector-id))))
+                                'voice-connector-id)
+                               common-lisp:t)))
         "GetVoiceConnectorEmergencyCallingConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-voice-connector-emergency-calling-configuration))
@@ -12927,10 +12960,11 @@
         'chime-sdk-voice-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/voice-connector-groups/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'voice-connector-group-id))))
+                                'voice-connector-group-id)
+                               common-lisp:t)))
         "GetVoiceConnectorGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-voice-connector-group))
@@ -12951,10 +12985,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/voice-connectors/~A/logging-configuration"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'voice-connector-id))))
+                                'voice-connector-id)
+                               common-lisp:t)))
         "GetVoiceConnectorLoggingConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-voice-connector-logging-configuration))
@@ -12975,10 +13010,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/voice-connectors/~A/origination"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'voice-connector-id))))
+                                'voice-connector-id)
+                               common-lisp:t)))
         "GetVoiceConnectorOrigination"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-voice-connector-origination))
@@ -12999,10 +13035,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/voice-connectors/~A/programmable-numbers/proxy"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'voice-connector-id))))
+                                'voice-connector-id)
+                               common-lisp:t)))
         "GetVoiceConnectorProxy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-voice-connector-proxy))
@@ -13023,10 +13060,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/voice-connectors/~A/streaming-configuration"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'voice-connector-id))))
+                                'voice-connector-id)
+                               common-lisp:t)))
         "GetVoiceConnectorStreamingConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-voice-connector-streaming-configuration))
@@ -13047,10 +13085,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/voice-connectors/~A/termination"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'voice-connector-id))))
+                                'voice-connector-id)
+                               common-lisp:t)))
         "GetVoiceConnectorTermination"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-voice-connector-termination))
@@ -13071,10 +13110,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/voice-connectors/~A/termination/health"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'voice-connector-id))))
+                                'voice-connector-id)
+                               common-lisp:t)))
         "GetVoiceConnectorTerminationHealth"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-voice-connector-termination-health))
@@ -13093,10 +13133,11 @@
         'chime-sdk-voice-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/voice-profiles/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'voice-profile-id))))
+                                'voice-profile-id)
+                               common-lisp:t)))
         "GetVoiceProfile"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-voice-profile))
@@ -13115,10 +13156,11 @@
         'chime-sdk-voice-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/voice-profile-domains/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'voice-profile-domain-id))))
+                                'voice-profile-domain-id)
+                               common-lisp:t)))
         "GetVoiceProfileDomain"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-voice-profile-domain))
@@ -13142,14 +13184,16 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/voice-connectors/~A/voice-tone-analysis-tasks/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'voice-connector-id))
-                              (quri.encode:url-encode
+                                'voice-connector-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'voice-tone-analysis-task-id))))
+                                'voice-tone-analysis-task-id)
+                               common-lisp:t)))
         "GetVoiceToneAnalysisTask"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-voice-tone-analysis-task))
@@ -13215,10 +13259,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/voice-connectors/~A/proxy-sessions"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'voice-connector-id))))
+                                'voice-connector-id)
+                               common-lisp:t)))
         "ListProxySessions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-proxy-sessions))
@@ -13324,10 +13369,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/voice-connectors/~A/termination/credentials"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'voice-connector-id))))
+                                'voice-connector-id)
+                               common-lisp:t)))
         "ListVoiceConnectorTerminationCredentials"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-voice-connector-termination-credentials))
@@ -13402,10 +13448,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/sip-media-applications/~A/alexa-skill-configuration"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'sip-media-application-id))))
+                                'sip-media-application-id)
+                               common-lisp:t)))
         "PutSipMediaApplicationAlexaSkillConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-sip-media-application-alexa-skill-configuration))
@@ -13429,10 +13476,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/sip-media-applications/~A/logging-configuration"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'sip-media-application-id))))
+                                'sip-media-application-id)
+                               common-lisp:t)))
         "PutSipMediaApplicationLoggingConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-sip-media-application-logging-configuration))
@@ -13455,10 +13503,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/voice-connectors/~A/emergency-calling-configuration"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'voice-connector-id))))
+                                'voice-connector-id)
+                               common-lisp:t)))
         "PutVoiceConnectorEmergencyCallingConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-voice-connector-emergency-calling-configuration))
@@ -13480,10 +13529,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/voice-connectors/~A/logging-configuration"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'voice-connector-id))))
+                                'voice-connector-id)
+                               common-lisp:t)))
         "PutVoiceConnectorLoggingConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-voice-connector-logging-configuration))
@@ -13504,10 +13554,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/voice-connectors/~A/origination"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'voice-connector-id))))
+                                'voice-connector-id)
+                               common-lisp:t)))
         "PutVoiceConnectorOrigination"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-voice-connector-origination))
@@ -13532,10 +13583,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/voice-connectors/~A/programmable-numbers/proxy"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'voice-connector-id))))
+                                'voice-connector-id)
+                               common-lisp:t)))
         "PutVoiceConnectorProxy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-voice-connector-proxy))
@@ -13558,10 +13610,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/voice-connectors/~A/streaming-configuration"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'voice-connector-id))))
+                                'voice-connector-id)
+                               common-lisp:t)))
         "PutVoiceConnectorStreamingConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-voice-connector-streaming-configuration))
@@ -13582,10 +13635,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/voice-connectors/~A/termination"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'voice-connector-id))))
+                                'voice-connector-id)
+                               common-lisp:t)))
         "PutVoiceConnectorTermination"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-voice-connector-termination))
@@ -13606,10 +13660,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/voice-connectors/~A/termination/credentials?operation=put"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'voice-connector-id))))
+                                'voice-connector-id)
+                               common-lisp:t)))
         "PutVoiceConnectorTerminationCredentials"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-voice-connector-termination-credentials))
@@ -13629,10 +13684,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/phone-numbers/~A?operation=restore"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'phone-number-id))))
+                                'phone-number-id)
+                               common-lisp:t)))
         "RestorePhoneNumber"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'restore-phone-number))
@@ -13676,10 +13732,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/voice-connectors/~A/speaker-search-tasks"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'voice-connector-id))))
+                                'voice-connector-id)
+                               common-lisp:t)))
         "StartSpeakerSearchTask"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'start-speaker-search-task))
@@ -13703,10 +13760,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/voice-connectors/~A/voice-tone-analysis-tasks"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'voice-connector-id))))
+                                'voice-connector-id)
+                               common-lisp:t)))
         "StartVoiceToneAnalysisTask"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'start-voice-tone-analysis-task))
@@ -13728,14 +13786,16 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/voice-connectors/~A/speaker-search-tasks/~A?operation=stop"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'voice-connector-id))
-                              (quri.encode:url-encode
+                                'voice-connector-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'speaker-search-task-id))))
+                                'speaker-search-task-id)
+                               common-lisp:t)))
         "StopSpeakerSearchTask"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'stop-speaker-search-task))
@@ -13758,14 +13818,16 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/voice-connectors/~A/voice-tone-analysis-tasks/~A?operation=stop"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'voice-connector-id))
-                              (quri.encode:url-encode
+                                'voice-connector-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'voice-tone-analysis-task-id))))
+                                'voice-tone-analysis-task-id)
+                               common-lisp:t)))
         "StopVoiceToneAnalysisTask"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'stop-voice-tone-analysis-task))
@@ -13834,10 +13896,11 @@
         'chime-sdk-voice-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/phone-numbers/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'phone-number-id))))
+                                'phone-number-id)
+                               common-lisp:t)))
         "UpdatePhoneNumber"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-phone-number))
@@ -13877,14 +13940,16 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/voice-connectors/~A/proxy-sessions/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'voice-connector-id))
-                              (quri.encode:url-encode
+                                'voice-connector-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'proxy-session-id))))
+                                'proxy-session-id)
+                               common-lisp:t)))
         "UpdateProxySession"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-proxy-session))
@@ -13905,10 +13970,11 @@
         'chime-sdk-voice-request aws-sdk/generator/operation::input "PUT"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/sip-media-applications/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'sip-media-application-id))))
+                                'sip-media-application-id)
+                               common-lisp:t)))
         "UpdateSipMediaApplication"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-sip-media-application))
@@ -13931,14 +13997,16 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/sip-media-applications/~A/calls/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'sip-media-application-id))
-                              (quri.encode:url-encode
+                                'sip-media-application-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'transaction-id))))
+                                'transaction-id)
+                               common-lisp:t)))
         "UpdateSipMediaApplicationCall"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-sip-media-application-call))
@@ -13959,10 +14027,11 @@
         'chime-sdk-voice-request aws-sdk/generator/operation::input "PUT"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/sip-rules/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'sip-rule-id))))
+                                'sip-rule-id)
+                               common-lisp:t)))
         "UpdateSipRule"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-sip-rule))
@@ -13983,10 +14052,11 @@
         'chime-sdk-voice-request aws-sdk/generator/operation::input "PUT"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/voice-connectors/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'voice-connector-id))))
+                                'voice-connector-id)
+                               common-lisp:t)))
         "UpdateVoiceConnector"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-voice-connector))
@@ -14009,10 +14079,11 @@
         'chime-sdk-voice-request aws-sdk/generator/operation::input "PUT"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/voice-connector-groups/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'voice-connector-group-id))))
+                                'voice-connector-group-id)
+                               common-lisp:t)))
         "UpdateVoiceConnectorGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-voice-connector-group))
@@ -14032,10 +14103,11 @@
         'chime-sdk-voice-request aws-sdk/generator/operation::input "PUT"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/voice-profiles/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'voice-profile-id))))
+                                'voice-profile-id)
+                               common-lisp:t)))
         "UpdateVoiceProfile"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-voice-profile))
@@ -14056,10 +14128,11 @@
         'chime-sdk-voice-request aws-sdk/generator/operation::input "PUT"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/voice-profile-domains/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'voice-profile-domain-id))))
+                                'voice-profile-domain-id)
+                               common-lisp:t)))
         "UpdateVoiceProfileDomain"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-voice-profile-domain))

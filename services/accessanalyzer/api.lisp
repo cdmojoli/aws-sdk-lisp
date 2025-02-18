@@ -20,7 +20,7 @@
  (common-lisp:export 'accessanalyzer-error))
 (common-lisp:progn
  (common-lisp:defclass accessanalyzer-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "accessanalyzer"
                         :api-version "2019-11-01" :host-prefix
@@ -8465,10 +8465,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/policy/generation/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'job-id))))
+                                                             'job-id)
+                                                            common-lisp:t)))
                                                         "CancelPolicyGeneration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'cancel-policy-generation))
@@ -8572,10 +8573,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/analyzer/~A/archive-rule"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'analyzer-name))))
+                                                             'analyzer-name)
+                                                            common-lisp:t)))
                                                         "CreateArchiveRule"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-archive-rule))
@@ -8599,10 +8601,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/analyzer/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'analyzer-name))))
+                                                             'analyzer-name)
+                                                            common-lisp:t)))
                                                         "DeleteAnalyzer"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-analyzer))
@@ -8627,14 +8630,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/analyzer/~A/archive-rule/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'analyzer-name))
-                                                           (quri.encode:url-encode
+                                                             'analyzer-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'rule-name))))
+                                                             'rule-name)
+                                                            common-lisp:t)))
                                                         "DeleteArchiveRule"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-archive-rule))
@@ -8658,10 +8663,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/access-preview/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'access-preview-id))))
+                                                             'access-preview-id)
+                                                            common-lisp:t)))
                                                         "GetAccessPreview"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-access-preview))
@@ -8703,10 +8709,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/analyzer/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'analyzer-name))))
+                                                             'analyzer-name)
+                                                            common-lisp:t)))
                                                         "GetAnalyzer"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-analyzer))
@@ -8730,14 +8737,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/analyzer/~A/archive-rule/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'analyzer-name))
-                                                           (quri.encode:url-encode
+                                                             'analyzer-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'rule-name))))
+                                                             'rule-name)
+                                                            common-lisp:t)))
                                                         "GetArchiveRule"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-archive-rule))
@@ -8761,10 +8770,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/finding/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetFinding"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-finding))
@@ -8789,10 +8799,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/findingv2/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetFindingV2"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-finding-v2))
@@ -8819,10 +8830,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/policy/generation/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'job-id))))
+                                                             'job-id)
+                                                            common-lisp:t)))
                                                         "GetGeneratedPolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-generated-policy))
@@ -8850,10 +8862,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/access-preview/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'access-preview-id))))
+                                                             'access-preview-id)
+                                                            common-lisp:t)))
                                                         "ListAccessPreviewFindings"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-access-preview-findings))
@@ -8933,10 +8946,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/analyzer/~A/archive-rule"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'analyzer-name))))
+                                                             'analyzer-name)
+                                                            common-lisp:t)))
                                                         "ListArchiveRules"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-archive-rules))
@@ -9017,10 +9031,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -9084,10 +9099,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -9111,10 +9127,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -9140,14 +9157,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/analyzer/~A/archive-rule/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'analyzer-name))
-                                                           (quri.encode:url-encode
+                                                             'analyzer-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'rule-name))))
+                                                             'rule-name)
+                                                            common-lisp:t)))
                                                         "UpdateArchiveRule"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-archive-rule))

@@ -20,7 +20,7 @@
  (common-lisp:export 'networkmanager-error))
 (common-lisp:progn
  (common-lisp:defclass networkmanager-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "networkmanager"
                         :api-version "2019-07-05" :host-prefix "networkmanager"
@@ -14584,10 +14584,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/attachments/~A/accept"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'attachment-id))))
+                                                             'attachment-id)
+                                                            common-lisp:t)))
                                                         "AcceptAttachment"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'accept-attachment))
@@ -14614,10 +14615,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/global-networks/~A/connect-peer-associations"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'global-network-id))))
+                                                             'global-network-id)
+                                                            common-lisp:t)))
                                                         "AssociateConnectPeer"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'associate-connect-peer))
@@ -14645,10 +14647,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/global-networks/~A/customer-gateway-associations"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'global-network-id))))
+                                                             'global-network-id)
+                                                            common-lisp:t)))
                                                         "AssociateCustomerGateway"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'associate-customer-gateway))
@@ -14673,10 +14676,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/global-networks/~A/link-associations"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'global-network-id))))
+                                                             'global-network-id)
+                                                            common-lisp:t)))
                                                         "AssociateLink"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'associate-link))
@@ -14704,10 +14708,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/global-networks/~A/transit-gateway-connect-peer-associations"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'global-network-id))))
+                                                             'global-network-id)
+                                                            common-lisp:t)))
                                                         "AssociateTransitGatewayConnectPeer"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'associate-transit-gateway-connect-peer))
@@ -14778,10 +14783,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/global-networks/~A/connections"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'global-network-id))))
+                                                             'global-network-id)
+                                                            common-lisp:t)))
                                                         "CreateConnection"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-connection))
@@ -14828,10 +14834,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/global-networks/~A/devices"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'global-network-id))))
+                                                             'global-network-id)
+                                                            common-lisp:t)))
                                                         "CreateDevice"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-device))
@@ -14876,10 +14883,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/global-networks/~A/links"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'global-network-id))))
+                                                             'global-network-id)
+                                                            common-lisp:t)))
                                                         "CreateLink"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-link))
@@ -14905,10 +14913,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/global-networks/~A/sites"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'global-network-id))))
+                                                             'global-network-id)
+                                                            common-lisp:t)))
                                                         "CreateSite"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-site))
@@ -15019,10 +15028,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/attachments/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'attachment-id))))
+                                                             'attachment-id)
+                                                            common-lisp:t)))
                                                         "DeleteAttachment"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-attachment))
@@ -15046,10 +15056,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/connect-peers/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'connect-peer-id))))
+                                                             'connect-peer-id)
+                                                            common-lisp:t)))
                                                         "DeleteConnectPeer"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-connect-peer))
@@ -15074,14 +15085,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/global-networks/~A/connections/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'global-network-id))
-                                                           (quri.encode:url-encode
+                                                             'global-network-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'connection-id))))
+                                                             'connection-id)
+                                                            common-lisp:t)))
                                                         "DeleteConnection"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-connection))
@@ -15105,10 +15118,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/core-networks/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'core-network-id))))
+                                                             'core-network-id)
+                                                            common-lisp:t)))
                                                         "DeleteCoreNetwork"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-core-network))
@@ -15134,14 +15148,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/core-networks/~A/core-network-policy-versions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'core-network-id))
-                                                           (quri.encode:url-encode
+                                                             'core-network-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'policy-version-id))))
+                                                             'policy-version-id)
+                                                            common-lisp:t)))
                                                         "DeleteCoreNetworkPolicyVersion"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-core-network-policy-version))
@@ -15165,14 +15181,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/global-networks/~A/devices/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'global-network-id))
-                                                           (quri.encode:url-encode
+                                                             'global-network-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'device-id))))
+                                                             'device-id)
+                                                            common-lisp:t)))
                                                         "DeleteDevice"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-device))
@@ -15196,10 +15214,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/global-networks/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'global-network-id))))
+                                                             'global-network-id)
+                                                            common-lisp:t)))
                                                         "DeleteGlobalNetwork"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-global-network))
@@ -15223,14 +15242,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/global-networks/~A/links/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'global-network-id))
-                                                           (quri.encode:url-encode
+                                                             'global-network-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'link-id))))
+                                                             'link-id)
+                                                            common-lisp:t)))
                                                         "DeleteLink"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-link))
@@ -15254,10 +15275,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/peerings/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'peering-id))))
+                                                             'peering-id)
+                                                            common-lisp:t)))
                                                         "DeletePeering"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-peering))
@@ -15281,10 +15303,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/resource-policy/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "DeleteResourcePolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-resource-policy))
@@ -15308,14 +15331,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/global-networks/~A/sites/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'global-network-id))
-                                                           (quri.encode:url-encode
+                                                             'global-network-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'site-id))))
+                                                             'site-id)
+                                                            common-lisp:t)))
                                                         "DeleteSite"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-site))
@@ -15341,14 +15366,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/global-networks/~A/transit-gateway-registrations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'global-network-id))
-                                                           (quri.encode:url-encode
+                                                             'global-network-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'transit-gateway-arn))))
+                                                             'transit-gateway-arn)
+                                                            common-lisp:t)))
                                                         "DeregisterTransitGateway"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'deregister-transit-gateway))
@@ -15394,14 +15421,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/global-networks/~A/connect-peer-associations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'global-network-id))
-                                                           (quri.encode:url-encode
+                                                             'global-network-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'connect-peer-id))))
+                                                             'connect-peer-id)
+                                                            common-lisp:t)))
                                                         "DisassociateConnectPeer"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'disassociate-connect-peer))
@@ -15427,14 +15456,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/global-networks/~A/customer-gateway-associations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'global-network-id))
-                                                           (quri.encode:url-encode
+                                                             'global-network-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'customer-gateway-arn))))
+                                                             'customer-gateway-arn)
+                                                            common-lisp:t)))
                                                         "DisassociateCustomerGateway"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'disassociate-customer-gateway))
@@ -15459,10 +15490,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/global-networks/~A/link-associations"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'global-network-id))))
+                                                             'global-network-id)
+                                                            common-lisp:t)))
                                                         "DisassociateLink"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'disassociate-link))
@@ -15489,14 +15521,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/global-networks/~A/transit-gateway-connect-peer-associations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'global-network-id))
-                                                           (quri.encode:url-encode
+                                                             'global-network-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'transit-gateway-connect-peer-arn))))
+                                                             'transit-gateway-connect-peer-arn)
+                                                            common-lisp:t)))
                                                         "DisassociateTransitGatewayConnectPeer"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'disassociate-transit-gateway-connect-peer))
@@ -15522,14 +15556,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/core-networks/~A/core-network-change-sets/~A/execute"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'core-network-id))
-                                                           (quri.encode:url-encode
+                                                             'core-network-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'policy-version-id))))
+                                                             'policy-version-id)
+                                                            common-lisp:t)))
                                                         "ExecuteCoreNetworkChangeSet"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'execute-core-network-change-set))
@@ -15553,10 +15589,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/connect-attachments/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'attachment-id))))
+                                                             'attachment-id)
+                                                            common-lisp:t)))
                                                         "GetConnectAttachment"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-connect-attachment))
@@ -15580,10 +15617,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/connect-peers/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'connect-peer-id))))
+                                                             'connect-peer-id)
+                                                            common-lisp:t)))
                                                         "GetConnectPeer"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-connect-peer))
@@ -15611,10 +15649,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/global-networks/~A/connect-peer-associations"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'global-network-id))))
+                                                             'global-network-id)
+                                                            common-lisp:t)))
                                                         "GetConnectPeerAssociations"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-connect-peer-associations))
@@ -15641,10 +15680,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/global-networks/~A/connections"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'global-network-id))))
+                                                             'global-network-id)
+                                                            common-lisp:t)))
                                                         "GetConnections"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-connections))
@@ -15668,10 +15708,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/core-networks/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'core-network-id))))
+                                                             'core-network-id)
+                                                            common-lisp:t)))
                                                         "GetCoreNetwork"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-core-network))
@@ -15699,14 +15740,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/core-networks/~A/core-network-change-events/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'core-network-id))
-                                                           (quri.encode:url-encode
+                                                             'core-network-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'policy-version-id))))
+                                                             'policy-version-id)
+                                                            common-lisp:t)))
                                                         "GetCoreNetworkChangeEvents"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-core-network-change-events))
@@ -15734,14 +15777,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/core-networks/~A/core-network-change-sets/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'core-network-id))
-                                                           (quri.encode:url-encode
+                                                             'core-network-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'policy-version-id))))
+                                                             'policy-version-id)
+                                                            common-lisp:t)))
                                                         "GetCoreNetworkChangeSet"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-core-network-change-set))
@@ -15766,10 +15811,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/core-networks/~A/core-network-policy"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'core-network-id))))
+                                                             'core-network-id)
+                                                            common-lisp:t)))
                                                         "GetCoreNetworkPolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-core-network-policy))
@@ -15797,10 +15843,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/global-networks/~A/customer-gateway-associations"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'global-network-id))))
+                                                             'global-network-id)
+                                                            common-lisp:t)))
                                                         "GetCustomerGatewayAssociations"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-customer-gateway-associations))
@@ -15827,10 +15874,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/global-networks/~A/devices"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'global-network-id))))
+                                                             'global-network-id)
+                                                            common-lisp:t)))
                                                         "GetDevices"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-devices))
@@ -15857,10 +15905,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/global-networks/~A/link-associations"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'global-network-id))))
+                                                             'global-network-id)
+                                                            common-lisp:t)))
                                                         "GetLinkAssociations"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-link-associations))
@@ -15887,10 +15936,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/global-networks/~A/links"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'global-network-id))))
+                                                             'global-network-id)
+                                                            common-lisp:t)))
                                                         "GetLinks"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-links))
@@ -15918,10 +15968,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/global-networks/~A/network-resource-count"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'global-network-id))))
+                                                             'global-network-id)
+                                                            common-lisp:t)))
                                                         "GetNetworkResourceCounts"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-network-resource-counts))
@@ -15951,10 +16002,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/global-networks/~A/network-resource-relationships"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'global-network-id))))
+                                                             'global-network-id)
+                                                            common-lisp:t)))
                                                         "GetNetworkResourceRelationships"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-network-resource-relationships))
@@ -15983,10 +16035,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/global-networks/~A/network-resources"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'global-network-id))))
+                                                             'global-network-id)
+                                                            common-lisp:t)))
                                                         "GetNetworkResources"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-network-resources))
@@ -16016,10 +16069,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/global-networks/~A/network-routes"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'global-network-id))))
+                                                             'global-network-id)
+                                                            common-lisp:t)))
                                                         "GetNetworkRoutes"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-network-routes))
@@ -16048,10 +16102,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/global-networks/~A/network-telemetry"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'global-network-id))))
+                                                             'global-network-id)
+                                                            common-lisp:t)))
                                                         "GetNetworkTelemetry"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-network-telemetry))
@@ -16075,10 +16130,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/resource-policy/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "GetResourcePolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-resource-policy))
@@ -16103,14 +16159,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/global-networks/~A/route-analyses/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'global-network-id))
-                                                           (quri.encode:url-encode
+                                                             'global-network-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'route-analysis-id))))
+                                                             'route-analysis-id)
+                                                            common-lisp:t)))
                                                         "GetRouteAnalysis"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-route-analysis))
@@ -16135,10 +16193,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/site-to-site-vpn-attachments/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'attachment-id))))
+                                                             'attachment-id)
+                                                            common-lisp:t)))
                                                         "GetSiteToSiteVpnAttachment"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-site-to-site-vpn-attachment))
@@ -16164,10 +16223,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/global-networks/~A/sites"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'global-network-id))))
+                                                             'global-network-id)
+                                                            common-lisp:t)))
                                                         "GetSites"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-sites))
@@ -16195,10 +16255,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/global-networks/~A/transit-gateway-connect-peer-associations"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'global-network-id))))
+                                                             'global-network-id)
+                                                            common-lisp:t)))
                                                         "GetTransitGatewayConnectPeerAssociations"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-transit-gateway-connect-peer-associations))
@@ -16223,10 +16284,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/transit-gateway-peerings/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'peering-id))))
+                                                             'peering-id)
+                                                            common-lisp:t)))
                                                         "GetTransitGatewayPeering"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-transit-gateway-peering))
@@ -16254,10 +16316,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/global-networks/~A/transit-gateway-registrations"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'global-network-id))))
+                                                             'global-network-id)
+                                                            common-lisp:t)))
                                                         "GetTransitGatewayRegistrations"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-transit-gateway-registrations))
@@ -16282,10 +16345,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/transit-gateway-route-table-attachments/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'attachment-id))))
+                                                             'attachment-id)
+                                                            common-lisp:t)))
                                                         "GetTransitGatewayRouteTableAttachment"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-transit-gateway-route-table-attachment))
@@ -16309,10 +16373,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/vpc-attachments/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'attachment-id))))
+                                                             'attachment-id)
+                                                            common-lisp:t)))
                                                         "GetVpcAttachment"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-vpc-attachment))
@@ -16378,10 +16443,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/core-networks/~A/core-network-policy-versions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'core-network-id))))
+                                                             'core-network-id)
+                                                            common-lisp:t)))
                                                         "ListCoreNetworkPolicyVersions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-core-network-policy-versions))
@@ -16461,10 +16527,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -16491,10 +16558,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/core-networks/~A/core-network-policy"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'core-network-id))))
+                                                             'core-network-id)
+                                                            common-lisp:t)))
                                                         "PutCoreNetworkPolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-core-network-policy))
@@ -16518,10 +16586,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/resource-policy/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "PutResourcePolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-resource-policy))
@@ -16546,10 +16615,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/global-networks/~A/transit-gateway-registrations"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'global-network-id))))
+                                                             'global-network-id)
+                                                            common-lisp:t)))
                                                         "RegisterTransitGateway"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'register-transit-gateway))
@@ -16573,10 +16643,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/attachments/~A/reject"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'attachment-id))))
+                                                             'attachment-id)
+                                                            common-lisp:t)))
                                                         "RejectAttachment"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'reject-attachment))
@@ -16602,14 +16673,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/core-networks/~A/core-network-policy-versions/~A/restore"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'core-network-id))
-                                                           (quri.encode:url-encode
+                                                             'core-network-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'policy-version-id))))
+                                                             'policy-version-id)
+                                                            common-lisp:t)))
                                                         "RestoreCoreNetworkPolicyVersion"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'restore-core-network-policy-version))
@@ -16655,10 +16728,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/global-networks/~A/route-analyses"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'global-network-id))))
+                                                             'global-network-id)
+                                                            common-lisp:t)))
                                                         "StartRouteAnalysis"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'start-route-analysis))
@@ -16682,10 +16756,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -16709,10 +16784,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -16739,14 +16815,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/global-networks/~A/connections/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'global-network-id))
-                                                           (quri.encode:url-encode
+                                                             'global-network-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'connection-id))))
+                                                             'connection-id)
+                                                            common-lisp:t)))
                                                         "UpdateConnection"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-connection))
@@ -16770,10 +16848,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/core-networks/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'core-network-id))))
+                                                             'core-network-id)
+                                                            common-lisp:t)))
                                                         "UpdateCoreNetwork"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-core-network))
@@ -16801,14 +16880,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/global-networks/~A/devices/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'global-network-id))
-                                                           (quri.encode:url-encode
+                                                             'global-network-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'device-id))))
+                                                             'device-id)
+                                                            common-lisp:t)))
                                                         "UpdateDevice"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-device))
@@ -16832,10 +16913,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/global-networks/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'global-network-id))))
+                                                             'global-network-id)
+                                                            common-lisp:t)))
                                                         "UpdateGlobalNetwork"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-global-network))
@@ -16862,14 +16944,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/global-networks/~A/links/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'global-network-id))
-                                                           (quri.encode:url-encode
+                                                             'global-network-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'link-id))))
+                                                             'link-id)
+                                                            common-lisp:t)))
                                                         "UpdateLink"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-link))
@@ -16895,14 +16979,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/global-networks/~A/network-resources/~A/metadata"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'global-network-id))
-                                                           (quri.encode:url-encode
+                                                             'global-network-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "UpdateNetworkResourceMetadata"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-network-resource-metadata))
@@ -16928,14 +17014,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/global-networks/~A/sites/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'global-network-id))
-                                                           (quri.encode:url-encode
+                                                             'global-network-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'site-id))))
+                                                             'site-id)
+                                                            common-lisp:t)))
                                                         "UpdateSite"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-site))
@@ -16962,10 +17050,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/vpc-attachments/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'attachment-id))))
+                                                             'attachment-id)
+                                                            common-lisp:t)))
                                                         "UpdateVpcAttachment"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-vpc-attachment))

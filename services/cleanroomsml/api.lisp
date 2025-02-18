@@ -20,7 +20,7 @@
  (common-lisp:export 'cleanroomsml-error))
 (common-lisp:progn
  (common-lisp:defclass cleanroomsml-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "cleanroomsml" :api-version
                         "2023-09-06" :host-prefix "cleanrooms-ml" :signing-name
@@ -4780,10 +4780,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/audience-generation-job/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'audience-generation-job-arn))))
+                                                             'audience-generation-job-arn)
+                                                            common-lisp:t)))
                                                         "DeleteAudienceGenerationJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-audience-generation-job))
@@ -4807,10 +4808,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/audience-model/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'audience-model-arn))))
+                                                             'audience-model-arn)
+                                                            common-lisp:t)))
                                                         "DeleteAudienceModel"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-audience-model))
@@ -4835,10 +4837,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/configured-audience-model/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'configured-audience-model-arn))))
+                                                             'configured-audience-model-arn)
+                                                            common-lisp:t)))
                                                         "DeleteConfiguredAudienceModel"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-configured-audience-model))
@@ -4863,10 +4866,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/configured-audience-model/~A/policy"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'configured-audience-model-arn))))
+                                                             'configured-audience-model-arn)
+                                                            common-lisp:t)))
                                                         "DeleteConfiguredAudienceModelPolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-configured-audience-model-policy))
@@ -4890,10 +4894,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/training-dataset/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'training-dataset-arn))))
+                                                             'training-dataset-arn)
+                                                            common-lisp:t)))
                                                         "DeleteTrainingDataset"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-training-dataset))
@@ -4918,10 +4923,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/audience-generation-job/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'audience-generation-job-arn))))
+                                                             'audience-generation-job-arn)
+                                                            common-lisp:t)))
                                                         "GetAudienceGenerationJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-audience-generation-job))
@@ -4945,10 +4951,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/audience-model/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'audience-model-arn))))
+                                                             'audience-model-arn)
+                                                            common-lisp:t)))
                                                         "GetAudienceModel"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-audience-model))
@@ -4973,10 +4980,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/configured-audience-model/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'configured-audience-model-arn))))
+                                                             'configured-audience-model-arn)
+                                                            common-lisp:t)))
                                                         "GetConfiguredAudienceModel"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-configured-audience-model))
@@ -5001,10 +5009,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/configured-audience-model/~A/policy"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'configured-audience-model-arn))))
+                                                             'configured-audience-model-arn)
+                                                            common-lisp:t)))
                                                         "GetConfiguredAudienceModelPolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-configured-audience-model-policy))
@@ -5028,10 +5037,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/training-dataset/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'training-dataset-arn))))
+                                                             'training-dataset-arn)
+                                                            common-lisp:t)))
                                                         "GetTrainingDataset"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-training-dataset))
@@ -5134,10 +5144,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -5185,10 +5196,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/configured-audience-model/~A/policy"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'configured-audience-model-arn))))
+                                                             'configured-audience-model-arn)
+                                                            common-lisp:t)))
                                                         "PutConfiguredAudienceModelPolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-configured-audience-model-policy))
@@ -5257,10 +5269,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -5284,10 +5297,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -5318,10 +5332,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/configured-audience-model/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'configured-audience-model-arn))))
+                                                             'configured-audience-model-arn)
+                                                            common-lisp:t)))
                                                         "UpdateConfiguredAudienceModel"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-configured-audience-model))

@@ -20,7 +20,7 @@
  (common-lisp:export 'finspace-error))
 (common-lisp:progn
  (common-lisp:defclass finspace-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "finspace" :api-version
                         "2021-03-12" :host-prefix "finspace" :signing-name
@@ -12149,14 +12149,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/kx/environments/~A/databases/~A/changesets"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'environment-id))
-                                                           (quri.encode:url-encode
+                                                             'environment-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'database-name))))
+                                                             'database-name)
+                                                            common-lisp:t)))
                                                         "CreateKxChangeset"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-kx-changeset))
@@ -12194,10 +12196,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/kx/environments/~A/clusters"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'environment-id))))
+                                                             'environment-id)
+                                                            common-lisp:t)))
                                                         "CreateKxCluster"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-kx-cluster))
@@ -12224,10 +12227,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/kx/environments/~A/databases"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'environment-id))))
+                                                             'environment-id)
+                                                            common-lisp:t)))
                                                         "CreateKxDatabase"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-kx-database))
@@ -12257,14 +12261,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/kx/environments/~A/databases/~A/dataviews"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'environment-id))
-                                                           (quri.encode:url-encode
+                                                             'environment-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'database-name))))
+                                                             'database-name)
+                                                            common-lisp:t)))
                                                         "CreateKxDataview"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-kx-dataview))
@@ -12311,10 +12317,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/kx/environments/~A/scalingGroups"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'environment-id))))
+                                                             'environment-id)
+                                                            common-lisp:t)))
                                                         "CreateKxScalingGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-kx-scaling-group))
@@ -12341,10 +12348,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/kx/environments/~A/users"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'environment-id))))
+                                                             'environment-id)
+                                                            common-lisp:t)))
                                                         "CreateKxUser"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-kx-user))
@@ -12372,10 +12380,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/kx/environments/~A/kxvolumes"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'environment-id))))
+                                                             'environment-id)
+                                                            common-lisp:t)))
                                                         "CreateKxVolume"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-kx-volume))
@@ -12399,10 +12408,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/environment/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'environment-id))))
+                                                             'environment-id)
+                                                            common-lisp:t)))
                                                         "DeleteEnvironment"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-environment))
@@ -12427,14 +12437,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/kx/environments/~A/clusters/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'environment-id))
-                                                           (quri.encode:url-encode
+                                                             'environment-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'cluster-name))))
+                                                             'cluster-name)
+                                                            common-lisp:t)))
                                                         "DeleteKxCluster"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-kx-cluster))
@@ -12460,14 +12472,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/kx/environments/~A/databases/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'environment-id))
-                                                           (quri.encode:url-encode
+                                                             'environment-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'database-name))))
+                                                             'database-name)
+                                                            common-lisp:t)))
                                                         "DeleteKxDatabase"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-kx-database))
@@ -12494,18 +12508,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/kx/environments/~A/databases/~A/dataviews/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'environment-id))
-                                                           (quri.encode:url-encode
+                                                             'environment-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'database-name))
-                                                           (quri.encode:url-encode
+                                                             'database-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dataview-name))))
+                                                             'dataview-name)
+                                                            common-lisp:t)))
                                                         "DeleteKxDataview"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-kx-dataview))
@@ -12529,10 +12546,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/kx/environments/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'environment-id))))
+                                                             'environment-id)
+                                                            common-lisp:t)))
                                                         "DeleteKxEnvironment"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-kx-environment))
@@ -12558,14 +12576,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/kx/environments/~A/scalingGroups/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'environment-id))
-                                                           (quri.encode:url-encode
+                                                             'environment-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'scaling-group-name))))
+                                                             'scaling-group-name)
+                                                            common-lisp:t)))
                                                         "DeleteKxScalingGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-kx-scaling-group))
@@ -12590,14 +12610,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/kx/environments/~A/users/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'environment-id))
-                                                           (quri.encode:url-encode
+                                                             'environment-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'user-name))))
+                                                             'user-name)
+                                                            common-lisp:t)))
                                                         "DeleteKxUser"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-kx-user))
@@ -12622,14 +12644,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/kx/environments/~A/kxvolumes/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'environment-id))
-                                                           (quri.encode:url-encode
+                                                             'environment-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'volume-name))))
+                                                             'volume-name)
+                                                            common-lisp:t)))
                                                         "DeleteKxVolume"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-kx-volume))
@@ -12653,10 +12677,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/environment/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'environment-id))))
+                                                             'environment-id)
+                                                            common-lisp:t)))
                                                         "GetEnvironment"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-environment))
@@ -12682,18 +12707,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/kx/environments/~A/databases/~A/changesets/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'environment-id))
-                                                           (quri.encode:url-encode
+                                                             'environment-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'database-name))
-                                                           (quri.encode:url-encode
+                                                             'database-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'changeset-id))))
+                                                             'changeset-id)
+                                                            common-lisp:t)))
                                                         "GetKxChangeset"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-kx-changeset))
@@ -12717,14 +12745,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/kx/environments/~A/clusters/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'environment-id))
-                                                           (quri.encode:url-encode
+                                                             'environment-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'cluster-name))))
+                                                             'cluster-name)
+                                                            common-lisp:t)))
                                                         "GetKxCluster"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-kx-cluster))
@@ -12749,10 +12779,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/kx/environments/~A/connectionString"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'environment-id))))
+                                                             'environment-id)
+                                                            common-lisp:t)))
                                                         "GetKxConnectionString"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-kx-connection-string))
@@ -12776,14 +12807,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/kx/environments/~A/databases/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'environment-id))
-                                                           (quri.encode:url-encode
+                                                             'environment-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'database-name))))
+                                                             'database-name)
+                                                            common-lisp:t)))
                                                         "GetKxDatabase"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-kx-database))
@@ -12809,18 +12842,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/kx/environments/~A/databases/~A/dataviews/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'environment-id))
-                                                           (quri.encode:url-encode
+                                                             'environment-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'database-name))
-                                                           (quri.encode:url-encode
+                                                             'database-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dataview-name))))
+                                                             'dataview-name)
+                                                            common-lisp:t)))
                                                         "GetKxDataview"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-kx-dataview))
@@ -12844,10 +12880,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/kx/environments/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'environment-id))))
+                                                             'environment-id)
+                                                            common-lisp:t)))
                                                         "GetKxEnvironment"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-kx-environment))
@@ -12872,14 +12909,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/kx/environments/~A/scalingGroups/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'environment-id))
-                                                           (quri.encode:url-encode
+                                                             'environment-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'scaling-group-name))))
+                                                             'scaling-group-name)
+                                                            common-lisp:t)))
                                                         "GetKxScalingGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-kx-scaling-group))
@@ -12903,14 +12942,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/kx/environments/~A/users/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'environment-id))
-                                                           (quri.encode:url-encode
+                                                             'environment-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'user-name))))
+                                                             'user-name)
+                                                            common-lisp:t)))
                                                         "GetKxUser"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-kx-user))
@@ -12934,14 +12975,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/kx/environments/~A/kxvolumes/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'environment-id))
-                                                           (quri.encode:url-encode
+                                                             'environment-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'volume-name))))
+                                                             'volume-name)
+                                                            common-lisp:t)))
                                                         "GetKxVolume"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-kx-volume))
@@ -12985,14 +13028,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/kx/environments/~A/databases/~A/changesets"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'environment-id))
-                                                           (quri.encode:url-encode
+                                                             'environment-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'database-name))))
+                                                             'database-name)
+                                                            common-lisp:t)))
                                                         "ListKxChangesets"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-kx-changesets))
@@ -13018,14 +13063,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/kx/environments/~A/clusters/~A/nodes"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'environment-id))
-                                                           (quri.encode:url-encode
+                                                             'environment-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'cluster-name))))
+                                                             'cluster-name)
+                                                            common-lisp:t)))
                                                         "ListKxClusterNodes"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-kx-cluster-nodes))
@@ -13051,10 +13098,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/kx/environments/~A/clusters"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'environment-id))))
+                                                             'environment-id)
+                                                            common-lisp:t)))
                                                         "ListKxClusters"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-kx-clusters))
@@ -13079,10 +13127,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/kx/environments/~A/databases"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'environment-id))))
+                                                             'environment-id)
+                                                            common-lisp:t)))
                                                         "ListKxDatabases"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-kx-databases))
@@ -13109,14 +13158,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/kx/environments/~A/databases/~A/dataviews"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'environment-id))
-                                                           (quri.encode:url-encode
+                                                             'environment-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'database-name))))
+                                                             'database-name)
+                                                            common-lisp:t)))
                                                         "ListKxDataviews"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-kx-dataviews))
@@ -13159,10 +13210,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/kx/environments/~A/scalingGroups"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'environment-id))))
+                                                             'environment-id)
+                                                            common-lisp:t)))
                                                         "ListKxScalingGroups"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-kx-scaling-groups))
@@ -13187,10 +13239,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/kx/environments/~A/users"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'environment-id))))
+                                                             'environment-id)
+                                                            common-lisp:t)))
                                                         "ListKxUsers"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-kx-users))
@@ -13216,10 +13269,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/kx/environments/~A/kxvolumes"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'environment-id))))
+                                                             'environment-id)
+                                                            common-lisp:t)))
                                                         "ListKxVolumes"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-kx-volumes))
@@ -13243,10 +13297,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -13270,10 +13325,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -13297,10 +13353,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -13327,10 +13384,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/environment/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'environment-id))))
+                                                             'environment-id)
+                                                            common-lisp:t)))
                                                         "UpdateEnvironment"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-environment))
@@ -13359,14 +13417,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/kx/environments/~A/clusters/~A/configuration/code"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'environment-id))
-                                                           (quri.encode:url-encode
+                                                             'environment-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'cluster-name))))
+                                                             'cluster-name)
+                                                            common-lisp:t)))
                                                         "UpdateKxClusterCodeConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-kx-cluster-code-configuration))
@@ -13394,14 +13454,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/kx/environments/~A/clusters/~A/configuration/databases"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'environment-id))
-                                                           (quri.encode:url-encode
+                                                             'environment-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'cluster-name))))
+                                                             'cluster-name)
+                                                            common-lisp:t)))
                                                         "UpdateKxClusterDatabases"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-kx-cluster-databases))
@@ -13428,14 +13490,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/kx/environments/~A/databases/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'environment-id))
-                                                           (quri.encode:url-encode
+                                                             'environment-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'database-name))))
+                                                             'database-name)
+                                                            common-lisp:t)))
                                                         "UpdateKxDatabase"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-kx-database))
@@ -13463,18 +13527,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/kx/environments/~A/databases/~A/dataviews/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'environment-id))
-                                                           (quri.encode:url-encode
+                                                             'environment-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'database-name))
-                                                           (quri.encode:url-encode
+                                                             'database-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dataview-name))))
+                                                             'dataview-name)
+                                                            common-lisp:t)))
                                                         "UpdateKxDataview"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-kx-dataview))
@@ -13500,10 +13567,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/kx/environments/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'environment-id))))
+                                                             'environment-id)
+                                                            common-lisp:t)))
                                                         "UpdateKxEnvironment"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-kx-environment))
@@ -13532,10 +13600,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/kx/environments/~A/network"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'environment-id))))
+                                                             'environment-id)
+                                                            common-lisp:t)))
                                                         "UpdateKxEnvironmentNetwork"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-kx-environment-network))
@@ -13561,14 +13630,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/kx/environments/~A/users/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'environment-id))
-                                                           (quri.encode:url-encode
+                                                             'environment-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'user-name))))
+                                                             'user-name)
+                                                            common-lisp:t)))
                                                         "UpdateKxUser"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-kx-user))
@@ -13595,14 +13666,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/kx/environments/~A/kxvolumes/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'environment-id))
-                                                           (quri.encode:url-encode
+                                                             'environment-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'volume-name))))
+                                                             'volume-name)
+                                                            common-lisp:t)))
                                                         "UpdateKxVolume"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-kx-volume))

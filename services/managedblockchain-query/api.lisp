@@ -20,7 +20,7 @@
  (common-lisp:export 'managedblockchain-query-error))
 (common-lisp:progn
  (common-lisp:defclass managedblockchain-query-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "managedblockchain-query"
                         :api-version "2023-05-04" :host-prefix

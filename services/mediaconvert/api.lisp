@@ -20,7 +20,7 @@
  (common-lisp:export 'mediaconvert-error))
 (common-lisp:progn
  (common-lisp:defclass mediaconvert-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "mediaconvert" :api-version
                         "2017-08-29" :host-prefix "mediaconvert" :signing-name
@@ -17772,13 +17772,6 @@
                           aws-sdk/generator/shape::value))))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
-                           aws-sdk/generator/shape::input 'payload))
-      (common-lisp:list
-       (common-lisp:cons "Payload"
-                         (aws-sdk/generator/shape::input-params
-                          aws-sdk/generator/shape::value))))
-    (alexandria:when-let (aws-sdk/generator/shape::value
-                          (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'preset))
       (common-lisp:list
        (common-lisp:cons "Preset"
@@ -24845,10 +24838,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2017-08-29/jobs/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "CancelJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'cancel-job))
@@ -24960,10 +24954,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2017-08-29/jobTemplates/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "DeleteJobTemplate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-job-template))
@@ -24996,10 +24991,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2017-08-29/presets/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "DeletePreset"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-preset))
@@ -25023,10 +25019,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2017-08-29/queues/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "DeleteQueue"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-queue))
@@ -25068,10 +25065,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2017-08-29/certificates/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'arn))))
+                                                             'arn)
+                                                            common-lisp:t)))
                                                         "DisassociateCertificate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'disassociate-certificate))
@@ -25095,10 +25093,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2017-08-29/jobs/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-job))
@@ -25122,10 +25121,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2017-08-29/jobTemplates/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "GetJobTemplate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-job-template))
@@ -25157,10 +25157,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2017-08-29/presets/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "GetPreset"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-preset))
@@ -25184,10 +25185,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2017-08-29/queues/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "GetQueue"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-queue))
@@ -25290,10 +25292,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2017-08-29/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'arn))))
+                                                             'arn)
+                                                            common-lisp:t)))
                                                         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -25353,10 +25356,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2017-08-29/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'arn))))
+                                                             'arn)
+                                                            common-lisp:t)))
                                                         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -25384,10 +25388,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2017-08-29/jobTemplates/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "UpdateJobTemplate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-job-template))
@@ -25412,10 +25417,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2017-08-29/presets/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "UpdatePreset"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-preset))
@@ -25441,10 +25447,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/2017-08-29/queues/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "UpdateQueue"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-queue))

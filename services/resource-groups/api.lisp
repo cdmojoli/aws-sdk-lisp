@@ -20,7 +20,7 @@
  (common-lisp:export 'resource-groups-error))
 (common-lisp:progn
  (common-lisp:defclass resource-groups-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "resource-groups"
                         :api-version "2017-11-27" :host-prefix
@@ -2861,9 +2861,10 @@
         'resource-groups-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/resources/~A/tags"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'arn))))
+                                aws-sdk/generator/operation::input 'arn)
+                               common-lisp:t)))
         "GetTags"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-tags))
@@ -2965,9 +2966,10 @@
         'resource-groups-request aws-sdk/generator/operation::input "PUT"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/resources/~A/tags"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'arn))))
+                                aws-sdk/generator/operation::input 'arn)
+                               common-lisp:t)))
         "Tag"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag))
@@ -3002,9 +3004,10 @@
         'resource-groups-request aws-sdk/generator/operation::input "PATCH"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/resources/~A/tags"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'arn))))
+                                aws-sdk/generator/operation::input 'arn)
+                               common-lisp:t)))
         "Untag"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag))

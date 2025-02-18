@@ -20,7 +20,7 @@
  (common-lisp:export 'mediapackagev2-error))
 (common-lisp:progn
  (common-lisp:defclass mediapackagev2-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "mediapackagev2"
                         :api-version "2022-12-25" :host-prefix "mediapackagev2"
@@ -320,8 +320,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'client-token))
-      (common-lisp:cons "x-amzn-client-token"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amzn-client-token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -523,8 +524,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'client-token))
-      (common-lisp:cons "x-amzn-client-token"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amzn-client-token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -1065,8 +1067,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'client-token))
-      (common-lisp:cons "x-amzn-client-token"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amzn-client-token" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -5134,10 +5137,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/channelGroup/~A/channel"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'channel-group-name))))
+                                                             'channel-group-name)
+                                                            common-lisp:t)))
                                                         "CreateChannel"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-channel))
@@ -5186,14 +5190,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/channelGroup/~A/channel/~A/originEndpoint"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'channel-group-name))
-                                                           (quri.encode:url-encode
+                                                             'channel-group-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'channel-name))))
+                                                             'channel-name)
+                                                            common-lisp:t)))
                                                         "CreateOriginEndpoint"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-origin-endpoint))
@@ -5218,14 +5224,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/channelGroup/~A/channel/~A/"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'channel-group-name))
-                                                           (quri.encode:url-encode
+                                                             'channel-group-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'channel-name))))
+                                                             'channel-name)
+                                                            common-lisp:t)))
                                                         "DeleteChannel"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-channel))
@@ -5249,10 +5257,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/channelGroup/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'channel-group-name))))
+                                                             'channel-group-name)
+                                                            common-lisp:t)))
                                                         "DeleteChannelGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-channel-group))
@@ -5277,14 +5286,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/channelGroup/~A/channel/~A/policy"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'channel-group-name))
-                                                           (quri.encode:url-encode
+                                                             'channel-group-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'channel-name))))
+                                                             'channel-name)
+                                                            common-lisp:t)))
                                                         "DeleteChannelPolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-channel-policy))
@@ -5311,18 +5322,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/channelGroup/~A/channel/~A/originEndpoint/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'channel-group-name))
-                                                           (quri.encode:url-encode
+                                                             'channel-group-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'channel-name))
-                                                           (quri.encode:url-encode
+                                                             'channel-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'origin-endpoint-name))))
+                                                             'origin-endpoint-name)
+                                                            common-lisp:t)))
                                                         "DeleteOriginEndpoint"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-origin-endpoint))
@@ -5350,18 +5364,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/channelGroup/~A/channel/~A/originEndpoint/~A/policy"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'channel-group-name))
-                                                           (quri.encode:url-encode
+                                                             'channel-group-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'channel-name))
-                                                           (quri.encode:url-encode
+                                                             'channel-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'origin-endpoint-name))))
+                                                             'origin-endpoint-name)
+                                                            common-lisp:t)))
                                                         "DeleteOriginEndpointPolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-origin-endpoint-policy))
@@ -5386,14 +5403,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/channelGroup/~A/channel/~A/"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'channel-group-name))
-                                                           (quri.encode:url-encode
+                                                             'channel-group-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'channel-name))))
+                                                             'channel-name)
+                                                            common-lisp:t)))
                                                         "GetChannel"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-channel))
@@ -5417,10 +5436,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/channelGroup/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'channel-group-name))))
+                                                             'channel-group-name)
+                                                            common-lisp:t)))
                                                         "GetChannelGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-channel-group))
@@ -5445,14 +5465,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/channelGroup/~A/channel/~A/policy"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'channel-group-name))
-                                                           (quri.encode:url-encode
+                                                             'channel-group-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'channel-name))))
+                                                             'channel-name)
+                                                            common-lisp:t)))
                                                         "GetChannelPolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-channel-policy))
@@ -5479,18 +5501,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/channelGroup/~A/channel/~A/originEndpoint/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'channel-group-name))
-                                                           (quri.encode:url-encode
+                                                             'channel-group-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'channel-name))
-                                                           (quri.encode:url-encode
+                                                             'channel-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'origin-endpoint-name))))
+                                                             'origin-endpoint-name)
+                                                            common-lisp:t)))
                                                         "GetOriginEndpoint"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-origin-endpoint))
@@ -5518,18 +5543,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/channelGroup/~A/channel/~A/originEndpoint/~A/policy"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'channel-group-name))
-                                                           (quri.encode:url-encode
+                                                             'channel-group-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'channel-name))
-                                                           (quri.encode:url-encode
+                                                             'channel-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'origin-endpoint-name))))
+                                                             'origin-endpoint-name)
+                                                            common-lisp:t)))
                                                         "GetOriginEndpointPolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-origin-endpoint-policy))
@@ -5572,10 +5600,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/channelGroup/~A/channel"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'channel-group-name))))
+                                                             'channel-group-name)
+                                                            common-lisp:t)))
                                                         "ListChannels"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-channels))
@@ -5602,14 +5631,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/channelGroup/~A/channel/~A/originEndpoint"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'channel-group-name))
-                                                           (quri.encode:url-encode
+                                                             'channel-group-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'channel-name))))
+                                                             'channel-name)
+                                                            common-lisp:t)))
                                                         "ListOriginEndpoints"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-origin-endpoints))
@@ -5633,10 +5664,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -5661,14 +5693,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/channelGroup/~A/channel/~A/policy"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'channel-group-name))
-                                                           (quri.encode:url-encode
+                                                             'channel-group-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'channel-name))))
+                                                             'channel-name)
+                                                            common-lisp:t)))
                                                         "PutChannelPolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-channel-policy))
@@ -5696,18 +5730,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/channelGroup/~A/channel/~A/originEndpoint/~A/policy"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'channel-group-name))
-                                                           (quri.encode:url-encode
+                                                             'channel-group-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'channel-name))
-                                                           (quri.encode:url-encode
+                                                             'channel-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'origin-endpoint-name))))
+                                                             'origin-endpoint-name)
+                                                            common-lisp:t)))
                                                         "PutOriginEndpointPolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-origin-endpoint-policy))
@@ -5731,10 +5768,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -5758,10 +5796,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -5787,14 +5826,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/channelGroup/~A/channel/~A/"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'channel-group-name))
-                                                           (quri.encode:url-encode
+                                                             'channel-group-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'channel-name))))
+                                                             'channel-name)
+                                                            common-lisp:t)))
                                                         "UpdateChannel"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-channel))
@@ -5818,10 +5859,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/channelGroup/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'channel-group-name))))
+                                                             'channel-group-name)
+                                                            common-lisp:t)))
                                                         "UpdateChannelGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-channel-group))
@@ -5851,18 +5893,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/channelGroup/~A/channel/~A/originEndpoint/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'channel-group-name))
-                                                           (quri.encode:url-encode
+                                                             'channel-group-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'channel-name))
-                                                           (quri.encode:url-encode
+                                                             'channel-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'origin-endpoint-name))))
+                                                             'origin-endpoint-name)
+                                                            common-lisp:t)))
                                                         "UpdateOriginEndpoint"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-origin-endpoint))

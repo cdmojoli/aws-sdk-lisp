@@ -20,7 +20,7 @@
  (common-lisp:export 'groundstation-error))
 (common-lisp:progn
  (common-lisp:defclass groundstation-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "groundstation" :api-version
                         "2019-05-23" :host-prefix "groundstation" :signing-name
@@ -7284,10 +7284,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/contact/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'contact-id))))
+                                                             'contact-id)
+                                                            common-lisp:t)))
                                                         "CancelContact"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'cancel-contact))
@@ -7395,14 +7396,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/config/~A/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'config-type))
-                                                           (quri.encode:url-encode
+                                                             'config-type)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'config-id))))
+                                                             'config-id)
+                                                            common-lisp:t)))
                                                         "DeleteConfig"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-config))
@@ -7427,10 +7430,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/dataflowEndpointGroup/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dataflow-endpoint-group-id))))
+                                                             'dataflow-endpoint-group-id)
+                                                            common-lisp:t)))
                                                         "DeleteDataflowEndpointGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-dataflow-endpoint-group))
@@ -7454,10 +7458,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/ephemeris/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'ephemeris-id))))
+                                                             'ephemeris-id)
+                                                            common-lisp:t)))
                                                         "DeleteEphemeris"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-ephemeris))
@@ -7481,10 +7486,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/missionprofile/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'mission-profile-id))))
+                                                             'mission-profile-id)
+                                                            common-lisp:t)))
                                                         "DeleteMissionProfile"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-mission-profile))
@@ -7508,10 +7514,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/contact/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'contact-id))))
+                                                             'contact-id)
+                                                            common-lisp:t)))
                                                         "DescribeContact"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-contact))
@@ -7535,10 +7542,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/ephemeris/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'ephemeris-id))))
+                                                             'ephemeris-id)
+                                                            common-lisp:t)))
                                                         "DescribeEphemeris"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-ephemeris))
@@ -7562,10 +7570,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/agent/~A/configuration"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'agent-id))))
+                                                             'agent-id)
+                                                            common-lisp:t)))
                                                         "GetAgentConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-agent-configuration))
@@ -7589,14 +7598,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/config/~A/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'config-type))
-                                                           (quri.encode:url-encode
+                                                             'config-type)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'config-id))))
+                                                             'config-id)
+                                                            common-lisp:t)))
                                                         "GetConfig"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-config))
@@ -7621,10 +7632,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/dataflowEndpointGroup/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'dataflow-endpoint-group-id))))
+                                                             'dataflow-endpoint-group-id)
+                                                            common-lisp:t)))
                                                         "GetDataflowEndpointGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-dataflow-endpoint-group))
@@ -7665,10 +7677,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/missionprofile/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'mission-profile-id))))
+                                                             'mission-profile-id)
+                                                            common-lisp:t)))
                                                         "GetMissionProfile"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-mission-profile))
@@ -7692,10 +7705,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/satellite/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'satellite-id))))
+                                                             'satellite-id)
+                                                            common-lisp:t)))
                                                         "GetSatellite"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-satellite))
@@ -7848,10 +7862,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -7912,10 +7927,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -7939,10 +7955,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -7969,10 +7986,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/agent/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'agent-id))))
+                                                             'agent-id)
+                                                            common-lisp:t)))
                                                         "UpdateAgentStatus"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-agent-status))
@@ -7997,14 +8015,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/config/~A/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'config-type))
-                                                           (quri.encode:url-encode
+                                                             'config-type)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'config-id))))
+                                                             'config-id)
+                                                            common-lisp:t)))
                                                         "UpdateConfig"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-config))
@@ -8029,10 +8049,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/ephemeris/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'ephemeris-id))))
+                                                             'ephemeris-id)
+                                                            common-lisp:t)))
                                                         "UpdateEphemeris"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-ephemeris))
@@ -8063,10 +8084,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/missionprofile/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'mission-profile-id))))
+                                                             'mission-profile-id)
+                                                            common-lisp:t)))
                                                         "UpdateMissionProfile"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-mission-profile))

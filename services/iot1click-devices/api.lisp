@@ -20,7 +20,7 @@
  (common-lisp:export 'iot1click-devices-error))
 (common-lisp:progn
  (common-lisp:defclass iot1click-devices-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "iot1click-devices"
                         :api-version "2018-05-14" :host-prefix
@@ -1500,10 +1500,10 @@
         'iot1click-devices-request aws-sdk/generator/operation::input "PUT"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/claims/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'claim-code))))
+                                aws-sdk/generator/operation::input 'claim-code)
+                               common-lisp:t)))
         "ClaimDevicesByClaimCode"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'claim-devices-by-claim-code))
@@ -1522,10 +1522,10 @@
         'iot1click-devices-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/devices/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'device-id))))
+                                aws-sdk/generator/operation::input 'device-id)
+                               common-lisp:t)))
         "DescribeDevice"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-device))
@@ -1544,10 +1544,10 @@
         'iot1click-devices-request aws-sdk/generator/operation::input "PUT"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/devices/~A/finalize-claim"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'device-id))))
+                                aws-sdk/generator/operation::input 'device-id)
+                               common-lisp:t)))
         "FinalizeDeviceClaim"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'finalize-device-claim))
@@ -1566,10 +1566,10 @@
         'iot1click-devices-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/devices/~A/methods"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'device-id))))
+                                aws-sdk/generator/operation::input 'device-id)
+                               common-lisp:t)))
         "GetDeviceMethods"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-device-methods))
@@ -1588,10 +1588,10 @@
         'iot1click-devices-request aws-sdk/generator/operation::input "PUT"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/devices/~A/initiate-claim"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'device-id))))
+                                aws-sdk/generator/operation::input 'device-id)
+                               common-lisp:t)))
         "InitiateDeviceClaim"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'initiate-device-claim))
@@ -1612,10 +1612,10 @@
         'iot1click-devices-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/devices/~A/methods"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'device-id))))
+                                aws-sdk/generator/operation::input 'device-id)
+                               common-lisp:t)))
         "InvokeDeviceMethod"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'invoke-device-method))
@@ -1637,10 +1637,10 @@
         'iot1click-devices-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/devices/~A/events"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'device-id))))
+                                aws-sdk/generator/operation::input 'device-id)
+                               common-lisp:t)))
         "ListDeviceEvents"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-device-events))
@@ -1676,10 +1676,11 @@
         'iot1click-devices-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -1698,10 +1699,11 @@
         'iot1click-devices-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -1720,10 +1722,10 @@
         'iot1click-devices-request aws-sdk/generator/operation::input "PUT"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/devices/~A/unclaim"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'device-id))))
+                                aws-sdk/generator/operation::input 'device-id)
+                               common-lisp:t)))
         "UnclaimDevice"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'unclaim-device))
@@ -1742,10 +1744,11 @@
         'iot1click-devices-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -1764,10 +1767,10 @@
         'iot1click-devices-request aws-sdk/generator/operation::input "PUT"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/devices/~A/state"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'device-id))))
+                                aws-sdk/generator/operation::input 'device-id)
+                               common-lisp:t)))
         "UpdateDeviceState"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-device-state))

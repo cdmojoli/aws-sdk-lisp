@@ -20,7 +20,7 @@
  (common-lisp:export 'iotwireless-error))
 (common-lisp:progn
  (common-lisp:defclass iotwireless-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "iotwireless" :api-version
                         "2020-11-22" :host-prefix "api.iotwireless"
@@ -8769,13 +8769,6 @@
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         ((aws-sdk/generator/shape::input gnss))
    (common-lisp:append
-    (alexandria:when-let (aws-sdk/generator/shape::value
-                          (common-lisp:slot-value
-                           aws-sdk/generator/shape::input 'payload))
-      (common-lisp:list
-       (common-lisp:cons "Payload"
-                         (aws-sdk/generator/shape::input-params
-                          aws-sdk/generator/shape::value))))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'capture-time))
@@ -20400,10 +20393,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/fuota-tasks/~A/multicast-group"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "AssociateMulticastGroupWithFuotaTask"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'associate-multicast-group-with-fuota-task))
@@ -20428,10 +20422,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/fuota-tasks/~A/wireless-device"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "AssociateWirelessDeviceWithFuotaTask"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'associate-wireless-device-with-fuota-task))
@@ -20456,10 +20451,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/multicast-groups/~A/wireless-device"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "AssociateWirelessDeviceWithMulticastGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'associate-wireless-device-with-multicast-group))
@@ -20484,10 +20480,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/wireless-devices/~A/thing"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "AssociateWirelessDeviceWithThing"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'associate-wireless-device-with-thing))
@@ -20512,10 +20509,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/wireless-gateways/~A/certificate"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "AssociateWirelessGatewayWithCertificate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'associate-wireless-gateway-with-certificate))
@@ -20540,10 +20538,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/wireless-gateways/~A/thing"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "AssociateWirelessGatewayWithThing"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'associate-wireless-gateway-with-thing))
@@ -20568,10 +20567,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/multicast-groups/~A/session"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "CancelMulticastGroupSession"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'cancel-multicast-group-session))
@@ -20765,10 +20765,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/wireless-gateways/~A/tasks"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "CreateWirelessGatewayTask"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-wireless-gateway-task))
@@ -20814,10 +20815,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/destinations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "DeleteDestination"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-destination))
@@ -20841,10 +20843,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/device-profiles/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "DeleteDeviceProfile"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-device-profile))
@@ -20868,10 +20871,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/fuota-tasks/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "DeleteFuotaTask"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-fuota-task))
@@ -20895,10 +20899,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/multicast-groups/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "DeleteMulticastGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-multicast-group))
@@ -20923,10 +20928,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/network-analyzer-configurations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'configuration-name))))
+                                                             'configuration-name)
+                                                            common-lisp:t)))
                                                         "DeleteNetworkAnalyzerConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-network-analyzer-configuration))
@@ -20951,10 +20957,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/wireless-devices/~A/data"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "DeleteQueuedMessages"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-queued-messages))
@@ -20978,10 +20985,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/service-profiles/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "DeleteServiceProfile"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-service-profile))
@@ -21005,10 +21013,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/wireless-devices/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "DeleteWirelessDevice"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-wireless-device))
@@ -21033,10 +21042,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/wireless_device_import_task/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "DeleteWirelessDeviceImportTask"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-wireless-device-import-task))
@@ -21060,10 +21070,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/wireless-gateways/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "DeleteWirelessGateway"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-wireless-gateway))
@@ -21088,10 +21099,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/wireless-gateways/~A/tasks"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "DeleteWirelessGatewayTask"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-wireless-gateway-task))
@@ -21116,10 +21128,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/wireless-gateway-task-definitions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "DeleteWirelessGatewayTaskDefinition"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-wireless-gateway-task-definition))
@@ -21145,10 +21158,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/wireless-devices/~A/deregister"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'identifier))))
+                                                             'identifier)
+                                                            common-lisp:t)))
                                                         "DeregisterWirelessDevice"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'deregister-wireless-device))
@@ -21174,10 +21188,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/partner-accounts/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'partner-account-id))))
+                                                             'partner-account-id)
+                                                            common-lisp:t)))
                                                         "DisassociateAwsAccountFromPartnerAccount"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'disassociate-aws-account-from-partner-account))
@@ -21202,14 +21217,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/fuota-tasks/~A/multicast-groups/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))
-                                                           (quri.encode:url-encode
+                                                             'id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'multicast-group-id))))
+                                                             'multicast-group-id)
+                                                            common-lisp:t)))
                                                         "DisassociateMulticastGroupFromFuotaTask"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'disassociate-multicast-group-from-fuota-task))
@@ -21234,14 +21251,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/fuota-tasks/~A/wireless-devices/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))
-                                                           (quri.encode:url-encode
+                                                             'id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'wireless-device-id))))
+                                                             'wireless-device-id)
+                                                            common-lisp:t)))
                                                         "DisassociateWirelessDeviceFromFuotaTask"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'disassociate-wireless-device-from-fuota-task))
@@ -21266,14 +21285,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/multicast-groups/~A/wireless-devices/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))
-                                                           (quri.encode:url-encode
+                                                             'id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'wireless-device-id))))
+                                                             'wireless-device-id)
+                                                            common-lisp:t)))
                                                         "DisassociateWirelessDeviceFromMulticastGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'disassociate-wireless-device-from-multicast-group))
@@ -21298,10 +21319,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/wireless-devices/~A/thing"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "DisassociateWirelessDeviceFromThing"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'disassociate-wireless-device-from-thing))
@@ -21326,10 +21348,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/wireless-gateways/~A/certificate"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "DisassociateWirelessGatewayFromCertificate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'disassociate-wireless-gateway-from-certificate))
@@ -21354,10 +21377,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/wireless-gateways/~A/thing"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "DisassociateWirelessGatewayFromThing"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'disassociate-wireless-gateway-from-thing))
@@ -21381,10 +21405,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/destinations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "GetDestination"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-destination))
@@ -21408,10 +21433,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/device-profiles/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetDeviceProfile"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-device-profile))
@@ -21445,10 +21471,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/fuota-tasks/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetFuotaTask"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-fuota-task))
@@ -21481,10 +21508,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/multicast-groups/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetMulticastGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-multicast-group))
@@ -21509,10 +21537,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/multicast-groups/~A/session"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetMulticastGroupSession"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-multicast-group-session))
@@ -21537,10 +21566,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/network-analyzer-configurations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'configuration-name))))
+                                                             'configuration-name)
+                                                            common-lisp:t)))
                                                         "GetNetworkAnalyzerConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-network-analyzer-configuration))
@@ -21565,10 +21595,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/partner-accounts/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'partner-account-id))))
+                                                             'partner-account-id)
+                                                            common-lisp:t)))
                                                         "GetPartnerAccount"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-partner-account))
@@ -21593,10 +21624,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/positions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-identifier))))
+                                                             'resource-identifier)
+                                                            common-lisp:t)))
                                                         "GetPosition"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-position))
@@ -21622,10 +21654,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/position-configurations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-identifier))))
+                                                             'resource-identifier)
+                                                            common-lisp:t)))
                                                         "GetPositionConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-position-configuration))
@@ -21672,10 +21705,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/event-configurations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'identifier))))
+                                                             'identifier)
+                                                            common-lisp:t)))
                                                         "GetResourceEventConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-resource-event-configuration))
@@ -21700,10 +21734,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/log-levels/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-identifier))))
+                                                             'resource-identifier)
+                                                            common-lisp:t)))
                                                         "GetResourceLogLevel"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-resource-log-level))
@@ -21728,10 +21763,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/resource-positions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-identifier))))
+                                                             'resource-identifier)
+                                                            common-lisp:t)))
                                                         "GetResourcePosition")
        :want-stream common-lisp:t)
       "blob" common-lisp:nil *error-map*)))
@@ -21774,10 +21810,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/service-profiles/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetServiceProfile"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-service-profile))
@@ -21801,10 +21838,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/wireless-devices/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'identifier))))
+                                                             'identifier)
+                                                            common-lisp:t)))
                                                         "GetWirelessDevice"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-wireless-device))
@@ -21829,10 +21867,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/wireless_device_import_task/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetWirelessDeviceImportTask"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-wireless-device-import-task))
@@ -21857,10 +21896,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/wireless-devices/~A/statistics"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetWirelessDeviceStatistics"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-wireless-device-statistics))
@@ -21884,10 +21924,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/wireless-gateways/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'identifier))))
+                                                             'identifier)
+                                                            common-lisp:t)))
                                                         "GetWirelessGateway"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-wireless-gateway))
@@ -21912,10 +21953,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/wireless-gateways/~A/certificate"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetWirelessGatewayCertificate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-wireless-gateway-certificate))
@@ -21940,10 +21982,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/wireless-gateways/~A/firmware-information"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetWirelessGatewayFirmwareInformation"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-wireless-gateway-firmware-information))
@@ -21968,10 +22011,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/wireless-gateways/~A/statistics"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetWirelessGatewayStatistics"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-wireless-gateway-statistics))
@@ -21996,10 +22040,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/wireless-gateways/~A/tasks"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetWirelessGatewayTask"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-wireless-gateway-task))
@@ -22024,10 +22069,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/wireless-gateway-task-definitions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetWirelessGatewayTaskDefinition"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-wireless-gateway-task-definition))
@@ -22164,10 +22210,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/fuota-tasks/~A/multicast-groups"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "ListMulticastGroupsByFuotaTask"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-multicast-groups-by-fuota-task))
@@ -22250,10 +22297,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/wireless-devices/~A/data"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "ListQueuedMessages"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-queued-messages))
@@ -22397,10 +22445,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/position-configurations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-identifier))))
+                                                             'resource-identifier)
+                                                            common-lisp:t)))
                                                         "PutPositionConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-position-configuration))
@@ -22426,10 +22475,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/log-levels/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-identifier))))
+                                                             'resource-identifier)
+                                                            common-lisp:t)))
                                                         "PutResourceLogLevel"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-resource-log-level))
@@ -22463,10 +22513,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/log-levels/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-identifier))))
+                                                             'resource-identifier)
+                                                            common-lisp:t)))
                                                         "ResetResourceLogLevel"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'reset-resource-log-level))
@@ -22492,10 +22543,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/multicast-groups/~A/data"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "SendDataToMulticastGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'send-data-to-multicast-group))
@@ -22522,10 +22574,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/wireless-devices/~A/data"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "SendDataToWirelessDevice"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'send-data-to-wireless-device))
@@ -22550,10 +22603,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/multicast-groups/~A/bulk"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "StartBulkAssociateWirelessDeviceWithMulticastGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export
@@ -22579,10 +22633,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/multicast-groups/~A/bulk"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "StartBulkDisassociateWirelessDeviceFromMulticastGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export
@@ -22607,10 +22662,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/fuota-tasks/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "StartFuotaTask"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'start-fuota-task))
@@ -22635,10 +22691,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/multicast-groups/~A/session"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "StartMulticastGroupSession"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'start-multicast-group-session))
@@ -22723,10 +22780,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/wireless-devices/~A/test"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "TestWirelessDevice"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'test-wireless-device))
@@ -22770,10 +22828,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/destinations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "UpdateDestination"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-destination))
@@ -22825,10 +22884,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/fuota-tasks/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "UpdateFuotaTask"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-fuota-task))
@@ -22873,10 +22933,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/multicast-groups/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "UpdateMulticastGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-multicast-group))
@@ -22909,10 +22970,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/network-analyzer-configurations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'configuration-name))))
+                                                             'configuration-name)
+                                                            common-lisp:t)))
                                                         "UpdateNetworkAnalyzerConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-network-analyzer-configuration))
@@ -22937,10 +22999,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/partner-accounts/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'partner-account-id))))
+                                                             'partner-account-id)
+                                                            common-lisp:t)))
                                                         "UpdatePartnerAccount"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-partner-account))
@@ -22966,10 +23029,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/positions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-identifier))))
+                                                             'resource-identifier)
+                                                            common-lisp:t)))
                                                         "UpdatePosition"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-position))
@@ -22999,10 +23063,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/event-configurations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'identifier))))
+                                                             'identifier)
+                                                            common-lisp:t)))
                                                         "UpdateResourceEventConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-resource-event-configuration))
@@ -23028,10 +23093,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/resource-positions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-identifier))))
+                                                             'resource-identifier)
+                                                            common-lisp:t)))
                                                         "UpdateResourcePosition"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-resource-position))
@@ -23058,10 +23124,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/wireless-devices/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "UpdateWirelessDevice"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-wireless-device))
@@ -23086,10 +23153,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/wireless_device_import_task/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "UpdateWirelessDeviceImportTask"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-wireless-device-import-task))
@@ -23116,10 +23184,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/wireless-gateways/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "UpdateWirelessGateway"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-wireless-gateway))

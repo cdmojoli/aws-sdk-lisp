@@ -20,7 +20,7 @@
  (common-lisp:export 'sagemaker-a2i-runtime-error))
 (common-lisp:progn
  (common-lisp:defclass sagemaker-a2i-runtime-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "sagemaker-a2i-runtime"
                         :api-version "2019-11-07" :host-prefix
@@ -851,10 +851,11 @@
         "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/human-loops/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'human-loop-name))))
+                                'human-loop-name)
+                               common-lisp:t)))
         "DeleteHumanLoop"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-human-loop))
@@ -873,10 +874,11 @@
         'sagemaker-a2i-runtime-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/human-loops/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'human-loop-name))))
+                                'human-loop-name)
+                               common-lisp:t)))
         "DescribeHumanLoop"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-human-loop))

@@ -20,7 +20,7 @@
  (common-lisp:export 'sagemaker-geospatial-error))
 (common-lisp:progn
  (common-lisp:defclass sagemaker-geospatial-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "sagemaker-geospatial"
                         :api-version "2020-05-27" :host-prefix
@@ -6606,9 +6606,10 @@
         "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/earth-observation-jobs/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'arn))))
+                                aws-sdk/generator/operation::input 'arn)
+                               common-lisp:t)))
         "DeleteEarthObservationJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-earth-observation-job))
@@ -6629,9 +6630,10 @@
         "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/vector-enrichment-jobs/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'arn))))
+                                aws-sdk/generator/operation::input 'arn)
+                               common-lisp:t)))
         "DeleteVectorEnrichmentJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-vector-enrichment-job))
@@ -6689,9 +6691,10 @@
         'sagemaker-geospatial-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/earth-observation-jobs/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'arn))))
+                                aws-sdk/generator/operation::input 'arn)
+                               common-lisp:t)))
         "GetEarthObservationJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-earth-observation-job))
@@ -6710,9 +6713,10 @@
         'sagemaker-geospatial-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/raster-data-collection/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'arn))))
+                                aws-sdk/generator/operation::input 'arn)
+                               common-lisp:t)))
         "GetRasterDataCollection"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-raster-data-collection))
@@ -6736,15 +6740,18 @@
         'sagemaker-geospatial-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tile/~A/~A/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'z))
-                              (quri.encode:url-encode
+                                aws-sdk/generator/operation::input 'z)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'x))
-                              (quri.encode:url-encode
+                                aws-sdk/generator/operation::input 'x)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'y))))
+                                aws-sdk/generator/operation::input 'y)
+                               common-lisp:t)))
         "GetTile")
        :want-stream common-lisp:t)
       "blob" common-lisp:nil *error-map*)))
@@ -6764,9 +6771,10 @@
         'sagemaker-geospatial-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/vector-enrichment-jobs/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'arn))))
+                                aws-sdk/generator/operation::input 'arn)
+                               common-lisp:t)))
         "GetVectorEnrichmentJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-vector-enrichment-job))
@@ -6821,10 +6829,11 @@
         'sagemaker-geospatial-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -6953,10 +6962,11 @@
         'sagemaker-geospatial-request aws-sdk/generator/operation::input "PUT"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -6976,10 +6986,11 @@
         "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))

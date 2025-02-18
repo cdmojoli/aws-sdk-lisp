@@ -20,7 +20,7 @@
  (common-lisp:export 'connectcases-error))
 (common-lisp:progn
  (common-lisp:defclass connectcases-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "connectcases" :api-version
                         "2022-10-03" :host-prefix "cases" :signing-name "cases"
@@ -5872,10 +5872,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/domains/~A/fields-batch"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-id))))
+                                                             'domain-id)
+                                                            common-lisp:t)))
                                                         "BatchGetField"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'batch-get-field))
@@ -5899,14 +5900,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/domains/~A/fields/~A/options"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-id))
-                                                           (quri.encode:url-encode
+                                                             'domain-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'field-id))))
+                                                             'field-id)
+                                                            common-lisp:t)))
                                                         "BatchPutFieldOptions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'batch-put-field-options))
@@ -5933,10 +5936,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/domains/~A/cases"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-id))))
+                                                             'domain-id)
+                                                            common-lisp:t)))
                                                         "CreateCase"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-case))
@@ -5978,10 +5982,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/domains/~A/fields"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-id))))
+                                                             'domain-id)
+                                                            common-lisp:t)))
                                                         "CreateField"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-field))
@@ -6005,10 +6010,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/domains/~A/layouts"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-id))))
+                                                             'domain-id)
+                                                            common-lisp:t)))
                                                         "CreateLayout"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-layout))
@@ -6034,14 +6040,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/domains/~A/cases/~A/related-items/"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-id))
-                                                           (quri.encode:url-encode
+                                                             'domain-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'case-id))))
+                                                             'case-id)
+                                                            common-lisp:t)))
                                                         "CreateRelatedItem"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-related-item))
@@ -6068,10 +6076,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/domains/~A/templates"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-id))))
+                                                             'domain-id)
+                                                            common-lisp:t)))
                                                         "CreateTemplate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-template))
@@ -6095,10 +6104,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/domains/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-id))))
+                                                             'domain-id)
+                                                            common-lisp:t)))
                                                         "DeleteDomain"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-domain))
@@ -6123,14 +6133,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/domains/~A/cases/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-id))
-                                                           (quri.encode:url-encode
+                                                             'domain-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'case-id))))
+                                                             'case-id)
+                                                            common-lisp:t)))
                                                         "GetCase"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-case))
@@ -6155,14 +6167,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/domains/~A/cases/~A/audit-history"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-id))
-                                                           (quri.encode:url-encode
+                                                             'domain-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'case-id))))
+                                                             'case-id)
+                                                            common-lisp:t)))
                                                         "GetCaseAuditEvents"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-case-audit-events))
@@ -6187,10 +6201,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/domains/~A/case-event-configuration"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-id))))
+                                                             'domain-id)
+                                                            common-lisp:t)))
                                                         "GetCaseEventConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-case-event-configuration))
@@ -6214,10 +6229,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/domains/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-id))))
+                                                             'domain-id)
+                                                            common-lisp:t)))
                                                         "GetDomain"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-domain))
@@ -6241,14 +6257,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/domains/~A/layouts/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-id))
-                                                           (quri.encode:url-encode
+                                                             'domain-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'layout-id))))
+                                                             'layout-id)
+                                                            common-lisp:t)))
                                                         "GetLayout"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-layout))
@@ -6272,14 +6290,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/domains/~A/templates/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-id))
-                                                           (quri.encode:url-encode
+                                                             'domain-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'template-id))))
+                                                             'template-id)
+                                                            common-lisp:t)))
                                                         "GetTemplate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-template))
@@ -6305,10 +6325,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/domains/~A/list-cases-for-contact"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-id))))
+                                                             'domain-id)
+                                                            common-lisp:t)))
                                                         "ListCasesForContact"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-cases-for-contact))
@@ -6351,14 +6372,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/domains/~A/fields/~A/options-list"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-id))
-                                                           (quri.encode:url-encode
+                                                             'domain-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'field-id))))
+                                                             'field-id)
+                                                            common-lisp:t)))
                                                         "ListFieldOptions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-field-options))
@@ -6383,10 +6406,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/domains/~A/fields-list"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-id))))
+                                                             'domain-id)
+                                                            common-lisp:t)))
                                                         "ListFields"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-fields))
@@ -6411,10 +6435,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/domains/~A/layouts-list"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-id))))
+                                                             'domain-id)
+                                                            common-lisp:t)))
                                                         "ListLayouts"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-layouts))
@@ -6438,10 +6463,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'arn))))
+                                                             'arn)
+                                                            common-lisp:t)))
                                                         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -6466,10 +6492,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/domains/~A/templates-list"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-id))))
+                                                             'domain-id)
+                                                            common-lisp:t)))
                                                         "ListTemplates"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-templates))
@@ -6494,10 +6521,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/domains/~A/case-event-configuration"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-id))))
+                                                             'domain-id)
+                                                            common-lisp:t)))
                                                         "PutCaseEventConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-case-event-configuration))
@@ -6524,10 +6552,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/domains/~A/cases-search"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-id))))
+                                                             'domain-id)
+                                                            common-lisp:t)))
                                                         "SearchCases"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'search-cases))
@@ -6553,14 +6582,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/domains/~A/cases/~A/related-items-search"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-id))
-                                                           (quri.encode:url-encode
+                                                             'domain-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'case-id))))
+                                                             'case-id)
+                                                            common-lisp:t)))
                                                         "SearchRelatedItems"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'search-related-items))
@@ -6584,10 +6615,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'arn))))
+                                                             'arn)
+                                                            common-lisp:t)))
                                                         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -6611,10 +6643,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'arn))))
+                                                             'arn)
+                                                            common-lisp:t)))
                                                         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -6639,14 +6672,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/domains/~A/cases/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-id))
-                                                           (quri.encode:url-encode
+                                                             'domain-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'case-id))))
+                                                             'case-id)
+                                                            common-lisp:t)))
                                                         "UpdateCase"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-case))
@@ -6671,14 +6706,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/domains/~A/fields/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-id))
-                                                           (quri.encode:url-encode
+                                                             'domain-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'field-id))))
+                                                             'field-id)
+                                                            common-lisp:t)))
                                                         "UpdateField"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-field))
@@ -6703,14 +6740,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/domains/~A/layouts/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-id))
-                                                           (quri.encode:url-encode
+                                                             'domain-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'layout-id))))
+                                                             'layout-id)
+                                                            common-lisp:t)))
                                                         "UpdateLayout"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-layout))
@@ -6738,14 +6777,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/domains/~A/templates/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain-id))
-                                                           (quri.encode:url-encode
+                                                             'domain-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'template-id))))
+                                                             'template-id)
+                                                            common-lisp:t)))
                                                         "UpdateTemplate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-template))

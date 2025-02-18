@@ -20,7 +20,7 @@
  (common-lisp:export 'sesv2-error))
 (common-lisp:progn
  (common-lisp:defclass sesv2-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "sesv2" :api-version
                         "2019-09-27" :host-prefix "email" :signing-name "ses"
@@ -15543,10 +15543,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/export-jobs/~A/cancel"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'job-id))))
+                                                             'job-id)
+                                                            common-lisp:t)))
                                                         "CancelExportJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'cancel-export-job))
@@ -15597,10 +15598,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/configuration-sets/~A/event-destinations"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'configuration-set-name))))
+                                                             'configuration-set-name)
+                                                            common-lisp:t)))
                                                         "CreateConfigurationSetEventDestination"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-configuration-set-event-destination))
@@ -15627,10 +15629,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/contact-lists/~A/contacts"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'contact-list-name))))
+                                                             'contact-list-name)
+                                                            common-lisp:t)))
                                                         "CreateContact"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-contact))
@@ -15759,14 +15762,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/identities/~A/policies/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'email-identity))
-                                                           (quri.encode:url-encode
+                                                             'email-identity)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'policy-name))))
+                                                             'policy-name)
+                                                            common-lisp:t)))
                                                         "CreateEmailIdentityPolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-email-identity-policy))
@@ -15846,10 +15851,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/configuration-sets/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'configuration-set-name))))
+                                                             'configuration-set-name)
+                                                            common-lisp:t)))
                                                         "DeleteConfigurationSet"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-configuration-set))
@@ -15876,14 +15882,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/configuration-sets/~A/event-destinations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'configuration-set-name))
-                                                           (quri.encode:url-encode
+                                                             'configuration-set-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'event-destination-name))))
+                                                             'event-destination-name)
+                                                            common-lisp:t)))
                                                         "DeleteConfigurationSetEventDestination"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-configuration-set-event-destination))
@@ -15908,14 +15916,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/contact-lists/~A/contacts/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'contact-list-name))
-                                                           (quri.encode:url-encode
+                                                             'contact-list-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'email-address))))
+                                                             'email-address)
+                                                            common-lisp:t)))
                                                         "DeleteContact"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-contact))
@@ -15939,10 +15949,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/contact-lists/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'contact-list-name))))
+                                                             'contact-list-name)
+                                                            common-lisp:t)))
                                                         "DeleteContactList"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-contact-list))
@@ -15967,10 +15978,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/custom-verification-email-templates/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'template-name))))
+                                                             'template-name)
+                                                            common-lisp:t)))
                                                         "DeleteCustomVerificationEmailTemplate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-custom-verification-email-template))
@@ -15994,10 +16006,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/dedicated-ip-pools/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'pool-name))))
+                                                             'pool-name)
+                                                            common-lisp:t)))
                                                         "DeleteDedicatedIpPool"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-dedicated-ip-pool))
@@ -16021,10 +16034,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/identities/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'email-identity))))
+                                                             'email-identity)
+                                                            common-lisp:t)))
                                                         "DeleteEmailIdentity"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-email-identity))
@@ -16049,14 +16063,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/identities/~A/policies/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'email-identity))
-                                                           (quri.encode:url-encode
+                                                             'email-identity)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'policy-name))))
+                                                             'policy-name)
+                                                            common-lisp:t)))
                                                         "DeleteEmailIdentityPolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-email-identity-policy))
@@ -16080,10 +16096,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/templates/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'template-name))))
+                                                             'template-name)
+                                                            common-lisp:t)))
                                                         "DeleteEmailTemplate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-email-template))
@@ -16108,10 +16125,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/suppression/addresses/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'email-address))))
+                                                             'email-address)
+                                                            common-lisp:t)))
                                                         "DeleteSuppressedDestination"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-suppressed-destination))
@@ -16161,10 +16179,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/configuration-sets/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'configuration-set-name))))
+                                                             'configuration-set-name)
+                                                            common-lisp:t)))
                                                         "GetConfigurationSet"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-configuration-set))
@@ -16189,10 +16208,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/configuration-sets/~A/event-destinations"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'configuration-set-name))))
+                                                             'configuration-set-name)
+                                                            common-lisp:t)))
                                                         "GetConfigurationSetEventDestinations"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-configuration-set-event-destinations))
@@ -16217,14 +16237,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/contact-lists/~A/contacts/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'contact-list-name))
-                                                           (quri.encode:url-encode
+                                                             'contact-list-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'email-address))))
+                                                             'email-address)
+                                                            common-lisp:t)))
                                                         "GetContact"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-contact))
@@ -16248,10 +16270,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/contact-lists/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'contact-list-name))))
+                                                             'contact-list-name)
+                                                            common-lisp:t)))
                                                         "GetContactList"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-contact-list))
@@ -16276,10 +16299,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/custom-verification-email-templates/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'template-name))))
+                                                             'template-name)
+                                                            common-lisp:t)))
                                                         "GetCustomVerificationEmailTemplate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-custom-verification-email-template))
@@ -16303,10 +16327,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/dedicated-ips/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'ip))))
+                                                             'ip)
+                                                            common-lisp:t)))
                                                         "GetDedicatedIp"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-dedicated-ip))
@@ -16330,10 +16355,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/dedicated-ip-pools/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'pool-name))))
+                                                             'pool-name)
+                                                            common-lisp:t)))
                                                         "GetDedicatedIpPool"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-dedicated-ip-pool))
@@ -16385,10 +16411,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/deliverability-dashboard/test-reports/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'report-id))))
+                                                             'report-id)
+                                                            common-lisp:t)))
                                                         "GetDeliverabilityTestReport"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-deliverability-test-report))
@@ -16413,10 +16440,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/deliverability-dashboard/campaigns/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'campaign-id))))
+                                                             'campaign-id)
+                                                            common-lisp:t)))
                                                         "GetDomainDeliverabilityCampaign"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-domain-deliverability-campaign))
@@ -16441,10 +16469,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/deliverability-dashboard/statistics-report/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'domain))))
+                                                             'domain)
+                                                            common-lisp:t)))
                                                         "GetDomainStatisticsReport"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-domain-statistics-report))
@@ -16468,10 +16497,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/identities/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'email-identity))))
+                                                             'email-identity)
+                                                            common-lisp:t)))
                                                         "GetEmailIdentity"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-email-identity))
@@ -16496,10 +16526,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/identities/~A/policies"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'email-identity))))
+                                                             'email-identity)
+                                                            common-lisp:t)))
                                                         "GetEmailIdentityPolicies"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-email-identity-policies))
@@ -16523,10 +16554,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/templates/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'template-name))))
+                                                             'template-name)
+                                                            common-lisp:t)))
                                                         "GetEmailTemplate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-email-template))
@@ -16550,10 +16582,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/export-jobs/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'job-id))))
+                                                             'job-id)
+                                                            common-lisp:t)))
                                                         "GetExportJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-export-job))
@@ -16577,10 +16610,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/import-jobs/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'job-id))))
+                                                             'job-id)
+                                                            common-lisp:t)))
                                                         "GetImportJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-import-job))
@@ -16604,10 +16638,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/insights/~A/"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'message-id))))
+                                                             'message-id)
+                                                            common-lisp:t)))
                                                         "GetMessageInsights"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-message-insights))
@@ -16632,10 +16667,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/suppression/addresses/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'email-address))))
+                                                             'email-address)
+                                                            common-lisp:t)))
                                                         "GetSuppressedDestination"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-suppressed-destination))
@@ -16697,10 +16733,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/contact-lists/~A/contacts"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'contact-list-name))))
+                                                             'contact-list-name)
+                                                            common-lisp:t)))
                                                         "ListContacts"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-contacts))
@@ -16784,10 +16821,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/deliverability-dashboard/domains/~A/campaigns"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'subscribed-domain))))
+                                                             'subscribed-domain)
+                                                            common-lisp:t)))
                                                         "ListDomainDeliverabilityCampaigns"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-domain-deliverability-campaigns))
@@ -17046,10 +17084,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/configuration-sets/~A/delivery-options"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'configuration-set-name))))
+                                                             'configuration-set-name)
+                                                            common-lisp:t)))
                                                         "PutConfigurationSetDeliveryOptions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-configuration-set-delivery-options))
@@ -17076,10 +17115,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/configuration-sets/~A/reputation-options"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'configuration-set-name))))
+                                                             'configuration-set-name)
+                                                            common-lisp:t)))
                                                         "PutConfigurationSetReputationOptions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-configuration-set-reputation-options))
@@ -17105,10 +17145,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/configuration-sets/~A/sending"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'configuration-set-name))))
+                                                             'configuration-set-name)
+                                                            common-lisp:t)))
                                                         "PutConfigurationSetSendingOptions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-configuration-set-sending-options))
@@ -17135,10 +17176,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/configuration-sets/~A/suppression-options"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'configuration-set-name))))
+                                                             'configuration-set-name)
+                                                            common-lisp:t)))
                                                         "PutConfigurationSetSuppressionOptions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-configuration-set-suppression-options))
@@ -17165,10 +17207,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/configuration-sets/~A/tracking-options"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'configuration-set-name))))
+                                                             'configuration-set-name)
+                                                            common-lisp:t)))
                                                         "PutConfigurationSetTrackingOptions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-configuration-set-tracking-options))
@@ -17194,10 +17237,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/configuration-sets/~A/vdm-options"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'configuration-set-name))))
+                                                             'configuration-set-name)
+                                                            common-lisp:t)))
                                                         "PutConfigurationSetVdmOptions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-configuration-set-vdm-options))
@@ -17221,10 +17265,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/dedicated-ips/~A/pool"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'ip))))
+                                                             'ip)
+                                                            common-lisp:t)))
                                                         "PutDedicatedIpInPool"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-dedicated-ip-in-pool))
@@ -17249,10 +17294,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/dedicated-ip-pools/~A/scaling"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'pool-name))))
+                                                             'pool-name)
+                                                            common-lisp:t)))
                                                         "PutDedicatedIpPoolScalingAttributes"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-dedicated-ip-pool-scaling-attributes))
@@ -17277,10 +17323,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/dedicated-ips/~A/warmup"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'ip))))
+                                                             'ip)
+                                                            common-lisp:t)))
                                                         "PutDedicatedIpWarmupAttributes"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-dedicated-ip-warmup-attributes))
@@ -17326,10 +17373,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/identities/~A/configuration-set"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'email-identity))))
+                                                             'email-identity)
+                                                            common-lisp:t)))
                                                         "PutEmailIdentityConfigurationSetAttributes"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-email-identity-configuration-set-attributes))
@@ -17354,10 +17402,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/identities/~A/dkim"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'email-identity))))
+                                                             'email-identity)
+                                                            common-lisp:t)))
                                                         "PutEmailIdentityDkimAttributes"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-email-identity-dkim-attributes))
@@ -17385,10 +17434,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v1/email/identities/~A/dkim/signing"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'email-identity))))
+                                                             'email-identity)
+                                                            common-lisp:t)))
                                                         "PutEmailIdentityDkimSigningAttributes"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-email-identity-dkim-signing-attributes))
@@ -17414,10 +17464,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/identities/~A/feedback"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'email-identity))))
+                                                             'email-identity)
+                                                            common-lisp:t)))
                                                         "PutEmailIdentityFeedbackAttributes"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-email-identity-feedback-attributes))
@@ -17445,10 +17496,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/identities/~A/mail-from"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'email-identity))))
+                                                             'email-identity)
+                                                            common-lisp:t)))
                                                         "PutEmailIdentityMailFromAttributes"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-email-identity-mail-from-attributes))
@@ -17583,10 +17635,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/templates/~A/render"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'template-name))))
+                                                             'template-name)
+                                                            common-lisp:t)))
                                                         "TestRenderEmailTemplate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'test-render-email-template))
@@ -17632,14 +17685,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/configuration-sets/~A/event-destinations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'configuration-set-name))
-                                                           (quri.encode:url-encode
+                                                             'configuration-set-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'event-destination-name))))
+                                                             'event-destination-name)
+                                                            common-lisp:t)))
                                                         "UpdateConfigurationSetEventDestination"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-configuration-set-event-destination))
@@ -17666,14 +17721,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/contact-lists/~A/contacts/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'contact-list-name))
-                                                           (quri.encode:url-encode
+                                                             'contact-list-name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'email-address))))
+                                                             'email-address)
+                                                            common-lisp:t)))
                                                         "UpdateContact"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-contact))
@@ -17698,10 +17755,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/contact-lists/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'contact-list-name))))
+                                                             'contact-list-name)
+                                                            common-lisp:t)))
                                                         "UpdateContactList"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-contact-list))
@@ -17730,10 +17788,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/custom-verification-email-templates/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'template-name))))
+                                                             'template-name)
+                                                            common-lisp:t)))
                                                         "UpdateCustomVerificationEmailTemplate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-custom-verification-email-template))
@@ -17759,14 +17818,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/identities/~A/policies/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'email-identity))
-                                                           (quri.encode:url-encode
+                                                             'email-identity)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'policy-name))))
+                                                             'policy-name)
+                                                            common-lisp:t)))
                                                         "UpdateEmailIdentityPolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-email-identity-policy))
@@ -17790,10 +17851,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/v2/email/templates/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'template-name))))
+                                                             'template-name)
+                                                            common-lisp:t)))
                                                         "UpdateEmailTemplate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-email-template))

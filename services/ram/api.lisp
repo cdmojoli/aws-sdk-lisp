@@ -20,7 +20,7 @@
  (common-lisp:export 'ram-error))
 (common-lisp:progn
  (common-lisp:defclass ram-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "ram" :api-version
                         "2018-01-04" :host-prefix "ram" :signing-name

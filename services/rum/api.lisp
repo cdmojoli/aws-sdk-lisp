@@ -20,7 +20,7 @@
  (common-lisp:export 'rum-error))
 (common-lisp:progn
  (common-lisp:defclass rum-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "rum" :api-version
                         "2018-05-10" :host-prefix "rum" :signing-name "rum"
@@ -3187,10 +3187,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/rummetrics/~A/metrics"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-monitor-name))))
+                                                             'app-monitor-name)
+                                                            common-lisp:t)))
                                                         "BatchCreateRumMetricDefinitions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'batch-create-rum-metric-definitions))
@@ -3218,10 +3219,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/rummetrics/~A/metrics"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-monitor-name))))
+                                                             'app-monitor-name)
+                                                            common-lisp:t)))
                                                         "BatchDeleteRumMetricDefinitions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'batch-delete-rum-metric-definitions))
@@ -3249,10 +3251,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/rummetrics/~A/metrics"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-monitor-name))))
+                                                             'app-monitor-name)
+                                                            common-lisp:t)))
                                                         "BatchGetRumMetricDefinitions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'batch-get-rum-metric-definitions))
@@ -3296,10 +3299,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/appmonitor/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "DeleteAppMonitor"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-app-monitor))
@@ -3326,10 +3330,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/rummetrics/~A/metricsdestination"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-monitor-name))))
+                                                             'app-monitor-name)
+                                                            common-lisp:t)))
                                                         "DeleteRumMetricsDestination"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-rum-metrics-destination))
@@ -3353,10 +3358,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/appmonitor/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "GetAppMonitor"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-app-monitor))
@@ -3382,10 +3388,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/appmonitor/~A/data"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "GetAppMonitorData"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-app-monitor-data))
@@ -3428,10 +3435,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/rummetrics/~A/metricsdestination"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-monitor-name))))
+                                                             'app-monitor-name)
+                                                            common-lisp:t)))
                                                         "ListRumMetricsDestinations"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-rum-metrics-destinations))
@@ -3455,10 +3463,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -3485,10 +3494,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/appmonitors/~A/"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "PutRumEvents"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-rum-events))
@@ -3516,10 +3526,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/rummetrics/~A/metricsdestination"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-monitor-name))))
+                                                             'app-monitor-name)
+                                                            common-lisp:t)))
                                                         "PutRumMetricsDestination"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-rum-metrics-destination))
@@ -3543,10 +3554,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -3570,10 +3582,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -3600,10 +3613,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/appmonitor/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "UpdateAppMonitor"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-app-monitor))
@@ -3631,10 +3645,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/rummetrics/~A/metrics"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'app-monitor-name))))
+                                                             'app-monitor-name)
+                                                            common-lisp:t)))
                                                         "UpdateRumMetricDefinition"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-rum-metric-definition))

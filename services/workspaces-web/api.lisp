@@ -20,7 +20,7 @@
  (common-lisp:export 'workspaces-web-error))
 (common-lisp:progn
  (common-lisp:defclass workspaces-web-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "workspaces-web"
                         :api-version "2020-07-08" :host-prefix "workspaces-web"

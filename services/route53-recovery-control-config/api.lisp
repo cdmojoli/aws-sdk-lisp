@@ -20,7 +20,7 @@
  (common-lisp:export 'route53-recovery-control-config-error))
 (common-lisp:progn
  (common-lisp:defclass route53-recovery-control-config-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service
                         "route53-recovery-control-config" :api-version
@@ -3405,10 +3405,11 @@
         aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/cluster/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'cluster-arn))))
+                                'cluster-arn)
+                               common-lisp:t)))
         "DeleteCluster"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-cluster))
@@ -3428,10 +3429,11 @@
         aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/controlpanel/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'control-panel-arn))))
+                                'control-panel-arn)
+                               common-lisp:t)))
         "DeleteControlPanel"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-control-panel))
@@ -3451,10 +3453,11 @@
         aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/routingcontrol/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'routing-control-arn))))
+                                'routing-control-arn)
+                               common-lisp:t)))
         "DeleteRoutingControl"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-routing-control))
@@ -3474,10 +3477,11 @@
         aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/safetyrule/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'safety-rule-arn))))
+                                'safety-rule-arn)
+                               common-lisp:t)))
         "DeleteSafetyRule"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-safety-rule))
@@ -3497,10 +3501,11 @@
         aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/cluster/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'cluster-arn))))
+                                'cluster-arn)
+                               common-lisp:t)))
         "DescribeCluster"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-cluster))
@@ -3520,10 +3525,11 @@
         aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/controlpanel/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'control-panel-arn))))
+                                'control-panel-arn)
+                               common-lisp:t)))
         "DescribeControlPanel"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-control-panel))
@@ -3543,10 +3549,11 @@
         aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/routingcontrol/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'routing-control-arn))))
+                                'routing-control-arn)
+                               common-lisp:t)))
         "DescribeRoutingControl"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-routing-control))
@@ -3566,10 +3573,11 @@
         aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/safetyrule/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'safety-rule-arn))))
+                                'safety-rule-arn)
+                               common-lisp:t)))
         "DescribeSafetyRule"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-safety-rule))
@@ -3589,10 +3597,11 @@
         aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/resourcePolicy/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "GetResourcePolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-resource-policy))
@@ -3616,10 +3625,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/routingcontrol/~A/associatedRoute53HealthChecks"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'routing-control-arn))))
+                                'routing-control-arn)
+                               common-lisp:t)))
         "ListAssociatedRoute53HealthChecks"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-associated-route53health-checks))
@@ -3675,10 +3685,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/controlpanel/~A/routingcontrols"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'control-panel-arn))))
+                                'control-panel-arn)
+                               common-lisp:t)))
         "ListRoutingControls"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-routing-controls))
@@ -3699,10 +3710,11 @@
         aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/controlpanel/~A/safetyrules"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'control-panel-arn))))
+                                'control-panel-arn)
+                               common-lisp:t)))
         "ListSafetyRules"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-safety-rules))
@@ -3722,10 +3734,11 @@
         aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -3745,10 +3758,11 @@
         aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -3768,10 +3782,11 @@
         aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))

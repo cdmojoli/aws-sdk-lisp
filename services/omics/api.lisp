@@ -20,7 +20,7 @@
  (common-lisp:export 'omics-error))
 (common-lisp:progn
  (common-lisp:defclass omics-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "omics" :api-version
                         "2022-11-28" :host-prefix "omics" :signing-name "omics"
@@ -6735,7 +6735,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'range))
-      (common-lisp:cons "Range" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Range" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -18248,14 +18250,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/sequencestore/~A/upload/~A/abort"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'sequence-store-id))
-                                                           (quri.encode:url-encode
+                                                             'sequence-store-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'upload-id))))
+                                                             'upload-id)
+                                                            common-lisp:t)))
                                                         "AbortMultipartReadSetUpload"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'abort-multipart-read-set-upload))
@@ -18279,10 +18283,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/share/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'share-id))))
+                                                             'share-id)
+                                                            common-lisp:t)))
                                                         "AcceptShare"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'accept-share))
@@ -18306,10 +18311,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/sequencestore/~A/readset/batch/delete"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'sequence-store-id))))
+                                                             'sequence-store-id)
+                                                            common-lisp:t)))
                                                         "BatchDeleteReadSet"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'batch-delete-read-set))
@@ -18333,10 +18339,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/import/annotation/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'job-id))))
+                                                             'job-id)
+                                                            common-lisp:t)))
                                                         "CancelAnnotationImportJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'cancel-annotation-import-job))
@@ -18360,10 +18367,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/run/~A/cancel"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "CancelRun"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'cancel-run))
@@ -18387,10 +18395,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/import/variant/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'job-id))))
+                                                             'job-id)
+                                                            common-lisp:t)))
                                                         "CancelVariantImportJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'cancel-variant-import-job))
@@ -18416,14 +18425,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/sequencestore/~A/upload/~A/complete"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'sequence-store-id))
-                                                           (quri.encode:url-encode
+                                                             'sequence-store-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'upload-id))))
+                                                             'upload-id)
+                                                            common-lisp:t)))
                                                         "CompleteMultipartReadSetUpload"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'complete-multipart-read-set-upload))
@@ -18471,10 +18482,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/annotationStore/~A/version"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "CreateAnnotationStoreVersion"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-annotation-store-version))
@@ -18504,10 +18516,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/sequencestore/~A/upload"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'sequence-store-id))))
+                                                             'sequence-store-id)
+                                                            common-lisp:t)))
                                                         "CreateMultipartReadSetUpload"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-multipart-read-set-upload))
@@ -18651,10 +18664,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/annotationStore/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "DeleteAnnotationStore"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-annotation-store))
@@ -18679,10 +18693,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/annotationStore/~A/versions/delete"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "DeleteAnnotationStoreVersions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-annotation-store-versions))
@@ -18706,14 +18721,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/referencestore/~A/reference/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'reference-store-id))
-                                                           (quri.encode:url-encode
+                                                             'reference-store-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "DeleteReference"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-reference))
@@ -18737,10 +18754,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/referencestore/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "DeleteReferenceStore"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-reference-store))
@@ -18764,10 +18782,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/run/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "DeleteRun"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-run))
@@ -18791,10 +18810,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/runGroup/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "DeleteRunGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-run-group))
@@ -18818,10 +18838,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/sequencestore/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "DeleteSequenceStore"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-sequence-store))
@@ -18845,10 +18866,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/share/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'share-id))))
+                                                             'share-id)
+                                                            common-lisp:t)))
                                                         "DeleteShare"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-share))
@@ -18872,10 +18894,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/variantStore/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "DeleteVariantStore"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-variant-store))
@@ -18899,10 +18922,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/workflow/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "DeleteWorkflow"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-workflow))
@@ -18926,10 +18950,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/import/annotation/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'job-id))))
+                                                             'job-id)
+                                                            common-lisp:t)))
                                                         "GetAnnotationImportJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-annotation-import-job))
@@ -18953,10 +18978,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/annotationStore/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "GetAnnotationStore"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-annotation-store))
@@ -18981,14 +19007,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/annotationStore/~A/version/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))
-                                                           (quri.encode:url-encode
+                                                             'name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'version-name))))
+                                                             'version-name)
+                                                            common-lisp:t)))
                                                         "GetAnnotationStoreVersion"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-annotation-store-version))
@@ -19013,14 +19041,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/sequencestore/~A/readset/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'sequence-store-id))
-                                                           (quri.encode:url-encode
+                                                             'sequence-store-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetReadSet")
        :want-stream common-lisp:t)
       "blob" common-lisp:nil *error-map*)))
@@ -19046,14 +19076,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/sequencestore/~A/activationjob/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'sequence-store-id))
-                                                           (quri.encode:url-encode
+                                                             'sequence-store-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetReadSetActivationJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-read-set-activation-job))
@@ -19077,14 +19109,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/sequencestore/~A/exportjob/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'sequence-store-id))
-                                                           (quri.encode:url-encode
+                                                             'sequence-store-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetReadSetExportJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-read-set-export-job))
@@ -19108,14 +19142,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/sequencestore/~A/importjob/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'sequence-store-id))
-                                                           (quri.encode:url-encode
+                                                             'sequence-store-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetReadSetImportJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-read-set-import-job))
@@ -19139,14 +19175,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/sequencestore/~A/readset/~A/metadata"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'sequence-store-id))
-                                                           (quri.encode:url-encode
+                                                             'sequence-store-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetReadSetMetadata"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-read-set-metadata))
@@ -19172,14 +19210,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/referencestore/~A/reference/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'reference-store-id))
-                                                           (quri.encode:url-encode
+                                                             'reference-store-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetReference")
        :want-stream common-lisp:t)
       "blob" common-lisp:nil *error-map*)))
@@ -19204,14 +19244,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/referencestore/~A/importjob/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'reference-store-id))
-                                                           (quri.encode:url-encode
+                                                             'reference-store-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetReferenceImportJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-reference-import-job))
@@ -19235,14 +19277,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/referencestore/~A/reference/~A/metadata"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'reference-store-id))
-                                                           (quri.encode:url-encode
+                                                             'reference-store-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetReferenceMetadata"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-reference-metadata))
@@ -19266,10 +19310,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/referencestore/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetReferenceStore"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-reference-store))
@@ -19293,10 +19338,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/run/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetRun"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-run))
@@ -19320,10 +19366,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/runGroup/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetRunGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-run-group))
@@ -19347,14 +19394,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/run/~A/task/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))
-                                                           (quri.encode:url-encode
+                                                             'id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'task-id))))
+                                                             'task-id)
+                                                            common-lisp:t)))
                                                         "GetRunTask"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-run-task))
@@ -19378,10 +19427,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/sequencestore/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetSequenceStore"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-sequence-store))
@@ -19405,10 +19455,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/share/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'share-id))))
+                                                             'share-id)
+                                                            common-lisp:t)))
                                                         "GetShare"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-share))
@@ -19432,10 +19483,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/import/variant/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'job-id))))
+                                                             'job-id)
+                                                            common-lisp:t)))
                                                         "GetVariantImportJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-variant-import-job))
@@ -19459,10 +19511,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/variantStore/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "GetVariantStore"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-variant-store))
@@ -19486,10 +19539,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/workflow/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "GetWorkflow"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-workflow))
@@ -19535,10 +19589,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/annotationStore/~A/versions"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "ListAnnotationStoreVersions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-annotation-store-versions))
@@ -19583,10 +19638,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/sequencestore/~A/uploads"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'sequence-store-id))))
+                                                             'sequence-store-id)
+                                                            common-lisp:t)))
                                                         "ListMultipartReadSetUploads"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-multipart-read-set-uploads))
@@ -19613,10 +19669,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/sequencestore/~A/activationjobs"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'sequence-store-id))))
+                                                             'sequence-store-id)
+                                                            common-lisp:t)))
                                                         "ListReadSetActivationJobs"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-read-set-activation-jobs))
@@ -19643,10 +19700,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/sequencestore/~A/exportjobs"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'sequence-store-id))))
+                                                             'sequence-store-id)
+                                                            common-lisp:t)))
                                                         "ListReadSetExportJobs"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-read-set-export-jobs))
@@ -19673,10 +19731,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/sequencestore/~A/importjobs"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'sequence-store-id))))
+                                                             'sequence-store-id)
+                                                            common-lisp:t)))
                                                         "ListReadSetImportJobs"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-read-set-import-jobs))
@@ -19704,14 +19763,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/sequencestore/~A/upload/~A/parts"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'sequence-store-id))
-                                                           (quri.encode:url-encode
+                                                             'sequence-store-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'upload-id))))
+                                                             'upload-id)
+                                                            common-lisp:t)))
                                                         "ListReadSetUploadParts"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-read-set-upload-parts))
@@ -19737,10 +19798,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/sequencestore/~A/readsets"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'sequence-store-id))))
+                                                             'sequence-store-id)
+                                                            common-lisp:t)))
                                                         "ListReadSets"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-read-sets))
@@ -19767,10 +19829,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/referencestore/~A/importjobs"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'reference-store-id))))
+                                                             'reference-store-id)
+                                                            common-lisp:t)))
                                                         "ListReferenceImportJobs"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-reference-import-jobs))
@@ -19814,10 +19877,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/referencestore/~A/references"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'reference-store-id))))
+                                                             'reference-store-id)
+                                                            common-lisp:t)))
                                                         "ListReferences"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-references))
@@ -19860,10 +19924,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/run/~A/task"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "ListRunTasks"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-run-tasks))
@@ -19944,10 +20009,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -20050,10 +20116,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/sequencestore/~A/activationjob"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'sequence-store-id))))
+                                                             'sequence-store-id)
+                                                            common-lisp:t)))
                                                         "StartReadSetActivationJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'start-read-set-activation-job))
@@ -20081,10 +20148,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/sequencestore/~A/exportjob"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'sequence-store-id))))
+                                                             'sequence-store-id)
+                                                            common-lisp:t)))
                                                         "StartReadSetExportJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'start-read-set-export-job))
@@ -20111,10 +20179,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/sequencestore/~A/importjob"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'sequence-store-id))))
+                                                             'sequence-store-id)
+                                                            common-lisp:t)))
                                                         "StartReadSetImportJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'start-read-set-import-job))
@@ -20141,10 +20210,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/referencestore/~A/importjob"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'reference-store-id))))
+                                                             'reference-store-id)
+                                                            common-lisp:t)))
                                                         "StartReferenceImportJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'start-reference-import-job))
@@ -20211,10 +20281,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -20238,10 +20309,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -20265,10 +20337,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/annotationStore/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "UpdateAnnotationStore"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-annotation-store))
@@ -20293,14 +20366,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/annotationStore/~A/version/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))
-                                                           (quri.encode:url-encode
+                                                             'name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'version-name))))
+                                                             'version-name)
+                                                            common-lisp:t)))
                                                         "UpdateAnnotationStoreVersion"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-annotation-store-version))
@@ -20326,10 +20401,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/runGroup/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "UpdateRunGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-run-group))
@@ -20353,10 +20429,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/variantStore/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "UpdateVariantStore"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-variant-store))
@@ -20380,10 +20457,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/workflow/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "UpdateWorkflow"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-workflow))
@@ -20410,14 +20488,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/sequencestore/~A/upload/~A/part"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'sequence-store-id))
-                                                           (quri.encode:url-encode
+                                                             'sequence-store-id)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'upload-id))))
+                                                             'upload-id)
+                                                            common-lisp:t)))
                                                         "UploadReadSetPart"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'upload-read-set-part))

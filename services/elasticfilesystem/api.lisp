@@ -20,7 +20,7 @@
  (common-lisp:export 'elasticfilesystem-error))
 (common-lisp:progn
  (common-lisp:defclass elasticfilesystem-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "elasticfilesystem"
                         :api-version "2015-02-01" :host-prefix
@@ -4151,10 +4151,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/2015-02-01/file-systems/~A/replication-configuration"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'source-file-system-id))))
+                                'source-file-system-id)
+                               common-lisp:t)))
         "CreateReplicationConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-replication-configuration))
@@ -4173,10 +4174,11 @@
         'elasticfilesystem-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/2015-02-01/create-tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'file-system-id))))
+                                'file-system-id)
+                               common-lisp:t)))
         "CreateTags"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-tags))
@@ -4195,10 +4197,11 @@
         'elasticfilesystem-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/2015-02-01/access-points/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'access-point-id))))
+                                'access-point-id)
+                               common-lisp:t)))
         "DeleteAccessPoint"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-access-point))
@@ -4217,10 +4220,11 @@
         'elasticfilesystem-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/2015-02-01/file-systems/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'file-system-id))))
+                                'file-system-id)
+                               common-lisp:t)))
         "DeleteFileSystem"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-file-system))
@@ -4241,10 +4245,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/2015-02-01/file-systems/~A/policy"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'file-system-id))))
+                                'file-system-id)
+                               common-lisp:t)))
         "DeleteFileSystemPolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-file-system-policy))
@@ -4263,10 +4268,11 @@
         'elasticfilesystem-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/2015-02-01/mount-targets/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'mount-target-id))))
+                                'mount-target-id)
+                               common-lisp:t)))
         "DeleteMountTarget"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-mount-target))
@@ -4287,10 +4293,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/2015-02-01/file-systems/~A/replication-configuration"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'source-file-system-id))))
+                                'source-file-system-id)
+                               common-lisp:t)))
         "DeleteReplicationConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-replication-configuration))
@@ -4309,10 +4316,11 @@
         'elasticfilesystem-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/2015-02-01/delete-tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'file-system-id))))
+                                'file-system-id)
+                               common-lisp:t)))
         "DeleteTags"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-tags))
@@ -4368,10 +4376,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/2015-02-01/file-systems/~A/backup-policy"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'file-system-id))))
+                                'file-system-id)
+                               common-lisp:t)))
         "DescribeBackupPolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-backup-policy))
@@ -4392,10 +4401,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/2015-02-01/file-systems/~A/policy"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'file-system-id))))
+                                'file-system-id)
+                               common-lisp:t)))
         "DescribeFileSystemPolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-file-system-policy))
@@ -4434,10 +4444,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/2015-02-01/file-systems/~A/lifecycle-configuration"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'file-system-id))))
+                                'file-system-id)
+                               common-lisp:t)))
         "DescribeLifecycleConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-lifecycle-configuration))
@@ -4458,10 +4469,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/2015-02-01/mount-targets/~A/security-groups"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'mount-target-id))))
+                                'mount-target-id)
+                               common-lisp:t)))
         "DescribeMountTargetSecurityGroups"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-mount-target-security-groups))
@@ -4519,10 +4531,11 @@
         'elasticfilesystem-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/2015-02-01/tags/~A/"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'file-system-id))))
+                                'file-system-id)
+                               common-lisp:t)))
         "DescribeTags"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-tags))
@@ -4542,10 +4555,11 @@
         'elasticfilesystem-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/2015-02-01/resource-tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-id))))
+                                'resource-id)
+                               common-lisp:t)))
         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -4567,10 +4581,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/2015-02-01/mount-targets/~A/security-groups"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'mount-target-id))))
+                                'mount-target-id)
+                               common-lisp:t)))
         "ModifyMountTargetSecurityGroups"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'modify-mount-target-security-groups))
@@ -4606,10 +4621,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/2015-02-01/file-systems/~A/backup-policy"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'file-system-id))))
+                                'file-system-id)
+                               common-lisp:t)))
         "PutBackupPolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-backup-policy))
@@ -4632,10 +4648,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/2015-02-01/file-systems/~A/policy"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'file-system-id))))
+                                'file-system-id)
+                               common-lisp:t)))
         "PutFileSystemPolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-file-system-policy))
@@ -4657,10 +4674,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/2015-02-01/file-systems/~A/lifecycle-configuration"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'file-system-id))))
+                                'file-system-id)
+                               common-lisp:t)))
         "PutLifecycleConfiguration"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-lifecycle-configuration))
@@ -4679,10 +4697,11 @@
         'elasticfilesystem-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/2015-02-01/resource-tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-id))))
+                                'resource-id)
+                               common-lisp:t)))
         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -4701,10 +4720,11 @@
         'elasticfilesystem-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/2015-02-01/resource-tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-id))))
+                                'resource-id)
+                               common-lisp:t)))
         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -4726,10 +4746,11 @@
         'elasticfilesystem-request aws-sdk/generator/operation::input "PUT"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/2015-02-01/file-systems/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'file-system-id))))
+                                'file-system-id)
+                               common-lisp:t)))
         "UpdateFileSystem"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-file-system))
@@ -4752,10 +4773,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/2015-02-01/file-systems/~A/protection"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'file-system-id))))
+                                'file-system-id)
+                               common-lisp:t)))
         "UpdateFileSystemProtection"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-file-system-protection))

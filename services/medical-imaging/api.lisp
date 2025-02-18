@@ -20,7 +20,7 @@
  (common-lisp:export 'medical-imaging-error))
 (common-lisp:progn
  (common-lisp:defclass medical-imaging-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "medical-imaging"
                         :api-version "2023-07-19" :host-prefix
@@ -2004,7 +2004,9 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-type))
-      (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -2112,11 +2114,15 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-type))
-      (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Type" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'content-encoding))
-      (common-lisp:cons "Content-Encoding" aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "Content-Encoding" aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         (
                          (aws-sdk/generator/shape::input
@@ -3976,14 +3982,16 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/datastore/~A/imageSet/~A/copyImageSet"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'datastore-id))
-                              (quri.encode:url-encode
+                                'datastore-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'source-image-set-id))))
+                                'source-image-set-id)
+                               common-lisp:t)))
         "CopyImageSet"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'copy-image-set))
@@ -4020,10 +4028,11 @@
         'medical-imaging-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/datastore/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'datastore-id))))
+                                'datastore-id)
+                               common-lisp:t)))
         "DeleteDatastore"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-datastore))
@@ -4043,14 +4052,16 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/datastore/~A/imageSet/~A/deleteImageSet"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'datastore-id))
-                              (quri.encode:url-encode
+                                'datastore-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'image-set-id))))
+                                'image-set-id)
+                               common-lisp:t)))
         "DeleteImageSet"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-image-set))
@@ -4070,13 +4081,15 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/getDICOMImportJob/datastore/~A/job/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'datastore-id))
-                              (quri.encode:url-encode
+                                'datastore-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input 'job-id))))
+                                aws-sdk/generator/operation::input 'job-id)
+                               common-lisp:t)))
         "GetDICOMImportJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-dicomimport-job))
@@ -4095,10 +4108,11 @@
         'medical-imaging-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/datastore/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'datastore-id))))
+                                'datastore-id)
+                               common-lisp:t)))
         "GetDatastore"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-datastore))
@@ -4120,14 +4134,16 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/datastore/~A/imageSet/~A/getImageFrame"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'datastore-id))
-                              (quri.encode:url-encode
+                                'datastore-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'image-set-id))))
+                                'image-set-id)
+                               common-lisp:t)))
         "GetImageFrame")
        :want-stream common-lisp:t)
       "blob" common-lisp:nil *error-map*)))
@@ -4149,14 +4165,16 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/datastore/~A/imageSet/~A/getImageSet"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'datastore-id))
-                              (quri.encode:url-encode
+                                'datastore-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'image-set-id))))
+                                'image-set-id)
+                               common-lisp:t)))
         "GetImageSet"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-image-set))
@@ -4177,14 +4195,16 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/datastore/~A/imageSet/~A/getImageSetMetadata"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'datastore-id))
-                              (quri.encode:url-encode
+                                'datastore-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'image-set-id))))
+                                'image-set-id)
+                               common-lisp:t)))
         "GetImageSetMetadata")
        :want-stream common-lisp:t)
       "blob" common-lisp:nil *error-map*)))
@@ -4207,10 +4227,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/listDICOMImportJobs/datastore/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'datastore-id))))
+                                'datastore-id)
+                               common-lisp:t)))
         "ListDICOMImportJobs"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-dicomimport-jobs))
@@ -4249,14 +4270,16 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/datastore/~A/imageSet/~A/listImageSetVersions"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'datastore-id))
-                              (quri.encode:url-encode
+                                'datastore-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'image-set-id))))
+                                'image-set-id)
+                               common-lisp:t)))
         "ListImageSetVersions"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-image-set-versions))
@@ -4275,10 +4298,11 @@
         'medical-imaging-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -4300,10 +4324,11 @@
         'medical-imaging-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/datastore/~A/searchImageSets"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'datastore-id))))
+                                'datastore-id)
+                               common-lisp:t)))
         "SearchImageSets"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'search-image-sets))
@@ -4326,10 +4351,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/startDICOMImportJob/datastore/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'datastore-id))))
+                                'datastore-id)
+                               common-lisp:t)))
         "StartDICOMImportJob"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'start-dicomimport-job))
@@ -4348,10 +4374,11 @@
         'medical-imaging-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -4370,10 +4397,11 @@
         'medical-imaging-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -4397,14 +4425,16 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/datastore/~A/imageSet/~A/updateImageSetMetadata"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'datastore-id))
-                              (quri.encode:url-encode
+                                'datastore-id)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'image-set-id))))
+                                'image-set-id)
+                               common-lisp:t)))
         "UpdateImageSetMetadata"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-image-set-metadata))

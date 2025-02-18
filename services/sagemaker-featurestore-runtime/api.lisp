@@ -20,7 +20,7 @@
  (common-lisp:export 'sagemaker-featurestore-runtime-error))
 (common-lisp:progn
  (common-lisp:defclass sagemaker-featurestore-runtime-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service
                         "sagemaker-featurestore-runtime" :api-version
@@ -898,10 +898,11 @@
         aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/FeatureGroup/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'feature-group-name))))
+                                'feature-group-name)
+                               common-lisp:t)))
         "DeleteRecord"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-record))
@@ -925,10 +926,11 @@
         aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/FeatureGroup/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'feature-group-name))))
+                                'feature-group-name)
+                               common-lisp:t)))
         "GetRecord"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-record))
@@ -951,10 +953,11 @@
         aws-sdk/generator/operation::input "PUT"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/FeatureGroup/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'feature-group-name))))
+                                'feature-group-name)
+                               common-lisp:t)))
         "PutRecord"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-record))

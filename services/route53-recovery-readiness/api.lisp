@@ -20,7 +20,7 @@
  (common-lisp:export 'route53-recovery-readiness-error))
 (common-lisp:progn
  (common-lisp:defclass route53-recovery-readiness-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "route53-recovery-readiness"
                         :api-version "2019-12-02" :host-prefix
@@ -4418,10 +4418,10 @@
         "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/cells/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'cell-name))))
+                                aws-sdk/generator/operation::input 'cell-name)
+                               common-lisp:t)))
         "DeleteCell"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-cell))
@@ -4442,10 +4442,11 @@
         "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/crossaccountauthorizations/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'cross-account-authorization))))
+                                'cross-account-authorization)
+                               common-lisp:t)))
         "DeleteCrossAccountAuthorization"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-cross-account-authorization))
@@ -4465,10 +4466,11 @@
         "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/readinesschecks/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'readiness-check-name))))
+                                'readiness-check-name)
+                               common-lisp:t)))
         "DeleteReadinessCheck"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-readiness-check))
@@ -4488,10 +4490,11 @@
         "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/recoverygroups/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'recovery-group-name))))
+                                'recovery-group-name)
+                               common-lisp:t)))
         "DeleteRecoveryGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-recovery-group))
@@ -4511,10 +4514,11 @@
         "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/resourcesets/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-set-name))))
+                                'resource-set-name)
+                               common-lisp:t)))
         "DeleteResourceSet"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-resource-set))
@@ -4538,10 +4542,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/recoverygroups/~A/architectureRecommendations"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'recovery-group-name))))
+                                'recovery-group-name)
+                               common-lisp:t)))
         "GetArchitectureRecommendations"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-architecture-recommendations))
@@ -4561,10 +4566,10 @@
         "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/cells/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'cell-name))))
+                                aws-sdk/generator/operation::input 'cell-name)
+                               common-lisp:t)))
         "GetCell"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-cell))
@@ -4586,10 +4591,10 @@
         "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/cellreadiness/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'cell-name))))
+                                aws-sdk/generator/operation::input 'cell-name)
+                               common-lisp:t)))
         "GetCellReadinessSummary"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-cell-readiness-summary))
@@ -4609,10 +4614,11 @@
         "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/readinesschecks/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'readiness-check-name))))
+                                'readiness-check-name)
+                               common-lisp:t)))
         "GetReadinessCheck"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-readiness-check))
@@ -4637,14 +4643,16 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/readinesschecks/~A/resource/~A/status"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'readiness-check-name))
-                              (quri.encode:url-encode
+                                'readiness-check-name)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-identifier))))
+                                'resource-identifier)
+                               common-lisp:t)))
         "GetReadinessCheckResourceStatus"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-readiness-check-resource-status))
@@ -4667,10 +4675,11 @@
         "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/readinesschecks/~A/status"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'readiness-check-name))))
+                                'readiness-check-name)
+                               common-lisp:t)))
         "GetReadinessCheckStatus"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-readiness-check-status))
@@ -4690,10 +4699,11 @@
         "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/recoverygroups/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'recovery-group-name))))
+                                'recovery-group-name)
+                               common-lisp:t)))
         "GetRecoveryGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-recovery-group))
@@ -4716,10 +4726,11 @@
         "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/recoverygroupreadiness/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'recovery-group-name))))
+                                'recovery-group-name)
+                               common-lisp:t)))
         "GetRecoveryGroupReadinessSummary"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-recovery-group-readiness-summary))
@@ -4739,10 +4750,11 @@
         "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/resourcesets/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-set-name))))
+                                'resource-set-name)
+                               common-lisp:t)))
         "GetResourceSet"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-resource-set))
@@ -4860,10 +4872,11 @@
         "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "ListTagsForResources"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resources))
@@ -4883,10 +4896,11 @@
         "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -4906,10 +4920,11 @@
         "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/tags/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-arn))))
+                                'resource-arn)
+                               common-lisp:t)))
         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -4929,10 +4944,10 @@
         "PUT"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/cells/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
-                                aws-sdk/generator/operation::input
-                                'cell-name))))
+                                aws-sdk/generator/operation::input 'cell-name)
+                               common-lisp:t)))
         "UpdateCell"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-cell))
@@ -4953,10 +4968,11 @@
         "PUT"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/readinesschecks/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'readiness-check-name))))
+                                'readiness-check-name)
+                               common-lisp:t)))
         "UpdateReadinessCheck"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-readiness-check))
@@ -4976,10 +4992,11 @@
         "PUT"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/recoverygroups/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'recovery-group-name))))
+                                'recovery-group-name)
+                               common-lisp:t)))
         "UpdateRecoveryGroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-recovery-group))
@@ -5001,10 +5018,11 @@
         "PUT"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/resourcesets/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'resource-set-name))))
+                                'resource-set-name)
+                               common-lisp:t)))
         "UpdateResourceSet"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-resource-set))

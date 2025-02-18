@@ -20,7 +20,7 @@
  (common-lisp:export 'chime-sdk-identity-error))
 (common-lisp:progn
  (common-lisp:defclass chime-sdk-identity-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "chime-sdk-identity"
                         :api-version "2021-04-20" :host-prefix "identity-chime"
@@ -4289,10 +4289,11 @@
         'chime-sdk-identity-request aws-sdk/generator/operation::input "POST"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/app-instances/~A/admins"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'app-instance-arn))))
+                                'app-instance-arn)
+                               common-lisp:t)))
         "CreateAppInstanceAdmin"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-app-instance-admin))
@@ -4350,10 +4351,11 @@
         'chime-sdk-identity-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/app-instances/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'app-instance-arn))))
+                                'app-instance-arn)
+                               common-lisp:t)))
         "DeleteAppInstance"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-app-instance))
@@ -4374,14 +4376,16 @@
         'chime-sdk-identity-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/app-instances/~A/admins/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'app-instance-arn))
-                              (quri.encode:url-encode
+                                'app-instance-arn)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'app-instance-admin-arn))))
+                                'app-instance-admin-arn)
+                               common-lisp:t)))
         "DeleteAppInstanceAdmin"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-app-instance-admin))
@@ -4400,10 +4404,11 @@
         'chime-sdk-identity-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/app-instance-bots/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'app-instance-bot-arn))))
+                                'app-instance-bot-arn)
+                               common-lisp:t)))
         "DeleteAppInstanceBot"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-app-instance-bot))
@@ -4422,10 +4427,11 @@
         'chime-sdk-identity-request aws-sdk/generator/operation::input "DELETE"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/app-instance-users/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'app-instance-user-arn))))
+                                'app-instance-user-arn)
+                               common-lisp:t)))
         "DeleteAppInstanceUser"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-app-instance-user))
@@ -4447,14 +4453,16 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/app-instance-users/~A/endpoints/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'app-instance-user-arn))
-                              (quri.encode:url-encode
+                                'app-instance-user-arn)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'endpoint-id))))
+                                'endpoint-id)
+                               common-lisp:t)))
         "DeregisterAppInstanceUserEndpoint"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'deregister-app-instance-user-endpoint))
@@ -4473,10 +4481,11 @@
         'chime-sdk-identity-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/app-instances/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'app-instance-arn))))
+                                'app-instance-arn)
+                               common-lisp:t)))
         "DescribeAppInstance"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-app-instance))
@@ -4497,14 +4506,16 @@
         'chime-sdk-identity-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/app-instances/~A/admins/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'app-instance-arn))
-                              (quri.encode:url-encode
+                                'app-instance-arn)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'app-instance-admin-arn))))
+                                'app-instance-admin-arn)
+                               common-lisp:t)))
         "DescribeAppInstanceAdmin"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-app-instance-admin))
@@ -4524,10 +4535,11 @@
         'chime-sdk-identity-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/app-instance-bots/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'app-instance-bot-arn))))
+                                'app-instance-bot-arn)
+                               common-lisp:t)))
         "DescribeAppInstanceBot"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-app-instance-bot))
@@ -4547,10 +4559,11 @@
         'chime-sdk-identity-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/app-instance-users/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'app-instance-user-arn))))
+                                'app-instance-user-arn)
+                               common-lisp:t)))
         "DescribeAppInstanceUser"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-app-instance-user))
@@ -4572,14 +4585,16 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/app-instance-users/~A/endpoints/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'app-instance-user-arn))
-                              (quri.encode:url-encode
+                                'app-instance-user-arn)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'endpoint-id))))
+                                'endpoint-id)
+                               common-lisp:t)))
         "DescribeAppInstanceUserEndpoint"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-app-instance-user-endpoint))
@@ -4600,10 +4615,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/app-instances/~A/retention-settings"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'app-instance-arn))))
+                                'app-instance-arn)
+                               common-lisp:t)))
         "GetAppInstanceRetentionSettings"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-app-instance-retention-settings))
@@ -4623,10 +4639,11 @@
         'chime-sdk-identity-request aws-sdk/generator/operation::input "GET"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/app-instances/~A/admins"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'app-instance-arn))))
+                                'app-instance-arn)
+                               common-lisp:t)))
         "ListAppInstanceAdmins"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-app-instance-admins))
@@ -4666,10 +4683,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/app-instance-users/~A/endpoints"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'app-instance-user-arn))))
+                                'app-instance-user-arn)
+                               common-lisp:t)))
         "ListAppInstanceUserEndpoints"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-app-instance-user-endpoints))
@@ -4741,10 +4759,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/app-instances/~A/retention-settings"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'app-instance-arn))))
+                                'app-instance-arn)
+                               common-lisp:t)))
         "PutAppInstanceRetentionSettings"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-app-instance-retention-settings))
@@ -4767,10 +4786,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/app-instance-users/~A/expiration-settings"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'app-instance-user-arn))))
+                                'app-instance-user-arn)
+                               common-lisp:t)))
         "PutAppInstanceUserExpirationSettings"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'put-app-instance-user-expiration-settings))
@@ -4795,10 +4815,11 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/app-instance-users/~A/endpoints"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'app-instance-user-arn))))
+                                'app-instance-user-arn)
+                               common-lisp:t)))
         "RegisterAppInstanceUserEndpoint"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'register-app-instance-user-endpoint))
@@ -4849,10 +4870,11 @@
         'chime-sdk-identity-request aws-sdk/generator/operation::input "PUT"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/app-instances/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'app-instance-arn))))
+                                'app-instance-arn)
+                               common-lisp:t)))
         "UpdateAppInstance"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-app-instance))
@@ -4873,10 +4895,11 @@
         'chime-sdk-identity-request aws-sdk/generator/operation::input "PUT"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/app-instance-bots/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'app-instance-bot-arn))))
+                                'app-instance-bot-arn)
+                               common-lisp:t)))
         "UpdateAppInstanceBot"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-app-instance-bot))
@@ -4896,10 +4919,11 @@
         'chime-sdk-identity-request aws-sdk/generator/operation::input "PUT"
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil "/app-instance-users/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'app-instance-user-arn))))
+                                'app-instance-user-arn)
+                               common-lisp:t)))
         "UpdateAppInstanceUser"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-app-instance-user))
@@ -4923,14 +4947,16 @@
         (common-lisp:lambda (aws-sdk/generator/operation::input)
           (common-lisp:format common-lisp:nil
                               "/app-instance-users/~A/endpoints/~A"
-                              (quri.encode:url-encode
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'app-instance-user-arn))
-                              (quri.encode:url-encode
+                                'app-instance-user-arn)
+                               common-lisp:t)
+                              (aws-sdk/generator/operation::aws-sign4-uri-encode
                                (common-lisp:slot-value
                                 aws-sdk/generator/operation::input
-                                'endpoint-id))))
+                                'endpoint-id)
+                               common-lisp:t)))
         "UpdateAppInstanceUserEndpoint"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-app-instance-user-endpoint))

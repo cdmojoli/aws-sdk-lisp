@@ -20,7 +20,7 @@
  (common-lisp:export 'mobileanalytics-error))
 (common-lisp:progn
  (common-lisp:defclass mobileanalytics-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "mobileanalytics"
                         :api-version "2014-06-05" :host-prefix
@@ -193,13 +193,17 @@
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input 'client-context))
-      (common-lisp:cons "x-amz-Client-Context" aws-sdk/generator/shape::value))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-Client-Context" aws-sdk/generator/shape::value)
+       common-lisp:nil))
     (alexandria:when-let (aws-sdk/generator/shape::value
                           (common-lisp:slot-value
                            aws-sdk/generator/shape::input
                            'client-context-encoding))
-      (common-lisp:cons "x-amz-Client-Context-Encoding"
-                        aws-sdk/generator/shape::value))))
+      (common-lisp:cons
+       (common-lisp:cons "x-amz-Client-Context-Encoding"
+                         aws-sdk/generator/shape::value)
+       common-lisp:nil))))
  (common-lisp:defmethod aws-sdk/generator/shape::input-params
                         ((aws-sdk/generator/shape::input put-events-input))
    (common-lisp:append

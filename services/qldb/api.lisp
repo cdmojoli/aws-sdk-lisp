@@ -20,7 +20,7 @@
  (common-lisp:export 'qldb-error))
 (common-lisp:progn
  (common-lisp:defclass qldb-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "qldb" :api-version
                         "2019-01-02" :host-prefix "qldb" :signing-name "qldb"
@@ -2916,14 +2916,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/ledgers/~A/journal-kinesis-streams/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))
-                                                           (quri.encode:url-encode
+                                                             'name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'stream-id))))
+                                                             'stream-id)
+                                                            common-lisp:t)))
                                                         "CancelJournalKinesisStream"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'cancel-journal-kinesis-stream))
@@ -2967,10 +2969,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/ledgers/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "DeleteLedger"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-ledger))
@@ -2995,14 +2998,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/ledgers/~A/journal-kinesis-streams/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))
-                                                           (quri.encode:url-encode
+                                                             'name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'stream-id))))
+                                                             'stream-id)
+                                                            common-lisp:t)))
                                                         "DescribeJournalKinesisStream"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-journal-kinesis-stream))
@@ -3027,14 +3032,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/ledgers/~A/journal-s3-exports/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))
-                                                           (quri.encode:url-encode
+                                                             'name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'export-id))))
+                                                             'export-id)
+                                                            common-lisp:t)))
                                                         "DescribeJournalS3Export"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-journal-s3export))
@@ -3058,10 +3065,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/ledgers/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "DescribeLedger"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-ledger))
@@ -3089,10 +3097,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/ledgers/~A/journal-s3-exports"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "ExportJournalToS3"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'export-journal-to-s3))
@@ -3117,10 +3126,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/ledgers/~A/block"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "GetBlock"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-block))
@@ -3144,10 +3154,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/ledgers/~A/digest"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "GetDigest"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-digest))
@@ -3173,10 +3184,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/ledgers/~A/revision"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "GetRevision"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'get-revision))
@@ -3202,10 +3214,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/ledgers/~A/journal-kinesis-streams"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "ListJournalKinesisStreamsForLedger"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-journal-kinesis-streams-for-ledger))
@@ -3248,10 +3261,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/ledgers/~A/journal-s3-exports"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "ListJournalS3ExportsForLedger"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-journal-s3exports-for-ledger))
@@ -3292,10 +3306,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -3324,10 +3339,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/ledgers/~A/journal-kinesis-streams"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "StreamJournalToKinesis"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'stream-journal-to-kinesis))
@@ -3351,10 +3367,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -3378,10 +3395,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -3406,10 +3424,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/ledgers/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "UpdateLedger"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-ledger))
@@ -3434,10 +3453,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/ledgers/~A/permissions-mode"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "UpdateLedgerPermissionsMode"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-ledger-permissions-mode))

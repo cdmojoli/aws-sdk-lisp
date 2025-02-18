@@ -20,7 +20,7 @@
  (common-lisp:export 'eks-error))
 (common-lisp:progn
  (common-lisp:defclass eks-request
-                       (aws-sdk/generator/service::rest-json-request)
+                       (aws-sdk/rest-json-request:rest-json-request)
                        common-lisp:nil
                        (:default-initargs :service "eks" :api-version
                         "2017-11-01" :host-prefix "eks" :signing-name "eks"
@@ -11522,14 +11522,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/clusters/~A/access-entries/~A/access-policies"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))
-                                                           (quri.encode:url-encode
+                                                             'name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'principal-arn))))
+                                                             'principal-arn)
+                                                            common-lisp:t)))
                                                         "AssociateAccessPolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'associate-access-policy))
@@ -11557,10 +11559,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/clusters/~A/encryption-config/associate"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "AssociateEncryptionConfig"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'associate-encryption-config))
@@ -11587,10 +11590,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/clusters/~A/identity-provider-configs/associate"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "AssociateIdentityProviderConfig"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'associate-identity-provider-config))
@@ -11617,10 +11621,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/clusters/~A/access-entries"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "CreateAccessEntry"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-access-entry))
@@ -11649,10 +11654,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/clusters/~A/addons"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "CreateAddon"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-addon))
@@ -11725,10 +11731,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/clusters/~A/fargate-profiles"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "CreateFargateProfile"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-fargate-profile))
@@ -11760,10 +11767,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/clusters/~A/node-groups"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "CreateNodegroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-nodegroup))
@@ -11791,10 +11799,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/clusters/~A/pod-identity-associations"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "CreatePodIdentityAssociation"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'create-pod-identity-association))
@@ -11818,14 +11827,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/clusters/~A/access-entries/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))
-                                                           (quri.encode:url-encode
+                                                             'name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'principal-arn))))
+                                                             'principal-arn)
+                                                            common-lisp:t)))
                                                         "DeleteAccessEntry"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-access-entry))
@@ -11850,14 +11861,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/clusters/~A/addons/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))
-                                                           (quri.encode:url-encode
+                                                             'name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'addon-name))))
+                                                             'addon-name)
+                                                            common-lisp:t)))
                                                         "DeleteAddon"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-addon))
@@ -11881,10 +11894,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/clusters/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "DeleteCluster"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-cluster))
@@ -11909,10 +11923,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/eks-anywhere-subscriptions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "DeleteEksAnywhereSubscription"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-eks-anywhere-subscription))
@@ -11937,14 +11952,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/clusters/~A/fargate-profiles/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))
-                                                           (quri.encode:url-encode
+                                                             'name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'fargate-profile-name))))
+                                                             'fargate-profile-name)
+                                                            common-lisp:t)))
                                                         "DeleteFargateProfile"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-fargate-profile))
@@ -11968,14 +11985,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/clusters/~A/node-groups/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))
-                                                           (quri.encode:url-encode
+                                                             'name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'nodegroup-name))))
+                                                             'nodegroup-name)
+                                                            common-lisp:t)))
                                                         "DeleteNodegroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-nodegroup))
@@ -12000,14 +12019,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/clusters/~A/pod-identity-associations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))
-                                                           (quri.encode:url-encode
+                                                             'name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'association-id))))
+                                                             'association-id)
+                                                            common-lisp:t)))
                                                         "DeletePodIdentityAssociation"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'delete-pod-identity-association))
@@ -12031,10 +12052,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/cluster-registrations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "DeregisterCluster"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'deregister-cluster))
@@ -12058,14 +12080,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/clusters/~A/access-entries/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))
-                                                           (quri.encode:url-encode
+                                                             'name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'principal-arn))))
+                                                             'principal-arn)
+                                                            common-lisp:t)))
                                                         "DescribeAccessEntry"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-access-entry))
@@ -12089,14 +12113,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/clusters/~A/addons/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))
-                                                           (quri.encode:url-encode
+                                                             'name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'addon-name))))
+                                                             'addon-name)
+                                                            common-lisp:t)))
                                                         "DescribeAddon"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-addon))
@@ -12160,10 +12186,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/clusters/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "DescribeCluster"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-cluster))
@@ -12188,10 +12215,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/eks-anywhere-subscriptions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "DescribeEksAnywhereSubscription"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-eks-anywhere-subscription))
@@ -12216,14 +12244,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/clusters/~A/fargate-profiles/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))
-                                                           (quri.encode:url-encode
+                                                             'name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'fargate-profile-name))))
+                                                             'fargate-profile-name)
+                                                            common-lisp:t)))
                                                         "DescribeFargateProfile"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-fargate-profile))
@@ -12249,10 +12279,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/clusters/~A/identity-provider-configs/describe"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "DescribeIdentityProviderConfig"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-identity-provider-config))
@@ -12276,14 +12307,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/clusters/~A/insights/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))
-                                                           (quri.encode:url-encode
+                                                             'name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "DescribeInsight"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-insight))
@@ -12307,14 +12340,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/clusters/~A/node-groups/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))
-                                                           (quri.encode:url-encode
+                                                             'name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'nodegroup-name))))
+                                                             'nodegroup-name)
+                                                            common-lisp:t)))
                                                         "DescribeNodegroup"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-nodegroup))
@@ -12339,14 +12374,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/clusters/~A/pod-identity-associations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))
-                                                           (quri.encode:url-encode
+                                                             'name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'association-id))))
+                                                             'association-id)
+                                                            common-lisp:t)))
                                                         "DescribePodIdentityAssociation"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-pod-identity-association))
@@ -12371,14 +12408,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/clusters/~A/updates/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))
-                                                           (quri.encode:url-encode
+                                                             'name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'update-id))))
+                                                             'update-id)
+                                                            common-lisp:t)))
                                                         "DescribeUpdate"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'describe-update))
@@ -12404,18 +12443,21 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/clusters/~A/access-entries/~A/access-policies/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))
-                                                           (quri.encode:url-encode
+                                                             'name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'principal-arn))
-                                                           (quri.encode:url-encode
+                                                             'principal-arn)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'policy-arn))))
+                                                             'policy-arn)
+                                                            common-lisp:t)))
                                                         "DisassociateAccessPolicy"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'disassociate-access-policy))
@@ -12443,10 +12485,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/clusters/~A/identity-provider-configs/disassociate"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "DisassociateIdentityProviderConfig"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'disassociate-identity-provider-config))
@@ -12473,10 +12516,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/clusters/~A/access-entries"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "ListAccessEntries"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-access-entries))
@@ -12519,10 +12563,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/clusters/~A/addons"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "ListAddons"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-addons))
@@ -12549,14 +12594,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/clusters/~A/access-entries/~A/access-policies"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))
-                                                           (quri.encode:url-encode
+                                                             'name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'principal-arn))))
+                                                             'principal-arn)
+                                                            common-lisp:t)))
                                                         "ListAssociatedAccessPolicies"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-associated-access-policies))
@@ -12618,10 +12665,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/clusters/~A/fargate-profiles"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "ListFargateProfiles"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-fargate-profiles))
@@ -12647,10 +12695,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/clusters/~A/identity-provider-configs"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "ListIdentityProviderConfigs"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-identity-provider-configs))
@@ -12676,10 +12725,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/clusters/~A/insights"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "ListInsights"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-insights))
@@ -12704,10 +12754,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/clusters/~A/node-groups"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "ListNodegroups"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-nodegroups))
@@ -12735,10 +12786,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/clusters/~A/pod-identity-associations"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "ListPodIdentityAssociations"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-pod-identity-associations))
@@ -12762,10 +12814,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "ListTagsForResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-tags-for-resource))
@@ -12792,10 +12845,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/clusters/~A/updates"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "ListUpdates"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'list-updates))
@@ -12839,10 +12893,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "TagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'tag-resource))
@@ -12866,10 +12921,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/tags/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'resource-arn))))
+                                                             'resource-arn)
+                                                            common-lisp:t)))
                                                         "UntagResource"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'untag-resource))
@@ -12896,14 +12952,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/clusters/~A/access-entries/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))
-                                                           (quri.encode:url-encode
+                                                             'name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'principal-arn))))
+                                                             'principal-arn)
+                                                            common-lisp:t)))
                                                         "UpdateAccessEntry"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-access-entry))
@@ -12932,14 +12990,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/clusters/~A/addons/~A/update"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))
-                                                           (quri.encode:url-encode
+                                                             'name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'addon-name))))
+                                                             'addon-name)
+                                                            common-lisp:t)))
                                                         "UpdateAddon"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-addon))
@@ -12966,10 +13026,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/clusters/~A/update-config"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "UpdateClusterConfig"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-cluster-config))
@@ -12994,10 +13055,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/clusters/~A/updates"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))))
+                                                             'name)
+                                                            common-lisp:t)))
                                                         "UpdateClusterVersion"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-cluster-version))
@@ -13023,10 +13085,11 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/eks-anywhere-subscriptions/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'id))))
+                                                             'id)
+                                                            common-lisp:t)))
                                                         "UpdateEksAnywhereSubscription"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-eks-anywhere-subscription))
@@ -13053,14 +13116,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/clusters/~A/node-groups/~A/update-config"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))
-                                                           (quri.encode:url-encode
+                                                             'name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'nodegroup-name))))
+                                                             'nodegroup-name)
+                                                            common-lisp:t)))
                                                         "UpdateNodegroupConfig"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-nodegroup-config))
@@ -13088,14 +13153,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/clusters/~A/node-groups/~A/update-version"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))
-                                                           (quri.encode:url-encode
+                                                             'name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'nodegroup-name))))
+                                                             'nodegroup-name)
+                                                            common-lisp:t)))
                                                         "UpdateNodegroupVersion"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-nodegroup-version))
@@ -13123,14 +13190,16 @@
                                                           (common-lisp:format
                                                            common-lisp:nil
                                                            "/clusters/~A/pod-identity-associations/~A"
-                                                           (quri.encode:url-encode
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'name))
-                                                           (quri.encode:url-encode
+                                                             'name)
+                                                            common-lisp:t)
+                                                           (aws-sdk/generator/operation::aws-sign4-uri-encode
                                                             (common-lisp:slot-value
                                                              aws-sdk/generator/operation::input
-                                                             'association-id))))
+                                                             'association-id)
+                                                            common-lisp:t)))
                                                         "UpdatePodIdentityAssociation"))
       common-lisp:nil common-lisp:nil *error-map*)))
  (common-lisp:export 'update-pod-identity-association))
