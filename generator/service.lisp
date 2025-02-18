@@ -10,6 +10,8 @@
                 #:query-request)
   (:import-from #:aws-sdk/json-request
                 #:json-request)
+  (:import-from #:aws-sdk/rest-json-request
+                #:rest-json-request)
   (:import-from #:aws-sdk/rest-xml-request
                 #:rest-xml-request)
   (:import-from #:yason)
