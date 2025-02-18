@@ -54,6 +54,7 @@
                    (quri:uri-query-params (quri:uri uri))))))
 
 (defun make-request-with-input (request-class input method path-conversion action)
+  (declare (debug 3))
   (make-instance request-class
                  :method method
                  :path (add-query-with-input
@@ -106,7 +107,7 @@
              (lambda (key-value)
                (destructuring-bind (key . value) key-value
                  `(when-let (value (slot-value input ',(lispify key)))
-                    (cons ,(gethash "locationName" value) value))))
+                    (cons (cons ,(gethash "locationName" value) value) nil))))
              (filter-member "location" "header" members))
           ,@(mapcar
              (lambda (key-value)
@@ -120,11 +121,12 @@
        (defmethod input-params ((input ,shape-name))
          (append
           ,@(loop for key being each hash-key of members
-                  using (hash-value value)
-                  if (not (or (gethash "location" value)
+                    using (hash-value value)
+                  if (not (or (string= "Payload" key)
+                              (gethash "location" value)
                               (gethash "streaming" value)))
-                  collect `(when-let (value (slot-value input ',(lispify key)))
-                             (list (cons ,key (input-params value)))))))
+                    collect `(when-let (value (slot-value input ',(lispify key)))
+                               (list (cons ,key (input-params value)))))))
        (defmethod input-payload ((input ,shape-name))
          ,(if payload
               `(slot-value input ',(lispify payload))
