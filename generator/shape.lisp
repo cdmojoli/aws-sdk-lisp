@@ -55,7 +55,6 @@
                   (quri:uri-query-params (quri:uri uri)))))
 
 (defun make-request-with-input (request-class input method path-conversion action)
-  (declare (debug 3))
   (make-instance request-class
                  :method method
                  :path (quri:render-uri (add-query-with-input
