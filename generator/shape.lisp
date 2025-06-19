@@ -43,17 +43,16 @@
   (:method (input) (declare (ignore input)) nil))
 
 (defun add-query-with-input (uri input)
-  (quri:render-uri
-   (quri:make-uri :defaults uri
-                  :query
-                  (append
-                   (loop :for slot :in (c2mop:class-direct-slots (class-of input))
-                         :for slot-name := (c2mop:slot-definition-name slot)
-                         :when (and (slot-value input slot-name)
-                                    (equal "querystring" (member-slot-location slot)))
-                           :collect (cons (member-slot-location-name slot)
-                                          (slot-value input slot-name)))
-                   (quri:uri-query-params (quri:uri uri))))))
+  (quri:make-uri :defaults uri
+                 :query
+                 (append
+                  (loop :for slot :in (c2mop:class-direct-slots (class-of input))
+                        :for slot-name := (c2mop:slot-definition-name slot)
+                        :when (and (slot-value input slot-name)
+                                   (equal "querystring" (member-slot-location slot)))
+                        :collect (cons (member-slot-location-name slot)
+                                       (slot-value input slot-name)))
+                  (quri:uri-query-params (quri:uri uri)))))
 
 (defun make-request-with-input (request-class input method path-conversion action)
   (declare (debug 3))
