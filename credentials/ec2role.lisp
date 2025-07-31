@@ -30,8 +30,8 @@
 
 (defun token-alive-p (token)
   (and (token-p token)
-       (<= (+ (token-created-at token) (token-ttl token))
-           (get-universal-time))))
+       (<= (get-universal-time)
+           (+ (token-created-at token) (token-ttl token)))))
 
 (defun fetch-token ()
   (when *use-imds-v2*
